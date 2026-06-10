@@ -1,6 +1,7 @@
 const state = {
   products: [],
   filtered: [],
+  avoidList: [],
   rules: null,
 };
 
@@ -42,15 +43,14 @@ function renderSummary(data) {
   const products = data.products || [];
   const avgScore = products.reduce((sum, item) => sum + item.score.total, 0) / products.length;
   const topScore = Math.max(...products.map((item) => item.score.total));
-  const sourceCount = new Set(products.flatMap((item) => item.platforms.map((p) => p.name))).size;
   const newCount = products.filter((item) => item.statusTag === "新增").length;
-  const repeatCount = products.filter((item) => item.appearanceCount > 1).length;
+  const avoidCount = (data.avoidList || []).length;
 
   byId("summaryGrid").innerHTML = [
     ["单品SKU", `${products.length}个`, "每日固定输出"],
     ["平均热度", avgScore.toFixed(1), "1-10分综合模型"],
     ["最高分", topScore.toFixed(1), "优先进入上架池"],
-    ["上榜状态", `${newCount}新/${repeatCount}复`, `${sourceCount}个平台信号`],
+    ["风控", `${newCount}新/${avoidCount}暂缓`, "避免误上高风险品"],
   ]
     .map(
       ([label, value, note]) => `
@@ -62,6 +62,32 @@ function renderSummary(data) {
       `,
     )
     .join("");
+}
+
+function renderOperatorGuide(data) {
+  const guide = data.operatorGuide || [];
+  const rules = data.trialRules || [];
+  byId("operatorGuide").innerHTML = `
+    <div>
+      <p class="eyebrow">Daily workflow</p>
+      <h2>店主每日10分钟操作流程</h2>
+    </div>
+    <div class="operator-steps">
+      ${guide
+        .map(
+          (item, index) => `
+            <article class="step-card">
+              <span>${index + 1}</span>
+              <p>${escapeHtml(item)}</p>
+            </article>
+          `,
+        )
+        .join("")}
+    </div>
+    <div class="trial-rules">
+      ${rules.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+    </div>
+  `;
 }
 
 function statusBadges(item) {
@@ -81,6 +107,19 @@ function platformCard(platform) {
       <span>${escapeHtml(platform.salesSignal)}</span>
     </a>
   `;
+}
+
+function scoreText(item) {
+  const score = item.score;
+  return [
+    `跨平台${score.platformHeat}`,
+    `价格${score.priceCompetitiveness}`,
+    `利润${score.profitFeasibility}`,
+    `销量${score.salesProof}`,
+    `复购${score.repeatPurchase}`,
+    `差异${score.differentiation}`,
+    `风险扣${score.riskPenalty}`,
+  ].join(" · ");
 }
 
 function productCard(item) {
@@ -106,9 +145,7 @@ function productCard(item) {
 
         <div class="scoreline" aria-label="综合热度分">
           <div class="scorebar"><span style="width:${scoreWidth(item.score.total)}"></span></div>
-          <p class="subline">
-            跨平台${item.score.platformHeat} · 价格${item.score.priceCompetitiveness} · 利润${item.score.profitFeasibility} · 销量${item.score.salesProof} · 风险扣${item.score.riskPenalty}
-          </p>
+          <p class="subline">${scoreText(item)}</p>
         </div>
 
         <div class="details">
@@ -125,7 +162,7 @@ function productCard(item) {
           <p><strong>热度依据：</strong>${escapeHtml(item.heatEvidence)}</p>
           <p><strong>上架建议：</strong>${escapeHtml(item.listingAdvice)}</p>
           <p><strong>风险提示：</strong>${escapeHtml(item.risk)}</p>
-          <p><strong>成本口径：</strong>${escapeHtml(item.costSource)}</p>
+          <p><strong>试款约束：</strong>${escapeHtml(item.trialBudgetRule)}；${escapeHtml(item.costSource)}</p>
         </div>
       </div>
     </article>
@@ -150,9 +187,26 @@ function topCard(item) {
   `;
 }
 
+function avoidCard(item) {
+  return `
+    <article class="avoid-card">
+      <div class="badge-row">
+        <span class="badge danger">${escapeHtml(item.statusTag || "暂缓")}</span>
+        <span class="badge warn">${escapeHtml(item.category || "风控")}</span>
+      </div>
+      <h3>${escapeHtml(item.name)}</h3>
+      <p class="subline">${escapeHtml(item.brand)} · ${escapeHtml(item.sku)}</p>
+      <p><strong>回避原因：</strong>${escapeHtml(item.avoidReason)}</p>
+      <p><strong>后续观察：</strong>${escapeHtml(item.revisitCondition)}</p>
+      <a class="source-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(item.sourcePlatform)} ${escapeHtml(item.sourceSkuId)}</a>
+    </article>
+  `;
+}
+
 function renderProducts() {
   byId("topPicks").innerHTML = state.products.slice(0, 3).map(topCard).join("");
   byId("productGrid").innerHTML = state.filtered.map(productCard).join("");
+  byId("avoidGrid").innerHTML = state.avoidList.map(avoidCard).join("");
 }
 
 function populateFilters(products) {
@@ -176,6 +230,7 @@ function applyFilters() {
   state.filtered.sort((a, b) => {
     if (sortBy === "price") return a.suggestedPrice[0] - b.suggestedPrice[0];
     if (sortBy === "profit") return b.score.profitFeasibility - a.score.profitFeasibility;
+    if (sortBy === "repeat") return b.score.repeatPurchase - a.score.repeatPurchase;
     return b.score.total - a.score.total;
   });
 
@@ -200,13 +255,15 @@ async function boot() {
   if (!response.ok) throw new Error("无法读取选品数据");
   const data = await response.json();
 
-  state.products = data.products;
-  state.filtered = data.products;
+  state.products = data.products || [];
+  state.filtered = data.products || [];
+  state.avoidList = data.avoidList || [];
   state.rules = data.scoreRules;
 
   byId("generatedAt").textContent = `生成时间：${data.generatedAtBeijing}`;
   renderSummary(data);
-  populateFilters(data.products);
+  renderOperatorGuide(data);
+  populateFilters(state.products);
   renderRules(data.scoreRules);
   renderProducts();
 

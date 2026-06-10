@@ -1,5 +1,5 @@
 {
-  "catalogVersion": "2026-06-10-single-sku",
+  "catalogVersion": "2026-06-10-single-sku-v2",
   "mode": "single-sku",
   "products": [
     {
@@ -56,6 +56,8 @@
         "priceCompetitiveness": 8.4,
         "profitFeasibility": 7.8,
         "salesProof": 9.0,
+        "repeatPurchase": 9.4,
+        "differentiation": 7.8,
         "operability": 8.7,
         "riskPenalty": 0.8
       }
@@ -114,6 +116,8 @@
         "priceCompetitiveness": 8.1,
         "profitFeasibility": 7.6,
         "salesProof": 9.2,
+        "repeatPurchase": 9.2,
+        "differentiation": 8.0,
         "operability": 8.3,
         "riskPenalty": 0.9
       }
@@ -172,6 +176,8 @@
         "priceCompetitiveness": 8.2,
         "profitFeasibility": 7.9,
         "salesProof": 9.0,
+        "repeatPurchase": 8.8,
+        "differentiation": 7.6,
         "operability": 8.5,
         "riskPenalty": 0.7
       }
@@ -230,6 +236,8 @@
         "priceCompetitiveness": 7.8,
         "profitFeasibility": 7.7,
         "salesProof": 8.7,
+        "repeatPurchase": 8.7,
+        "differentiation": 8.0,
         "operability": 8.3,
         "riskPenalty": 0.7
       }
@@ -288,6 +296,8 @@
         "priceCompetitiveness": 8.6,
         "profitFeasibility": 8.8,
         "salesProof": 9.0,
+        "repeatPurchase": 8.2,
+        "differentiation": 8.5,
         "operability": 8.7,
         "riskPenalty": 0.5
       }
@@ -346,6 +356,8 @@
         "priceCompetitiveness": 7.7,
         "profitFeasibility": 7.1,
         "salesProof": 9.2,
+        "repeatPurchase": 9.1,
+        "differentiation": 6.8,
         "operability": 7.6,
         "riskPenalty": 1.0
       }
@@ -404,6 +416,8 @@
         "priceCompetitiveness": 8.0,
         "profitFeasibility": 7.8,
         "salesProof": 7.2,
+        "repeatPurchase": 8.3,
+        "differentiation": 8.2,
         "operability": 8.2,
         "riskPenalty": 0.8
       }
@@ -462,6 +476,8 @@
         "priceCompetitiveness": 8.0,
         "profitFeasibility": 7.4,
         "salesProof": 8.2,
+        "repeatPurchase": 8.4,
+        "differentiation": 7.5,
         "operability": 8.0,
         "riskPenalty": 0.8
       }
@@ -520,6 +536,8 @@
         "priceCompetitiveness": 7.8,
         "profitFeasibility": 8.3,
         "salesProof": 8.8,
+        "repeatPurchase": 8.6,
+        "differentiation": 8.1,
         "operability": 8.0,
         "riskPenalty": 0.6
       }
@@ -578,9 +596,61 @@
         "priceCompetitiveness": 8.0,
         "profitFeasibility": 7.8,
         "salesProof": 8.1,
+        "repeatPurchase": 8.6,
+        "differentiation": 7.7,
         "operability": 8.1,
         "riskPenalty": 0.7
       }
+    }
+  ],
+  "avoidList": [
+    {
+      "id": "avoid-jd-100042032003-deyou-wet-toilet-80x6",
+      "brand": "德佑",
+      "name": "德佑湿厕纸80片*6包家庭装",
+      "sku": "80片*6包",
+      "category": "纸品/湿巾",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100042032003",
+      "sourceUrl": "https://item.jd.com/100042032003.html",
+      "avoidReason": "同规格湿厕纸价格战明显，新店若没有授权价差容易被低价压制。",
+      "revisitCondition": "真实供货价低于建议售价75%，且能提供品牌进货凭证和保质期批次时再测。"
+    },
+    {
+      "id": "avoid-jd-100053792086-shuiweishi-oil-cleaner-480x5",
+      "brand": "水卫士",
+      "name": "水卫士厨房重油污净480g*5瓶",
+      "sku": "480g*5瓶",
+      "category": "家庭清洁",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100053792086",
+      "sourceUrl": "https://item.jd.com/100053792086.html",
+      "avoidReason": "5瓶液体重货破损和运费风险偏高，首日不适合新店无履约数据直接上架。",
+      "revisitCondition": "快递阶梯价、破损补发成本和偏远地区运费模板核算完成后再进入测款池。"
+    },
+    {
+      "id": "avoid-jd-100117443328-yunnanbaiyao-toothpaste-500g",
+      "brand": "云南白药",
+      "name": "云南白药益生菌牙膏套装6支500g",
+      "sku": "6支500g",
+      "category": "个护日化",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100117443328",
+      "sourceUrl": "https://item.jd.com/100117443328.html",
+      "avoidReason": "牙膏功效词合规要求高，且大品牌控价和投诉风险高于普通清洁耗材。",
+      "revisitCondition": "确认授权凭证、标题不含医疗化承诺，并能用牙刷/牙线赠品做差异后再测。"
+    },
+    {
+      "id": "avoid-jd-100030771720-walch-laundry-liquid-12jin",
+      "brand": "威露士",
+      "name": "威露士清可新洗衣液松木香12斤组合装",
+      "sku": "12斤组合装",
+      "category": "衣物清洁",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100030771720",
+      "sourceUrl": "https://item.jd.com/100030771720.html",
+      "avoidReason": "12斤液体属于重货标品，价格透明且运费吃利润，新店不宜同时铺太多同类重货。",
+      "revisitCondition": "当蓝月亮12斤 SKU 跑出点击和转化数据后，再用该 SKU 做同价位替补对照。"
     }
   ]
 }

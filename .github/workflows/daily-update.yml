@@ -37,6 +37,9 @@ jobs:
       - name: Generate daily recommendation data
         run: python scripts/generate_daily_data.py
 
+      - name: Validate dashboard data
+        run: python scripts/validate_dashboard.py
+
       - name: Commit refreshed daily data
         run: |
           git config user.name "github-actions[bot]"

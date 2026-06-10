@@ -15,24 +15,26 @@ DAILY_DIR = ROOT / "docs" / "daily"
 BEIJING = timezone(timedelta(hours=8))
 
 WEIGHTS = {
-    "platformHeat": 0.35,
-    "priceCompetitiveness": 0.25,
+    "platformHeat": 0.30,
+    "priceCompetitiveness": 0.20,
     "profitFeasibility": 0.20,
-    "salesProof": 0.15,
+    "salesProof": 0.10,
+    "repeatPurchase": 0.10,
+    "differentiation": 0.05,
     "operability": 0.05,
 }
 
 RULES = {
-    "summary": "总分=跨平台热度35%+价格竞争力25%+利润可行性20%+销量/评论信号15%+上架可操作性5%-风险扣分。供货价参考暂按建议售价*78%倒推，待替换真实成本。",
+    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。供货价参考暂按建议售价*78%倒推，待替换真实成本。",
     "items": [
         {
             "name": "跨平台热度",
-            "weight": "35%",
+            "weight": "30%",
             "description": "淘宝/天猫、京东、抖音、小红书出现榜单、热词、内容种草或行业报告信号越多，得分越高。",
         },
         {
             "name": "价格竞争力",
-            "weight": "25%",
+            "weight": "20%",
             "description": "建议售价越接近同品牌同规格或近似规格的主流低价带，且不牺牲毛利，得分越高。",
         },
         {
@@ -42,13 +44,23 @@ RULES = {
         },
         {
             "name": "销量/评论信号",
-            "weight": "15%",
+            "weight": "10%",
             "description": "公开评论量、榜单名次、销量口径、达人带货或内容互动信号越强，得分越高。",
+        },
+        {
+            "name": "复购率",
+            "weight": "10%",
+            "description": "纸品、清洁剂、洗护等消耗速度快、复购周期短的 SKU 得分更高。",
+        },
+        {
+            "name": "差异化空间",
+            "weight": "5%",
+            "description": "能通过组合装、赠品、标题场景、主图卖点避开官方同款硬碰的 SKU 得分更高。",
         },
         {
             "name": "上架可操作性",
             "weight": "5%",
-            "description": "经销现货、标准品牌SKU、组合装/赠品差异空间越大，得分越高。",
+            "description": "经销现货、标准品牌 SKU、履约稳定、资质风险低、售后可控的 SKU 得分更高。",
         },
         {
             "name": "风险扣分",
@@ -57,6 +69,20 @@ RULES = {
         },
     ],
 }
+
+OPERATOR_GUIDE = [
+    "看：先看今日 Top3 和热度分，只处理具体 SKU，不处理泛品类。",
+    "核：核对真实供货价、运费模板、保质期、品牌授权/进货凭证。",
+    "上：真实成本低于供货价参考时再上架；高于参考值则暂缓或改组合装。",
+    "72小时：看曝光、点击、收藏加购；无曝光先改标题和主图。",
+    "7天：看转化、退款、毛利；低效 SKU 淘汰或降为活动品。",
+]
+
+TRIAL_RULES = [
+    "单 SKU 首批试款成本建议控制在 ￥200-￥500。",
+    "液体和纸品重货必须先核算快递阶梯价、破损率和偏远地区策略。",
+    "不具备授权、凭证、保质期可控条件的 SKU 不进入上架池。",
+]
 
 
 def read_json(path: Path, default: dict) -> dict:
@@ -72,7 +98,7 @@ def write_json(path: Path, data: dict) -> None:
 
 
 def load_catalog() -> dict:
-    return read_json(CATALOG_PATH, {"products": []})
+    return read_json(CATALOG_PATH, {"products": [], "avoidList": []})
 
 
 def deterministic_adjustment(product_id: str, date_key: str) -> float:
@@ -93,6 +119,8 @@ def score_product(product: dict, date_key: str, focus_category: str) -> dict:
         "priceCompetitiveness": inputs["priceCompetitiveness"],
         "profitFeasibility": inputs["profitFeasibility"],
         "salesProof": inputs["salesProof"],
+        "repeatPurchase": inputs["repeatPurchase"],
+        "differentiation": inputs["differentiation"],
         "operability": inputs["operability"],
         "riskPenalty": inputs["riskPenalty"],
         "total": total,
@@ -100,7 +128,8 @@ def score_product(product: dict, date_key: str, focus_category: str) -> dict:
 
 
 def gross_margin_range(prices: list[float], costs: list[float]) -> list[float]:
-    return [round(((price - cost) / price) * 100, 1) for price, cost in zip(prices, costs)]
+    margins = [round(((price - cost) / price) * 100, 1) for price, cost in zip(prices, costs)]
+    return [min(margins), max(margins)]
 
 
 def platform_lowest_price(platforms: list[dict]) -> float | None:
@@ -117,6 +146,7 @@ def enrich_product(product: dict, date_key: str, focus_category: str) -> dict:
     item["costSource"] = "成本上限代替，待替换真实供货价"
     item["estimatedGrossProfitRate"] = gross_margin_range(suggested, supply_reference)
     item["platformLowestPrice"] = platform_lowest_price(item.get("platforms", []))
+    item["trialBudgetRule"] = "首批试款成本建议控制在￥200-￥500"
     item["score"] = score_product(product, date_key, focus_category)
     item.pop("scoreInputs", None)
     return item
@@ -168,6 +198,17 @@ def update_history(history: dict, date_key: str, products: list[dict], generated
     return next_history
 
 
+def enrich_avoid_list(items: list[dict]) -> list[dict]:
+    return [
+        {
+            **item,
+            "statusTag": "暂缓",
+            "decision": "今日不建议上架",
+        }
+        for item in items
+    ]
+
+
 def generate() -> tuple[dict, dict]:
     now = datetime.now(BEIJING)
     date_key = now.strftime("%Y-%m-%d")
@@ -193,10 +234,13 @@ def generate() -> tuple[dict, dict]:
         "timezone": "Asia/Shanghai",
         "catalogVersion": catalog["catalogVersion"],
         "mode": catalog.get("mode", "single-sku"),
-        "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架。",
+        "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
         "focusCategory": focus_category,
         "scoreRules": RULES,
+        "operatorGuide": OPERATOR_GUIDE,
+        "trialRules": TRIAL_RULES,
         "products": selected,
+        "avoidList": enrich_avoid_list(catalog.get("avoidList", [])),
     }
     next_history = update_history(history, date_key, selected, generated_at)
     return data, next_history
@@ -223,9 +267,21 @@ def write_daily_markdown(data: dict) -> None:
         f"- 评分规则：{data['scoreRules']['summary']}",
         "- 供货价口径：当前按建议售价*78%倒推成本上限，后续替换为真实供货价。",
         "",
-        "| 排名 | 上榜标签 | 品牌/SKU | 规格 | 类型 | 平台最低参考 | 建议售价 | 供货价参考 | 预计毛利率 | 热度分 | 源商品 |",
-        "|---:|---|---|---|---|---:|---:|---:|---:|---:|---|",
+        "## 店主每日10分钟操作流程",
+        "",
     ]
+    lines.extend(f"- {step}" for step in data["operatorGuide"])
+    lines.extend(["", "## 试款资金与履约约束", ""])
+    lines.extend(f"- {rule}" for rule in data["trialRules"])
+    lines.extend(
+        [
+            "",
+            "## 今日10个候选SKU",
+            "",
+            "| 排名 | 上榜标签 | 品牌/SKU | 规格 | 类型 | 平台最低参考 | 建议售价 | 供货价参考 | 预计毛利率 | 热度分 | 源商品 |",
+            "|---:|---|---|---|---|---:|---:|---:|---:|---:|---|",
+        ]
+    )
 
     for item in data["products"]:
         lowest = f"￥{item['platformLowestPrice']}" if item.get("platformLowestPrice") else "内容参考"
@@ -250,6 +306,15 @@ def write_daily_markdown(data: dict) -> None:
     lines.extend(["", "## 今日最建议上架", ""])
     for item in data["products"][:3]:
         lines.append(f"- {item['brand']} {item['name']}（{item['sku']}）：{item['listingAdvice']}")
+
+    lines.extend(["", "## 今日暂缓/回避SKU", ""])
+    lines.append("| 品牌/SKU | 规格 | 回避原因 | 后续观察条件 | 源商品 |")
+    lines.append("|---|---|---|---|---|")
+    for item in data["avoidList"]:
+        source = f"[{item['sourcePlatform']} {item['sourceSkuId']}]({item['sourceUrl']})"
+        lines.append(
+            f"| {item['brand']} {item['name']} | {item['sku']} | {item['avoidReason']} | {item['revisitCondition']} | {source} |"
+        )
 
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

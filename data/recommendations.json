@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-06-10T22:03:44.059122+08:00",
-  "generatedAtBeijing": "2026-06-10 22:03:44 UTC+8",
+  "generatedAt": "2026-06-10T22:34:09.707028+08:00",
+  "generatedAtBeijing": "2026-06-10 22:34:09 UTC+8",
   "date": "2026-06-10",
   "timezone": "Asia/Shanghai",
-  "catalogVersion": "2026-06-10-single-sku",
+  "catalogVersion": "2026-06-10-single-sku-v2",
   "mode": "single-sku",
-  "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架。",
+  "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
   "focusCategory": "家庭清洁",
   "scoreRules": {
-    "summary": "总分=跨平台热度35%+价格竞争力25%+利润可行性20%+销量/评论信号15%+上架可操作性5%-风险扣分。供货价参考暂按建议售价*78%倒推，待替换真实成本。",
+    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。供货价参考暂按建议售价*78%倒推，待替换真实成本。",
     "items": [
       {
         "name": "跨平台热度",
-        "weight": "35%",
+        "weight": "30%",
         "description": "淘宝/天猫、京东、抖音、小红书出现榜单、热词、内容种草或行业报告信号越多，得分越高。"
       },
       {
         "name": "价格竞争力",
-        "weight": "25%",
+        "weight": "20%",
         "description": "建议售价越接近同品牌同规格或近似规格的主流低价带，且不牺牲毛利，得分越高。"
       },
       {
@@ -27,13 +27,23 @@
       },
       {
         "name": "销量/评论信号",
-        "weight": "15%",
+        "weight": "10%",
         "description": "公开评论量、榜单名次、销量口径、达人带货或内容互动信号越强，得分越高。"
+      },
+      {
+        "name": "复购率",
+        "weight": "10%",
+        "description": "纸品、清洁剂、洗护等消耗速度快、复购周期短的 SKU 得分更高。"
+      },
+      {
+        "name": "差异化空间",
+        "weight": "5%",
+        "description": "能通过组合装、赠品、标题场景、主图卖点避开官方同款硬碰的 SKU 得分更高。"
       },
       {
         "name": "上架可操作性",
         "weight": "5%",
-        "description": "经销现货、标准品牌SKU、组合装/赠品差异空间越大，得分越高。"
+        "description": "经销现货、标准品牌 SKU、履约稳定、资质风险低、售后可控的 SKU 得分更高。"
       },
       {
         "name": "风险扣分",
@@ -42,6 +52,18 @@
       }
     ]
   },
+  "operatorGuide": [
+    "看：先看今日 Top3 和热度分，只处理具体 SKU，不处理泛品类。",
+    "核：核对真实供货价、运费模板、保质期、品牌授权/进货凭证。",
+    "上：真实成本低于供货价参考时再上架；高于参考值则暂缓或改组合装。",
+    "72小时：看曝光、点击、收藏加购；无曝光先改标题和主图。",
+    "7天：看转化、退款、毛利；低效 SKU 淘汰或降为活动品。"
+  ],
+  "trialRules": [
+    "单 SKU 首批试款成本建议控制在 ￥200-￥500。",
+    "液体和纸品重货必须先核算快递阶梯价、破损率和偏远地区策略。",
+    "不具备授权、凭证、保质期可控条件的 SKU 不进入上架池。"
+  ],
   "products": [
     {
       "id": "jd-5911553-mr-muscle-oil-cleaner-455x2",
@@ -109,98 +131,19 @@
         22.1
       ],
       "platformLowestPrice": 16.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
         "platformHeat": 8.7,
         "priceCompetitiveness": 8.6,
         "profitFeasibility": 8.8,
         "salesProof": 9.0,
+        "repeatPurchase": 8.2,
+        "differentiation": 8.5,
         "operability": 8.7,
         "riskPenalty": 0.5,
         "total": 8.5
       },
       "rank": 1,
-      "appearanceCount": 1,
-      "wasInPreviousDay": false,
-      "isNew": true,
-      "statusTag": "新增",
-      "historyNote": "首次进入每日推荐"
-    },
-    {
-      "id": "jd-100045910485-liby-laundry-pods-40",
-      "brand": "立白",
-      "name": "立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔",
-      "sku": "40颗",
-      "category": "衣物清洁",
-      "type": "平销款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100045910485",
-      "sourceUrl": "https://item.jd.com/100045910485.html",
-      "image": "https://img10.360buyimg.com/n1/s720x720_jfs/t1/452109/7/540/196515/6a1fe277F431281c8/0083320320daf059.jpg",
-      "suggestedPrice": [
-        29.9,
-        39.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥29.9-49.9",
-          "lowPrice": 29.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东洗衣凝珠榜单露出该单品，评论量级约500万+。",
-          "url": "https://item.jd.com/100045910485.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥29.9-45.9",
-          "lowPrice": 29.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "除菌除螨、40颗桶装是标准可比价规格，可用赠品差异化。",
-          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0%2040%E9%A2%97"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥29.9-49.9",
-          "lowPrice": 29.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "洗衣凝珠、除菌除螨和懒人洗衣内容有稳定带货场景。",
-          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "留香、除螨、宿舍洗衣、家庭囤货类笔记可承接。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
-        }
-      ],
-      "heatEvidence": "京东榜单源SKU评论量级强，淘宝/抖音同规格可比价，小红书有洗衣凝珠使用场景内容。",
-      "listingAdvice": "标题放立白、洗衣凝珠、40颗、除菌除螨、速溶快洗；主图突出每颗成本和40次洗涤；赠洗衣袋或留香珠小样提高转化。",
-      "risk": "洗衣凝珠低价白牌冲击明显，品牌标准品需用赠品、规格或组合差异避开旗舰店同款硬拼。",
-      "supplyCostReference": [
-        23.3,
-        31.1
-      ],
-      "costCeiling": [
-        23.3,
-        31.1
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
-      "estimatedGrossProfitRate": [
-        22.1,
-        22.1
-      ],
-      "platformLowestPrice": 29.9,
-      "score": {
-        "platformHeat": 9.0,
-        "priceCompetitiveness": 8.2,
-        "profitFeasibility": 7.9,
-        "salesProof": 9.0,
-        "operability": 8.5,
-        "riskPenalty": 0.7,
-        "total": 7.9
-      },
-      "rank": 2,
       "appearanceCount": 1,
       "wasInPreviousDay": false,
       "isNew": true,
@@ -273,13 +216,101 @@
         22.1
       ],
       "platformLowestPrice": 22.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
         "platformHeat": 9.2,
         "priceCompetitiveness": 8.4,
         "profitFeasibility": 7.8,
         "salesProof": 9.0,
+        "repeatPurchase": 9.4,
+        "differentiation": 7.8,
         "operability": 8.7,
         "riskPenalty": 0.8,
+        "total": 7.8
+      },
+      "rank": 2,
+      "appearanceCount": 1,
+      "wasInPreviousDay": false,
+      "isNew": true,
+      "statusTag": "新增",
+      "historyNote": "首次进入每日推荐"
+    },
+    {
+      "id": "jd-100045910485-liby-laundry-pods-40",
+      "brand": "立白",
+      "name": "立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔",
+      "sku": "40颗",
+      "category": "衣物清洁",
+      "type": "平销款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100045910485",
+      "sourceUrl": "https://item.jd.com/100045910485.html",
+      "image": "https://img10.360buyimg.com/n1/s720x720_jfs/t1/452109/7/540/196515/6a1fe277F431281c8/0083320320daf059.jpg",
+      "suggestedPrice": [
+        29.9,
+        39.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥29.9-49.9",
+          "lowPrice": 29.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东洗衣凝珠榜单露出该单品，评论量级约500万+。",
+          "url": "https://item.jd.com/100045910485.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥29.9-45.9",
+          "lowPrice": 29.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "除菌除螨、40颗桶装是标准可比价规格，可用赠品差异化。",
+          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0%2040%E9%A2%97"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥29.9-49.9",
+          "lowPrice": 29.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "洗衣凝珠、除菌除螨和懒人洗衣内容有稳定带货场景。",
+          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "留香、除螨、宿舍洗衣、家庭囤货类笔记可承接。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
+        }
+      ],
+      "heatEvidence": "京东榜单源SKU评论量级强，淘宝/抖音同规格可比价，小红书有洗衣凝珠使用场景内容。",
+      "listingAdvice": "标题放立白、洗衣凝珠、40颗、除菌除螨、速溶快洗；主图突出每颗成本和40次洗涤；赠洗衣袋或留香珠小样提高转化。",
+      "risk": "洗衣凝珠低价白牌冲击明显，品牌标准品需用赠品、规格或组合差异避开旗舰店同款硬拼。",
+      "supplyCostReference": [
+        23.3,
+        31.1
+      ],
+      "costCeiling": [
+        23.3,
+        31.1
+      ],
+      "costSource": "成本上限代替，待替换真实供货价",
+      "estimatedGrossProfitRate": [
+        22.1,
+        22.1
+      ],
+      "platformLowestPrice": 29.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 9.0,
+        "priceCompetitiveness": 8.2,
+        "profitFeasibility": 7.9,
+        "salesProof": 9.0,
+        "repeatPurchase": 8.8,
+        "differentiation": 7.6,
+        "operability": 8.5,
+        "riskPenalty": 0.7,
         "total": 7.8
       },
       "rank": 3,
@@ -351,102 +382,23 @@
       ],
       "costSource": "成本上限代替，待替换真实供货价",
       "estimatedGrossProfitRate": [
-        22.1,
-        22.0
+        22.0,
+        22.1
       ],
       "platformLowestPrice": 39.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
         "platformHeat": 8.6,
         "priceCompetitiveness": 7.8,
         "profitFeasibility": 7.7,
         "salesProof": 8.7,
+        "repeatPurchase": 8.7,
+        "differentiation": 8.0,
         "operability": 8.3,
         "riskPenalty": 0.7,
         "total": 7.6
       },
       "rank": 4,
-      "appearanceCount": 1,
-      "wasInPreviousDay": false,
-      "isNew": true,
-      "statusTag": "新增",
-      "historyNote": "首次进入每日推荐"
-    },
-    {
-      "id": "jd-100005511754-mindact-wet-toilet-80x5",
-      "brand": "心相印",
-      "name": "心相印三丽鸥湿厕纸 80片*5包 纯水湿纸巾家庭装",
-      "sku": "80片*5包",
-      "category": "纸品/湿巾",
-      "type": "引流款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100005511754",
-      "sourceUrl": "https://item.jd.com/100005511754.html",
-      "image": "https://img14.360buyimg.com/n1/s720x720_jfs/t1/452907/11/3363/143117/6a261685F94f47093/0083320320f37f08.png",
-      "suggestedPrice": [
-        26.9,
-        32.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥26.9-39.9",
-          "lowPrice": 26.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东湿厕纸榜单露出该单品，评论量级约300万+。",
-          "url": "https://item.jd.com/100005511754.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥25.9-39.9",
-          "lowPrice": 25.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "同品牌80片*5包可比价，IP包装适合做主图差异。",
-          "url": "https://s.taobao.com/search?q=%E5%BF%83%E7%9B%B8%E5%8D%B0%E6%B9%BF%E5%8E%95%E7%BA%B8%2080%E7%89%875%E5%8C%85"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥29.9-42.9",
-          "lowPrice": 29.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "湿厕纸家庭装、IP包装和囤货装短视频转化场景明确。",
-          "url": "https://www.douyin.com/search/%E5%BF%83%E7%9B%B8%E5%8D%B0%E6%B9%BF%E5%8E%95%E7%BA%B8"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "三丽鸥包装、厕所好物、卫生升级类内容适合承接。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BF%83%E7%9B%B8%E5%8D%B0%E6%B9%BF%E5%8E%95%E7%BA%B8"
-        }
-      ],
-      "heatEvidence": "京东源SKU评论量级高，淘宝/抖音可检索同品牌同规格价格，小红书有IP包装和家居清洁内容。",
-      "listingAdvice": "标题突出心相印、三丽鸥、湿厕纸、80片5包、家庭装；主图强调IP包装和纯水湿巾；适合与抽纸或便携装组成套购。",
-      "risk": "IP包装可能存在新旧随机，详情页需写明版本随机；品牌低价控价风险高，避免冒充官方活动价。",
-      "supplyCostReference": [
-        21.0,
-        25.7
-      ],
-      "costCeiling": [
-        21.0,
-        25.7
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
-      "estimatedGrossProfitRate": [
-        21.9,
-        21.9
-      ],
-      "platformLowestPrice": 25.9,
-      "score": {
-        "platformHeat": 9.0,
-        "priceCompetitiveness": 8.1,
-        "profitFeasibility": 7.6,
-        "salesProof": 9.2,
-        "operability": 8.3,
-        "riskPenalty": 0.9,
-        "total": 7.5
-      },
-      "rank": 5,
       "appearanceCount": 1,
       "wasInPreviousDay": false,
       "isNew": true,
@@ -519,13 +471,101 @@
         22.0
       ],
       "platformLowestPrice": 45.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
         "platformHeat": 8.1,
         "priceCompetitiveness": 7.8,
         "profitFeasibility": 8.3,
         "salesProof": 8.8,
+        "repeatPurchase": 8.6,
+        "differentiation": 8.1,
         "operability": 8.0,
         "riskPenalty": 0.6,
+        "total": 7.6
+      },
+      "rank": 5,
+      "appearanceCount": 1,
+      "wasInPreviousDay": false,
+      "isNew": true,
+      "statusTag": "新增",
+      "historyNote": "首次进入每日推荐"
+    },
+    {
+      "id": "jd-100005511754-mindact-wet-toilet-80x5",
+      "brand": "心相印",
+      "name": "心相印三丽鸥湿厕纸 80片*5包 纯水湿纸巾家庭装",
+      "sku": "80片*5包",
+      "category": "纸品/湿巾",
+      "type": "引流款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100005511754",
+      "sourceUrl": "https://item.jd.com/100005511754.html",
+      "image": "https://img14.360buyimg.com/n1/s720x720_jfs/t1/452907/11/3363/143117/6a261685F94f47093/0083320320f37f08.png",
+      "suggestedPrice": [
+        26.9,
+        32.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥26.9-39.9",
+          "lowPrice": 26.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东湿厕纸榜单露出该单品，评论量级约300万+。",
+          "url": "https://item.jd.com/100005511754.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥25.9-39.9",
+          "lowPrice": 25.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "同品牌80片*5包可比价，IP包装适合做主图差异。",
+          "url": "https://s.taobao.com/search?q=%E5%BF%83%E7%9B%B8%E5%8D%B0%E6%B9%BF%E5%8E%95%E7%BA%B8%2080%E7%89%875%E5%8C%85"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥29.9-42.9",
+          "lowPrice": 29.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "湿厕纸家庭装、IP包装和囤货装短视频转化场景明确。",
+          "url": "https://www.douyin.com/search/%E5%BF%83%E7%9B%B8%E5%8D%B0%E6%B9%BF%E5%8E%95%E7%BA%B8"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "三丽鸥包装、厕所好物、卫生升级类内容适合承接。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%BF%83%E7%9B%B8%E5%8D%B0%E6%B9%BF%E5%8E%95%E7%BA%B8"
+        }
+      ],
+      "heatEvidence": "京东源SKU评论量级高，淘宝/抖音可检索同品牌同规格价格，小红书有IP包装和家居清洁内容。",
+      "listingAdvice": "标题突出心相印、三丽鸥、湿厕纸、80片5包、家庭装；主图强调IP包装和纯水湿巾；适合与抽纸或便携装组成套购。",
+      "risk": "IP包装可能存在新旧随机，详情页需写明版本随机；品牌低价控价风险高，避免冒充官方活动价。",
+      "supplyCostReference": [
+        21.0,
+        25.7
+      ],
+      "costCeiling": [
+        21.0,
+        25.7
+      ],
+      "costSource": "成本上限代替，待替换真实供货价",
+      "estimatedGrossProfitRate": [
+        21.9,
+        21.9
+      ],
+      "platformLowestPrice": 25.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 9.0,
+        "priceCompetitiveness": 8.1,
+        "profitFeasibility": 7.6,
+        "salesProof": 9.2,
+        "repeatPurchase": 9.2,
+        "differentiation": 8.0,
+        "operability": 8.3,
+        "riskPenalty": 0.9,
         "total": 7.5
       },
       "rank": 6,
@@ -597,15 +637,18 @@
       ],
       "costSource": "成本上限代替，待替换真实供货价",
       "estimatedGrossProfitRate": [
-        22.1,
-        22.0
+        22.0,
+        22.1
       ],
       "platformLowestPrice": 39.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
         "platformHeat": 7.9,
         "priceCompetitiveness": 8.0,
         "profitFeasibility": 7.8,
         "salesProof": 8.1,
+        "repeatPurchase": 8.6,
+        "differentiation": 7.7,
         "operability": 8.1,
         "riskPenalty": 0.7,
         "total": 7.4
@@ -683,16 +726,104 @@
         22.0
       ],
       "platformLowestPrice": 55.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
         "platformHeat": 8.8,
         "priceCompetitiveness": 7.7,
         "profitFeasibility": 7.1,
         "salesProof": 9.2,
+        "repeatPurchase": 9.1,
+        "differentiation": 6.8,
         "operability": 7.6,
         "riskPenalty": 1.0,
         "total": 7.3
       },
       "rank": 8,
+      "appearanceCount": 1,
+      "wasInPreviousDay": false,
+      "isNew": true,
+      "statusTag": "新增",
+      "historyNote": "首次进入每日推荐"
+    },
+    {
+      "id": "jd-10160893457212-liby-master-liquid-6-4jin",
+      "brand": "立白",
+      "name": "立白大师香氛洗衣液组合装 1kg*2瓶+1.2kg袋",
+      "sku": "6.4斤组合装",
+      "category": "衣物清洁",
+      "type": "平销款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "10160893457212",
+      "sourceUrl": "https://item.jd.com/10160893457212.html",
+      "image": "https://img12.360buyimg.com/n1/s720x720_jfs/t1/436430/39/3907/168308/6a05a3f9F4db201a2/0083320320e5bc52.jpg",
+      "suggestedPrice": [
+        39.9,
+        59.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥39.9-69.9",
+          "lowPrice": 39.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东洗衣液套榜单露出该SKU，评论量级约5000+。",
+          "url": "https://item.jd.com/10160893457212.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥39.9-65.9",
+          "lowPrice": 39.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "6.4斤瓶袋组合能避开12斤大货的运费压力。",
+          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%B4%97%E8%A1%A3%E6%B6%B2%206.4%E6%96%A4"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥39.9-69.9",
+          "lowPrice": 39.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "香氛、留香、柔护洁净是短视频洗护常见卖点。",
+          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%B4%97%E8%A1%A3%E6%B6%B2"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "衣柜香味、宿舍洗衣、香氛洗护笔记有内容承接空间。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%B4%97%E8%A1%A3%E6%B6%B2"
+        }
+      ],
+      "heatEvidence": "京东榜单有具体源SKU；香氛洗护在淘宝/抖音/小红书均有可检索内容和价格区间。",
+      "listingAdvice": "标题覆盖立白大师、香氛洗衣液、6.4斤、持久留香、柔护洁净；主图强调瓶袋组合和香氛；可与留香珠小样打组合。",
+      "risk": "评论量级低于头部洗衣液，适合作为平销测款；液体破损和香味偏好需在详情页做预期管理。",
+      "supplyCostReference": [
+        31.1,
+        46.7
+      ],
+      "costCeiling": [
+        31.1,
+        46.7
+      ],
+      "costSource": "成本上限代替，待替换真实供货价",
+      "estimatedGrossProfitRate": [
+        22.0,
+        22.1
+      ],
+      "platformLowestPrice": 39.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.0,
+        "priceCompetitiveness": 8.0,
+        "profitFeasibility": 7.8,
+        "salesProof": 7.2,
+        "repeatPurchase": 8.3,
+        "differentiation": 8.2,
+        "operability": 8.2,
+        "riskPenalty": 0.8,
+        "total": 7.2
+      },
+      "rank": 9,
       "appearanceCount": 1,
       "wasInPreviousDay": false,
       "isNew": true,
@@ -765,96 +896,17 @@
         22.0
       ],
       "platformLowestPrice": 24.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
         "platformHeat": 7.9,
         "priceCompetitiveness": 8.0,
         "profitFeasibility": 7.4,
         "salesProof": 8.2,
+        "repeatPurchase": 8.4,
+        "differentiation": 7.5,
         "operability": 8.0,
         "riskPenalty": 0.8,
         "total": 7.2
-      },
-      "rank": 9,
-      "appearanceCount": 1,
-      "wasInPreviousDay": false,
-      "isNew": true,
-      "statusTag": "新增",
-      "historyNote": "首次进入每日推荐"
-    },
-    {
-      "id": "jd-10160893457212-liby-master-liquid-6-4jin",
-      "brand": "立白",
-      "name": "立白大师香氛洗衣液组合装 1kg*2瓶+1.2kg袋",
-      "sku": "6.4斤组合装",
-      "category": "衣物清洁",
-      "type": "平销款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "10160893457212",
-      "sourceUrl": "https://item.jd.com/10160893457212.html",
-      "image": "https://img12.360buyimg.com/n1/s720x720_jfs/t1/436430/39/3907/168308/6a05a3f9F4db201a2/0083320320e5bc52.jpg",
-      "suggestedPrice": [
-        39.9,
-        59.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥39.9-69.9",
-          "lowPrice": 39.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东洗衣液套榜单露出该SKU，评论量级约5000+。",
-          "url": "https://item.jd.com/10160893457212.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥39.9-65.9",
-          "lowPrice": 39.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "6.4斤瓶袋组合能避开12斤大货的运费压力。",
-          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%B4%97%E8%A1%A3%E6%B6%B2%206.4%E6%96%A4"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥39.9-69.9",
-          "lowPrice": 39.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "香氛、留香、柔护洁净是短视频洗护常见卖点。",
-          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%B4%97%E8%A1%A3%E6%B6%B2"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "衣柜香味、宿舍洗衣、香氛洗护笔记有内容承接空间。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%B4%97%E8%A1%A3%E6%B6%B2"
-        }
-      ],
-      "heatEvidence": "京东榜单有具体源SKU；香氛洗护在淘宝/抖音/小红书均有可检索内容和价格区间。",
-      "listingAdvice": "标题覆盖立白大师、香氛洗衣液、6.4斤、持久留香、柔护洁净；主图强调瓶袋组合和香氛；可与留香珠小样打组合。",
-      "risk": "评论量级低于头部洗衣液，适合作为平销测款；液体破损和香味偏好需在详情页做预期管理。",
-      "supplyCostReference": [
-        31.1,
-        46.7
-      ],
-      "costCeiling": [
-        31.1,
-        46.7
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
-      "estimatedGrossProfitRate": [
-        22.1,
-        22.0
-      ],
-      "platformLowestPrice": 39.9,
-      "score": {
-        "platformHeat": 8.0,
-        "priceCompetitiveness": 8.0,
-        "profitFeasibility": 7.8,
-        "salesProof": 7.2,
-        "operability": 8.2,
-        "riskPenalty": 0.8,
-        "total": 7.1
       },
       "rank": 10,
       "appearanceCount": 1,
@@ -862,6 +914,64 @@
       "isNew": true,
       "statusTag": "新增",
       "historyNote": "首次进入每日推荐"
+    }
+  ],
+  "avoidList": [
+    {
+      "id": "avoid-jd-100042032003-deyou-wet-toilet-80x6",
+      "brand": "德佑",
+      "name": "德佑湿厕纸80片*6包家庭装",
+      "sku": "80片*6包",
+      "category": "纸品/湿巾",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100042032003",
+      "sourceUrl": "https://item.jd.com/100042032003.html",
+      "avoidReason": "同规格湿厕纸价格战明显，新店若没有授权价差容易被低价压制。",
+      "revisitCondition": "真实供货价低于建议售价75%，且能提供品牌进货凭证和保质期批次时再测。",
+      "statusTag": "暂缓",
+      "decision": "今日不建议上架"
+    },
+    {
+      "id": "avoid-jd-100053792086-shuiweishi-oil-cleaner-480x5",
+      "brand": "水卫士",
+      "name": "水卫士厨房重油污净480g*5瓶",
+      "sku": "480g*5瓶",
+      "category": "家庭清洁",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100053792086",
+      "sourceUrl": "https://item.jd.com/100053792086.html",
+      "avoidReason": "5瓶液体重货破损和运费风险偏高，首日不适合新店无履约数据直接上架。",
+      "revisitCondition": "快递阶梯价、破损补发成本和偏远地区运费模板核算完成后再进入测款池。",
+      "statusTag": "暂缓",
+      "decision": "今日不建议上架"
+    },
+    {
+      "id": "avoid-jd-100117443328-yunnanbaiyao-toothpaste-500g",
+      "brand": "云南白药",
+      "name": "云南白药益生菌牙膏套装6支500g",
+      "sku": "6支500g",
+      "category": "个护日化",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100117443328",
+      "sourceUrl": "https://item.jd.com/100117443328.html",
+      "avoidReason": "牙膏功效词合规要求高，且大品牌控价和投诉风险高于普通清洁耗材。",
+      "revisitCondition": "确认授权凭证、标题不含医疗化承诺，并能用牙刷/牙线赠品做差异后再测。",
+      "statusTag": "暂缓",
+      "decision": "今日不建议上架"
+    },
+    {
+      "id": "avoid-jd-100030771720-walch-laundry-liquid-12jin",
+      "brand": "威露士",
+      "name": "威露士清可新洗衣液松木香12斤组合装",
+      "sku": "12斤组合装",
+      "category": "衣物清洁",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100030771720",
+      "sourceUrl": "https://item.jd.com/100030771720.html",
+      "avoidReason": "12斤液体属于重货标品，价格透明且运费吃利润，新店不宜同时铺太多同类重货。",
+      "revisitCondition": "当蓝月亮12斤 SKU 跑出点击和转化数据后，再用该 SKU 做同价位替补对照。",
+      "statusTag": "暂缓",
+      "decision": "今日不建议上架"
     }
   ]
 }

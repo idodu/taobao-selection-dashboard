@@ -22,6 +22,8 @@
     <main>
       <section class="summary-grid" id="summaryGrid" aria-label="核心指标"></section>
 
+      <section class="operator-panel" id="operatorGuide" aria-label="店主每日操作流程"></section>
+
       <section class="toolbar" aria-label="筛选排序">
         <label>
           类目
@@ -44,6 +46,7 @@
             <option value="score">综合热度分</option>
             <option value="price">建议售价</option>
             <option value="profit">利润可行性</option>
+            <option value="repeat">复购率</option>
           </select>
         </label>
       </section>
@@ -63,6 +66,14 @@
         </div>
       </section>
       <section class="product-grid" id="productGrid" aria-label="候选商品列表"></section>
+
+      <section class="section-head">
+        <div>
+          <p class="eyebrow">Risk control</p>
+          <h2>今日暂缓上架SKU</h2>
+        </div>
+      </section>
+      <section class="avoid-grid" id="avoidGrid" aria-label="今日暂缓上架商品"></section>
 
       <section class="rules">
         <div>
