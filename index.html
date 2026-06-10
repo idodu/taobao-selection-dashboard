@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>淘宝家清个护 / 日化纸品选品看板</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Daily Selection Dashboard</p>
+        <h1>淘宝家清个护 / 日化纸品选品看板</h1>
+      </div>
+      <div class="meta">
+        <span id="generatedAt">数据生成中</span>
+        <span>北京时间每日10:00自动更新</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-grid" id="summaryGrid" aria-label="核心指标"></section>
+
+      <section class="toolbar" aria-label="筛选排序">
+        <label>
+          类目
+          <select id="categoryFilter">
+            <option value="all">全部类目</option>
+          </select>
+        </label>
+        <label>
+          利润判断
+          <select id="typeFilter">
+            <option value="all">全部类型</option>
+            <option value="引流款">引流款</option>
+            <option value="平销款">平销款</option>
+            <option value="利润款">利润款</option>
+          </select>
+        </label>
+        <label>
+          排序
+          <select id="sortBy">
+            <option value="score">综合热度分</option>
+            <option value="price">建议到手价</option>
+            <option value="profit">利润可行性</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <p class="eyebrow">Top picks</p>
+          <h2>今日最建议上架</h2>
+        </div>
+      </section>
+      <section class="top-picks" id="topPicks" aria-label="今日最建议上架商品"></section>
+
+      <section class="section-head">
+        <div>
+          <p class="eyebrow">Candidates</p>
+          <h2>10个候选品</h2>
+        </div>
+      </section>
+      <section class="product-grid" id="productGrid" aria-label="候选商品列表"></section>
+
+      <section class="rules">
+        <div>
+          <p class="eyebrow">Scoring</p>
+          <h2>热度综合打分规则</h2>
+        </div>
+        <div id="scoreRules" class="rules-body"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>价格和销量为公开页面可见信号或区间估算，最终上架前以实际供货价、平台成交价和品牌授权为准。</span>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
