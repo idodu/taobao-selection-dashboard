@@ -210,6 +210,22 @@ select {
   color: var(--amber);
 }
 
+.badge.new {
+  background: #eff6ff;
+  color: var(--blue);
+}
+
+.badge.yesterday {
+  background: #fef3c7;
+  color: var(--amber);
+}
+
+.badge.returning,
+.badge.repeat {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -287,9 +303,14 @@ select {
   line-height: 1.45;
 }
 
+.platform .match {
+  color: var(--teal);
+  font-weight: 800;
+}
+
 .details {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -321,6 +342,13 @@ select {
 
 .notes strong {
   color: var(--ink);
+}
+
+.source-link {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .rules {
