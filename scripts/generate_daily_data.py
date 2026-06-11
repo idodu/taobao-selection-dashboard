@@ -156,6 +156,21 @@ def build_1688_supply(product: dict, supply_cache: dict) -> dict:
         and isinstance(cached.get("offerUrl"), str)
         and "1688.com" in cached["offerUrl"]
     )
+    verified_at = parse_datetime(cached.get("verifiedAt")) if is_verified else None
+    age_hours = (
+        round((datetime.now(BEIJING) - verified_at.astimezone(BEIJING)).total_seconds() / 3600, 1)
+        if verified_at
+        else None
+    )
+    freshness_status = (
+        "fresh"
+        if age_hours is not None and age_hours <= 48
+        else "aging"
+        if age_hours is not None and age_hours <= 168
+        else "stale"
+        if age_hours is not None
+        else "unverified"
+    )
 
     return {
         "query": query,
@@ -168,6 +183,8 @@ def build_1688_supply(product: dict, supply_cache: dict) -> dict:
         "offerId": cached.get("offerId") if is_verified else None,
         "offerUrl": cached.get("offerUrl") if is_verified else None,
         "verifiedAt": cached.get("verifiedAt") if is_verified else None,
+        "ageHours": age_hours,
+        "freshnessStatus": freshness_status,
         "source": cached.get("source") if is_verified else "1688待核验",
         "note": (
             "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -175,6 +192,16 @@ def build_1688_supply(product: dict, supply_cache: dict) -> dict:
             else "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
         ),
     }
+
+
+def parse_datetime(value: object) -> datetime | None:
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=BEIJING)
 
 
 def enrich_product(product: dict, date_key: str, focus_category: str, supply_cache: dict) -> dict:

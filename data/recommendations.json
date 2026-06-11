@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-11T21:16:46.211961+08:00",
-  "generatedAtBeijing": "2026-06-11 21:16:46 UTC+8",
+  "generatedAt": "2026-06-11T21:39:54.411483+08:00",
+  "generatedAtBeijing": "2026-06-11 21:39:54 UTC+8",
   "date": "2026-06-11",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-10-single-sku-v2",
@@ -146,6 +146,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -246,6 +248,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -346,6 +350,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -446,6 +452,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -546,6 +554,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -646,6 +656,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -746,6 +758,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -846,6 +860,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -946,6 +962,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },
@@ -1046,6 +1064,8 @@
         "offerId": null,
         "offerUrl": null,
         "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
         "source": "1688待核验",
         "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
       },

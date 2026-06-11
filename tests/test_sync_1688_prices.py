@@ -156,6 +156,68 @@ class Sync1688PricesTest(unittest.TestCase):
         self.assertIsNone(match["moq"])
         self.assertEqual(attempt["exactMatches"], 1)
 
+    def test_elim_rotation_prioritizes_never_checked_then_oldest(self) -> None:
+        products = [{"id": f"sku-{index}"} for index in range(1, 6)]
+        cache = {
+            "items": {
+                "sku-1": {"verifiedAt": "2026-06-10T10:00:00+08:00"},
+                "sku-2": {"verifiedAt": "2026-06-09T10:00:00+08:00"},
+            },
+            "attempts": {
+                "sku-3": {"attemptedAt": "2026-06-08T10:00:00+08:00"},
+                "sku-4": {"attemptedAt": "2026-06-11T10:00:00+08:00"},
+            },
+        }
+        selected = MODULE.select_elim_refresh_products(products, cache, limit=3)
+        self.assertEqual([item["id"] for item in selected], ["sku-5", "sku-3", "sku-2"])
+
+    def test_elim_rotation_full_refresh_returns_all_products(self) -> None:
+        products = [{"id": f"sku-{index}"} for index in range(1, 11)]
+        selected = MODULE.select_elim_refresh_products(products, {}, limit=5, full_refresh=True)
+        self.assertEqual(len(selected), 10)
+
+    def test_elim_two_daily_runs_cover_all_ten_products(self) -> None:
+        products = [
+            {
+                "id": f"sku-{index}",
+                "supply1688Search": {
+                    "keywords": f"product {index}",
+                    "requiredTokenGroups": [[f"product{index}"]],
+                },
+            }
+            for index in range(1, 11)
+        ]
+        catalog = {"products": products}
+        original = MODULE.search_exact_elim_offer
+
+        def fake_search(product, token):
+            product_number = product["id"].split("-")[-1]
+            return (
+                {
+                    "lowestPrice": float(product_number),
+                    "moq": 1,
+                    "unit": "件",
+                    "matchStatus": "exact",
+                    "matchedTitle": f"product{product_number}",
+                    "offerId": product_number,
+                    "offerUrl": f"https://detail.1688.com/offer/{product_number}.html",
+                    "verifiedAt": MODULE.datetime.now(MODULE.BEIJING).isoformat(),
+                    "source": "test",
+                },
+                {"status": "matched"},
+            )
+
+        MODULE.search_exact_elim_offer = fake_search
+        try:
+            first = MODULE.sync_elim(catalog, "token", existing_cache={}, daily_limit=5)
+            second = MODULE.sync_elim(catalog, "token", existing_cache=first, daily_limit=5)
+        finally:
+            MODULE.search_exact_elim_offer = original
+        self.assertEqual(len(first["refreshedProductIds"]), 5)
+        self.assertEqual(len(second["refreshedProductIds"]), 5)
+        self.assertEqual(set(first["refreshedProductIds"]).intersection(second["refreshedProductIds"]), set())
+        self.assertEqual(len(second["items"]), 10)
+
 
 if __name__ == "__main__":
     unittest.main()

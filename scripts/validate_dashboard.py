@@ -102,7 +102,7 @@ def validate_product(item: dict, index: int) -> list[str]:
         errors.append(f"{label}: appearanceCount must be a positive integer")
 
     supply_1688 = item["supply1688"]
-    required_1688 = {"query", "searchUrl", "lowestPrice", "moq", "matchStatus", "offerUrl", "verifiedAt", "source", "note"}
+    required_1688 = {"query", "searchUrl", "lowestPrice", "moq", "matchStatus", "offerUrl", "verifiedAt", "ageHours", "freshnessStatus", "source", "note"}
     if not isinstance(supply_1688, dict):
         errors.append(f"{label}: supply1688 must be an object")
     else:
@@ -113,6 +113,8 @@ def validate_product(item: dict, index: int) -> list[str]:
             errors.append(f"{label}: supply1688.searchUrl must be http(s)")
         if supply_1688.get("matchStatus") not in {"exact", "unverified"}:
             errors.append(f"{label}: invalid supply1688.matchStatus")
+        if supply_1688.get("freshnessStatus") not in {"fresh", "aging", "stale", "unverified"}:
+            errors.append(f"{label}: invalid supply1688.freshnessStatus")
         if supply_1688.get("matchStatus") == "exact":
             if not isinstance(supply_1688.get("lowestPrice"), (int, float)) or supply_1688["lowestPrice"] <= 0:
                 errors.append(f"{label}: verified 1688 lowestPrice must be positive")

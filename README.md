@@ -86,6 +86,14 @@ GitHub 仓库需要配置：
 
 系统优先级为 `TOP_APP_KEY/TOP_APP_SECRET` → `ELIM_API_KEY` → 自定义授权报价源。ElimAPI 搜索结果会同时比较常规价、促销价、批发代销价和零售价，取精确标题匹配商品中的最低值，并记录实际采用的价格字段。
 
+为适配每月 200 次的免费额度，云端默认每天按“最久未检查优先”刷新 5 个 SKU，10 个 SKU 最长约 48 小时轮换一遍，月请求量约 150 次。旧报价会保留核验时间：
+
+- 48 小时内：`48小时内`
+- 48 小时至 7 天：`需复核`
+- 超过 7 天：`已过期`
+
+在 GitHub Actions 手动运行时勾选 `full_refresh`，可一次刷新全部 10 个 SKU，适合首次接入或临时复核。
+
 配置路径：GitHub 仓库 `Settings` → `Secrets and variables` → `Actions` → `New repository secret`。两个 Secret 配置完成后，手动运行一次 `Daily product selection update`，页面的“1688核验”指标会显示成功匹配的 SKU 数量。
 
 本地测试可参考 `.env.1688.example` 设置环境变量后运行：

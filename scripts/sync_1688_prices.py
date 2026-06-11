@@ -406,9 +406,48 @@ def sync_top(catalog: dict, app_key: str, app_secret: str) -> dict:
     }
 
 
-def sync_elim(catalog: dict, token: str) -> dict:
-    items: dict[str, dict] = {}
-    attempts: dict[str, dict] = {}
+def parse_datetime(value: object) -> datetime | None:
+    if not isinstance(value, str) or not value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=BEIJING)
+
+
+def select_elim_refresh_products(
+    products: list[dict],
+    existing_cache: dict,
+    limit: int,
+    full_refresh: bool = False,
+) -> list[dict]:
+    if full_refresh:
+        return products
+    attempts = existing_cache.get("attempts", {})
+    items = existing_cache.get("items", {})
+    fallback = datetime(1970, 1, 1, tzinfo=timezone.utc)
+
+    def last_checked(product: dict) -> datetime:
+        product_id = product["id"]
+        attempt_time = parse_datetime(attempts.get(product_id, {}).get("attemptedAt"))
+        verified_time = parse_datetime(items.get(product_id, {}).get("verifiedAt"))
+        value = attempt_time or verified_time or fallback
+        return value.astimezone(timezone.utc)
+
+    return sorted(products, key=lambda product: (last_checked(product), product["id"]))[:limit]
+
+
+def sync_elim(
+    catalog: dict,
+    token: str,
+    existing_cache: dict | None = None,
+    daily_limit: int = 5,
+    full_refresh: bool = False,
+) -> dict:
+    existing_cache = existing_cache or {}
+    items: dict[str, dict] = dict(existing_cache.get("items", {}))
+    attempts: dict[str, dict] = dict(existing_cache.get("attempts", {}))
     api_errors: list[str] = []
     config_errors = [
         error
@@ -418,14 +457,26 @@ def sync_elim(catalog: dict, token: str) -> dict:
     if config_errors:
         raise ValueError("invalid 1688 search configuration:\n" + "\n".join(config_errors))
 
-    for product in catalog.get("products", []):
+    products = catalog.get("products", [])
+    selected = select_elim_refresh_products(products, existing_cache, daily_limit, full_refresh)
+    refreshed_ids: list[str] = []
+    for product in selected:
+        attempted_at = datetime.now(BEIJING).isoformat()
         try:
             match, attempt = search_exact_elim_offer(product, token)
+            attempt["attemptedAt"] = attempted_at
             attempts[product["id"]] = attempt
             if match:
                 items[product["id"]] = match
+            else:
+                items.pop(product["id"], None)
+            refreshed_ids.append(product["id"])
         except Exception as exc:
-            attempts[product["id"]] = {"status": "api-error", "error": str(exc)}
+            attempts[product["id"]] = {
+                "status": "api-error",
+                "error": str(exc),
+                "attemptedAt": attempted_at,
+            }
             api_errors.append(f"{product['id']}: {exc}")
 
     if api_errors:
@@ -433,9 +484,12 @@ def sync_elim(catalog: dict, token: str) -> dict:
     return {
         "updatedAt": datetime.now(BEIJING).isoformat(),
         "provider": "elim-api",
-        "sourcePolicy": "ElimAPI按价格升序搜索1688；仅保留标题同时匹配品牌和全部规格词组的单SKU最低公开价。",
+        "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
         "items": items,
         "attempts": attempts,
+        "refreshedProductIds": refreshed_ids,
+        "dailyRequestLimit": len(selected),
+        "fullRefresh": full_refresh,
     }
 
 
@@ -443,6 +497,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Sync audited single-SKU 1688 prices.")
     parser.add_argument("--allow-missing", action="store_true", help="Keep the existing cache when credentials are absent.")
     parser.add_argument("--provider", choices=("auto", "top", "elim", "feed"), default="auto")
+    parser.add_argument("--full-refresh", action="store_true", help="Refresh every SKU instead of the daily Elim quota.")
+    parser.add_argument("--elim-daily-limit", type=int, default=None, help="Maximum Elim searches in this run.")
     args = parser.parse_args()
 
     catalog = read_json(CATALOG_PATH)
@@ -450,7 +506,9 @@ def main() -> int:
     app_key = os.getenv("TOP_APP_KEY", "").strip()
     app_secret = os.getenv("TOP_APP_SECRET", "").strip()
     elim_token = os.getenv("ELIM_API_KEY", "").strip()
+    elim_daily_limit = args.elim_daily_limit or int(os.getenv("ELIM_DAILY_LIMIT", "5"))
     feed_url = os.getenv("SUPPLY_1688_FEED_URL", "").strip()
+    existing_cache = read_json(OUTPUT_PATH, {"items": {}, "attempts": {}})
 
     try:
         use_top = args.provider == "top" or (args.provider == "auto" and app_key and app_secret)
@@ -465,7 +523,15 @@ def main() -> int:
         elif use_elim:
             if not elim_token:
                 raise ValueError("ELIM_API_KEY is required")
-            output = sync_elim(catalog, elim_token)
+            if elim_daily_limit < 1:
+                raise ValueError("ELIM_DAILY_LIMIT must be at least 1")
+            output = sync_elim(
+                catalog,
+                elim_token,
+                existing_cache=existing_cache,
+                daily_limit=elim_daily_limit,
+                full_refresh=args.full_refresh,
+            )
         elif use_feed:
             if not feed_url:
                 raise ValueError("SUPPLY_1688_FEED_URL is required")

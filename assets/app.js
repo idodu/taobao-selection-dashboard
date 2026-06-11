@@ -127,6 +127,8 @@ function scoreText(item) {
 function supply1688Panel(item) {
   const supply = item.supply1688 || {};
   const verified = supply.matchStatus === "exact" && Number.isFinite(supply.lowestPrice);
+  const freshness = supply.freshnessStatus || "unverified";
+  const freshnessLabel = freshness === "fresh" ? "48小时内" : freshness === "aging" ? "需复核" : freshness === "stale" ? "已过期" : "待核验";
   const href = verified ? supply.offerUrl : supply.searchUrl;
   const price = verified ? currency.format(supply.lowestPrice) : "待核验";
   const meta = verified
@@ -140,7 +142,7 @@ function supply1688Panel(item) {
         <strong>${price}</strong>
       </div>
       <div class="supply-meta">
-        <span class="badge ${verified ? "score" : "warn"}">${verified ? "精确匹配 已核验" : "待核验"}</span>
+        <span class="badge ${verified && freshness === "fresh" ? "score" : "warn"}">${verified ? `精确匹配 · ${freshnessLabel}` : "待核验"}</span>
         <span>${meta}</span>
       </div>
     </a>

@@ -5,6 +5,12 @@ on:
     # 02:00 UTC = 10:00 Asia/Shanghai
     - cron: "0 2 * * *"
   workflow_dispatch:
+    inputs:
+      full_refresh:
+        description: "Refresh all 10 SKUs (uses 10 API calls)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -39,9 +45,15 @@ jobs:
           TOP_APP_KEY: ${{ secrets.TOP_APP_KEY }}
           TOP_APP_SECRET: ${{ secrets.TOP_APP_SECRET }}
           ELIM_API_KEY: ${{ secrets.ELIM_API_KEY }}
+          ELIM_DAILY_LIMIT: "5"
           SUPPLY_1688_FEED_URL: ${{ secrets.SUPPLY_1688_FEED_URL }}
           SUPPLY_1688_FEED_TOKEN: ${{ secrets.SUPPLY_1688_FEED_TOKEN }}
-        run: python scripts/sync_1688_prices.py --allow-missing
+        run: |
+          ARGS="--allow-missing"
+          if [ "${{ github.event.inputs.full_refresh }}" = "true" ]; then
+            ARGS="$ARGS --full-refresh"
+          fi
+          python scripts/sync_1688_prices.py $ARGS
 
       - name: Generate daily recommendation data
         run: python scripts/generate_daily_data.py
