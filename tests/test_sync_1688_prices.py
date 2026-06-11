@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import io
 import json
 import unittest
 from pathlib import Path
@@ -47,6 +48,36 @@ class Sync1688PricesTest(unittest.TestCase):
             "retail_price": None,
         }
         self.assertEqual(MODULE.lowest_elim_price(offer), (18.8, "promotion_price"))
+
+    def test_elim_api_key_uses_x_api_key_header(self) -> None:
+        captured = {}
+
+        class FakeResponse:
+            def __enter__(self):
+                return io.BytesIO(b'{"success": true}')
+
+            def __exit__(self, exc_type, exc, traceback):
+                return False
+
+        original = MODULE.urlopen
+
+        def fake_urlopen(request, timeout):
+            captured["headers"] = dict(request.header_items())
+            captured["timeout"] = timeout
+            return FakeResponse()
+
+        MODULE.urlopen = fake_urlopen
+        try:
+            payload = MODULE.post_json(
+                "https://openapi.elim.asia/v1/products/search",
+                {"q": "test"},
+                api_key="secret-key",
+            )
+        finally:
+            MODULE.urlopen = original
+        self.assertTrue(payload["success"])
+        self.assertEqual(captured["headers"]["X-api-key"], "secret-key")
+        self.assertNotIn("Authorization", captured["headers"])
 
     def test_search_response_offer_list(self) -> None:
         payload = {
@@ -148,7 +179,7 @@ class Sync1688PricesTest(unittest.TestCase):
         original = MODULE.post_json
         MODULE.post_json = lambda *args, **kwargs: payload
         try:
-            match, attempt = MODULE.search_exact_elim_offer(product, "token")
+            match, attempt = MODULE.search_exact_elim_offer(product, api_key="token")
         finally:
             MODULE.post_json = original
         self.assertEqual(match["lowestPrice"], 18.8)
@@ -190,7 +221,7 @@ class Sync1688PricesTest(unittest.TestCase):
         catalog = {"products": products}
         original = MODULE.search_exact_elim_offer
 
-        def fake_search(product, token):
+        def fake_search(product, **credentials):
             product_number = product["id"].split("-")[-1]
             return (
                 {
@@ -209,8 +240,18 @@ class Sync1688PricesTest(unittest.TestCase):
 
         MODULE.search_exact_elim_offer = fake_search
         try:
-            first = MODULE.sync_elim(catalog, "token", existing_cache={}, daily_limit=5)
-            second = MODULE.sync_elim(catalog, "token", existing_cache=first, daily_limit=5)
+            first = MODULE.sync_elim(
+                catalog,
+                api_key="token",
+                existing_cache={},
+                daily_limit=5,
+            )
+            second = MODULE.sync_elim(
+                catalog,
+                api_key="token",
+                existing_cache=first,
+                daily_limit=5,
+            )
         finally:
             MODULE.search_exact_elim_offer = original
         self.assertEqual(len(first["refreshedProductIds"]), 5)

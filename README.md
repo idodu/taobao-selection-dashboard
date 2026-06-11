@@ -82,7 +82,8 @@ GitHub 仓库需要配置：
 
 如果暂时无法完成 TOP 开发者认证，可使用 ElimAPI 的 1688 授权搜索服务。其免费档公开说明为每月 200 次请求，配置一个 GitHub Secret 即可：
 
-- `ELIM_API_KEY`：ElimAPI 控制台生成的 Bearer API Key。
+- `ELIM_API_KEY`：ElimAPI 控制台生成的 API Key，系统通过官方要求的 `x-api-key` 请求头使用。
+- `ELIM_ACCESS_TOKEN`：可选。通过登录接口获得的短期 JWT，仅在未配置 API Key 时使用。
 
 系统优先级为 `TOP_APP_KEY/TOP_APP_SECRET` → `ELIM_API_KEY` → 自定义授权报价源。ElimAPI 搜索结果会同时比较常规价、促销价、批发代销价和零售价，取精确标题匹配商品中的最低值，并记录实际采用的价格字段。
 

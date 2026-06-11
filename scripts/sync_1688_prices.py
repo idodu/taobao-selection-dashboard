@@ -10,6 +10,7 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlencode, urlparse
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 
@@ -89,19 +90,49 @@ def call_top_api(
     return payload
 
 
-def post_json(url: str, payload: dict, token: str) -> dict:
+def post_json(
+    url: str,
+    payload: dict,
+    *,
+    api_key: str | None = None,
+    access_token: str | None = None,
+) -> dict:
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "User-Agent": "taobao-selection-dashboard/1.0",
+    }
+    if api_key:
+        headers["x-api-key"] = api_key
+    elif access_token:
+        headers["Authorization"] = f"Bearer {access_token}"
+    else:
+        raise ValueError("ElimAPI API key or access token is required")
+
     request = Request(
         url,
         data=json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8"),
-        headers={
-            "Accept": "application/json",
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-            "User-Agent": "taobao-selection-dashboard/1.0",
-        },
+        headers=headers,
     )
-    with urlopen(request, timeout=30) as response:
-        return json.load(response)
+    try:
+        with urlopen(request, timeout=30) as response:
+            return json.load(response)
+    except HTTPError as exc:
+        try:
+            detail = json.loads(exc.read().decode("utf-8")).get("message")
+        except (UnicodeDecodeError, json.JSONDecodeError, AttributeError):
+            detail = None
+        if exc.code == 401:
+            raise RuntimeError(
+                "ElimAPI rejected the credential (401). Generate an active API Key in the "
+                "ElimAPI dashboard and configure it as ELIM_API_KEY."
+            ) from exc
+        if exc.code == 403:
+            raise RuntimeError(
+                "ElimAPI denied this account or API Key (403). Check account activation "
+                "and subscription status in the ElimAPI dashboard."
+            ) from exc
+        raise RuntimeError(f"ElimAPI HTTP {exc.code}: {detail or exc.reason}") from exc
 
 
 def normalize_text(value: object) -> str:
@@ -238,7 +269,12 @@ def lowest_elim_price(offer: dict) -> tuple[float | None, str | None]:
     return min(candidates, default=(None, None), key=lambda item: item[0])
 
 
-def search_exact_elim_offer(product: dict, token: str) -> tuple[dict | None, dict]:
+def search_exact_elim_offer(
+    product: dict,
+    *,
+    api_key: str | None = None,
+    access_token: str | None = None,
+) -> tuple[dict | None, dict]:
     config = product.get("supply1688Search") or {}
     keywords = config.get("keywords")
     required_groups = config.get("requiredTokenGroups")
@@ -254,7 +290,8 @@ def search_exact_elim_offer(product: dict, token: str) -> tuple[dict | None, dic
             "page": 1,
             "size": 40,
         },
-        token,
+        api_key=api_key,
+        access_token=access_token,
     )
     if not payload.get("success"):
         raise RuntimeError(payload.get("message") or "ElimAPI search failed")
@@ -440,7 +477,9 @@ def select_elim_refresh_products(
 
 def sync_elim(
     catalog: dict,
-    token: str,
+    *,
+    api_key: str | None = None,
+    access_token: str | None = None,
     existing_cache: dict | None = None,
     daily_limit: int = 5,
     full_refresh: bool = False,
@@ -463,7 +502,11 @@ def sync_elim(
     for product in selected:
         attempted_at = datetime.now(BEIJING).isoformat()
         try:
-            match, attempt = search_exact_elim_offer(product, token)
+            match, attempt = search_exact_elim_offer(
+                product,
+                api_key=api_key,
+                access_token=access_token,
+            )
             attempt["attemptedAt"] = attempted_at
             attempts[product["id"]] = attempt
             if match:
@@ -478,6 +521,8 @@ def sync_elim(
                 "attemptedAt": attempted_at,
             }
             api_errors.append(f"{product['id']}: {exc}")
+            if "401" in str(exc) or "403" in str(exc):
+                break
 
     if api_errors:
         raise RuntimeError("ElimAPI 1688 refresh failed:\n" + "\n".join(api_errors))
@@ -506,13 +551,16 @@ def main() -> int:
     app_key = os.getenv("TOP_APP_KEY", "").strip()
     app_secret = os.getenv("TOP_APP_SECRET", "").strip()
     elim_token = os.getenv("ELIM_API_KEY", "").strip()
+    elim_access_token = os.getenv("ELIM_ACCESS_TOKEN", "").strip()
     elim_daily_limit = args.elim_daily_limit or int(os.getenv("ELIM_DAILY_LIMIT", "5"))
     feed_url = os.getenv("SUPPLY_1688_FEED_URL", "").strip()
     existing_cache = read_json(OUTPUT_PATH, {"items": {}, "attempts": {}})
 
     try:
         use_top = args.provider == "top" or (args.provider == "auto" and app_key and app_secret)
-        use_elim = args.provider == "elim" or (args.provider == "auto" and elim_token and not use_top)
+        use_elim = args.provider == "elim" or (
+            args.provider == "auto" and (elim_token or elim_access_token) and not use_top
+        )
         use_feed = args.provider == "feed" or (
             args.provider == "auto" and feed_url and not use_top and not use_elim
         )
@@ -521,13 +569,14 @@ def main() -> int:
                 raise ValueError("TOP_APP_KEY and TOP_APP_SECRET are both required")
             output = sync_top(catalog, app_key, app_secret)
         elif use_elim:
-            if not elim_token:
-                raise ValueError("ELIM_API_KEY is required")
+            if not elim_token and not elim_access_token:
+                raise ValueError("ELIM_API_KEY or ELIM_ACCESS_TOKEN is required")
             if elim_daily_limit < 1:
                 raise ValueError("ELIM_DAILY_LIMIT must be at least 1")
             output = sync_elim(
                 catalog,
-                elim_token,
+                api_key=elim_token or None,
+                access_token=elim_access_token or None,
                 existing_cache=existing_cache,
                 daily_limit=elim_daily_limit,
                 full_refresh=args.full_refresh,
