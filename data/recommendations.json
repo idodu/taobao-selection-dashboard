@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-06-11T21:41:31.339348+08:00",
-  "generatedAtBeijing": "2026-06-11 21:41:31 UTC+8",
+  "generatedAt": "2026-06-11T22:10:33.805131+08:00",
+  "generatedAtBeijing": "2026-06-11 22:10:33 UTC+8",
   "date": "2026-06-11",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-10-single-sku-v2",
-  "supply1688UpdatedAt": null,
-  "supply1688Provider": "not-configured",
-  "supply1688VerifiedCount": 0,
-  "supply1688PendingCount": 10,
+  "supply1688UpdatedAt": "2026-06-11T22:10:33.750376+08:00",
+  "supply1688Provider": "elim-api",
+  "supply1688VerifiedCount": 3,
+  "supply1688PendingCount": 7,
   "mode": "single-sku",
   "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
   "focusCategory": "纸品/湿巾",
@@ -326,15 +326,15 @@
       "listingAdvice": "标题放立白、洗衣凝珠、40颗、除菌除螨、速溶快洗；主图突出每颗成本和40次洗涤；赠洗衣袋或留香珠小样提高转化。",
       "risk": "洗衣凝珠低价白牌冲击明显，品牌标准品需用赠品、规格或组合差异避开旗舰店同款硬拼。",
       "supplyCostReference": [
-        23.3,
-        31.1
+        11.89,
+        11.89
       ],
-      "costSource": "成本上限参考，不是1688真实报价",
+      "costSource": "1688单SKU已核验最低公开阶梯价",
       "estimatedGrossProfitRate": [
-        22.1,
-        22.1
+        60.2,
+        70.2
       ],
-      "marginBasis": "成本上限估算",
+      "marginBasis": "1688已核验价",
       "costCeiling": [
         23.3,
         31.1
@@ -342,18 +342,18 @@
       "supply1688": {
         "query": "立白 洗衣凝珠 40颗",
         "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AB%8B%E7%99%BD+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+40%E9%A2%97",
-        "lowestPrice": null,
+        "lowestPrice": 11.89,
         "moq": null,
         "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+        "matchStatus": "exact",
+        "matchedTitle": "立白沙龙级香氛洗衣凝珠6合一家用持久留香洗衣珠高级感40颗正品",
+        "offerId": "938670169290",
+        "offerUrl": "https://detail.1688.com/offer/938670169290.html",
+        "verifiedAt": "2026-06-11T22:10:24.434505+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
       },
       "platformLowestPrice": 29.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
@@ -530,15 +530,15 @@
       "listingAdvice": "标题覆盖奥妙、洗衣凝珠、50颗、除菌除螨、桃桃春日、鲜花精油；主图强调50颗桶装和香氛卖点；可与留香珠做加价购。",
       "risk": "香味主观差异大，详情页需提示不同衣物和晾晒环境会影响留香；品牌低价促销波动会压缩利润。",
       "supplyCostReference": [
-        31.1,
-        43.6
+        2.3,
+        2.3
       ],
-      "costSource": "成本上限参考，不是1688真实报价",
+      "costSource": "1688单SKU已核验最低公开阶梯价",
       "estimatedGrossProfitRate": [
-        22.0,
-        22.1
+        94.2,
+        95.9
       ],
-      "marginBasis": "成本上限估算",
+      "marginBasis": "1688已核验价",
       "costCeiling": [
         31.1,
         43.6
@@ -546,18 +546,18 @@
       "supply1688": {
         "query": "奥妙 洗衣凝珠 50颗",
         "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A5%A5%E5%A6%99+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+50%E9%A2%97",
-        "lowestPrice": null,
+        "lowestPrice": 2.3,
         "moq": null,
         "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+        "matchStatus": "exact",
+        "matchedTitle": "奥妙洗衣凝珠50颗浓缩天然酵素洗衣球除菌留香柔软护衣多香型可选",
+        "offerId": "898169972654",
+        "offerUrl": "https://detail.1688.com/offer/898169972654.html",
+        "verifiedAt": "2026-06-11T22:10:25.691008+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
       },
       "platformLowestPrice": 39.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
@@ -938,15 +938,15 @@
       "listingAdvice": "标题放蓝月亮、洗衣液、12斤、亮白增艳、薰衣草、瓶袋套装；主图突出3kg瓶+1kg袋*3和家庭囤货；偏远地区设置运费模板。",
       "risk": "液体重货运费和破损率吃利润，需单独核算偏远地区；品牌标准品价格透明，避免和旗舰店同价硬碰。",
       "supplyCostReference": [
-        46.7,
-        62.3
+        20.26,
+        20.26
       ],
-      "costSource": "成本上限参考，不是1688真实报价",
+      "costSource": "1688单SKU已核验最低公开阶梯价",
       "estimatedGrossProfitRate": [
-        22.0,
-        22.0
+        66.2,
+        74.6
       ],
-      "marginBasis": "成本上限估算",
+      "marginBasis": "1688已核验价",
       "costCeiling": [
         46.7,
         62.3
@@ -954,18 +954,18 @@
       "supply1688": {
         "query": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
         "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%93%9D%E6%9C%88%E4%BA%AE+%E6%B4%97%E8%A1%A3%E6%B6%B2+12%E6%96%A4+3kg+1kg+3%E8%A2%8B",
-        "lowestPrice": null,
+        "lowestPrice": 20.26,
         "moq": null,
         "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+        "matchStatus": "exact",
+        "matchedTitle": "蓝月亮洗衣液12斤装3kg+2kg+1kg瓶洁净薰衣草香洗衣液整箱批家用",
+        "offerId": "674082368984",
+        "offerUrl": "https://detail.1688.com/offer/674082368984.html",
+        "verifiedAt": "2026-06-11T22:10:28.010181+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
       },
       "platformLowestPrice": 55.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",

@@ -1,5 +1,155 @@
 {
-  "updatedAt": null,
-  "sourcePolicy": "仅保存同品牌、同规格、单SKU精确匹配且带1688商品链接的已核验报价。",
-  "items": {}
+  "updatedAt": "2026-06-11T22:10:33.750376+08:00",
+  "provider": "elim-api",
+  "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
+  "items": {
+    "jd-100045910485-liby-laundry-pods-40": {
+      "lowestPrice": 11.89,
+      "moq": null,
+      "unit": "件",
+      "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+      "matchStatus": "exact",
+      "matchedTitle": "立白沙龙级香氛洗衣凝珠6合一家用持久留香洗衣珠高级感40颗正品",
+      "offerId": "938670169290",
+      "offerUrl": "https://detail.1688.com/offer/938670169290.html",
+      "verifiedAt": "2026-06-11T22:10:24.434505+08:00",
+      "source": "ElimAPI 1688授权搜索",
+      "priceField": "promotion_price",
+      "matchEvidence": [
+        "立白",
+        "洗衣凝珠",
+        "40颗"
+      ],
+      "bookedCount": 2,
+      "sellerType": "merchant"
+    },
+    "jd-100154323857-omo-laundry-pods-50": {
+      "lowestPrice": 2.3,
+      "moq": null,
+      "unit": "件",
+      "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+      "matchStatus": "exact",
+      "matchedTitle": "奥妙洗衣凝珠50颗浓缩天然酵素洗衣球除菌留香柔软护衣多香型可选",
+      "offerId": "898169972654",
+      "offerUrl": "https://detail.1688.com/offer/898169972654.html",
+      "verifiedAt": "2026-06-11T22:10:25.691008+08:00",
+      "source": "ElimAPI 1688授权搜索",
+      "priceField": "price",
+      "matchEvidence": [
+        "奥妙",
+        "洗衣凝珠",
+        "50颗"
+      ],
+      "bookedCount": 10,
+      "sellerType": "seller"
+    },
+    "jd-5851301-blue-moon-laundry-liquid-12jin": {
+      "lowestPrice": 20.26,
+      "moq": null,
+      "unit": "件",
+      "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+      "matchStatus": "exact",
+      "matchedTitle": "蓝月亮洗衣液12斤装3kg+2kg+1kg瓶洁净薰衣草香洗衣液整箱批家用",
+      "offerId": "674082368984",
+      "offerUrl": "https://detail.1688.com/offer/674082368984.html",
+      "verifiedAt": "2026-06-11T22:10:28.010181+08:00",
+      "source": "ElimAPI 1688授权搜索",
+      "priceField": "promotion_price",
+      "matchEvidence": [
+        "蓝月亮",
+        "洗衣液",
+        "12斤",
+        "3kg",
+        "1kg"
+      ],
+      "bookedCount": 468,
+      "sellerType": "factory"
+    }
+  },
+  "attempts": {
+    "jd-100145357766-vinda-wet-toilet-80x5": {
+      "keywords": "维达 湿厕纸 80片 5包",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-11T22:10:19.502433+08:00"
+    },
+    "jd-100005511754-mindact-wet-toilet-80x5": {
+      "keywords": "心相印 湿厕纸 80片 5包",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-11T22:10:21.979944+08:00"
+    },
+    "jd-100045910485-liby-laundry-pods-40": {
+      "keywords": "立白 洗衣凝珠 40颗",
+      "returnedOffers": 40,
+      "exactMatches": 11,
+      "status": "matched",
+      "attemptedAt": "2026-06-11T22:10:23.161115+08:00"
+    },
+    "jd-100154323857-omo-laundry-pods-50": {
+      "keywords": "奥妙 洗衣凝珠 50颗",
+      "returnedOffers": 40,
+      "exactMatches": 16,
+      "status": "matched",
+      "attemptedAt": "2026-06-11T22:10:24.434531+08:00"
+    },
+    "jd-5911553-mr-muscle-oil-cleaner-455x2": {
+      "keywords": "威猛先生 油污清洁剂 455g 2瓶 替换装",
+      "returnedOffers": 3,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-11T22:10:25.691035+08:00"
+    },
+    "jd-5851301-blue-moon-laundry-liquid-12jin": {
+      "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
+      "returnedOffers": 40,
+      "exactMatches": 3,
+      "status": "matched",
+      "attemptedAt": "2026-06-11T22:10:26.583113+08:00"
+    },
+    "jd-10160893457212-liby-master-liquid-6-4jin": {
+      "keywords": "立白 大师香氛 洗衣液 1kg 2瓶 1.2kg",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-11T22:10:28.010209+08:00"
+    },
+    "jd-100166629324-vinda-kitchen-paper-180x6": {
+      "keywords": "维达 厨房纸 180抽 6提",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-11T22:10:29.454137+08:00"
+    },
+    "jd-100008268866-sensodyne-toothpaste-270g": {
+      "keywords": "舒适达 专业修复 牙膏 270g",
+      "returnedOffers": 0,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-11T22:10:31.242189+08:00"
+    },
+    "jd-100013568111-corou-cotton-towel-100x6": {
+      "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-11T22:10:31.804411+08:00"
+    }
+  },
+  "refreshedProductIds": [
+    "jd-100145357766-vinda-wet-toilet-80x5",
+    "jd-100005511754-mindact-wet-toilet-80x5",
+    "jd-100045910485-liby-laundry-pods-40",
+    "jd-100154323857-omo-laundry-pods-50",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2",
+    "jd-5851301-blue-moon-laundry-liquid-12jin",
+    "jd-10160893457212-liby-master-liquid-6-4jin",
+    "jd-100166629324-vinda-kitchen-paper-180x6",
+    "jd-100008268866-sensodyne-toothpaste-270g",
+    "jd-100013568111-corou-cotton-towel-100x6"
+  ],
+  "dailyRequestLimit": 10,
+  "fullRefresh": true
 }
