@@ -4,12 +4,14 @@ import hashlib
 import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import quote_plus
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "product_catalog.json"
 OUTPUT_PATH = ROOT / "data" / "recommendations.json"
 HISTORY_PATH = ROOT / "data" / "selection_history.json"
+SUPPLY_1688_PATH = ROOT / "data" / "1688_supply_prices.json"
 DAILY_DIR = ROOT / "docs" / "daily"
 
 BEIJING = timezone(timedelta(hours=8))
@@ -25,7 +27,7 @@ WEIGHTS = {
 }
 
 RULES = {
-    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。供货价参考暂按建议售价*78%倒推，待替换真实成本。",
+    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。1688价仅在单SKU精确匹配并核验后参与毛利计算。",
     "items": [
         {
             "name": "跨平台热度",
@@ -40,7 +42,7 @@ RULES = {
         {
             "name": "利润可行性",
             "weight": "20%",
-            "description": "供货价参考按建议售价*78%倒推，预留约22%毛利空间；真实供货价低于该参考值时优先上架。",
+            "description": "优先使用已核验的1688单SKU最低价计算；未核验时只显示建议售价*78%的成本上限，不冒充真实供货价。",
         },
         {
             "name": "销量/评论信号",
@@ -101,6 +103,10 @@ def load_catalog() -> dict:
     return read_json(CATALOG_PATH, {"products": [], "avoidList": []})
 
 
+def load_1688_supply() -> dict:
+    return read_json(SUPPLY_1688_PATH, {"updatedAt": None, "items": {}})
+
+
 def deterministic_adjustment(product_id: str, date_key: str) -> float:
     digest = hashlib.sha256(f"{product_id}:{date_key}".encode("utf-8")).hexdigest()
     bucket = int(digest[:4], 16) % 31
@@ -137,14 +143,59 @@ def platform_lowest_price(platforms: list[dict]) -> float | None:
     return min(prices) if prices else None
 
 
-def enrich_product(product: dict, date_key: str, focus_category: str) -> dict:
+def build_1688_supply(product: dict, supply_cache: dict) -> dict:
+    cached = supply_cache.get("items", {}).get(product["id"], {})
+    query = f"{product['brand']} {product['name']} {product['sku']}"
+    search_url = f"https://s.1688.com/selloffer/offer_search.htm?keywords={quote_plus(query)}"
+    lowest_price = cached.get("lowestPrice")
+    match_status = cached.get("matchStatus", "unverified")
+    is_verified = (
+        isinstance(lowest_price, (int, float))
+        and lowest_price > 0
+        and match_status == "exact"
+        and isinstance(cached.get("offerUrl"), str)
+        and "1688.com" in cached["offerUrl"]
+    )
+
+    return {
+        "query": query,
+        "searchUrl": search_url,
+        "lowestPrice": round(lowest_price, 2) if is_verified else None,
+        "moq": cached.get("moq") if is_verified else None,
+        "unit": cached.get("unit", "件"),
+        "matchStatus": "exact" if is_verified else "unverified",
+        "matchedTitle": cached.get("matchedTitle") if is_verified else None,
+        "offerId": cached.get("offerId") if is_verified else None,
+        "offerUrl": cached.get("offerUrl") if is_verified else None,
+        "verifiedAt": cached.get("verifiedAt") if is_verified else None,
+        "source": cached.get("source") if is_verified else "1688待核验",
+        "note": (
+            "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+            if is_verified
+            else "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+        ),
+    }
+
+
+def enrich_product(product: dict, date_key: str, focus_category: str, supply_cache: dict) -> dict:
     item = dict(product)
     suggested = item["suggestedPrice"]
-    supply_reference = [round(value * 0.78, 1) for value in suggested]
-    item["supplyCostReference"] = supply_reference
-    item["costCeiling"] = supply_reference
-    item["costSource"] = "成本上限代替，待替换真实供货价"
-    item["estimatedGrossProfitRate"] = gross_margin_range(suggested, supply_reference)
+    cost_ceiling = [round(value * 0.78, 1) for value in suggested]
+    supply_1688 = build_1688_supply(product, supply_cache)
+    verified_price = supply_1688["lowestPrice"]
+    if verified_price is not None:
+        actual_costs = [verified_price, verified_price]
+        item["supplyCostReference"] = actual_costs
+        item["costSource"] = "1688单SKU已核验最低公开阶梯价"
+        item["estimatedGrossProfitRate"] = gross_margin_range(suggested, actual_costs)
+        item["marginBasis"] = "1688已核验价"
+    else:
+        item["supplyCostReference"] = cost_ceiling
+        item["costSource"] = "成本上限参考，不是1688真实报价"
+        item["estimatedGrossProfitRate"] = gross_margin_range(suggested, cost_ceiling)
+        item["marginBasis"] = "成本上限估算"
+    item["costCeiling"] = cost_ceiling
+    item["supply1688"] = supply_1688
     item["platformLowestPrice"] = platform_lowest_price(item.get("platforms", []))
     item["trialBudgetRule"] = "首批试款成本建议控制在￥200-￥500"
     item["score"] = score_product(product, date_key, focus_category)
@@ -213,11 +264,12 @@ def generate() -> tuple[dict, dict]:
     now = datetime.now(BEIJING)
     date_key = now.strftime("%Y-%m-%d")
     catalog = load_catalog()
+    supply_cache = load_1688_supply()
     history = read_json(HISTORY_PATH, {"dates": {}})
     categories = sorted({item["category"] for item in catalog["products"]})
     focus_category = categories[now.timetuple().tm_yday % len(categories)] if categories else ""
 
-    products = [enrich_product(item, date_key, focus_category) for item in catalog["products"]]
+    products = [enrich_product(item, date_key, focus_category, supply_cache) for item in catalog["products"]]
     products.sort(key=lambda item: item["score"]["total"], reverse=True)
     selected = products[:10]
 
@@ -233,6 +285,7 @@ def generate() -> tuple[dict, dict]:
         "date": date_key,
         "timezone": "Asia/Shanghai",
         "catalogVersion": catalog["catalogVersion"],
+        "supply1688UpdatedAt": supply_cache.get("updatedAt"),
         "mode": catalog.get("mode", "single-sku"),
         "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
         "focusCategory": focus_category,
@@ -265,7 +318,7 @@ def write_daily_markdown(data: dict) -> None:
         f"- 生成时间：{data['generatedAtBeijing']}",
         f"- 今日轮换关注：{data['focusCategory']}",
         f"- 评分规则：{data['scoreRules']['summary']}",
-        "- 供货价口径：当前按建议售价*78%倒推成本上限，后续替换为真实供货价。",
+        "- 供货价口径：1688单SKU精确匹配并核验后显示真实最低公开阶梯价；否则仅显示成本上限参考。",
         "",
         "## 店主每日10分钟操作流程",
         "",
@@ -278,16 +331,22 @@ def write_daily_markdown(data: dict) -> None:
             "",
             "## 今日10个候选SKU",
             "",
-            "| 排名 | 上榜标签 | 品牌/SKU | 规格 | 类型 | 平台最低参考 | 建议售价 | 供货价参考 | 预计毛利率 | 热度分 | 源商品 |",
-            "|---:|---|---|---|---|---:|---:|---:|---:|---:|---|",
+            "| 排名 | 上榜标签 | 品牌/SKU | 规格 | 类型 | 平台最低参考 | 建议售价 | 1688最低价 | 成本上限 | 预计毛利率 | 热度分 | 源商品 |",
+            "|---:|---|---|---|---|---:|---:|---:|---:|---:|---:|---|",
         ]
     )
 
     for item in data["products"]:
         lowest = f"￥{item['platformLowestPrice']}" if item.get("platformLowestPrice") else "内容参考"
+        supply_1688 = item["supply1688"]
+        supply_price = (
+            f"[￥{supply_1688['lowestPrice']}]({supply_1688['offerUrl']})"
+            if supply_1688["lowestPrice"] is not None
+            else f"[待核验]({supply_1688['searchUrl']})"
+        )
         source = f"[{item['sourcePlatform']} {item['sourceSkuId']}]({item['sourceUrl']})"
         lines.append(
-            "| {rank} | {status} | {brand} {name} | {sku} | {type} | {lowest} | {price} | {cost} | {margin} | {score} | {source} |".format(
+            "| {rank} | {status} | {brand} {name} | {sku} | {type} | {lowest} | {price} | {supply_price} | {ceiling} | {margin} | {score} | {source} |".format(
                 rank=item["rank"],
                 status=f"{item['statusTag']} / {item['historyNote']}",
                 brand=item["brand"],
@@ -296,7 +355,8 @@ def write_daily_markdown(data: dict) -> None:
                 type=item["type"],
                 lowest=lowest,
                 price=money_range(item["suggestedPrice"]),
-                cost=money_range(item["supplyCostReference"]),
+                supply_price=supply_price,
+                ceiling=money_range(item["costCeiling"]),
                 margin=percent_range(item["estimatedGrossProfitRate"]),
                 score=item["score"]["total"],
                 source=source,

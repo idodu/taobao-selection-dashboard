@@ -20,6 +20,10 @@ PRODUCT_REQUIRED = {
     "sourceUrl",
     "suggestedPrice",
     "supplyCostReference",
+    "costCeiling",
+    "costSource",
+    "marginBasis",
+    "supply1688",
     "estimatedGrossProfitRate",
     "platformLowestPrice",
     "platforms",
@@ -88,12 +92,38 @@ def validate_product(item: dict, index: int) -> list[str]:
         errors.append(f"{label}: suggestedPrice must be a two-number range")
     if not is_money_range(item["supplyCostReference"]):
         errors.append(f"{label}: supplyCostReference must be a two-number range")
+    if not is_money_range(item["costCeiling"]):
+        errors.append(f"{label}: costCeiling must be a two-number range")
     if not is_money_range(item["estimatedGrossProfitRate"]):
         errors.append(f"{label}: estimatedGrossProfitRate must be a two-number range")
     if item["statusTag"] not in {"新增", "昨日品", "回归品"}:
         errors.append(f"{label}: invalid statusTag {item['statusTag']}")
     if not isinstance(item["appearanceCount"], int) or item["appearanceCount"] < 1:
         errors.append(f"{label}: appearanceCount must be a positive integer")
+
+    supply_1688 = item["supply1688"]
+    required_1688 = {"query", "searchUrl", "lowestPrice", "moq", "matchStatus", "offerUrl", "verifiedAt", "source", "note"}
+    if not isinstance(supply_1688, dict):
+        errors.append(f"{label}: supply1688 must be an object")
+    else:
+        missing_1688 = required_1688 - set(supply_1688)
+        if missing_1688:
+            errors.append(f"{label}: supply1688 missing fields {sorted(missing_1688)}")
+        if not is_http_url(supply_1688.get("searchUrl", "")):
+            errors.append(f"{label}: supply1688.searchUrl must be http(s)")
+        if supply_1688.get("matchStatus") not in {"exact", "unverified"}:
+            errors.append(f"{label}: invalid supply1688.matchStatus")
+        if supply_1688.get("matchStatus") == "exact":
+            if not isinstance(supply_1688.get("lowestPrice"), (int, float)) or supply_1688["lowestPrice"] <= 0:
+                errors.append(f"{label}: verified 1688 lowestPrice must be positive")
+            if not isinstance(supply_1688.get("moq"), (int, float)) or supply_1688["moq"] <= 0:
+                errors.append(f"{label}: verified 1688 moq must be positive")
+            if not is_http_url(supply_1688.get("offerUrl", "")) or "1688.com" not in supply_1688["offerUrl"]:
+                errors.append(f"{label}: verified 1688 offerUrl must be a 1688 URL")
+            if not supply_1688.get("verifiedAt"):
+                errors.append(f"{label}: verified 1688 price requires verifiedAt")
+        elif any(supply_1688.get(field) is not None for field in ("lowestPrice", "moq", "offerUrl", "verifiedAt")):
+            errors.append(f"{label}: unverified 1688 fields must not contain price or offer claims")
 
     score = item["score"]
     missing_score = SCORE_REQUIRED - set(score)

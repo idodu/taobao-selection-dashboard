@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-06-11T07:27:56.974792+08:00",
-  "generatedAtBeijing": "2026-06-11 07:27:56 UTC+8",
+  "generatedAt": "2026-06-11T08:14:57.887082+08:00",
+  "generatedAtBeijing": "2026-06-11 08:14:57 UTC+8",
   "date": "2026-06-11",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-10-single-sku-v2",
+  "supply1688UpdatedAt": null,
   "mode": "single-sku",
   "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
   "focusCategory": "纸品/湿巾",
   "scoreRules": {
-    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。供货价参考暂按建议售价*78%倒推，待替换真实成本。",
+    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。1688价仅在单SKU精确匹配并核验后参与毛利计算。",
     "items": [
       {
         "name": "跨平台热度",
@@ -23,7 +24,7 @@
       {
         "name": "利润可行性",
         "weight": "20%",
-        "description": "供货价参考按建议售价*78%倒推，预留约22%毛利空间；真实供货价低于该参考值时优先上架。"
+        "description": "优先使用已核验的1688单SKU最低价计算；未核验时只显示建议售价*78%的成本上限，不冒充真实供货价。"
       },
       {
         "name": "销量/评论信号",
@@ -121,15 +122,30 @@
         19.4,
         23.3
       ],
-      "costCeiling": [
-        19.4,
-        23.3
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.1,
         22.1
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        19.4,
+        23.3
+      ],
+      "supply1688": {
+        "query": "维达 维达（Vinda）湿厕纸 家庭装80片*5包 多巴胺湿厕纸 80片*5包",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BB%B4%E8%BE%BE+%E7%BB%B4%E8%BE%BE%EF%BC%88Vinda%EF%BC%89%E6%B9%BF%E5%8E%95%E7%BA%B8+%E5%AE%B6%E5%BA%AD%E8%A3%8580%E7%89%87%2A5%E5%8C%85+%E5%A4%9A%E5%B7%B4%E8%83%BA%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87%2A5%E5%8C%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 22.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -206,15 +222,30 @@
         15.5,
         23.3
       ],
-      "costCeiling": [
-        15.5,
-        23.3
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.1,
         22.1
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        15.5,
+        23.3
+      ],
+      "supply1688": {
+        "query": "威猛先生 威猛先生油污清洁剂 455g+455g替换装 柑橘香 455g+455g替换装",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B2%B9%E6%B1%A1%E6%B8%85%E6%B4%81%E5%89%82+455g%2B455g%E6%9B%BF%E6%8D%A2%E8%A3%85+%E6%9F%91%E6%A9%98%E9%A6%99+455g%2B455g%E6%9B%BF%E6%8D%A2%E8%A3%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 16.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -291,15 +322,30 @@
         23.3,
         31.1
       ],
-      "costCeiling": [
-        23.3,
-        31.1
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.1,
         22.1
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        23.3,
+        31.1
+      ],
+      "supply1688": {
+        "query": "立白 立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔 40颗",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+%E9%99%A4%E8%8F%8C%E9%99%A4%E8%9E%A8%E6%8A%91%E8%8F%8C%E6%B4%81%E5%87%8040%E9%A2%97+%E5%8D%95%E8%85%94+40%E9%A2%97",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 29.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -376,15 +422,30 @@
         21.0,
         25.7
       ],
-      "costCeiling": [
-        21.0,
-        25.7
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         21.9,
         21.9
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        21.0,
+        25.7
+      ],
+      "supply1688": {
+        "query": "心相印 心相印三丽鸥湿厕纸 80片*5包 纯水湿纸巾家庭装 80片*5包",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%BF%83%E7%9B%B8%E5%8D%B0+%E5%BF%83%E7%9B%B8%E5%8D%B0%E4%B8%89%E4%B8%BD%E9%B8%A5%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87%2A5%E5%8C%85+%E7%BA%AF%E6%B0%B4%E6%B9%BF%E7%BA%B8%E5%B7%BE%E5%AE%B6%E5%BA%AD%E8%A3%85+80%E7%89%87%2A5%E5%8C%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 25.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -461,15 +522,30 @@
         31.1,
         43.6
       ],
-      "costCeiling": [
-        31.1,
-        43.6
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.0,
         22.1
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        31.1,
+        43.6
+      ],
+      "supply1688": {
+        "query": "奥妙 奥妙桃桃春日除菌洗衣凝珠50颗 单腔洗衣球 50颗",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A5%A5%E5%A6%99+%E5%A5%A5%E5%A6%99%E6%A1%83%E6%A1%83%E6%98%A5%E6%97%A5%E9%99%A4%E8%8F%8C%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A050%E9%A2%97+%E5%8D%95%E8%85%94%E6%B4%97%E8%A1%A3%E7%90%83+50%E9%A2%97",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 39.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -546,15 +622,30 @@
         38.9,
         54.5
       ],
-      "costCeiling": [
-        38.9,
-        54.5
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.0,
         22.0
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        38.9,
+        54.5
+      ],
+      "supply1688": {
+        "query": "舒适达 舒适达专业修复抗敏成人牙膏套装270g 270g套装",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%88%92%E9%80%82%E8%BE%BE+%E8%88%92%E9%80%82%E8%BE%BE%E4%B8%93%E4%B8%9A%E4%BF%AE%E5%A4%8D%E6%8A%97%E6%95%8F%E6%88%90%E4%BA%BA%E7%89%99%E8%86%8F%E5%A5%97%E8%A3%85270g+270g%E5%A5%97%E8%A3%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 45.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -631,15 +722,30 @@
         31.1,
         43.6
       ],
-      "costCeiling": [
-        31.1,
-        43.6
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.0,
         22.1
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        31.1,
+        43.6
+      ],
+      "supply1688": {
+        "query": "可心柔 可心柔棉柔巾一次性洗脸巾100抽*6包 100抽*6包",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%8F%AF%E5%BF%83%E6%9F%94+%E5%8F%AF%E5%BF%83%E6%9F%94%E6%A3%89%E6%9F%94%E5%B7%BE%E4%B8%80%E6%AC%A1%E6%80%A7%E6%B4%97%E8%84%B8%E5%B7%BE100%E6%8A%BD%2A6%E5%8C%85+100%E6%8A%BD%2A6%E5%8C%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 39.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -716,15 +822,30 @@
         21.0,
         28.0
       ],
-      "costCeiling": [
-        21.0,
-        28.0
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         21.9,
         22.0
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        21.0,
+        28.0
+      ],
+      "supply1688": {
+        "query": "维达 维达厨房纸巾180抽*6提 可接触食品级悬挂式抽纸 180抽*6提",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BB%B4%E8%BE%BE+%E7%BB%B4%E8%BE%BE%E5%8E%A8%E6%88%BF%E7%BA%B8%E5%B7%BE180%E6%8A%BD%2A6%E6%8F%90+%E5%8F%AF%E6%8E%A5%E8%A7%A6%E9%A3%9F%E5%93%81%E7%BA%A7%E6%82%AC%E6%8C%82%E5%BC%8F%E6%8A%BD%E7%BA%B8+180%E6%8A%BD%2A6%E6%8F%90",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 24.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -801,15 +922,30 @@
         46.7,
         62.3
       ],
-      "costCeiling": [
-        46.7,
-        62.3
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.0,
         22.0
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        46.7,
+        62.3
+      ],
+      "supply1688": {
+        "query": "蓝月亮 蓝月亮洗衣液12斤套装 3kg瓶+1kg袋*3 薰衣草 12斤套装",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%93%9D%E6%9C%88%E4%BA%AE+%E8%93%9D%E6%9C%88%E4%BA%AE%E6%B4%97%E8%A1%A3%E6%B6%B212%E6%96%A4%E5%A5%97%E8%A3%85+3kg%E7%93%B6%2B1kg%E8%A2%8B%2A3+%E8%96%B0%E8%A1%A3%E8%8D%89+12%E6%96%A4%E5%A5%97%E8%A3%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 55.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {
@@ -886,15 +1022,30 @@
         31.1,
         46.7
       ],
-      "costCeiling": [
-        31.1,
-        46.7
-      ],
-      "costSource": "成本上限代替，待替换真实供货价",
+      "costSource": "成本上限参考，不是1688真实报价",
       "estimatedGrossProfitRate": [
         22.0,
         22.1
       ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        31.1,
+        46.7
+      ],
+      "supply1688": {
+        "query": "立白 立白大师香氛洗衣液组合装 1kg*2瓶+1.2kg袋 6.4斤组合装",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%B4%97%E8%A1%A3%E6%B6%B2%E7%BB%84%E5%90%88%E8%A3%85+1kg%2A2%E7%93%B6%2B1.2kg%E8%A2%8B+6.4%E6%96%A4%E7%BB%84%E5%90%88%E8%A3%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
       "platformLowestPrice": 39.9,
       "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
       "score": {

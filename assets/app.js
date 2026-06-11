@@ -122,6 +122,29 @@ function scoreText(item) {
   ].join(" · ");
 }
 
+function supply1688Panel(item) {
+  const supply = item.supply1688 || {};
+  const verified = supply.matchStatus === "exact" && Number.isFinite(supply.lowestPrice);
+  const href = verified ? supply.offerUrl : supply.searchUrl;
+  const price = verified ? currency.format(supply.lowestPrice) : "待核验";
+  const meta = verified
+    ? `起订量 ${escapeHtml(supply.moq)}${escapeHtml(supply.unit || "件")} · 核验时间 ${escapeHtml(supply.verifiedAt)}`
+    : "未取得可审计的同品牌同规格报价，不展示推测价格";
+
+  return `
+    <a class="supply-panel ${verified ? "verified" : "pending"}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">
+      <div>
+        <span class="supply-label">1688 单SKU最低价</span>
+        <strong>${price}</strong>
+      </div>
+      <div class="supply-meta">
+        <span class="badge ${verified ? "score" : "warn"}">${verified ? "精确匹配 已核验" : "待核验"}</span>
+        <span>${meta}</span>
+      </div>
+    </a>
+  `;
+}
+
 function productCard(item) {
   const platforms = item.platforms.map(platformCard).join("");
   const sourceLabel = `${item.sourcePlatform} ${item.sourceSkuId}`;
@@ -150,10 +173,12 @@ function productCard(item) {
 
         <div class="details">
           <div class="detail"><span>建议售价</span><strong>${formatRange(item.suggestedPrice)}</strong></div>
-          <div class="detail"><span>供货价参考</span><strong>${formatRange(item.supplyCostReference)}</strong></div>
-          <div class="detail"><span>预计毛利率</span><strong>${formatPercentRange(item.estimatedGrossProfitRate)}</strong></div>
+          <div class="detail"><span>成本上限</span><strong>${formatRange(item.costCeiling)}</strong></div>
+          <div class="detail"><span>预计毛利率</span><strong>${formatPercentRange(item.estimatedGrossProfitRate)}</strong><small>${escapeHtml(item.marginBasis)}</small></div>
           <div class="detail"><span>平台低价</span><strong>${item.platformLowestPrice ? currency.format(item.platformLowestPrice) : "内容参考"}</strong></div>
         </div>
+
+        ${supply1688Panel(item)}
 
         <div class="platforms">${platforms}</div>
 
@@ -162,6 +187,7 @@ function productCard(item) {
           <p><strong>热度依据：</strong>${escapeHtml(item.heatEvidence)}</p>
           <p><strong>上架建议：</strong>${escapeHtml(item.listingAdvice)}</p>
           <p><strong>风险提示：</strong>${escapeHtml(item.risk)}</p>
+          <p><strong>1688口径：</strong>${escapeHtml(item.supply1688.note)}</p>
           <p><strong>试款约束：</strong>${escapeHtml(item.trialBudgetRule)}；${escapeHtml(item.costSource)}</p>
         </div>
       </div>
@@ -182,6 +208,7 @@ function topCard(item) {
         <h3>${escapeHtml(item.name)}</h3>
         <p class="subline">${escapeHtml(item.brand)} · ${escapeHtml(item.sku)}</p>
         <p class="subline">建议售价：${formatRange(item.suggestedPrice)}</p>
+        <p class="subline">1688：${item.supply1688?.lowestPrice ? currency.format(item.supply1688.lowestPrice) : "待核验"}</p>
       </div>
     </article>
   `;
