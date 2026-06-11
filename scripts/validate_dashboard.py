@@ -116,8 +116,10 @@ def validate_product(item: dict, index: int) -> list[str]:
         if supply_1688.get("matchStatus") == "exact":
             if not isinstance(supply_1688.get("lowestPrice"), (int, float)) or supply_1688["lowestPrice"] <= 0:
                 errors.append(f"{label}: verified 1688 lowestPrice must be positive")
-            if not isinstance(supply_1688.get("moq"), (int, float)) or supply_1688["moq"] <= 0:
-                errors.append(f"{label}: verified 1688 moq must be positive")
+            if supply_1688.get("moq") is not None and (
+                not isinstance(supply_1688.get("moq"), (int, float)) or supply_1688["moq"] <= 0
+            ):
+                errors.append(f"{label}: verified 1688 moq must be positive or null")
             if not is_http_url(supply_1688.get("offerUrl", "")) or "1688.com" not in supply_1688["offerUrl"]:
                 errors.append(f"{label}: verified 1688 offerUrl must be a 1688 URL")
             if not supply_1688.get("verifiedAt"):

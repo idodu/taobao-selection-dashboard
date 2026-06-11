@@ -39,6 +39,15 @@ class Sync1688PricesTest(unittest.TestCase):
         self.assertEqual(MODULE.parse_lowest_price(12), 12.0)
         self.assertIsNone(MODULE.parse_lowest_price("面议"))
 
+    def test_elim_price_uses_lowest_available_price_type(self) -> None:
+        offer = {
+            "price": 22.9,
+            "promotion_price": 18.8,
+            "dropship_price": 21.5,
+            "retail_price": None,
+        }
+        self.assertEqual(MODULE.lowest_elim_price(offer), (18.8, "promotion_price"))
+
     def test_search_response_offer_list(self) -> None:
         payload = {
             "alibaba_open_search_daixiao_offer_get_response": {
@@ -105,6 +114,47 @@ class Sync1688PricesTest(unittest.TestCase):
         self.assertEqual(match["lowestPrice"], 18.8)
         self.assertEqual(match["offerId"], "3")
         self.assertEqual(attempt["exactMatches"], 2)
+
+    def test_elim_search_selects_exact_sku_and_price_field(self) -> None:
+        product = {
+            "id": "sku-1",
+            "supply1688Search": {
+                "keywords": "维达 湿厕纸 80片 5包",
+                "requiredTokenGroups": [["维达"], ["湿厕纸"], ["80片"], ["5包"]],
+            },
+        }
+        payload = {
+            "success": True,
+            "items": [
+                {
+                    "id": 1,
+                    "title": "维达湿厕纸80片3包",
+                    "price": 9.9,
+                    "link": "https://detail.1688.com/offer/1.html",
+                },
+                {
+                    "id": 2,
+                    "title": "维达湿厕纸80片5包",
+                    "price": 20.8,
+                    "promotion_price": 18.8,
+                    "dropship_price": 19.9,
+                    "unit": "件",
+                    "link": "https://detail.1688.com/offer/2.html",
+                    "sales_volume": 100,
+                    "seller_type": "merchant",
+                },
+            ],
+        }
+        original = MODULE.post_json
+        MODULE.post_json = lambda *args, **kwargs: payload
+        try:
+            match, attempt = MODULE.search_exact_elim_offer(product, "token")
+        finally:
+            MODULE.post_json = original
+        self.assertEqual(match["lowestPrice"], 18.8)
+        self.assertEqual(match["priceField"], "promotion_price")
+        self.assertIsNone(match["moq"])
+        self.assertEqual(attempt["exactMatches"], 1)
 
 
 if __name__ == "__main__":

@@ -38,6 +38,7 @@ jobs:
         env:
           TOP_APP_KEY: ${{ secrets.TOP_APP_KEY }}
           TOP_APP_SECRET: ${{ secrets.TOP_APP_SECRET }}
+          ELIM_API_KEY: ${{ secrets.ELIM_API_KEY }}
           SUPPLY_1688_FEED_URL: ${{ secrets.SUPPLY_1688_FEED_URL }}
           SUPPLY_1688_FEED_TOKEN: ${{ secrets.SUPPLY_1688_FEED_TOKEN }}
         run: python scripts/sync_1688_prices.py --allow-missing

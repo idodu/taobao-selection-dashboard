@@ -18,6 +18,7 @@ CATALOG_PATH = ROOT / "data" / "product_catalog.json"
 OUTPUT_PATH = ROOT / "data" / "1688_supply_prices.json"
 TOP_ENDPOINT = "https://eco.taobao.com/router/rest"
 TOP_SEARCH_METHOD = "alibaba.open.search.daixiao.offer.get"
+ELIM_SEARCH_ENDPOINT = "https://openapi.elim.asia/v1/products/search"
 BEIJING = timezone(timedelta(hours=8))
 
 
@@ -86,6 +87,21 @@ def call_top_api(
         detail = error.get("sub_msg") or error.get("msg") or "unknown TOP API error"
         raise RuntimeError(f"{error.get('sub_code') or error.get('code')}: {detail}")
     return payload
+
+
+def post_json(url: str, payload: dict, token: str) -> dict:
+    request = Request(
+        url,
+        data=json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8"),
+        headers={
+            "Accept": "application/json",
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+            "User-Agent": "taobao-selection-dashboard/1.0",
+        },
+    )
+    with urlopen(request, timeout=30) as response:
+        return json.load(response)
 
 
 def normalize_text(value: object) -> str:
@@ -212,14 +228,87 @@ def search_exact_offer(product: dict, app_key: str, app_secret: str) -> tuple[di
     )
 
 
+def lowest_elim_price(offer: dict) -> tuple[float | None, str | None]:
+    fields = ("promotion_price", "price", "whosesale_price", "dropship_price", "retail_price")
+    candidates = [
+        (price, field)
+        for field in fields
+        if (price := parse_lowest_price(offer.get(field))) is not None
+    ]
+    return min(candidates, default=(None, None), key=lambda item: item[0])
+
+
+def search_exact_elim_offer(product: dict, token: str) -> tuple[dict | None, dict]:
+    config = product.get("supply1688Search") or {}
+    keywords = config.get("keywords")
+    required_groups = config.get("requiredTokenGroups")
+    if not keywords or not isinstance(required_groups, list) or not required_groups:
+        raise ValueError(f"{product['id']}: supply1688Search configuration is incomplete")
+
+    payload = post_json(
+        ELIM_SEARCH_ENDPOINT,
+        {
+            "q": keywords,
+            "platform": "alibaba",
+            "sort": "PRICE_ASC",
+            "page": 1,
+            "size": 40,
+        },
+        token,
+    )
+    if not payload.get("success"):
+        raise RuntimeError(payload.get("message") or "ElimAPI search failed")
+    offers = [item for item in payload.get("items", []) if isinstance(item, dict)]
+    matches: list[tuple[float, dict, list[str], str]] = []
+    for offer in offers:
+        matched, evidence = title_matches(str(offer.get("title") or ""), required_groups)
+        price, price_field = lowest_elim_price(offer)
+        url = offer.get("link")
+        if matched and price is not None and price_field and is_1688_url(url):
+            matches.append((price, offer, evidence, price_field))
+
+    attempt = {
+        "keywords": keywords,
+        "returnedOffers": len(offers),
+        "exactMatches": len(matches),
+        "status": "matched" if matches else "no-exact-match",
+    }
+    if not matches:
+        return None, attempt
+
+    price, offer, evidence, price_field = min(matches, key=lambda candidate: candidate[0])
+    one_piece_fields = {"dropship_price", "retail_price"}
+    return (
+        {
+            "lowestPrice": price,
+            "moq": 1 if price_field in one_piece_fields else None,
+            "unit": offer.get("unit") or "件",
+            "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+            "matchStatus": "exact",
+            "matchedTitle": offer.get("title"),
+            "offerId": str(offer.get("id")),
+            "offerUrl": offer.get("link"),
+            "verifiedAt": datetime.now(BEIJING).isoformat(),
+            "source": "ElimAPI 1688授权搜索",
+            "priceField": price_field,
+            "matchEvidence": evidence,
+            "bookedCount": offer.get("sales_volume"),
+            "sellerType": offer.get("seller_type"),
+        },
+        attempt,
+    )
+
+
 def validate_item(product_id: str, item: dict) -> list[str]:
     errors: list[str] = []
     if item.get("matchStatus") != "exact":
         errors.append(f"{product_id}: matchStatus must be exact")
     if not isinstance(item.get("lowestPrice"), (int, float)) or item["lowestPrice"] <= 0:
         errors.append(f"{product_id}: lowestPrice must be positive")
-    if not isinstance(item.get("moq"), (int, float)) or item["moq"] <= 0:
-        errors.append(f"{product_id}: moq must be positive")
+    if item.get("moq") is not None and (
+        not isinstance(item.get("moq"), (int, float)) or item["moq"] <= 0
+    ):
+        errors.append(f"{product_id}: moq must be positive or null")
     if not item.get("matchedTitle"):
         errors.append(f"{product_id}: matchedTitle is required")
     if not is_1688_url(item.get("offerUrl")):
@@ -317,25 +406,66 @@ def sync_top(catalog: dict, app_key: str, app_secret: str) -> dict:
     }
 
 
+def sync_elim(catalog: dict, token: str) -> dict:
+    items: dict[str, dict] = {}
+    attempts: dict[str, dict] = {}
+    api_errors: list[str] = []
+    config_errors = [
+        error
+        for product in catalog.get("products", [])
+        for error in validate_search_config(product)
+    ]
+    if config_errors:
+        raise ValueError("invalid 1688 search configuration:\n" + "\n".join(config_errors))
+
+    for product in catalog.get("products", []):
+        try:
+            match, attempt = search_exact_elim_offer(product, token)
+            attempts[product["id"]] = attempt
+            if match:
+                items[product["id"]] = match
+        except Exception as exc:
+            attempts[product["id"]] = {"status": "api-error", "error": str(exc)}
+            api_errors.append(f"{product['id']}: {exc}")
+
+    if api_errors:
+        raise RuntimeError("ElimAPI 1688 refresh failed:\n" + "\n".join(api_errors))
+    return {
+        "updatedAt": datetime.now(BEIJING).isoformat(),
+        "provider": "elim-api",
+        "sourcePolicy": "ElimAPI按价格升序搜索1688；仅保留标题同时匹配品牌和全部规格词组的单SKU最低公开价。",
+        "items": items,
+        "attempts": attempts,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Sync audited single-SKU 1688 prices.")
     parser.add_argument("--allow-missing", action="store_true", help="Keep the existing cache when credentials are absent.")
-    parser.add_argument("--provider", choices=("auto", "top", "feed"), default="auto")
+    parser.add_argument("--provider", choices=("auto", "top", "elim", "feed"), default="auto")
     args = parser.parse_args()
 
     catalog = read_json(CATALOG_PATH)
     catalog_ids = {item["id"] for item in catalog.get("products", [])}
     app_key = os.getenv("TOP_APP_KEY", "").strip()
     app_secret = os.getenv("TOP_APP_SECRET", "").strip()
+    elim_token = os.getenv("ELIM_API_KEY", "").strip()
     feed_url = os.getenv("SUPPLY_1688_FEED_URL", "").strip()
 
     try:
         use_top = args.provider == "top" or (args.provider == "auto" and app_key and app_secret)
-        use_feed = args.provider == "feed" or (args.provider == "auto" and feed_url and not use_top)
+        use_elim = args.provider == "elim" or (args.provider == "auto" and elim_token and not use_top)
+        use_feed = args.provider == "feed" or (
+            args.provider == "auto" and feed_url and not use_top and not use_elim
+        )
         if use_top:
             if not app_key or not app_secret:
                 raise ValueError("TOP_APP_KEY and TOP_APP_SECRET are both required")
             output = sync_top(catalog, app_key, app_secret)
+        elif use_elim:
+            if not elim_token:
+                raise ValueError("ELIM_API_KEY is required")
+            output = sync_elim(catalog, elim_token)
         elif use_feed:
             if not feed_url:
                 raise ValueError("SUPPLY_1688_FEED_URL is required")

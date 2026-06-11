@@ -80,6 +80,12 @@ GitHub 仓库需要配置：
 
 该搜索 API 不需要买家 `session` 授权，但所有 TOP API 请求仍必须使用 AppKey/AppSecret 签名。系统使用官方支持的 HMAC-MD5 签名，不在仓库或日志中输出密钥。
 
+如果暂时无法完成 TOP 开发者认证，可使用 ElimAPI 的 1688 授权搜索服务。其免费档公开说明为每月 200 次请求，配置一个 GitHub Secret 即可：
+
+- `ELIM_API_KEY`：ElimAPI 控制台生成的 Bearer API Key。
+
+系统优先级为 `TOP_APP_KEY/TOP_APP_SECRET` → `ELIM_API_KEY` → 自定义授权报价源。ElimAPI 搜索结果会同时比较常规价、促销价、批发代销价和零售价，取精确标题匹配商品中的最低值，并记录实际采用的价格字段。
+
 配置路径：GitHub 仓库 `Settings` → `Secrets and variables` → `Actions` → `New repository secret`。两个 Secret 配置完成后，手动运行一次 `Daily product selection update`，页面的“1688核验”指标会显示成功匹配的 SKU 数量。
 
 本地测试可参考 `.env.1688.example` 设置环境变量后运行：
@@ -123,3 +129,4 @@ python scripts/validate_dashboard.py
 
 - [代销市场商品搜索服务](https://open.alitrip.com/docs/api.htm?apiId=26839)
 - [TOP API 公共参数与签名算法](https://developer.alibaba.com/docs/doc.htm?articleId=101617&docType=1)
+- [ElimAPI 1688产品搜索和价格字段说明](https://elim.asia/zh/guides/product/)

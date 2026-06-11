@@ -130,7 +130,7 @@ function supply1688Panel(item) {
   const href = verified ? supply.offerUrl : supply.searchUrl;
   const price = verified ? currency.format(supply.lowestPrice) : "待核验";
   const meta = verified
-    ? `起订量 ${escapeHtml(supply.moq)}${escapeHtml(supply.unit || "件")} · 核验时间 ${escapeHtml(supply.verifiedAt)}`
+    ? `${supply.moq ? `起订量 ${escapeHtml(supply.moq)}${escapeHtml(supply.unit || "件")} · ` : "起订量需商品页确认 · "}核验时间 ${escapeHtml(supply.verifiedAt)}`
     : "未取得可审计的同品牌同规格报价，不展示推测价格";
 
   return `
@@ -190,7 +190,6 @@ function productCard(item) {
           <p><strong>上架建议：</strong>${escapeHtml(item.listingAdvice)}</p>
           <p><strong>风险提示：</strong>${escapeHtml(item.risk)}</p>
           <p><strong>1688口径：</strong>${escapeHtml(item.supply1688.note)}</p>
-          <p><strong>试款约束：</strong>${escapeHtml(item.trialBudgetRule)}；${escapeHtml(item.costSource)}</p>
         </div>
       </div>
     </article>
