@@ -145,7 +145,7 @@ def platform_lowest_price(platforms: list[dict]) -> float | None:
 
 def build_1688_supply(product: dict, supply_cache: dict) -> dict:
     cached = supply_cache.get("items", {}).get(product["id"], {})
-    query = f"{product['brand']} {product['name']} {product['sku']}"
+    query = product.get("supply1688Search", {}).get("keywords") or f"{product['brand']} {product['name']} {product['sku']}"
     search_url = f"https://s.1688.com/selloffer/offer_search.htm?keywords={quote_plus(query)}"
     lowest_price = cached.get("lowestPrice")
     match_status = cached.get("matchStatus", "unverified")
@@ -200,6 +200,7 @@ def enrich_product(product: dict, date_key: str, focus_category: str, supply_cac
     item["trialBudgetRule"] = "首批试款成本建议控制在￥200-￥500"
     item["score"] = score_product(product, date_key, focus_category)
     item.pop("scoreInputs", None)
+    item.pop("supply1688Search", None)
     return item
 
 
@@ -278,6 +279,7 @@ def generate() -> tuple[dict, dict]:
 
     apply_history_labels(selected, history, date_key)
     generated_at = now.isoformat()
+    verified_1688_count = sum(item["supply1688"]["matchStatus"] == "exact" for item in selected)
 
     data = {
         "generatedAt": generated_at,
@@ -286,6 +288,9 @@ def generate() -> tuple[dict, dict]:
         "timezone": "Asia/Shanghai",
         "catalogVersion": catalog["catalogVersion"],
         "supply1688UpdatedAt": supply_cache.get("updatedAt"),
+        "supply1688Provider": supply_cache.get("provider", "not-configured"),
+        "supply1688VerifiedCount": verified_1688_count,
+        "supply1688PendingCount": len(selected) - verified_1688_count,
         "mode": catalog.get("mode", "single-sku"),
         "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
         "focusCategory": focus_category,

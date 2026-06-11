@@ -71,9 +71,30 @@
 
 系统只接受满足以下条件的 1688 报价：同一品牌、同一完整规格、单独 SKU、正数最低价、正数起订量、可访问的 `1688.com` 商品链接和核验时间。没有满足这些条件的数据时，页面显示“待核验”，不会生成虚假最低价。
 
-云端每天先运行 `scripts/sync_1688_prices.py`，再生成看板。同步脚本从授权 JSON 数据源读取报价，仓库需要配置：
+云端每天先运行 `scripts/sync_1688_prices.py`，再生成看板。首选数据源为淘宝开放平台官方接口 `alibaba.open.search.daixiao.offer.get`：按关键词搜索 1688 代销市场、按价格升序取回候选，然后只有标题同时命中品牌及全部规格词组的商品才会被认定为精确 SKU。
 
-- `SUPPLY_1688_FEED_URL`：授权数据源地址，可由 1688 OpenAPI、ERP 或经销商导出桥接服务提供。
+GitHub 仓库需要配置：
+
+- `TOP_APP_KEY`：淘宝开放平台应用 AppKey。
+- `TOP_APP_SECRET`：淘宝开放平台应用 AppSecret。
+
+该搜索 API 不需要买家 `session` 授权，但所有 TOP API 请求仍必须使用 AppKey/AppSecret 签名。系统使用官方支持的 HMAC-MD5 签名，不在仓库或日志中输出密钥。
+
+配置路径：GitHub 仓库 `Settings` → `Secrets and variables` → `Actions` → `New repository secret`。两个 Secret 配置完成后，手动运行一次 `Daily product selection update`，页面的“1688核验”指标会显示成功匹配的 SKU 数量。
+
+本地测试可参考 `.env.1688.example` 设置环境变量后运行：
+
+```powershell
+$env:TOP_APP_KEY="..."
+$env:TOP_APP_SECRET="..."
+python scripts/sync_1688_prices.py --provider top
+python scripts/generate_daily_data.py
+python scripts/validate_dashboard.py
+```
+
+如果已有 ERP 或经销商授权报价服务，也可继续使用备用数据源：
+
+- `SUPPLY_1688_FEED_URL`：授权 JSON 数据源地址。
 - `SUPPLY_1688_FEED_TOKEN`：可选 Bearer Token。
 
 数据源格式：
@@ -96,4 +117,9 @@
 }
 ```
 
-当前仓库未配置 1688 OpenAPI/授权数据源凭证，因此系统会诚实显示“待核验”。直接抓取 1688 页面无法稳定保证登录态、阶梯价和 SKU 匹配准确，不适合作为无人值守的每日价格源。
+当前仓库未配置 TOP 应用凭证，因此系统会诚实显示“待核验”。直接抓取 1688 页面无法稳定保证登录态、阶梯价和 SKU 匹配准确，不适合作为无人值守的每日价格源。
+
+官方依据：
+
+- [代销市场商品搜索服务](https://open.alitrip.com/docs/api.htm?apiId=26839)
+- [TOP API 公共参数与签名算法](https://developer.alibaba.com/docs/doc.htm?articleId=101617&docType=1)

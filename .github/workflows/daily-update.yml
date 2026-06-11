@@ -36,6 +36,8 @@ jobs:
 
       - name: Refresh audited 1688 SKU prices
         env:
+          TOP_APP_KEY: ${{ secrets.TOP_APP_KEY }}
+          TOP_APP_SECRET: ${{ secrets.TOP_APP_SECRET }}
           SUPPLY_1688_FEED_URL: ${{ secrets.SUPPLY_1688_FEED_URL }}
           SUPPLY_1688_FEED_TOKEN: ${{ secrets.SUPPLY_1688_FEED_TOKEN }}
         run: python scripts/sync_1688_prices.py --allow-missing
@@ -44,7 +46,9 @@ jobs:
         run: python scripts/generate_daily_data.py
 
       - name: Validate dashboard data
-        run: python scripts/validate_dashboard.py
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/validate_dashboard.py
 
       - name: Commit refreshed daily data
         run: |

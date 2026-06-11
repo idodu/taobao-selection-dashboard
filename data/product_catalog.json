@@ -7,6 +7,10 @@
       "brand": "维达",
       "name": "维达（Vinda）湿厕纸 家庭装80片*5包 多巴胺湿厕纸",
       "sku": "80片*5包",
+      "supply1688Search": {
+        "keywords": "维达 湿厕纸 80片 5包",
+        "requiredTokenGroups": [["维达", "vinda"], ["湿厕纸"], ["80片", "80抽"], ["5包", "5袋"]]
+      },
       "category": "纸品/湿巾",
       "type": "引流款",
       "primaryPlatform": "京东",
@@ -67,6 +71,10 @@
       "brand": "心相印",
       "name": "心相印三丽鸥湿厕纸 80片*5包 纯水湿纸巾家庭装",
       "sku": "80片*5包",
+      "supply1688Search": {
+        "keywords": "心相印 湿厕纸 80片 5包",
+        "requiredTokenGroups": [["心相印"], ["湿厕纸"], ["80片", "80抽"], ["5包", "5袋"]]
+      },
       "category": "纸品/湿巾",
       "type": "引流款",
       "primaryPlatform": "京东",
@@ -127,6 +135,10 @@
       "brand": "立白",
       "name": "立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔",
       "sku": "40颗",
+      "supply1688Search": {
+        "keywords": "立白 洗衣凝珠 40颗",
+        "requiredTokenGroups": [["立白"], ["洗衣凝珠", "凝珠"], ["40颗", "40粒"]]
+      },
       "category": "衣物清洁",
       "type": "平销款",
       "primaryPlatform": "京东",
@@ -187,6 +199,10 @@
       "brand": "奥妙",
       "name": "奥妙桃桃春日除菌洗衣凝珠50颗 单腔洗衣球",
       "sku": "50颗",
+      "supply1688Search": {
+        "keywords": "奥妙 洗衣凝珠 50颗",
+        "requiredTokenGroups": [["奥妙", "omo"], ["洗衣凝珠", "凝珠"], ["50颗", "50粒"]]
+      },
       "category": "衣物清洁",
       "type": "平销款",
       "primaryPlatform": "京东",
@@ -247,6 +263,10 @@
       "brand": "威猛先生",
       "name": "威猛先生油污清洁剂 455g+455g替换装 柑橘香",
       "sku": "455g+455g替换装",
+      "supply1688Search": {
+        "keywords": "威猛先生 油污清洁剂 455g 2瓶 替换装",
+        "requiredTokenGroups": [["威猛先生", "mr muscle"], ["油污", "厨房"], ["455g", "455克"], ["替换装"], ["2瓶", "双瓶", "455g+455g", "455克+455克"]]
+      },
       "category": "家庭清洁",
       "type": "利润款",
       "primaryPlatform": "京东",
@@ -307,6 +327,10 @@
       "brand": "蓝月亮",
       "name": "蓝月亮洗衣液12斤套装 3kg瓶+1kg袋*3 薰衣草",
       "sku": "12斤套装",
+      "supply1688Search": {
+        "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
+        "requiredTokenGroups": [["蓝月亮"], ["洗衣液"], ["12斤", "6kg", "6000g"], ["3kg", "3公斤"], ["1kg", "1公斤"]]
+      },
       "category": "衣物清洁",
       "type": "平销款",
       "primaryPlatform": "京东",
@@ -367,6 +391,10 @@
       "brand": "立白",
       "name": "立白大师香氛洗衣液组合装 1kg*2瓶+1.2kg袋",
       "sku": "6.4斤组合装",
+      "supply1688Search": {
+        "keywords": "立白 大师香氛 洗衣液 1kg 2瓶 1.2kg",
+        "requiredTokenGroups": [["立白"], ["大师香氛", "大师"], ["洗衣液"], ["1kg*2", "1kg×2", "1公斤*2", "1kg2瓶"], ["1.2kg", "1.2公斤"]]
+      },
       "category": "衣物清洁",
       "type": "平销款",
       "primaryPlatform": "京东",
@@ -427,6 +455,10 @@
       "brand": "维达",
       "name": "维达厨房纸巾180抽*6提 可接触食品级悬挂式抽纸",
       "sku": "180抽*6提",
+      "supply1688Search": {
+        "keywords": "维达 厨房纸 180抽 6提",
+        "requiredTokenGroups": [["维达", "vinda"], ["厨房纸", "厨房纸巾"], ["180抽"], ["6提", "6包"]]
+      },
       "category": "纸品/湿巾",
       "type": "引流款",
       "primaryPlatform": "京东",
@@ -487,6 +519,10 @@
       "brand": "舒适达",
       "name": "舒适达专业修复抗敏成人牙膏套装270g",
       "sku": "270g套装",
+      "supply1688Search": {
+        "keywords": "舒适达 专业修复 牙膏 270g",
+        "requiredTokenGroups": [["舒适达", "sensodyne"], ["牙膏"], ["270g", "270克"]]
+      },
       "category": "个护日化",
       "type": "利润款",
       "primaryPlatform": "京东",
@@ -547,6 +583,10 @@
       "brand": "可心柔",
       "name": "可心柔棉柔巾一次性洗脸巾100抽*6包",
       "sku": "100抽*6包",
+      "supply1688Search": {
+        "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
+        "requiredTokenGroups": [["可心柔", "corou"], ["棉柔巾", "洗脸巾"], ["100抽"], ["6包", "6袋"]]
+      },
       "category": "纸品/湿巾",
       "type": "平销款",
       "primaryPlatform": "京东",

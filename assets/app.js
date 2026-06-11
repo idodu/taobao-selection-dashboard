@@ -45,11 +45,13 @@ function renderSummary(data) {
   const topScore = Math.max(...products.map((item) => item.score.total));
   const newCount = products.filter((item) => item.statusTag === "新增").length;
   const avoidCount = (data.avoidList || []).length;
+  const verified1688 = products.filter((item) => item.supply1688?.matchStatus === "exact").length;
 
   byId("summaryGrid").innerHTML = [
     ["单品SKU", `${products.length}个`, "每日固定输出"],
     ["平均热度", avgScore.toFixed(1), "1-10分综合模型"],
     ["最高分", topScore.toFixed(1), "优先进入上架池"],
+    ["1688核验", `${verified1688}/${products.length}`, verified1688 ? "已接入官方单SKU价" : "等待TOP应用密钥"],
     ["风控", `${newCount}新/${avoidCount}暂缓`, "避免误上高风险品"],
   ]
     .map(
