@@ -49,6 +49,10 @@
             <option value="repeat">复购率</option>
           </select>
         </label>
+        <button class="details-toggle" id="detailsToggle" type="button" aria-pressed="false">
+          <span aria-hidden="true">＋</span>
+          展开全部详情
+        </button>
       </section>
 
       <section class="section-head">
@@ -75,13 +79,16 @@
       </section>
       <section class="avoid-grid" id="avoidGrid" aria-label="今日暂缓上架商品"></section>
 
-      <section class="rules">
-        <div>
-          <p class="eyebrow">Scoring</p>
-          <h2>热度综合打分规则</h2>
-        </div>
+      <details class="rules">
+        <summary class="rules-summary">
+          <div>
+            <p class="eyebrow">Scoring</p>
+            <h2>热度综合打分规则</h2>
+          </div>
+          <span>查看评分规则 <b aria-hidden="true">＋</b></span>
+        </summary>
         <div id="scoreRules" class="rules-body"></div>
-      </section>
+      </details>
     </main>
 
     <footer>

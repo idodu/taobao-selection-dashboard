@@ -104,8 +104,17 @@ function statusBadges(item) {
 function platformCard(platform) {
   return `
     <a class="platform" href="${escapeHtml(platform.url)}" target="_blank" rel="noreferrer">
-      <strong><span>${escapeHtml(platform.name)}</span><span>${escapeHtml(platform.price)}</span></strong>
+      <span class="platform-name">${escapeHtml(platform.name)}</span>
+      <strong>${escapeHtml(platform.price)}</strong>
       <span class="match">${escapeHtml(platform.matchType || "参考价")}</span>
+    </a>
+  `;
+}
+
+function platformEvidence(platform) {
+  return `
+    <a class="evidence-row" href="${escapeHtml(platform.url)}" target="_blank" rel="noreferrer">
+      <strong>${escapeHtml(platform.name)}</strong>
       <span>${escapeHtml(platform.salesSignal)}</span>
     </a>
   `;
@@ -138,12 +147,12 @@ function supply1688Panel(item) {
   return `
     <a class="supply-panel ${verified ? "verified" : "pending"}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">
       <div>
-        <span class="supply-label">1688 单SKU最低价</span>
+        <span class="supply-label">1688 单SKU价</span>
         <strong>${price}</strong>
       </div>
       <div class="supply-meta">
         <span class="badge ${verified && freshness === "fresh" ? "score" : "warn"}">${verified ? `精确匹配 · ${freshnessLabel}` : "待核验"}</span>
-        <span>${meta}</span>
+        <span class="supply-detail">${meta}</span>
       </div>
     </a>
   `;
@@ -151,6 +160,7 @@ function supply1688Panel(item) {
 
 function productCard(item) {
   const platforms = item.platforms.map(platformCard).join("");
+  const platformEvidenceRows = item.platforms.map(platformEvidence).join("");
   const sourceLabel = `${item.sourcePlatform} ${item.sourceSkuId}`;
 
   return `
@@ -159,7 +169,7 @@ function productCard(item) {
         <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" loading="eager" onerror="this.onerror=null;this.src='assets/placeholder.svg';">
       </div>
       <div class="product-body">
-        <div>
+        <div class="product-heading">
           <div class="badge-row">
             <span class="badge">#${item.rank}</span>
             <span class="badge score">${item.score.total.toFixed(1)}分</span>
@@ -172,27 +182,37 @@ function productCard(item) {
 
         <div class="scoreline" aria-label="综合热度分">
           <div class="scorebar"><span style="width:${scoreWidth(item.score.total)}"></span></div>
-          <p class="subline">${scoreText(item)}</p>
         </div>
 
         <div class="details">
           <div class="detail"><span>建议售价</span><strong>${formatRange(item.suggestedPrice)}</strong></div>
-          <div class="detail"><span>成本上限</span><strong>${formatRange(item.costCeiling)}</strong></div>
-          <div class="detail"><span>预计毛利率</span><strong>${formatPercentRange(item.estimatedGrossProfitRate)}</strong><small>${escapeHtml(item.marginBasis)}</small></div>
+          <div class="detail"><span>预计毛利率</span><strong>${formatPercentRange(item.estimatedGrossProfitRate)}</strong></div>
           <div class="detail"><span>平台低价</span><strong>${item.platformLowestPrice ? currency.format(item.platformLowestPrice) : "内容参考"}</strong></div>
+          <div class="detail"><span>成本上限</span><strong>${formatRange(item.costCeiling)}</strong></div>
         </div>
 
         ${supply1688Panel(item)}
 
         <div class="platforms">${platforms}</div>
 
-        <div class="notes">
-          <p><strong>源商品链接：</strong><a class="source-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(sourceLabel)}</a></p>
-          <p><strong>热度依据：</strong>${escapeHtml(item.heatEvidence)}</p>
-          <p><strong>上架建议：</strong>${escapeHtml(item.listingAdvice)}</p>
-          <p><strong>风险提示：</strong>${escapeHtml(item.risk)}</p>
-          <p><strong>1688口径：</strong>${escapeHtml(item.supply1688.note)}</p>
-        </div>
+        <details class="product-more">
+          <summary><span>完整依据与上架建议</span><span class="summary-icon" aria-hidden="true">＋</span></summary>
+          <div class="expanded-content">
+            <div class="score-breakdown">
+              <strong>评分明细</strong>
+              <p>${scoreText(item)}</p>
+            </div>
+            <div class="platform-evidence">${platformEvidenceRows}</div>
+            <div class="notes">
+              <p><strong>源商品：</strong><a class="source-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(sourceLabel)}</a></p>
+              <p><strong>热度依据：</strong>${escapeHtml(item.heatEvidence)}</p>
+              <p><strong>上架建议：</strong>${escapeHtml(item.listingAdvice)}</p>
+              <p><strong>风险提示：</strong>${escapeHtml(item.risk)}</p>
+              <p><strong>成本口径：</strong>${escapeHtml(item.marginBasis)}</p>
+              <p><strong>1688口径：</strong>${escapeHtml(item.supply1688.note)}</p>
+            </div>
+          </div>
+        </details>
       </div>
     </article>
   `;
@@ -237,6 +257,25 @@ function renderProducts() {
   byId("topPicks").innerHTML = state.products.slice(0, 3).map(topCard).join("");
   byId("productGrid").innerHTML = state.filtered.map(productCard).join("");
   byId("avoidGrid").innerHTML = state.avoidList.map(avoidCard).join("");
+  syncDetailsToggle();
+}
+
+function syncDetailsToggle() {
+  const toggle = byId("detailsToggle");
+  if (!toggle) return;
+  const details = [...document.querySelectorAll(".product-more")];
+  const allOpen = details.length > 0 && details.every((item) => item.open);
+  toggle.setAttribute("aria-pressed", String(allOpen));
+  toggle.innerHTML = `<span aria-hidden="true">${allOpen ? "−" : "＋"}</span>${allOpen ? "收起全部详情" : "展开全部详情"}`;
+}
+
+function toggleAllDetails() {
+  const details = [...document.querySelectorAll(".product-more")];
+  const shouldOpen = !details.every((item) => item.open);
+  details.forEach((item) => {
+    item.open = shouldOpen;
+  });
+  syncDetailsToggle();
 }
 
 function populateFilters(products) {
@@ -300,6 +339,8 @@ async function boot() {
   ["categoryFilter", "typeFilter", "sortBy"].forEach((id) => {
     byId(id).addEventListener("change", applyFilters);
   });
+  byId("detailsToggle").addEventListener("click", toggleAllDetails);
+  byId("productGrid").addEventListener("toggle", syncDetailsToggle, true);
 }
 
 boot().catch((error) => {
