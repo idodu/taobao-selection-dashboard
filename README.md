@@ -96,6 +96,14 @@ GitHub 仓库需要配置：
 
 配置路径：GitHub 仓库 `Settings` → `Secrets and variables` → `Actions` → `New repository secret`。两个 Secret 配置完成后，手动运行一次 `Daily product selection update`，页面的“1688核验”指标会显示成功匹配的 SKU 数量。
 
+也可以在仓库根目录运行以下脚本完成 ElimAPI 的安全配置和首次全量刷新：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/configure_1688_provider.ps1
+```
+
+脚本会隐藏输入内容，将密钥直接写入 GitHub Secret `ELIM_API_KEY`，随后触发全部 10 个 SKU 的首次刷新并等待 Pages 部署完成。密钥不会写入本地文件或 Git 历史。
+
 本地测试可参考 `.env.1688.example` 设置环境变量后运行：
 
 ```powershell
