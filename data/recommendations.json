@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-06-11T22:27:48.660087+08:00",
-  "generatedAtBeijing": "2026-06-11 22:27:48 UTC+8",
-  "date": "2026-06-11",
+  "generatedAt": "2026-06-12T14:25:08.064426+08:00",
+  "generatedAtBeijing": "2026-06-12 14:25:08 UTC+8",
+  "date": "2026-06-12",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-10-single-sku-v2",
-  "supply1688UpdatedAt": "2026-06-11T22:27:48.604185+08:00",
+  "supply1688UpdatedAt": "2026-06-12T14:25:08.004449+08:00",
   "supply1688Provider": "elim-api",
   "supply1688VerifiedCount": 3,
   "supply1688PendingCount": 7,
   "mode": "single-sku",
   "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
-  "focusCategory": "纸品/湿巾",
+  "focusCategory": "衣物清洁",
   "scoreRules": {
     "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。1688价仅在单SKU精确匹配并核验后参与毛利计算。",
     "items": [
@@ -69,108 +69,6 @@
     "不具备授权、凭证、保质期可控条件的 SKU 不进入上架池。"
   ],
   "products": [
-    {
-      "id": "jd-100145357766-vinda-wet-toilet-80x5",
-      "brand": "维达",
-      "name": "维达（Vinda）湿厕纸 家庭装80片*5包 多巴胺湿厕纸",
-      "sku": "80片*5包",
-      "category": "纸品/湿巾",
-      "type": "引流款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100145357766",
-      "sourceUrl": "https://item.jd.com/100145357766.html",
-      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t20280606/445445/1/15027/254589/6a258046F3964d2cc/0a02320320e2d20a.jpg",
-      "suggestedPrice": [
-        24.9,
-        29.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥24.9-39.9",
-          "lowPrice": 24.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东湿厕纸榜单露出该单品，评论量级约200万+。",
-          "url": "https://item.jd.com/100145357766.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥22.9-35.9",
-          "lowPrice": 22.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "80片*5包家庭装可比价，适合用赠品或组合装避开官方同款硬碰。",
-          "url": "https://s.taobao.com/search?q=%E7%BB%B4%E8%BE%BE%E6%B9%BF%E5%8E%95%E7%BA%B8%2080%E7%89%875%E5%8C%85"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥29.9-39.9",
-          "lowPrice": 29.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "湿厕纸内容围绕可冲散、家庭囤货、卫生升级，持续有带货场景。",
-          "url": "https://www.douyin.com/search/%E7%BB%B4%E8%BE%BE%E6%B9%BF%E5%8E%95%E7%BA%B8"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "如厕升级、家庭囤货、母婴可用等笔记适合做自然搜索内容承接。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%BB%B4%E8%BE%BE%E6%B9%BF%E5%8E%95%E7%BA%B8"
-        }
-      ],
-      "heatEvidence": "京东榜单可见该具体SKU且评论量级高；淘宝/抖音/小红书均有湿厕纸家庭装价格和内容信号。",
-      "listingAdvice": "标题覆盖维达、湿厕纸、80片5包、家庭装、可冲散、纯水湿巾；主图突出品牌、5包囤货、可冲散和0酒精；可加10片便携装做差异。",
-      "risk": "湿巾类控价和品控投诉较敏感，需保留进货凭证、批次和保质期；低客单重货需核算偏远地区运费。",
-      "supplyCostReference": [
-        19.4,
-        23.3
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.1,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        19.4,
-        23.3
-      ],
-      "supply1688": {
-        "query": "维达 湿厕纸 80片 5包",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BB%B4%E8%BE%BE+%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87+5%E5%8C%85",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platformLowestPrice": 22.9,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 9.2,
-        "priceCompetitiveness": 8.4,
-        "profitFeasibility": 7.8,
-        "salesProof": 9.0,
-        "repeatPurchase": 9.4,
-        "differentiation": 7.8,
-        "operability": 8.7,
-        "riskPenalty": 0.8,
-        "total": 8.1
-      },
-      "rank": 1,
-      "appearanceCount": 2,
-      "wasInPreviousDay": true,
-      "isNew": false,
-      "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
-    },
     {
       "id": "jd-5911553-mr-muscle-oil-cleaner-455x2",
       "brand": "威猛先生",
@@ -264,14 +162,14 @@
         "differentiation": 8.5,
         "operability": 8.7,
         "riskPenalty": 0.5,
-        "total": 8.1
+        "total": 8.2
       },
-      "rank": 2,
-      "appearanceCount": 2,
+      "rank": 1,
+      "appearanceCount": 3,
       "wasInPreviousDay": true,
       "isNew": false,
       "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
+      "historyNote": "累计上榜3次"
     },
     {
       "id": "jd-100045910485-liby-laundry-pods-40",
@@ -350,7 +248,7 @@
         "offerId": "938670169290",
         "offerUrl": "https://detail.1688.com/offer/938670169290.html",
         "verifiedAt": "2026-06-11T22:27:47.914481+08:00",
-        "ageHours": 0.0,
+        "ageHours": 16.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -366,14 +264,218 @@
         "differentiation": 7.6,
         "operability": 8.5,
         "riskPenalty": 0.7,
-        "total": 7.8
+        "total": 8.0
       },
-      "rank": 3,
-      "appearanceCount": 2,
+      "rank": 2,
+      "appearanceCount": 3,
       "wasInPreviousDay": true,
       "isNew": false,
       "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
+      "historyNote": "累计上榜3次"
+    },
+    {
+      "id": "jd-100145357766-vinda-wet-toilet-80x5",
+      "brand": "维达",
+      "name": "维达（Vinda）湿厕纸 家庭装80片*5包 多巴胺湿厕纸",
+      "sku": "80片*5包",
+      "category": "纸品/湿巾",
+      "type": "引流款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100145357766",
+      "sourceUrl": "https://item.jd.com/100145357766.html",
+      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t20280606/445445/1/15027/254589/6a258046F3964d2cc/0a02320320e2d20a.jpg",
+      "suggestedPrice": [
+        24.9,
+        29.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥24.9-39.9",
+          "lowPrice": 24.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东湿厕纸榜单露出该单品，评论量级约200万+。",
+          "url": "https://item.jd.com/100145357766.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥22.9-35.9",
+          "lowPrice": 22.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "80片*5包家庭装可比价，适合用赠品或组合装避开官方同款硬碰。",
+          "url": "https://s.taobao.com/search?q=%E7%BB%B4%E8%BE%BE%E6%B9%BF%E5%8E%95%E7%BA%B8%2080%E7%89%875%E5%8C%85"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥29.9-39.9",
+          "lowPrice": 29.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "湿厕纸内容围绕可冲散、家庭囤货、卫生升级，持续有带货场景。",
+          "url": "https://www.douyin.com/search/%E7%BB%B4%E8%BE%BE%E6%B9%BF%E5%8E%95%E7%BA%B8"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "如厕升级、家庭囤货、母婴可用等笔记适合做自然搜索内容承接。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%BB%B4%E8%BE%BE%E6%B9%BF%E5%8E%95%E7%BA%B8"
+        }
+      ],
+      "heatEvidence": "京东榜单可见该具体SKU且评论量级高；淘宝/抖音/小红书均有湿厕纸家庭装价格和内容信号。",
+      "listingAdvice": "标题覆盖维达、湿厕纸、80片5包、家庭装、可冲散、纯水湿巾；主图突出品牌、5包囤货、可冲散和0酒精；可加10片便携装做差异。",
+      "risk": "湿巾类控价和品控投诉较敏感，需保留进货凭证、批次和保质期；低客单重货需核算偏远地区运费。",
+      "supplyCostReference": [
+        19.4,
+        23.3
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        22.1,
+        22.1
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        19.4,
+        23.3
+      ],
+      "supply1688": {
+        "query": "维达 湿厕纸 80片 5包",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BB%B4%E8%BE%BE+%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87+5%E5%8C%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platformLowestPrice": 22.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 9.2,
+        "priceCompetitiveness": 8.4,
+        "profitFeasibility": 7.8,
+        "salesProof": 9.0,
+        "repeatPurchase": 9.4,
+        "differentiation": 7.8,
+        "operability": 8.7,
+        "riskPenalty": 0.8,
+        "total": 7.8
+      },
+      "rank": 3,
+      "appearanceCount": 3,
+      "wasInPreviousDay": true,
+      "isNew": false,
+      "statusTag": "昨日品",
+      "historyNote": "累计上榜3次"
+    },
+    {
+      "id": "jd-100154323857-omo-laundry-pods-50",
+      "brand": "奥妙",
+      "name": "奥妙桃桃春日除菌洗衣凝珠50颗 单腔洗衣球",
+      "sku": "50颗",
+      "category": "衣物清洁",
+      "type": "平销款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100154323857",
+      "sourceUrl": "https://item.jd.com/100154323857.html",
+      "image": "https://img12.360buyimg.com/n1/s720x720_jfs/t1/341658/4/11180/123757/68e7f3c8Fc8b17e6b/19377b332c79b26b.jpg",
+      "suggestedPrice": [
+        39.9,
+        55.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥39.9-69.9",
+          "lowPrice": 39.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东洗衣凝珠榜单露出该单品，评论量级约300万+。",
+          "url": "https://item.jd.com/100154323857.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥39.9-65.9",
+          "lowPrice": 39.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "50颗装客单高于40颗装，适合对标同品牌促销价。",
+          "url": "https://s.taobao.com/search?q=%E5%A5%A5%E5%A6%99%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0%2050%E9%A2%97"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥39.9-69.9",
+          "lowPrice": 39.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "鲜花精油、除菌除螨、懒人洗衣关键词适合内容带货。",
+          "url": "https://www.douyin.com/search/%E5%A5%A5%E5%A6%99%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "香氛洗护、宿舍囤货、洗衣好物等内容可用于种草。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A5%A5%E5%A6%99%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
+        }
+      ],
+      "heatEvidence": "京东源SKU榜单和评论量级较强；淘宝/抖音同规格可比价，小红书有香氛洗护内容基础。",
+      "listingAdvice": "标题覆盖奥妙、洗衣凝珠、50颗、除菌除螨、桃桃春日、鲜花精油；主图强调50颗桶装和香氛卖点；可与留香珠做加价购。",
+      "risk": "香味主观差异大，详情页需提示不同衣物和晾晒环境会影响留香；品牌低价促销波动会压缩利润。",
+      "supplyCostReference": [
+        2.3,
+        2.3
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        94.2,
+        95.9
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        31.1,
+        43.6
+      ],
+      "supply1688": {
+        "query": "奥妙 洗衣凝珠 50颗",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A5%A5%E5%A6%99+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+50%E9%A2%97",
+        "lowestPrice": 2.3,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "奥妙洗衣凝珠50颗浓缩天然酵素洗衣球除菌留香柔软护衣多香型可选",
+        "offerId": "898169972654",
+        "offerUrl": "https://detail.1688.com/offer/898169972654.html",
+        "verifiedAt": "2026-06-11T22:27:48.269429+08:00",
+        "ageHours": 16.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platformLowestPrice": 39.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.6,
+        "priceCompetitiveness": 7.8,
+        "profitFeasibility": 7.7,
+        "salesProof": 8.7,
+        "repeatPurchase": 8.7,
+        "differentiation": 8.0,
+        "operability": 8.3,
+        "riskPenalty": 0.7,
+        "total": 7.8
+      },
+      "rank": 4,
+      "appearanceCount": 3,
+      "wasInPreviousDay": true,
+      "isNew": false,
+      "statusTag": "昨日品",
+      "historyNote": "累计上榜3次"
     },
     {
       "id": "jd-100005511754-mindact-wet-toilet-80x5",
@@ -468,116 +570,14 @@
         "differentiation": 8.0,
         "operability": 8.3,
         "riskPenalty": 0.9,
-        "total": 7.7
-      },
-      "rank": 4,
-      "appearanceCount": 2,
-      "wasInPreviousDay": true,
-      "isNew": false,
-      "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
-    },
-    {
-      "id": "jd-100154323857-omo-laundry-pods-50",
-      "brand": "奥妙",
-      "name": "奥妙桃桃春日除菌洗衣凝珠50颗 单腔洗衣球",
-      "sku": "50颗",
-      "category": "衣物清洁",
-      "type": "平销款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100154323857",
-      "sourceUrl": "https://item.jd.com/100154323857.html",
-      "image": "https://img12.360buyimg.com/n1/s720x720_jfs/t1/341658/4/11180/123757/68e7f3c8Fc8b17e6b/19377b332c79b26b.jpg",
-      "suggestedPrice": [
-        39.9,
-        55.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥39.9-69.9",
-          "lowPrice": 39.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东洗衣凝珠榜单露出该单品，评论量级约300万+。",
-          "url": "https://item.jd.com/100154323857.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥39.9-65.9",
-          "lowPrice": 39.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "50颗装客单高于40颗装，适合对标同品牌促销价。",
-          "url": "https://s.taobao.com/search?q=%E5%A5%A5%E5%A6%99%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0%2050%E9%A2%97"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥39.9-69.9",
-          "lowPrice": 39.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "鲜花精油、除菌除螨、懒人洗衣关键词适合内容带货。",
-          "url": "https://www.douyin.com/search/%E5%A5%A5%E5%A6%99%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "香氛洗护、宿舍囤货、洗衣好物等内容可用于种草。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A5%A5%E5%A6%99%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0"
-        }
-      ],
-      "heatEvidence": "京东源SKU榜单和评论量级较强；淘宝/抖音同规格可比价，小红书有香氛洗护内容基础。",
-      "listingAdvice": "标题覆盖奥妙、洗衣凝珠、50颗、除菌除螨、桃桃春日、鲜花精油；主图强调50颗桶装和香氛卖点；可与留香珠做加价购。",
-      "risk": "香味主观差异大，详情页需提示不同衣物和晾晒环境会影响留香；品牌低价促销波动会压缩利润。",
-      "supplyCostReference": [
-        2.3,
-        2.3
-      ],
-      "costSource": "1688单SKU已核验最低公开阶梯价",
-      "estimatedGrossProfitRate": [
-        94.2,
-        95.9
-      ],
-      "marginBasis": "1688已核验价",
-      "costCeiling": [
-        31.1,
-        43.6
-      ],
-      "supply1688": {
-        "query": "奥妙 洗衣凝珠 50颗",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A5%A5%E5%A6%99+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+50%E9%A2%97",
-        "lowestPrice": 2.3,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "exact",
-        "matchedTitle": "奥妙洗衣凝珠50颗浓缩天然酵素洗衣球除菌留香柔软护衣多香型可选",
-        "offerId": "898169972654",
-        "offerUrl": "https://detail.1688.com/offer/898169972654.html",
-        "verifiedAt": "2026-06-11T22:27:48.269429+08:00",
-        "ageHours": 0.0,
-        "freshnessStatus": "fresh",
-        "source": "ElimAPI 1688授权搜索",
-        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
-      },
-      "platformLowestPrice": 39.9,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.6,
-        "priceCompetitiveness": 7.8,
-        "profitFeasibility": 7.7,
-        "salesProof": 8.7,
-        "repeatPurchase": 8.7,
-        "differentiation": 8.0,
-        "operability": 8.3,
-        "riskPenalty": 0.7,
-        "total": 7.5
+        "total": 7.6
       },
       "rank": 5,
-      "appearanceCount": 2,
+      "appearanceCount": 3,
       "wasInPreviousDay": true,
       "isNew": false,
       "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
+      "historyNote": "累计上榜3次"
     },
     {
       "id": "jd-100008268866-sensodyne-toothpaste-270g",
@@ -672,320 +672,14 @@
         "differentiation": 8.1,
         "operability": 8.0,
         "riskPenalty": 0.6,
-        "total": 7.5
+        "total": 7.6
       },
       "rank": 6,
-      "appearanceCount": 2,
+      "appearanceCount": 3,
       "wasInPreviousDay": true,
       "isNew": false,
       "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
-    },
-    {
-      "id": "jd-100013568111-corou-cotton-towel-100x6",
-      "brand": "可心柔",
-      "name": "可心柔棉柔巾一次性洗脸巾100抽*6包",
-      "sku": "100抽*6包",
-      "category": "纸品/湿巾",
-      "type": "平销款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100013568111",
-      "sourceUrl": "https://item.jd.com/100013568111.html",
-      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t1/445248/23/8253/110826/6a1bf9f0F887c6e66/0083320320910d9f.jpg",
-      "suggestedPrice": [
-        39.9,
-        55.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥39.9-69.9",
-          "lowPrice": 39.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东棉柔巾榜单露出该单品，评论量级约50万+。",
-          "url": "https://item.jd.com/100013568111.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥39.9-59.9",
-          "lowPrice": 39.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "100抽*6包是可比价规格，洗脸巾/卸妆棉关键词转化稳定。",
-          "url": "https://s.taobao.com/search?q=%E5%8F%AF%E5%BF%83%E6%9F%94%E6%A3%89%E6%9F%94%E5%B7%BE%20100%E6%8A%BD6%E5%8C%85"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥39.9-69.9",
-          "lowPrice": 39.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "洗脸巾、干湿两用、卸妆清洁短视频内容稳定。",
-          "url": "https://www.douyin.com/search/%E5%8F%AF%E5%BF%83%E6%9F%94%E6%A3%89%E6%9F%94%E5%B7%BE"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "洗脸巾、洁面、母婴、宿舍囤货内容基础强。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8F%AF%E5%BF%83%E6%9F%94%E6%A3%89%E6%9F%94%E5%B7%BE"
-        }
-      ],
-      "heatEvidence": "京东源SKU有高评论基础；淘宝/抖音/小红书的洗脸巾、棉柔巾关键词热度稳定。",
-      "listingAdvice": "标题覆盖可心柔、棉柔巾、洗脸巾、100抽6包、干湿两用、卸妆棉；主图突出全棉、柔软、不掉絮；可与抽纸或湿厕纸组合。",
-      "risk": "棉柔巾白牌低价冲击强，品牌货源必须有价差；材质和适用人群表述需与包装一致。",
-      "supplyCostReference": [
-        31.1,
-        43.6
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.0,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        31.1,
-        43.6
-      ],
-      "supply1688": {
-        "query": "可心柔 棉柔巾 洗脸巾 100抽 6包",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%8F%AF%E5%BF%83%E6%9F%94+%E6%A3%89%E6%9F%94%E5%B7%BE+%E6%B4%97%E8%84%B8%E5%B7%BE+100%E6%8A%BD+6%E5%8C%85",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platformLowestPrice": 39.9,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 7.9,
-        "priceCompetitiveness": 8.0,
-        "profitFeasibility": 7.8,
-        "salesProof": 8.1,
-        "repeatPurchase": 8.6,
-        "differentiation": 7.7,
-        "operability": 8.1,
-        "riskPenalty": 0.7,
-        "total": 7.5
-      },
-      "rank": 7,
-      "appearanceCount": 2,
-      "wasInPreviousDay": true,
-      "isNew": false,
-      "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
-    },
-    {
-      "id": "jd-100166629324-vinda-kitchen-paper-180x6",
-      "brand": "维达",
-      "name": "维达厨房纸巾180抽*6提 可接触食品级悬挂式抽纸",
-      "sku": "180抽*6提",
-      "category": "纸品/湿巾",
-      "type": "引流款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100166629324",
-      "sourceUrl": "https://item.jd.com/100166629324.html",
-      "image": "https://img14.360buyimg.com/n1/s720x720_jfs/t1/380483/14/5143/177627/6940c2baF79697f26/78e54cc332871eb0.jpg",
-      "suggestedPrice": [
-        26.9,
-        35.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥26.9-45.9",
-          "lowPrice": 26.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东厨房纸价格页露出该SKU，评论量级约50万+。",
-          "url": "https://item.jd.com/100166629324.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥24.9-39.9",
-          "lowPrice": 24.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "180抽*6提悬挂式厨房纸适合对标同规格低价带。",
-          "url": "https://s.taobao.com/search?q=%E7%BB%B4%E8%BE%BE%E5%8E%A8%E6%88%BF%E7%BA%B8%E5%B7%BE%20180%E6%8A%BD6%E6%8F%90"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥29.9-39.9",
-          "lowPrice": 29.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "懒人抹布、厨房纸、吸油吸水短视频场景明确。",
-          "url": "https://www.douyin.com/search/%E7%BB%B4%E8%BE%BE%E5%8E%A8%E6%88%BF%E7%BA%B8"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "厨房收纳、露营清洁、食品接触级厨房纸内容可承接。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%BB%B4%E8%BE%BE%E5%8E%A8%E6%88%BF%E7%BA%B8"
-        }
-      ],
-      "heatEvidence": "京东价格页显示该具体SKU和高评论基础；厨房纸在抖音/小红书具备清洁场景内容。",
-      "listingAdvice": "标题覆盖维达、厨房纸、180抽6提、悬挂式、食品接触级、吸油吸水；可与油污净做厨房清洁组合装。",
-      "risk": "单价低且体积大，需控制包装体积和运费；厨房纸价格透明，利润空间低于清洁剂。",
-      "supplyCostReference": [
-        21.0,
-        28.0
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        21.9,
-        22.0
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        21.0,
-        28.0
-      ],
-      "supply1688": {
-        "query": "维达 厨房纸 180抽 6提",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BB%B4%E8%BE%BE+%E5%8E%A8%E6%88%BF%E7%BA%B8+180%E6%8A%BD+6%E6%8F%90",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platformLowestPrice": 24.9,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 7.9,
-        "priceCompetitiveness": 8.0,
-        "profitFeasibility": 7.4,
-        "salesProof": 8.2,
-        "repeatPurchase": 8.4,
-        "differentiation": 7.5,
-        "operability": 8.0,
-        "riskPenalty": 0.8,
-        "total": 7.3
-      },
-      "rank": 8,
-      "appearanceCount": 2,
-      "wasInPreviousDay": true,
-      "isNew": false,
-      "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
-    },
-    {
-      "id": "jd-5851301-blue-moon-laundry-liquid-12jin",
-      "brand": "蓝月亮",
-      "name": "蓝月亮洗衣液12斤套装 3kg瓶+1kg袋*3 薰衣草",
-      "sku": "12斤套装",
-      "category": "衣物清洁",
-      "type": "平销款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "5851301",
-      "sourceUrl": "https://item.jd.com/5851301.html",
-      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t1/453523/15/5786/191325/6a2928ebF5229324d/008332032029f5c6.jpg",
-      "suggestedPrice": [
-        59.9,
-        79.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥59.9-99.9",
-          "lowPrice": 59.9,
-          "matchType": "源商品/同规格参考",
-          "salesSignal": "京东洗衣液套榜单TOP商品，评论量级约500万+。",
-          "url": "https://item.jd.com/5851301.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥55.9-89.9",
-          "lowPrice": 55.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "12斤瓶袋组合可比价，适合用赠品或局部包邮策略控毛利。",
-          "url": "https://s.taobao.com/search?q=%E8%93%9D%E6%9C%88%E4%BA%AE%E6%B4%97%E8%A1%A3%E6%B6%B2%2012%E6%96%A4"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥59.9-89.9",
-          "lowPrice": 59.9,
-          "matchType": "近似同规格参考价",
-          "salesSignal": "家庭囤货、薰衣草留香和大容量组合装有稳定内容空间。",
-          "url": "https://www.douyin.com/search/%E8%93%9D%E6%9C%88%E4%BA%AE%E6%B4%97%E8%A1%A3%E6%B6%B2%2012%E6%96%A4"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "内容热度参考",
-          "salesSignal": "家庭洗护、囤货清单、薰衣草留香内容适合铺关键词。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%93%9D%E6%9C%88%E4%BA%AE%E6%B4%97%E8%A1%A3%E6%B6%B2%2012%E6%96%A4"
-        }
-      ],
-      "heatEvidence": "京东源SKU在洗衣液套榜单居前且评论量级高；淘宝/抖音存在同规格大容量比价需求。",
-      "listingAdvice": "标题放蓝月亮、洗衣液、12斤、亮白增艳、薰衣草、瓶袋套装；主图突出3kg瓶+1kg袋*3和家庭囤货；偏远地区设置运费模板。",
-      "risk": "液体重货运费和破损率吃利润，需单独核算偏远地区；品牌标准品价格透明，避免和旗舰店同价硬碰。",
-      "supplyCostReference": [
-        20.26,
-        20.26
-      ],
-      "costSource": "1688单SKU已核验最低公开阶梯价",
-      "estimatedGrossProfitRate": [
-        66.2,
-        74.6
-      ],
-      "marginBasis": "1688已核验价",
-      "costCeiling": [
-        46.7,
-        62.3
-      ],
-      "supply1688": {
-        "query": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%93%9D%E6%9C%88%E4%BA%AE+%E6%B4%97%E8%A1%A3%E6%B6%B2+12%E6%96%A4+3kg+1kg+3%E8%A2%8B",
-        "lowestPrice": 20.26,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "exact",
-        "matchedTitle": "蓝月亮洗衣液12斤装3kg+2kg+1kg瓶洁净薰衣草香洗衣液整箱批家用",
-        "offerId": "674082368984",
-        "offerUrl": "https://detail.1688.com/offer/674082368984.html",
-        "verifiedAt": "2026-06-11T22:10:28.010181+08:00",
-        "ageHours": 0.3,
-        "freshnessStatus": "fresh",
-        "source": "ElimAPI 1688授权搜索",
-        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
-      },
-      "platformLowestPrice": 55.9,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.8,
-        "priceCompetitiveness": 7.7,
-        "profitFeasibility": 7.1,
-        "salesProof": 9.2,
-        "repeatPurchase": 9.1,
-        "differentiation": 6.8,
-        "operability": 7.6,
-        "riskPenalty": 1.0,
-        "total": 7.2
-      },
-      "rank": 9,
-      "appearanceCount": 2,
-      "wasInPreviousDay": true,
-      "isNew": false,
-      "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
+      "historyNote": "累计上榜3次"
     },
     {
       "id": "jd-10160893457212-liby-master-liquid-6-4jin",
@@ -1080,14 +774,320 @@
         "differentiation": 8.2,
         "operability": 8.2,
         "riskPenalty": 0.8,
-        "total": 7.0
+        "total": 7.4
       },
-      "rank": 10,
-      "appearanceCount": 2,
+      "rank": 7,
+      "appearanceCount": 3,
       "wasInPreviousDay": true,
       "isNew": false,
       "statusTag": "昨日品",
-      "historyNote": "累计上榜2次"
+      "historyNote": "累计上榜3次"
+    },
+    {
+      "id": "jd-5851301-blue-moon-laundry-liquid-12jin",
+      "brand": "蓝月亮",
+      "name": "蓝月亮洗衣液12斤套装 3kg瓶+1kg袋*3 薰衣草",
+      "sku": "12斤套装",
+      "category": "衣物清洁",
+      "type": "平销款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "5851301",
+      "sourceUrl": "https://item.jd.com/5851301.html",
+      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t1/453523/15/5786/191325/6a2928ebF5229324d/008332032029f5c6.jpg",
+      "suggestedPrice": [
+        59.9,
+        79.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥59.9-99.9",
+          "lowPrice": 59.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东洗衣液套榜单TOP商品，评论量级约500万+。",
+          "url": "https://item.jd.com/5851301.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥55.9-89.9",
+          "lowPrice": 55.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "12斤瓶袋组合可比价，适合用赠品或局部包邮策略控毛利。",
+          "url": "https://s.taobao.com/search?q=%E8%93%9D%E6%9C%88%E4%BA%AE%E6%B4%97%E8%A1%A3%E6%B6%B2%2012%E6%96%A4"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥59.9-89.9",
+          "lowPrice": 59.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "家庭囤货、薰衣草留香和大容量组合装有稳定内容空间。",
+          "url": "https://www.douyin.com/search/%E8%93%9D%E6%9C%88%E4%BA%AE%E6%B4%97%E8%A1%A3%E6%B6%B2%2012%E6%96%A4"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "家庭洗护、囤货清单、薰衣草留香内容适合铺关键词。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E8%93%9D%E6%9C%88%E4%BA%AE%E6%B4%97%E8%A1%A3%E6%B6%B2%2012%E6%96%A4"
+        }
+      ],
+      "heatEvidence": "京东源SKU在洗衣液套榜单居前且评论量级高；淘宝/抖音存在同规格大容量比价需求。",
+      "listingAdvice": "标题放蓝月亮、洗衣液、12斤、亮白增艳、薰衣草、瓶袋套装；主图突出3kg瓶+1kg袋*3和家庭囤货；偏远地区设置运费模板。",
+      "risk": "液体重货运费和破损率吃利润，需单独核算偏远地区；品牌标准品价格透明，避免和旗舰店同价硬碰。",
+      "supplyCostReference": [
+        18.21,
+        18.21
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        69.6,
+        77.2
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        46.7,
+        62.3
+      ],
+      "supply1688": {
+        "query": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%93%9D%E6%9C%88%E4%BA%AE+%E6%B4%97%E8%A1%A3%E6%B6%B2+12%E6%96%A4+3kg+1kg+3%E8%A2%8B",
+        "lowestPrice": 18.21,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "蓝月亮洗衣液12斤装3kg+2kg+1kg瓶洁净薰衣草香洗衣液整箱批家用",
+        "offerId": "674082368984",
+        "offerUrl": "https://detail.1688.com/offer/674082368984.html",
+        "verifiedAt": "2026-06-12T14:25:02.512764+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platformLowestPrice": 55.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.8,
+        "priceCompetitiveness": 7.7,
+        "profitFeasibility": 7.1,
+        "salesProof": 9.2,
+        "repeatPurchase": 9.1,
+        "differentiation": 6.8,
+        "operability": 7.6,
+        "riskPenalty": 1.0,
+        "total": 7.3
+      },
+      "rank": 8,
+      "appearanceCount": 3,
+      "wasInPreviousDay": true,
+      "isNew": false,
+      "statusTag": "昨日品",
+      "historyNote": "累计上榜3次"
+    },
+    {
+      "id": "jd-100013568111-corou-cotton-towel-100x6",
+      "brand": "可心柔",
+      "name": "可心柔棉柔巾一次性洗脸巾100抽*6包",
+      "sku": "100抽*6包",
+      "category": "纸品/湿巾",
+      "type": "平销款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100013568111",
+      "sourceUrl": "https://item.jd.com/100013568111.html",
+      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t1/445248/23/8253/110826/6a1bf9f0F887c6e66/0083320320910d9f.jpg",
+      "suggestedPrice": [
+        39.9,
+        55.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥39.9-69.9",
+          "lowPrice": 39.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东棉柔巾榜单露出该单品，评论量级约50万+。",
+          "url": "https://item.jd.com/100013568111.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥39.9-59.9",
+          "lowPrice": 39.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "100抽*6包是可比价规格，洗脸巾/卸妆棉关键词转化稳定。",
+          "url": "https://s.taobao.com/search?q=%E5%8F%AF%E5%BF%83%E6%9F%94%E6%A3%89%E6%9F%94%E5%B7%BE%20100%E6%8A%BD6%E5%8C%85"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥39.9-69.9",
+          "lowPrice": 39.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "洗脸巾、干湿两用、卸妆清洁短视频内容稳定。",
+          "url": "https://www.douyin.com/search/%E5%8F%AF%E5%BF%83%E6%9F%94%E6%A3%89%E6%9F%94%E5%B7%BE"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "洗脸巾、洁面、母婴、宿舍囤货内容基础强。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%8F%AF%E5%BF%83%E6%9F%94%E6%A3%89%E6%9F%94%E5%B7%BE"
+        }
+      ],
+      "heatEvidence": "京东源SKU有高评论基础；淘宝/抖音/小红书的洗脸巾、棉柔巾关键词热度稳定。",
+      "listingAdvice": "标题覆盖可心柔、棉柔巾、洗脸巾、100抽6包、干湿两用、卸妆棉；主图突出全棉、柔软、不掉絮；可与抽纸或湿厕纸组合。",
+      "risk": "棉柔巾白牌低价冲击强，品牌货源必须有价差；材质和适用人群表述需与包装一致。",
+      "supplyCostReference": [
+        31.1,
+        43.6
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        22.0,
+        22.1
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        31.1,
+        43.6
+      ],
+      "supply1688": {
+        "query": "可心柔 棉柔巾 洗脸巾 100抽 6包",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%8F%AF%E5%BF%83%E6%9F%94+%E6%A3%89%E6%9F%94%E5%B7%BE+%E6%B4%97%E8%84%B8%E5%B7%BE+100%E6%8A%BD+6%E5%8C%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platformLowestPrice": 39.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 7.9,
+        "priceCompetitiveness": 8.0,
+        "profitFeasibility": 7.8,
+        "salesProof": 8.1,
+        "repeatPurchase": 8.6,
+        "differentiation": 7.7,
+        "operability": 8.1,
+        "riskPenalty": 0.7,
+        "total": 7.3
+      },
+      "rank": 9,
+      "appearanceCount": 3,
+      "wasInPreviousDay": true,
+      "isNew": false,
+      "statusTag": "昨日品",
+      "historyNote": "累计上榜3次"
+    },
+    {
+      "id": "jd-100166629324-vinda-kitchen-paper-180x6",
+      "brand": "维达",
+      "name": "维达厨房纸巾180抽*6提 可接触食品级悬挂式抽纸",
+      "sku": "180抽*6提",
+      "category": "纸品/湿巾",
+      "type": "引流款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100166629324",
+      "sourceUrl": "https://item.jd.com/100166629324.html",
+      "image": "https://img14.360buyimg.com/n1/s720x720_jfs/t1/380483/14/5143/177627/6940c2baF79697f26/78e54cc332871eb0.jpg",
+      "suggestedPrice": [
+        26.9,
+        35.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥26.9-45.9",
+          "lowPrice": 26.9,
+          "matchType": "源商品/同规格参考",
+          "salesSignal": "京东厨房纸价格页露出该SKU，评论量级约50万+。",
+          "url": "https://item.jd.com/100166629324.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥24.9-39.9",
+          "lowPrice": 24.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "180抽*6提悬挂式厨房纸适合对标同规格低价带。",
+          "url": "https://s.taobao.com/search?q=%E7%BB%B4%E8%BE%BE%E5%8E%A8%E6%88%BF%E7%BA%B8%E5%B7%BE%20180%E6%8A%BD6%E6%8F%90"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥29.9-39.9",
+          "lowPrice": 29.9,
+          "matchType": "近似同规格参考价",
+          "salesSignal": "懒人抹布、厨房纸、吸油吸水短视频场景明确。",
+          "url": "https://www.douyin.com/search/%E7%BB%B4%E8%BE%BE%E5%8E%A8%E6%88%BF%E7%BA%B8"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "内容热度参考",
+          "salesSignal": "厨房收纳、露营清洁、食品接触级厨房纸内容可承接。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%BB%B4%E8%BE%BE%E5%8E%A8%E6%88%BF%E7%BA%B8"
+        }
+      ],
+      "heatEvidence": "京东价格页显示该具体SKU和高评论基础；厨房纸在抖音/小红书具备清洁场景内容。",
+      "listingAdvice": "标题覆盖维达、厨房纸、180抽6提、悬挂式、食品接触级、吸油吸水；可与油污净做厨房清洁组合装。",
+      "risk": "单价低且体积大，需控制包装体积和运费；厨房纸价格透明，利润空间低于清洁剂。",
+      "supplyCostReference": [
+        21.0,
+        28.0
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        21.9,
+        22.0
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        21.0,
+        28.0
+      ],
+      "supply1688": {
+        "query": "维达 厨房纸 180抽 6提",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BB%B4%E8%BE%BE+%E5%8E%A8%E6%88%BF%E7%BA%B8+180%E6%8A%BD+6%E6%8F%90",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platformLowestPrice": 24.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 7.9,
+        "priceCompetitiveness": 8.0,
+        "profitFeasibility": 7.4,
+        "salesProof": 8.2,
+        "repeatPurchase": 8.4,
+        "differentiation": 7.5,
+        "operability": 8.0,
+        "riskPenalty": 0.8,
+        "total": 7.2
+      },
+      "rank": 10,
+      "appearanceCount": 3,
+      "wasInPreviousDay": true,
+      "isNew": false,
+      "statusTag": "昨日品",
+      "historyNote": "累计上榜3次"
     }
   ],
   "avoidList": [

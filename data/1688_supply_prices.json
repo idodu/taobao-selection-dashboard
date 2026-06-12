@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T22:27:48.604185+08:00",
+  "updatedAt": "2026-06-12T14:25:08.004449+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -44,7 +44,7 @@
       "sellerType": "seller"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
-      "lowestPrice": 20.26,
+      "lowestPrice": 18.21,
       "moq": null,
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
@@ -52,7 +52,7 @@
       "matchedTitle": "蓝月亮洗衣液12斤装3kg+2kg+1kg瓶洁净薰衣草香洗衣液整箱批家用",
       "offerId": "674082368984",
       "offerUrl": "https://detail.1688.com/offer/674082368984.html",
-      "verifiedAt": "2026-06-11T22:10:28.010181+08:00",
+      "verifiedAt": "2026-06-12T14:25:02.512764+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -107,43 +107,43 @@
       "returnedOffers": 40,
       "exactMatches": 3,
       "status": "matched",
-      "attemptedAt": "2026-06-11T22:10:26.583113+08:00"
+      "attemptedAt": "2026-06-12T14:25:00.395456+08:00"
     },
     "jd-10160893457212-liby-master-liquid-6-4jin": {
       "keywords": "立白 大师香氛 洗衣液 1kg 2瓶 1.2kg",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-11T22:10:28.010209+08:00"
+      "attemptedAt": "2026-06-12T14:25:02.512791+08:00"
     },
     "jd-100166629324-vinda-kitchen-paper-180x6": {
       "keywords": "维达 厨房纸 180抽 6提",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-11T22:10:29.454137+08:00"
+      "attemptedAt": "2026-06-12T14:25:04.278800+08:00"
     },
     "jd-100008268866-sensodyne-toothpaste-270g": {
       "keywords": "舒适达 专业修复 牙膏 270g",
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-11T22:10:31.242189+08:00"
+      "attemptedAt": "2026-06-12T14:25:05.915890+08:00"
     },
     "jd-100013568111-corou-cotton-towel-100x6": {
       "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-11T22:10:31.804411+08:00"
+      "attemptedAt": "2026-06-12T14:25:06.545376+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-100145357766-vinda-wet-toilet-80x5",
-    "jd-100005511754-mindact-wet-toilet-80x5",
-    "jd-100045910485-liby-laundry-pods-40",
-    "jd-100154323857-omo-laundry-pods-50",
-    "jd-5911553-mr-muscle-oil-cleaner-455x2"
+    "jd-5851301-blue-moon-laundry-liquid-12jin",
+    "jd-10160893457212-liby-master-liquid-6-4jin",
+    "jd-100166629324-vinda-kitchen-paper-180x6",
+    "jd-100008268866-sensodyne-toothpaste-270g",
+    "jd-100013568111-corou-cotton-towel-100x6"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
