@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-12T14:25:08.004449+08:00",
+  "updatedAt": "2026-06-13T14:08:02.417375+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -12,7 +12,7 @@
       "matchedTitle": "立白沙龙级香氛洗衣凝珠6合一家用持久留香洗衣珠高级感40颗正品",
       "offerId": "938670169290",
       "offerUrl": "https://detail.1688.com/offer/938670169290.html",
-      "verifiedAt": "2026-06-11T22:27:47.914481+08:00",
+      "verifiedAt": "2026-06-13T14:08:00.152792+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -32,7 +32,7 @@
       "matchedTitle": "奥妙洗衣凝珠50颗浓缩天然酵素洗衣球除菌留香柔软护衣多香型可选",
       "offerId": "898169972654",
       "offerUrl": "https://detail.1688.com/offer/898169972654.html",
-      "verifiedAt": "2026-06-11T22:27:48.269429+08:00",
+      "verifiedAt": "2026-06-13T14:08:01.585778+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -72,35 +72,35 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-11T22:27:46.680227+08:00"
+      "attemptedAt": "2026-06-13T14:07:55.357916+08:00"
     },
     "jd-100005511754-mindact-wet-toilet-80x5": {
       "keywords": "心相印 湿厕纸 80片 5包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-11T22:27:47.195749+08:00"
+      "attemptedAt": "2026-06-13T14:07:57.282309+08:00"
     },
     "jd-100045910485-liby-laundry-pods-40": {
       "keywords": "立白 洗衣凝珠 40颗",
       "returnedOffers": 40,
       "exactMatches": 11,
       "status": "matched",
-      "attemptedAt": "2026-06-11T22:27:47.552584+08:00"
+      "attemptedAt": "2026-06-13T14:07:58.645701+08:00"
     },
     "jd-100154323857-omo-laundry-pods-50": {
       "keywords": "奥妙 洗衣凝珠 50颗",
       "returnedOffers": 40,
       "exactMatches": 16,
       "status": "matched",
-      "attemptedAt": "2026-06-11T22:27:47.914509+08:00"
+      "attemptedAt": "2026-06-13T14:08:00.152821+08:00"
     },
     "jd-5911553-mr-muscle-oil-cleaner-455x2": {
       "keywords": "威猛先生 油污清洁剂 455g 2瓶 替换装",
       "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-11T22:27:48.269455+08:00"
+      "attemptedAt": "2026-06-13T14:08:01.585807+08:00"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
       "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
@@ -139,11 +139,11 @@
     }
   },
   "refreshedProductIds": [
-    "jd-5851301-blue-moon-laundry-liquid-12jin",
-    "jd-10160893457212-liby-master-liquid-6-4jin",
-    "jd-100166629324-vinda-kitchen-paper-180x6",
-    "jd-100008268866-sensodyne-toothpaste-270g",
-    "jd-100013568111-corou-cotton-towel-100x6"
+    "jd-100145357766-vinda-wet-toilet-80x5",
+    "jd-100005511754-mindact-wet-toilet-80x5",
+    "jd-100045910485-liby-laundry-pods-40",
+    "jd-100154323857-omo-laundry-pods-50",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
