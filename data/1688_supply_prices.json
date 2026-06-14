@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-14T11:05:10.096981+08:00",
+  "updatedAt": "2026-06-14T11:06:57.167650+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -74,7 +74,7 @@
       "matchedTitle": "威猛先生洁厕液柠檬草香750g*2瓶厕所清洁剂柠檬草香洁厕灵除垢",
       "offerId": "666127001707",
       "offerUrl": "https://detail.1688.com/offer/666127001707.html",
-      "verifiedAt": "2026-06-14T11:05:08.686431+08:00",
+      "verifiedAt": "2026-06-14T11:06:55.909374+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -95,7 +95,7 @@
       "matchedTitle": "正品威露士经典沐浴露清新嫩肤滋润肌肤清洁男女持久留香沐浴乳1L",
       "offerId": "915228126518",
       "offerUrl": "https://detail.1688.com/offer/915228126518.html",
-      "verifiedAt": "2026-06-14T11:05:08.949527+08:00",
+      "verifiedAt": "2026-06-14T11:06:56.206602+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -183,35 +183,35 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-14T11:05:08.949550+08:00"
+      "attemptedAt": "2026-06-14T11:06:56.206626+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
       "returnedOffers": 7,
       "exactMatches": 1,
       "status": "matched",
-      "attemptedAt": "2026-06-14T11:05:08.328441+08:00"
+      "attemptedAt": "2026-06-14T11:06:55.556310+08:00"
     },
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
       "returnedOffers": 40,
       "exactMatches": 9,
       "status": "matched",
-      "attemptedAt": "2026-06-14T11:05:08.686450+08:00"
+      "attemptedAt": "2026-06-14T11:06:55.909396+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-14T11:05:09.562953+08:00"
+      "attemptedAt": "2026-06-14T11:06:56.487761+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-14T11:05:09.836004+08:00"
+      "attemptedAt": "2026-06-14T11:06:56.833997+08:00"
     }
   },
   "refreshedProductIds": [
