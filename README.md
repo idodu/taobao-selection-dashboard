@@ -20,6 +20,14 @@
 - 云端运营：GitHub Actions 工作流 `.github/workflows/daily-update.yml` 每天 `02:00 UTC` 运行，即北京时间 `10:00`。
 - 发布方式：GitHub Pages 使用 Actions 部署，电脑关机不影响每日生成和发布。
 
+## 动态看板
+
+- 页面采用深色“流体数据空间”视觉，视觉规范维护在 `DESIGN.md`。
+- GSAP 运行文件保存在 `assets/vendor/gsap.min.js`，不依赖第三方 CDN；动画加载失败时静态页面仍可完整使用。
+- 动效只在首次进入、模块滚动出现、筛选变化和雷达翻页时触发；商品阅读期间不持续移动。
+- 顶部“动态/静态”开关会记住本机选择，并自动尊重系统的“减少动态效果”设置。
+- Canvas 数据光迹在标签页隐藏时暂停，手机端自动降低绘制密度。
+
 ## SKU 口径
 
 - 商品池维护在 `data/product_catalog.json`。

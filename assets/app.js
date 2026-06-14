@@ -60,7 +60,7 @@ function renderSummary(data) {
       ([label, value, note]) => `
         <article class="metric">
           <span>${label}</span>
-          <strong>${value}</strong>
+          <strong class="metric-value" data-final-value="${escapeHtml(value)}">${value}</strong>
           <span>${note}</span>
         </article>
       `,
@@ -78,7 +78,7 @@ function renderTodayBrief(data) {
         <h2>${escapeHtml(summary.headline || "今日选品已更新")}</h2>
       </div>
       <div class="freshness-ring" aria-label="今日换新数量">
-        <strong>${summary.replacementCount ?? 0}</strong>
+        <strong data-final-value="${summary.replacementCount ?? 0}">${summary.replacementCount ?? 0}</strong>
         <span>款换新</span>
       </div>
     </div>
@@ -227,7 +227,7 @@ function productCard(item) {
         </div>
 
         <div class="scoreline" aria-label="综合热度分">
-          <div class="scorebar"><span style="width:${scoreWidth(item.score.total)}"></span></div>
+          <div class="scorebar"><span data-score-fill="${item.score.total}" style="width:${scoreWidth(item.score.total)}"></span></div>
         </div>
 
         <div class="details">
@@ -320,7 +320,7 @@ function avoidCard(item) {
   `;
 }
 
-function renderProducts() {
+function renderProducts(reason = "update") {
   byId("topPicks").innerHTML = state.products.slice(0, 3).map(topCard).join("");
   byId("productGrid").innerHTML = state.filtered.map(productCard).join("");
   byId("trackingGrid").innerHTML = state.trackingProducts.map((item) => signalCard(item, "tracking")).join("");
@@ -329,6 +329,7 @@ function renderProducts() {
   updateRailControls("tracking");
   updateRailControls("radar");
   syncDetailsToggle();
+  window.dispatchEvent(new CustomEvent("dashboard:products-updated", { detail: { reason } }));
 }
 
 function railElements(mode) {
@@ -371,6 +372,7 @@ function moveRail(mode, direction) {
     left: direction * Math.max(280, rail.clientWidth * 0.88),
     behavior: "smooth",
   });
+  window.dispatchEvent(new CustomEvent("dashboard:rail-move", { detail: { mode, direction } }));
 }
 
 function bindRailControls(mode) {
@@ -424,7 +426,7 @@ function applyFilters() {
     return b.score.total - a.score.total;
   });
 
-  renderProducts();
+  renderProducts("filter");
 }
 
 function renderRules(rules) {
@@ -460,7 +462,7 @@ async function boot() {
   renderOperatorGuide(data);
   populateFilters(state.products);
   renderRules(data.scoreRules);
-  renderProducts();
+  renderProducts("initial");
   bindRailControls("tracking");
   bindRailControls("radar");
   window.addEventListener("resize", () => {
@@ -473,6 +475,8 @@ async function boot() {
   });
   byId("detailsToggle").addEventListener("click", toggleAllDetails);
   byId("productGrid").addEventListener("toggle", syncDetailsToggle, true);
+  document.body.dataset.dashboardReady = "true";
+  window.dispatchEvent(new CustomEvent("dashboard:ready", { detail: { data } }));
 }
 
 boot().catch((error) => {

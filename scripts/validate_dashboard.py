@@ -8,6 +8,10 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 RECOMMENDATIONS_PATH = ROOT / "data" / "recommendations.json"
+INDEX_PATH = ROOT / "index.html"
+MOTION_PATH = ROOT / "assets" / "motion.js"
+GSAP_PATH = ROOT / "assets" / "vendor" / "gsap.min.js"
+DESIGN_PATH = ROOT / "DESIGN.md"
 
 PRODUCT_REQUIRED = {
     "id",
@@ -225,9 +229,38 @@ def validate(data: dict) -> list[str]:
     return errors
 
 
+def validate_frontend() -> list[str]:
+    errors: list[str] = []
+    for path in (INDEX_PATH, MOTION_PATH, GSAP_PATH, DESIGN_PATH):
+        if not path.is_file() or path.stat().st_size == 0:
+            errors.append(f"frontend asset missing or empty: {path.relative_to(ROOT)}")
+    if errors:
+        return errors
+
+    index = INDEX_PATH.read_text(encoding="utf-8")
+    motion = MOTION_PATH.read_text(encoding="utf-8")
+    gsap = GSAP_PATH.read_text(encoding="utf-8")
+    has_gsap = "assets/vendor/gsap.min.js" in index
+    has_motion = "assets/motion.js" in index
+    if not has_gsap or not has_motion:
+        errors.append("index.html must load local GSAP before motion.js")
+    elif index.index("assets/vendor/gsap.min.js") > index.index("assets/motion.js"):
+        errors.append("local GSAP must load before motion.js")
+    if 'id="flowCanvas"' not in index or 'id="motionToggle"' not in index:
+        errors.append("dynamic dashboard requires flowCanvas and motionToggle")
+    if "cdn.jsdelivr.net" in index or "unpkg.com" in index:
+        errors.append("animation runtime must not depend on a public CDN")
+    for required in ("prefers-reduced-motion", "localStorage", "visibilitychange", "dashboard:ready"):
+        if required not in motion:
+            errors.append(f"motion.js missing required behavior: {required}")
+    if "GSAP 3.15.0" not in gsap[:200]:
+        errors.append("vendored GSAP version header is missing")
+    return errors
+
+
 def main() -> int:
     data = json.loads(RECOMMENDATIONS_PATH.read_text(encoding="utf-8"))
-    errors = validate(data)
+    errors = validate(data) + validate_frontend()
     if errors:
         for error in errors:
             print(f"VALIDATION_ERROR: {error}", file=sys.stderr)

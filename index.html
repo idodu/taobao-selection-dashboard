@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>淘宝家清个护 / 日化纸品单品SKU选品看板</title>
     <link rel="icon" href="assets/placeholder.svg">
-    <link rel="stylesheet" href="assets/styles.css?v=20260614-radar-nav">
+    <link rel="stylesheet" href="assets/styles.css?v=20260614-fluid-command-v5">
   </head>
   <body>
+    <div class="ambient-layer" aria-hidden="true">
+      <canvas id="flowCanvas"></canvas>
+      <div class="data-grid"></div>
+      <div class="scan-beam"></div>
+    </div>
+
     <header class="topbar">
-      <div>
+      <div class="brand-block">
         <p class="eyebrow">Daily SKU Selection Dashboard</p>
         <h1>淘宝家清个护 / 日化纸品单品SKU选品看板</h1>
+        <p class="command-subtitle">40 SKU 市场信号池 · 每日北京时间 10:00 自动轮换</p>
       </div>
-      <div class="meta">
-        <span id="generatedAt">数据生成中</span>
-        <span>北京时间每日10:00由 GitHub Actions 自动更新</span>
+
+      <div class="sku-network" aria-hidden="true">
+        <svg class="network-lines" viewBox="0 0 520 220" preserveAspectRatio="none">
+          <path d="M78 72 C170 22 248 32 304 86 S420 166 472 124"></path>
+          <path d="M72 166 C154 130 224 144 292 112 S406 42 468 68"></path>
+          <path d="M78 72 C132 112 146 134 72 166"></path>
+          <path d="M304 86 C356 86 408 82 468 68"></path>
+        </svg>
+        <span class="network-packet packet-one"></span>
+        <span class="network-packet packet-two"></span>
+        <div class="network-node node-paper"><i></i><span>纸品湿巾</span><b>10</b></div>
+        <div class="network-node node-laundry"><i></i><span>衣物清洁</span><b>10</b></div>
+        <div class="network-node node-home"><i></i><span>家庭清洁</span><b>10</b></div>
+        <div class="network-node node-care"><i></i><span>个护日化</span><b>10</b></div>
+      </div>
+
+      <div class="command-meta">
+        <div class="live-status"><i></i><span>MARKET SIGNAL LIVE</span></div>
+        <div class="meta">
+          <span id="generatedAt">数据生成中</span>
+          <span>GitHub Actions 云端自动运行</span>
+        </div>
+        <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="true">
+          <span class="motion-toggle-icon" aria-hidden="true"></span>
+          <span class="motion-toggle-label">动态</span>
+        </button>
       </div>
     </header>
 
@@ -129,6 +159,8 @@
       <span>1688价格仅在同品牌、同规格、单SKU精确匹配并保留商品链接与核验时间后展示；未核验时只显示成本上限，不以估算值冒充供货价。</span>
     </footer>
 
-    <script src="assets/app.js?v=20260614-radar-nav"></script>
+    <script src="assets/vendor/gsap.min.js?v=3.15.0"></script>
+    <script src="assets/app.js?v=20260614-fluid-command-v5"></script>
+    <script src="assets/motion.js?v=20260614-fluid-command-v5"></script>
   </body>
 </html>
