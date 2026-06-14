@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-14T10:54:49.657175+08:00",
-  "generatedAtBeijing": "2026-06-14 10:54:49 UTC+8",
+  "generatedAt": "2026-06-14T10:56:01.382786+08:00",
+  "generatedAtBeijing": "2026-06-14 10:56:01 UTC+8",
   "date": "2026-06-14",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-14-single-sku-v3-rotation",
   "catalogSize": 40,
-  "supply1688UpdatedAt": "2026-06-13T14:08:02.417375+08:00",
+  "supply1688UpdatedAt": "2026-06-14T10:56:01.322150+08:00",
   "supply1688Provider": "elim-api",
-  "supply1688VerifiedCount": 0,
-  "supply1688PendingCount": 10,
+  "supply1688VerifiedCount": 2,
+  "supply1688PendingCount": 8,
   "mode": "single-sku",
   "selectionPolicy": "每日目标为2个稳定跟踪款、4个轮换机会款、3个首次上榜款、1个季节机会款；历史样本不足时由当日最高质量候选补位。同品牌最多2款、同类目最多3款，并对连续出现和7日高频SKU扣分或冷却。",
   "focusCategory": "家庭清洁",
@@ -70,6 +70,252 @@
     "不具备授权、凭证、保质期可控条件的 SKU 不进入上架池。"
   ],
   "products": [
+    {
+      "id": "jd-3242242-洁厕液",
+      "brand": "威猛先生",
+      "name": "威猛先生洁厕灵750g*2瓶",
+      "sku": "750g*2瓶",
+      "category": "家庭清洁",
+      "type": "引流款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "夏季",
+        "除味"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "3242242",
+      "sourceUrl": "https://item.jd.com/3242242.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/430435/40/14160/209730/6a057481F6b2aa933/00833203206d1208.jpg",
+      "suggestedPrice": [
+        19.9,
+        29.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥19.9-29.9",
+          "lowPrice": 19.9,
+          "matchType": "公开源商品/同规格参考",
+          "salesSignal": "京东公开价格页收录该具体商品，可核对商品编号、图片与完整规格。",
+          "url": "https://item.jd.com/3242242.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥18.9-31.4",
+          "lowPrice": 18.9,
+          "matchType": "同品牌同规格搜索参考",
+          "salesSignal": "淘宝可检索同品牌同规格商品，用于核对低价带和官方活动价。",
+          "url": "https://s.taobao.com/search?q=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%20%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6%20750g%2A2%E7%93%B6"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥19.9-32.9",
+          "lowPrice": 19.9,
+          "matchType": "同品牌内容及价格参考",
+          "salesSignal": "抖音搜索可观察同品牌使用场景、达人讲解和促销组合。",
+          "url": "https://www.douyin.com/search/%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%20%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6%20750g%2A2%E7%93%B6"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "场景热度参考",
+          "salesSignal": "小红书搜索用于观察家庭囤货、清洁教程或洗护体验内容。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%20%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6%20750g%2A2%E7%93%B6"
+        }
+      ],
+      "heatEvidence": "京东公开价格页可核对该具体SKU；淘宝、抖音和小红书均保留同品牌同规格搜索入口，至少形成两个平台的价格或内容观察信号。",
+      "listingAdvice": "标题覆盖威猛先生、洁厕液和完整规格750g*2瓶；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "supplyCostReference": [
+        14.74,
+        14.74
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        25.9,
+        50.7
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        15.5,
+        23.3
+      ],
+      "supply1688": {
+        "query": "威猛先生 洁厕液 750g*2瓶",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E6%B4%81%E5%8E%95%E6%B6%B2+750g%2A2%E7%93%B6",
+        "lowestPrice": 14.74,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "威猛先生洁厕液柠檬草香750g*2瓶厕所清洁剂柠檬草香洁厕灵除垢",
+        "offerId": "666127001707",
+        "offerUrl": "https://detail.1688.com/offer/666127001707.html",
+        "verifiedAt": "2026-06-14T10:55:56.604499+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platformLowestPrice": 18.9,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.5,
+        "priceCompetitiveness": 8.1,
+        "profitFeasibility": 7.3,
+        "salesProof": 7.9,
+        "repeatPurchase": 9.0,
+        "differentiation": 8.2,
+        "operability": 8.0,
+        "riskPenalty": 0.6,
+        "total": 7.6
+      },
+      "rotation": {
+        "valueScore": 7.6,
+        "freshness": 10.0,
+        "dataConfidence": 10,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0.5,
+        "seasonalMatch": true,
+        "appearances7d": 0,
+        "consecutiveDays": 0,
+        "daysSinceLast": null,
+        "cooldown": false,
+        "selectionBucket": "季节机会款",
+        "rotationScore": 8.7
+      },
+      "lifecycleStatus": "合格候选",
+      "selectionReason": "季节机会款",
+      "rank": 1,
+      "appearanceCount": 1,
+      "wasInPreviousDay": false,
+      "isNew": true,
+      "statusTag": "新增",
+      "historyNote": "首次进入每日推荐"
+    },
+    {
+      "id": "jd-100043025636-沐浴露",
+      "brand": "威露士",
+      "name": "威露士经典沐浴露1L家庭装",
+      "sku": "1L",
+      "category": "个护日化",
+      "type": "平销款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "夏季",
+        "囤货"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "100043025636",
+      "sourceUrl": "https://item.jd.com/100043025636.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/394139/6/3820/117081/69800909F4d72d9be/00833203207c8afd.jpg",
+      "suggestedPrice": [
+        29.9,
+        39.9
+      ],
+      "platforms": [
+        {
+          "name": "京东",
+          "price": "约￥29.9-39.9",
+          "lowPrice": 29.9,
+          "matchType": "公开源商品/同规格参考",
+          "salesSignal": "京东公开价格页收录该具体商品，可核对商品编号、图片与完整规格。",
+          "url": "https://item.jd.com/100043025636.html"
+        },
+        {
+          "name": "淘宝/天猫",
+          "price": "约￥28.4-41.9",
+          "lowPrice": 28.4,
+          "matchType": "同品牌同规格搜索参考",
+          "salesSignal": "淘宝可检索同品牌同规格商品，用于核对低价带和官方活动价。",
+          "url": "https://s.taobao.com/search?q=%E5%A8%81%E9%9C%B2%E5%A3%AB%20%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%BB%8F%E5%85%B8%E6%B2%90%E6%B5%B4%E9%9C%B21L%E5%AE%B6%E5%BA%AD%E8%A3%85%201L"
+        },
+        {
+          "name": "抖音",
+          "price": "约￥29.9-43.9",
+          "lowPrice": 29.9,
+          "matchType": "同品牌内容及价格参考",
+          "salesSignal": "抖音搜索可观察同品牌使用场景、达人讲解和促销组合。",
+          "url": "https://www.douyin.com/search/%E5%A8%81%E9%9C%B2%E5%A3%AB%20%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%BB%8F%E5%85%B8%E6%B2%90%E6%B5%B4%E9%9C%B21L%E5%AE%B6%E5%BA%AD%E8%A3%85%201L"
+        },
+        {
+          "name": "小红书",
+          "price": "内容种草",
+          "matchType": "场景热度参考",
+          "salesSignal": "小红书搜索用于观察家庭囤货、清洁教程或洗护体验内容。",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A8%81%E9%9C%B2%E5%A3%AB%20%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%BB%8F%E5%85%B8%E6%B2%90%E6%B5%B4%E9%9C%B21L%E5%AE%B6%E5%BA%AD%E8%A3%85%201L"
+        }
+      ],
+      "heatEvidence": "京东公开价格页可核对该具体SKU；淘宝、抖音和小红书均保留同品牌同规格搜索入口，至少形成两个平台的价格或内容观察信号。",
+      "listingAdvice": "标题覆盖威露士、沐浴露和完整规格1L；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "supplyCostReference": [
+        21.0,
+        21.0
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        29.8,
+        47.4
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        23.3,
+        31.1
+      ],
+      "supply1688": {
+        "query": "威露士 沐浴露 1L",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E9%9C%B2%E5%A3%AB+%E6%B2%90%E6%B5%B4%E9%9C%B2+1L",
+        "lowestPrice": 21.0,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "正品威露士经典沐浴露清新嫩肤滋润肌肤清洁男女持久留香沐浴乳1L",
+        "offerId": "915228126518",
+        "offerUrl": "https://detail.1688.com/offer/915228126518.html",
+        "verifiedAt": "2026-06-14T10:55:58.197849+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platformLowestPrice": 28.4,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.4,
+        "priceCompetitiveness": 7.9,
+        "profitFeasibility": 8.4,
+        "salesProof": 7.7,
+        "repeatPurchase": 7.9,
+        "differentiation": 7.4,
+        "operability": 8.1,
+        "riskPenalty": 0.6,
+        "total": 7.5
+      },
+      "rotation": {
+        "valueScore": 7.5,
+        "freshness": 10.0,
+        "dataConfidence": 10,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0.5,
+        "seasonalMatch": true,
+        "appearances7d": 0,
+        "consecutiveDays": 0,
+        "daysSinceLast": null,
+        "cooldown": false,
+        "selectionBucket": "季节机会款",
+        "rotationScore": 8.62
+      },
+      "lifecycleStatus": "合格候选",
+      "selectionReason": "季节机会款",
+      "rank": 2,
+      "appearanceCount": 1,
+      "wasInPreviousDay": false,
+      "isNew": true,
+      "statusTag": "新增",
+      "historyNote": "首次进入每日推荐"
+    },
     {
       "id": "jd-100033499063-厨房纸",
       "brand": "清风",
@@ -183,252 +429,6 @@
         "cooldown": false,
         "selectionBucket": "季节机会款",
         "rotationScore": 8.6
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "季节机会款",
-      "rank": 1,
-      "appearanceCount": 1,
-      "wasInPreviousDay": false,
-      "isNew": true,
-      "statusTag": "新增",
-      "historyNote": "首次进入每日推荐"
-    },
-    {
-      "id": "jd-3242242-洁厕液",
-      "brand": "威猛先生",
-      "name": "威猛先生洁厕灵750g*2瓶",
-      "sku": "750g*2瓶",
-      "category": "家庭清洁",
-      "type": "引流款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "夏季",
-        "除味"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "3242242",
-      "sourceUrl": "https://item.jd.com/3242242.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/430435/40/14160/209730/6a057481F6b2aa933/00833203206d1208.jpg",
-      "suggestedPrice": [
-        19.9,
-        29.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥19.9-29.9",
-          "lowPrice": 19.9,
-          "matchType": "公开源商品/同规格参考",
-          "salesSignal": "京东公开价格页收录该具体商品，可核对商品编号、图片与完整规格。",
-          "url": "https://item.jd.com/3242242.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥18.9-31.4",
-          "lowPrice": 18.9,
-          "matchType": "同品牌同规格搜索参考",
-          "salesSignal": "淘宝可检索同品牌同规格商品，用于核对低价带和官方活动价。",
-          "url": "https://s.taobao.com/search?q=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%20%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6%20750g%2A2%E7%93%B6"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥19.9-32.9",
-          "lowPrice": 19.9,
-          "matchType": "同品牌内容及价格参考",
-          "salesSignal": "抖音搜索可观察同品牌使用场景、达人讲解和促销组合。",
-          "url": "https://www.douyin.com/search/%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%20%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6%20750g%2A2%E7%93%B6"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "场景热度参考",
-          "salesSignal": "小红书搜索用于观察家庭囤货、清洁教程或洗护体验内容。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%20%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6%20750g%2A2%E7%93%B6"
-        }
-      ],
-      "heatEvidence": "京东公开价格页可核对该具体SKU；淘宝、抖音和小红书均保留同品牌同规格搜索入口，至少形成两个平台的价格或内容观察信号。",
-      "listingAdvice": "标题覆盖威猛先生、洁厕液和完整规格750g*2瓶；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "supplyCostReference": [
-        15.5,
-        23.3
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.1,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        15.5,
-        23.3
-      ],
-      "supply1688": {
-        "query": "威猛先生 洁厕液 750g*2瓶",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E6%B4%81%E5%8E%95%E6%B6%B2+750g%2A2%E7%93%B6",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platformLowestPrice": 18.9,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.5,
-        "priceCompetitiveness": 8.1,
-        "profitFeasibility": 7.3,
-        "salesProof": 7.9,
-        "repeatPurchase": 9.0,
-        "differentiation": 8.2,
-        "operability": 8.0,
-        "riskPenalty": 0.6,
-        "total": 7.6
-      },
-      "rotation": {
-        "valueScore": 7.6,
-        "freshness": 10.0,
-        "dataConfidence": 9.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0.5,
-        "seasonalMatch": true,
-        "appearances7d": 0,
-        "consecutiveDays": 0,
-        "daysSinceLast": null,
-        "cooldown": false,
-        "selectionBucket": "季节机会款",
-        "rotationScore": 8.6
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "季节机会款",
-      "rank": 2,
-      "appearanceCount": 1,
-      "wasInPreviousDay": false,
-      "isNew": true,
-      "statusTag": "新增",
-      "historyNote": "首次进入每日推荐"
-    },
-    {
-      "id": "jd-100043025636-沐浴露",
-      "brand": "威露士",
-      "name": "威露士经典沐浴露1L家庭装",
-      "sku": "1L",
-      "category": "个护日化",
-      "type": "平销款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "夏季",
-        "囤货"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100043025636",
-      "sourceUrl": "https://item.jd.com/100043025636.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/394139/6/3820/117081/69800909F4d72d9be/00833203207c8afd.jpg",
-      "suggestedPrice": [
-        29.9,
-        39.9
-      ],
-      "platforms": [
-        {
-          "name": "京东",
-          "price": "约￥29.9-39.9",
-          "lowPrice": 29.9,
-          "matchType": "公开源商品/同规格参考",
-          "salesSignal": "京东公开价格页收录该具体商品，可核对商品编号、图片与完整规格。",
-          "url": "https://item.jd.com/100043025636.html"
-        },
-        {
-          "name": "淘宝/天猫",
-          "price": "约￥28.4-41.9",
-          "lowPrice": 28.4,
-          "matchType": "同品牌同规格搜索参考",
-          "salesSignal": "淘宝可检索同品牌同规格商品，用于核对低价带和官方活动价。",
-          "url": "https://s.taobao.com/search?q=%E5%A8%81%E9%9C%B2%E5%A3%AB%20%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%BB%8F%E5%85%B8%E6%B2%90%E6%B5%B4%E9%9C%B21L%E5%AE%B6%E5%BA%AD%E8%A3%85%201L"
-        },
-        {
-          "name": "抖音",
-          "price": "约￥29.9-43.9",
-          "lowPrice": 29.9,
-          "matchType": "同品牌内容及价格参考",
-          "salesSignal": "抖音搜索可观察同品牌使用场景、达人讲解和促销组合。",
-          "url": "https://www.douyin.com/search/%E5%A8%81%E9%9C%B2%E5%A3%AB%20%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%BB%8F%E5%85%B8%E6%B2%90%E6%B5%B4%E9%9C%B21L%E5%AE%B6%E5%BA%AD%E8%A3%85%201L"
-        },
-        {
-          "name": "小红书",
-          "price": "内容种草",
-          "matchType": "场景热度参考",
-          "salesSignal": "小红书搜索用于观察家庭囤货、清洁教程或洗护体验内容。",
-          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%A8%81%E9%9C%B2%E5%A3%AB%20%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%BB%8F%E5%85%B8%E6%B2%90%E6%B5%B4%E9%9C%B21L%E5%AE%B6%E5%BA%AD%E8%A3%85%201L"
-        }
-      ],
-      "heatEvidence": "京东公开价格页可核对该具体SKU；淘宝、抖音和小红书均保留同品牌同规格搜索入口，至少形成两个平台的价格或内容观察信号。",
-      "listingAdvice": "标题覆盖威露士、沐浴露和完整规格1L；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "supplyCostReference": [
-        23.3,
-        31.1
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.1,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        23.3,
-        31.1
-      ],
-      "supply1688": {
-        "query": "威露士 沐浴露 1L",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E9%9C%B2%E5%A3%AB+%E6%B2%90%E6%B5%B4%E9%9C%B2+1L",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platformLowestPrice": 28.4,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.4,
-        "priceCompetitiveness": 7.9,
-        "profitFeasibility": 8.4,
-        "salesProof": 7.7,
-        "repeatPurchase": 7.9,
-        "differentiation": 7.4,
-        "operability": 8.1,
-        "riskPenalty": 0.6,
-        "total": 7.5
-      },
-      "rotation": {
-        "valueScore": 7.5,
-        "freshness": 10.0,
-        "dataConfidence": 9.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0.5,
-        "seasonalMatch": true,
-        "appearances7d": 0,
-        "consecutiveDays": 0,
-        "daysSinceLast": null,
-        "cooldown": false,
-        "selectionBucket": "季节机会款",
-        "rotationScore": 8.53
       },
       "lifecycleStatus": "待核验",
       "selectionReason": "季节机会款",
@@ -3058,7 +3058,7 @@
     "replacementCount": 10,
     "sevenDayUniqueCount": 20,
     "cooldownCount": 10,
-    "headline": "今日替换10款，主推清风 76张*3包",
+    "headline": "今日替换10款，主推威猛先生 750g*2瓶",
     "highlights": [
       "今日关注类目：家庭清洁",
       "首次上榜10款，回归机会0款",
