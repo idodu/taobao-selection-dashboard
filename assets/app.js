@@ -326,7 +326,59 @@ function renderProducts() {
   byId("trackingGrid").innerHTML = state.trackingProducts.map((item) => signalCard(item, "tracking")).join("");
   byId("radarGrid").innerHTML = state.radarProducts.map((item) => signalCard(item, "radar")).join("");
   byId("avoidGrid").innerHTML = state.avoidList.map(avoidCard).join("");
+  updateRailControls("tracking");
+  updateRailControls("radar");
   syncDetailsToggle();
+}
+
+function railElements(mode) {
+  return {
+    rail: byId(`${mode}Grid`),
+    counter: byId(`${mode}Counter`),
+    previous: byId(`${mode}Prev`),
+    next: byId(`${mode}Next`),
+  };
+}
+
+function updateRailControls(mode) {
+  const { rail, counter, previous, next } = railElements(mode);
+  if (!rail || !counter || !previous || !next) return;
+
+  const cards = [...rail.querySelectorAll(".signal-card")];
+  if (!cards.length) {
+    counter.textContent = "0 个";
+    previous.disabled = true;
+    next.disabled = true;
+    return;
+  }
+
+  const cardWidth = cards[0].getBoundingClientRect().width;
+  const gap = Number.parseFloat(getComputedStyle(rail).columnGap) || 0;
+  const step = cardWidth + gap;
+  const start = Math.min(cards.length - 1, Math.max(0, Math.round(rail.scrollLeft / step)));
+  const visibleCount = Math.max(1, Math.floor((rail.clientWidth + gap) / step));
+  const end = Math.min(cards.length, start + visibleCount);
+
+  counter.textContent = `${start + 1}–${end} / 共 ${cards.length} 个`;
+  previous.disabled = rail.scrollLeft <= 2;
+  next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2;
+}
+
+function moveRail(mode, direction) {
+  const { rail } = railElements(mode);
+  if (!rail) return;
+  rail.scrollBy({
+    left: direction * Math.max(280, rail.clientWidth * 0.88),
+    behavior: "smooth",
+  });
+}
+
+function bindRailControls(mode) {
+  const { rail, previous, next } = railElements(mode);
+  if (!rail || !previous || !next) return;
+  previous.addEventListener("click", () => moveRail(mode, -1));
+  next.addEventListener("click", () => moveRail(mode, 1));
+  rail.addEventListener("scroll", () => updateRailControls(mode), { passive: true });
 }
 
 function syncDetailsToggle() {
@@ -409,6 +461,12 @@ async function boot() {
   populateFilters(state.products);
   renderRules(data.scoreRules);
   renderProducts();
+  bindRailControls("tracking");
+  bindRailControls("radar");
+  window.addEventListener("resize", () => {
+    updateRailControls("tracking");
+    updateRailControls("radar");
+  });
 
   ["categoryFilter", "typeFilter", "sortBy"].forEach((id) => {
     byId(id).addEventListener("change", applyFilters);

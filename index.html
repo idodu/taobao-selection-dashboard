@@ -78,7 +78,14 @@
           <p class="eyebrow">Watchlist</p>
           <h2>持续跟踪SKU</h2>
         </div>
-        <span>保留价值，但不占今日推荐位</span>
+        <div class="rail-head-actions">
+          <span>保留价值，但不占今日推荐位</span>
+          <div class="rail-controls" aria-label="持续跟踪翻页">
+            <span id="trackingCounter" class="rail-counter"></span>
+            <button id="trackingPrev" class="rail-button" type="button" aria-label="查看前一组持续跟踪商品">←</button>
+            <button id="trackingNext" class="rail-button" type="button" aria-label="查看后一组持续跟踪商品">→</button>
+          </div>
+        </div>
       </section>
       <section class="signal-rail" id="trackingGrid" aria-label="持续跟踪商品"></section>
 
@@ -87,7 +94,14 @@
           <p class="eyebrow">New radar</p>
           <h2>新品雷达</h2>
         </div>
-        <span>等待价格、货源或授权进一步核验</span>
+        <div class="rail-head-actions">
+          <span>等待价格、货源或授权进一步核验</span>
+          <div class="rail-controls" aria-label="新品雷达翻页">
+            <span id="radarCounter" class="rail-counter"></span>
+            <button id="radarPrev" class="rail-button" type="button" aria-label="查看前一组新品雷达">←</button>
+            <button id="radarNext" class="rail-button" type="button" aria-label="查看后一组新品雷达">→</button>
+          </div>
+        </div>
       </section>
       <section class="signal-rail" id="radarGrid" aria-label="新品雷达商品"></section>
 

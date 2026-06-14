@@ -315,6 +315,49 @@ select {
   margin: 28px 0 14px;
 }
 
+.rail-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.rail-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.rail-counter {
+  min-width: 92px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+
+.rail-button {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--ink);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.rail-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.rail-button:disabled {
+  cursor: default;
+  opacity: 0.35;
+}
+
 .top-picks {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1007,6 +1050,20 @@ footer {
   .compact-head {
     align-items: flex-start;
     gap: 8px;
+  }
+
+  .rail-head-actions {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .rail-head-actions > span {
+    display: none;
+  }
+
+  .rail-counter {
+    min-width: 82px;
   }
 
   .metric {
