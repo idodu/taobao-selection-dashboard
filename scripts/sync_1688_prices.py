@@ -17,6 +17,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "product_catalog.json"
 OUTPUT_PATH = ROOT / "data" / "1688_supply_prices.json"
+RECOMMENDATIONS_PATH = ROOT / "data" / "recommendations.json"
 TOP_ENDPOINT = "https://eco.taobao.com/router/rest"
 TOP_SEARCH_METHOD = "alibaba.open.search.daixiao.offer.get"
 ELIM_SEARCH_ENDPOINT = "https://openapi.elim.asia/v1/products/search"
@@ -458,6 +459,7 @@ def select_elim_refresh_products(
     existing_cache: dict,
     limit: int,
     full_refresh: bool = False,
+    preferred_ids: list[str] | None = None,
 ) -> list[dict]:
     if full_refresh:
         return products
@@ -472,7 +474,19 @@ def select_elim_refresh_products(
         value = attempt_time or verified_time or fallback
         return value.astimezone(timezone.utc)
 
-    return sorted(products, key=lambda product: (last_checked(product), product["id"]))[:limit]
+    preferred_order = {
+        product_id: index for index, product_id in enumerate(preferred_ids or [])
+    }
+
+    return sorted(
+        products,
+        key=lambda product: (
+            0 if product["id"] in preferred_order else 1,
+            preferred_order.get(product["id"], len(preferred_order)),
+            last_checked(product),
+            product["id"],
+        ),
+    )[:limit]
 
 
 def sync_elim(
@@ -483,6 +497,7 @@ def sync_elim(
     existing_cache: dict | None = None,
     daily_limit: int = 5,
     full_refresh: bool = False,
+    preferred_ids: list[str] | None = None,
 ) -> dict:
     existing_cache = existing_cache or {}
     items: dict[str, dict] = dict(existing_cache.get("items", {}))
@@ -497,7 +512,13 @@ def sync_elim(
         raise ValueError("invalid 1688 search configuration:\n" + "\n".join(config_errors))
 
     products = catalog.get("products", [])
-    selected = select_elim_refresh_products(products, existing_cache, daily_limit, full_refresh)
+    selected = select_elim_refresh_products(
+        products,
+        existing_cache,
+        daily_limit,
+        full_refresh,
+        preferred_ids=preferred_ids,
+    )
     refreshed_ids: list[str] = []
     for product in selected:
         attempted_at = datetime.now(BEIJING).isoformat()
@@ -555,6 +576,15 @@ def main() -> int:
     elim_daily_limit = args.elim_daily_limit or int(os.getenv("ELIM_DAILY_LIMIT", "5"))
     feed_url = os.getenv("SUPPLY_1688_FEED_URL", "").strip()
     existing_cache = read_json(OUTPUT_PATH, {"items": {}, "attempts": {}})
+    recommendations = read_json(RECOMMENDATIONS_PATH, {"products": [], "radarProducts": []})
+    preferred_ids = [
+        item["id"]
+        for item in (
+            recommendations.get("products", [])[:3]
+            + recommendations.get("radarProducts", [])[:2]
+        )
+        if isinstance(item, dict) and item.get("id")
+    ]
 
     try:
         use_top = args.provider == "top" or (args.provider == "auto" and app_key and app_secret)
@@ -580,6 +610,7 @@ def main() -> int:
                 existing_cache=existing_cache,
                 daily_limit=elim_daily_limit,
                 full_refresh=args.full_refresh,
+                preferred_ids=preferred_ids,
             )
         elif use_feed:
             if not feed_url:

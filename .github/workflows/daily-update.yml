@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       full_refresh:
-        description: "Refresh all 10 SKUs (uses 10 API calls)"
+        description: "Refresh all 40 SKUs (uses about 40 API calls)"
         required: false
         default: false
         type: boolean
@@ -39,6 +39,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Build preliminary daily shortlist
+        run: python scripts/generate_daily_data.py
 
       - name: Refresh audited 1688 SKU prices
         env:

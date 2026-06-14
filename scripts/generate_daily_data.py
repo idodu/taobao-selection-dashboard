@@ -86,6 +86,34 @@ TRIAL_RULES = [
     "不具备授权、凭证、保质期可控条件的 SKU 不进入上架池。",
 ]
 
+SELECTION_BUCKETS = {
+    "稳定跟踪款": 2,
+    "轮换机会款": 4,
+    "当日新发现": 3,
+    "季节机会款": 1,
+}
+
+TYPE_TARGETS = {
+    "引流款": 3,
+    "平销款": 5,
+    "利润款": 2,
+}
+
+SEASONAL_TAGS = {
+    1: {"冬季", "春节", "囤货"},
+    2: {"冬季", "春节", "开学"},
+    3: {"春季", "换季", "开学"},
+    4: {"春季", "换季", "过敏季"},
+    5: {"初夏", "梅雨季", "除霉"},
+    6: {"夏季", "梅雨季", "618", "除味"},
+    7: {"夏季", "除味", "清凉"},
+    8: {"夏季", "开学", "宿舍"},
+    9: {"秋季", "开学", "换季"},
+    10: {"秋季", "国庆", "大扫除"},
+    11: {"冬季", "双11", "囤货"},
+    12: {"冬季", "双12", "年末大扫除"},
+}
+
 
 def read_json(path: Path, default: dict) -> dict:
     if not path.exists():
@@ -130,6 +158,118 @@ def score_product(product: dict, date_key: str, focus_category: str) -> dict:
         "operability": inputs["operability"],
         "riskPenalty": inputs["riskPenalty"],
         "total": total,
+    }
+
+
+def history_stats(history: dict, before_date: str) -> dict[str, dict]:
+    dates = sorted(date for date in history.get("dates", {}) if date < before_date)
+    recent_dates = dates[-7:]
+    result: dict[str, dict] = {}
+
+    for date in dates:
+        for product_id in history["dates"][date].get("productIds", []):
+            item = result.setdefault(product_id, {"count": 0, "dates": []})
+            item["count"] += 1
+            item["dates"].append(date)
+
+    previous_date = dates[-1] if dates else None
+    for product_id, item in result.items():
+        item["wasPreviousDay"] = bool(
+            previous_date and product_id in history["dates"][previous_date].get("productIds", [])
+        )
+        item["appearances7d"] = sum(
+            product_id in history["dates"][date].get("productIds", []) for date in recent_dates
+        )
+        last_date = item["dates"][-1]
+        item["daysSinceLast"] = (
+            datetime.fromisoformat(before_date) - datetime.fromisoformat(last_date)
+        ).days
+
+        consecutive = 0
+        for date in reversed(dates):
+            if product_id in history["dates"][date].get("productIds", []):
+                consecutive += 1
+            else:
+                break
+        item["consecutiveDays"] = consecutive
+        item["cooldown"] = item["appearances7d"] >= 3 and item["daysSinceLast"] <= 3
+
+    return result
+
+
+def data_confidence(product: dict, supply_1688: dict) -> float:
+    score = 5.5
+    score += min(2.0, len(product.get("platforms", [])) * 0.5)
+    score += 0.8 if product.get("sourceUrl") else 0
+    score += 0.7 if product.get("image") else 0
+    score += 1.0 if supply_1688.get("matchStatus") == "exact" else 0
+    return round(min(10, score), 1)
+
+
+def rotation_metadata(
+    product: dict,
+    value_score: float,
+    stats: dict,
+    supply_1688: dict,
+    month: int,
+) -> dict:
+    count = stats.get("count", 0)
+    days_since_last = stats.get("daysSinceLast")
+    was_previous = stats.get("wasPreviousDay", False)
+    appearances_7d = stats.get("appearances7d", 0)
+    consecutive = stats.get("consecutiveDays", 0)
+
+    if count == 0:
+        freshness = 10.0
+    elif days_since_last is not None and days_since_last >= 4:
+        freshness = 9.0
+    elif days_since_last is not None and days_since_last >= 2:
+        freshness = 7.5
+    elif was_previous:
+        freshness = 4.0
+    else:
+        freshness = 6.0
+
+    repeat_penalty = 0.0
+    if was_previous:
+        repeat_penalty += 1.0
+    if consecutive >= 2:
+        repeat_penalty += 1.0
+    if appearances_7d >= 3:
+        repeat_penalty += 1.5
+
+    active_tags = SEASONAL_TAGS.get(month, set())
+    product_tags = set(product.get("seasonalTags", []))
+    seasonal_match = bool(active_tags & product_tags)
+    seasonal_bonus = 0.5 if seasonal_match else 0
+    confidence = data_confidence(product, supply_1688)
+    rotation_score = round(
+        value_score * 0.75 + freshness * 0.15 + confidence * 0.10 - repeat_penalty + seasonal_bonus,
+        2,
+    )
+
+    if seasonal_match and not was_previous:
+        bucket = "季节机会款"
+    elif count == 0:
+        bucket = "当日新发现"
+    elif not was_previous and (days_since_last or 0) >= 2:
+        bucket = "轮换机会款"
+    else:
+        bucket = "稳定跟踪款"
+
+    return {
+        "valueScore": value_score,
+        "freshness": freshness,
+        "dataConfidence": confidence,
+        "repeatPenalty": repeat_penalty,
+        "seasonalBonus": seasonal_bonus,
+        "seasonalMatch": seasonal_match,
+        "appearances7d": appearances_7d,
+        "consecutiveDays": consecutive,
+        "daysSinceLast": days_since_last,
+        "cooldown": bool(stats.get("cooldown")),
+        "selectionBucket": bucket,
+        "rotationScore": rotation_score,
     }
 
 
@@ -204,7 +344,14 @@ def parse_datetime(value: object) -> datetime | None:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=BEIJING)
 
 
-def enrich_product(product: dict, date_key: str, focus_category: str, supply_cache: dict) -> dict:
+def enrich_product(
+    product: dict,
+    date_key: str,
+    focus_category: str,
+    supply_cache: dict,
+    stats: dict | None = None,
+    month: int | None = None,
+) -> dict:
     item = dict(product)
     suggested = item["suggestedPrice"]
     cost_ceiling = [round(value * 0.78, 1) for value in suggested]
@@ -226,6 +373,18 @@ def enrich_product(product: dict, date_key: str, focus_category: str, supply_cac
     item["platformLowestPrice"] = platform_lowest_price(item.get("platforms", []))
     item["trialBudgetRule"] = "首批试款成本建议控制在￥200-￥500"
     item["score"] = score_product(product, date_key, focus_category)
+    item["rotation"] = rotation_metadata(
+        product,
+        item["score"]["total"],
+        stats or {},
+        supply_1688,
+        month or datetime.now(BEIJING).month,
+    )
+    item["lifecycleStatus"] = (
+        "待核验"
+        if supply_1688["matchStatus"] != "exact"
+        else "合格候选"
+    )
     item.pop("scoreInputs", None)
     item.pop("supply1688Search", None)
     return item
@@ -266,6 +425,82 @@ def apply_history_labels(products: list[dict], history: dict, date_key: str) -> 
             item["historyNote"] = "首次进入每日推荐"
 
 
+def select_daily_products(products: list[dict]) -> list[dict]:
+    selected: list[dict] = []
+    selected_ids: set[str] = set()
+    brand_counts: dict[str, int] = {}
+    category_counts: dict[str, int] = {}
+    type_counts: dict[str, int] = {}
+
+    def can_add(
+        item: dict,
+        enforce_type: bool = True,
+        allow_cooldown: bool = False,
+        enforce_diversity: bool = True,
+    ) -> bool:
+        if item["id"] in selected_ids:
+            return False
+        if item["rotation"]["cooldown"] and not allow_cooldown:
+            return False
+        if enforce_diversity:
+            if brand_counts.get(item["brand"], 0) >= 2:
+                return False
+            if category_counts.get(item["category"], 0) >= 3:
+                return False
+        if enforce_type and type_counts.get(item["type"], 0) >= TYPE_TARGETS[item["type"]]:
+            return False
+        return True
+
+    def add(item: dict, reason: str) -> None:
+        item["selectionReason"] = reason
+        selected.append(item)
+        selected_ids.add(item["id"])
+        brand_counts[item["brand"]] = brand_counts.get(item["brand"], 0) + 1
+        category_counts[item["category"]] = category_counts.get(item["category"], 0) + 1
+        type_counts[item["type"]] = type_counts.get(item["type"], 0) + 1
+
+    ranked = sorted(
+        products,
+        key=lambda item: (item["rotation"]["rotationScore"], item["score"]["total"]),
+        reverse=True,
+    )
+
+    for bucket, target in SELECTION_BUCKETS.items():
+        bucket_items = [item for item in ranked if item["rotation"]["selectionBucket"] == bucket]
+        for item in bucket_items:
+            if sum(chosen["selectionReason"] == bucket for chosen in selected) >= target:
+                break
+            if can_add(item):
+                add(item, bucket)
+
+    fallback_modes = (
+        (True, False, True),
+        (False, False, True),
+        (False, True, True),
+        (False, True, False),
+    )
+    for enforce_type, allow_cooldown, enforce_diversity in fallback_modes:
+        for item in ranked:
+            if len(selected) >= 10:
+                break
+            if can_add(
+                item,
+                enforce_type=enforce_type,
+                allow_cooldown=allow_cooldown,
+                enforce_diversity=enforce_diversity,
+            ):
+                add(item, item["rotation"]["selectionBucket"])
+
+    if len(selected) != 10:
+        raise RuntimeError(f"unable to select 10 products from catalog; selected {len(selected)}")
+
+    selected.sort(
+        key=lambda item: (item["rotation"]["rotationScore"], item["score"]["total"]),
+        reverse=True,
+    )
+    return selected
+
+
 def update_history(history: dict, date_key: str, products: list[dict], generated_at: str) -> dict:
     next_history = dict(history)
     next_history.setdefault("dates", {})
@@ -288,25 +523,78 @@ def enrich_avoid_list(items: list[dict]) -> list[dict]:
     ]
 
 
-def generate() -> tuple[dict, dict]:
-    now = datetime.now(BEIJING)
+def generate(
+    now: datetime | None = None,
+    history: dict | None = None,
+) -> tuple[dict, dict]:
+    now = now or datetime.now(BEIJING)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=BEIJING)
+    else:
+        now = now.astimezone(BEIJING)
     date_key = now.strftime("%Y-%m-%d")
     catalog = load_catalog()
     supply_cache = load_1688_supply()
-    history = read_json(HISTORY_PATH, {"dates": {}})
+    history = history if history is not None else read_json(HISTORY_PATH, {"dates": {}})
     categories = sorted({item["category"] for item in catalog["products"]})
     focus_category = categories[now.timetuple().tm_yday % len(categories)] if categories else ""
+    stats_by_product = history_stats(history, date_key)
 
-    products = [enrich_product(item, date_key, focus_category, supply_cache) for item in catalog["products"]]
-    products.sort(key=lambda item: item["score"]["total"], reverse=True)
-    selected = products[:10]
+    products = [
+        enrich_product(
+            item,
+            date_key,
+            focus_category,
+            supply_cache,
+            stats=stats_by_product.get(item["id"], {}),
+            month=now.month,
+        )
+        for item in catalog["products"]
+        if item.get("catalogStatus", "active") == "active"
+    ]
+    selected = select_daily_products(products)
 
     for index, item in enumerate(selected, start=1):
         item["rank"] = index
 
     apply_history_labels(selected, history, date_key)
+    selected_ids = {item["id"] for item in selected}
+    _, previous_ids = history_counts(history, date_key)
+    tracking = [
+        item
+        for item in products
+        if item["id"] not in selected_ids and stats_by_product.get(item["id"], {}).get("count", 0) > 0
+    ]
+    tracking.sort(key=lambda item: item["score"]["total"], reverse=True)
+    tracking = tracking[:5]
+    for item in tracking:
+        item["trackingReason"] = "历史上榜高分SKU，保留观察但不占今日推荐位"
+        item["lifecycleStatus"] = "持续跟踪"
+
+    radar = [
+        item
+        for item in products
+        if item["id"] not in selected_ids and stats_by_product.get(item["id"], {}).get("count", 0) == 0
+    ]
+    radar.sort(key=lambda item: item["rotation"]["rotationScore"], reverse=True)
+    radar = radar[:10]
+    for item in radar:
+        item["radarReason"] = "首次上榜前等待价格、货源或授权进一步核验"
+        item["lifecycleStatus"] = "新品雷达"
+
     generated_at = now.isoformat()
     verified_1688_count = sum(item["supply1688"]["matchStatus"] == "exact" for item in selected)
+    recent_history_dates = sorted(date for date in history.get("dates", {}) if date < date_key)[-6:]
+    seven_day_ids = set(selected_ids)
+    for history_date in recent_history_dates:
+        seven_day_ids.update(history["dates"][history_date].get("productIds", []))
+    overlap_count = len(selected_ids & previous_ids)
+    new_count = sum(item["statusTag"] == "新增" for item in selected)
+    returning_count = sum(item["statusTag"] == "回归品" for item in selected)
+    cooldown_count = sum(
+        item["rotation"]["cooldown"] and item["id"] not in selected_ids for item in products
+    )
+    leading_item = selected[0]
 
     data = {
         "generatedAt": generated_at,
@@ -314,17 +602,42 @@ def generate() -> tuple[dict, dict]:
         "date": date_key,
         "timezone": "Asia/Shanghai",
         "catalogVersion": catalog["catalogVersion"],
+        "catalogSize": len(products),
         "supply1688UpdatedAt": supply_cache.get("updatedAt"),
         "supply1688Provider": supply_cache.get("provider", "not-configured"),
         "supply1688VerifiedCount": verified_1688_count,
         "supply1688PendingCount": len(selected) - verified_1688_count,
         "mode": catalog.get("mode", "single-sku"),
-        "selectionPolicy": "每日选出综合热度分最高的10个具体单品SKU，并将前3个标记为最建议当天上架；同时输出今日暂缓上架SKU，避免新店误踩高风险品。",
+        "selectionPolicy": "每日目标为2个稳定跟踪款、4个轮换机会款、3个首次上榜款、1个季节机会款；历史样本不足时由当日最高质量候选补位。同品牌最多2款、同类目最多3款，并对连续出现和7日高频SKU扣分或冷却。",
         "focusCategory": focus_category,
         "scoreRules": RULES,
         "operatorGuide": OPERATOR_GUIDE,
         "trialRules": TRIAL_RULES,
         "products": selected,
+        "trackingProducts": tracking,
+        "radarProducts": radar,
+        "rotationSummary": {
+            "bucketTargets": SELECTION_BUCKETS,
+            "brandLimit": 2,
+            "categoryLimit": 3,
+            "typeTargets": TYPE_TARGETS,
+            "cooldownRule": "7天内上榜3次且距上次不超过3天时进入冷却，候选不足时才允许回补。",
+        },
+        "changeSummary": {
+            "newCount": new_count,
+            "returningCount": returning_count,
+            "overlapWithPrevious": overlap_count,
+            "replacementCount": 10 - overlap_count,
+            "sevenDayUniqueCount": len(seven_day_ids),
+            "cooldownCount": cooldown_count,
+            "headline": f"今日替换{10 - overlap_count}款，主推{leading_item['brand']} {leading_item['sku']}",
+            "highlights": [
+                f"今日关注类目：{focus_category}",
+                f"首次上榜{new_count}款，回归机会{returning_count}款",
+                f"近7日累计覆盖{len(seven_day_ids)}个不同SKU",
+                f"{cooldown_count}款因近期高频进入冷却观察",
+            ],
+        },
         "avoidList": enrich_avoid_list(catalog.get("avoidList", [])),
     }
     next_history = update_history(history, date_key, selected, generated_at)
@@ -358,6 +671,18 @@ def write_daily_markdown(data: dict) -> None:
     lines.extend(f"- {step}" for step in data["operatorGuide"])
     lines.extend(["", "## 试款资金与履约约束", ""])
     lines.extend(f"- {rule}" for rule in data["trialRules"])
+    change = data["changeSummary"]
+    lines.extend(
+        [
+            "",
+            "## 今日变化",
+            "",
+            f"- {change['headline']}",
+            f"- 与昨日重合：{change['overlapWithPrevious']} 个；今日替换：{change['replacementCount']} 个。",
+            f"- 近 7 日去重 SKU：{change['sevenDayUniqueCount']} 个；当前冷却 SKU：{change['cooldownCount']} 个。",
+        ]
+    )
+    lines.extend(f"- {highlight}" for highlight in change["highlights"])
     lines.extend(
         [
             "",
@@ -398,6 +723,18 @@ def write_daily_markdown(data: dict) -> None:
     lines.extend(["", "## 今日最建议上架", ""])
     for item in data["products"][:3]:
         lines.append(f"- {item['brand']} {item['name']}（{item['sku']}）：{item['listingAdvice']}")
+
+    lines.extend(["", "## 持续观察", ""])
+    for item in data["trackingProducts"]:
+        lines.append(
+            f"- {item['brand']} {item['name']}（{item['sku']}）：{item['trackingReason']}，商业价值 {item['score']['total']} 分。"
+        )
+
+    lines.extend(["", "## 机会雷达", ""])
+    for item in data["radarProducts"]:
+        lines.append(
+            f"- {item['brand']} {item['name']}（{item['sku']}）：{item['radarReason']}，商业价值 {item['score']['total']} 分。"
+        )
 
     lines.extend(["", "## 今日暂缓/回避SKU", ""])
     lines.append("| 品牌/SKU | 规格 | 回避原因 | 后续观察条件 | 源商品 |")

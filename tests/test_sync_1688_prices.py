@@ -19,7 +19,7 @@ class Sync1688PricesTest(unittest.TestCase):
         catalog_path = SCRIPT.parents[1] / "data" / "product_catalog.json"
         catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
         products = catalog["products"]
-        self.assertEqual(len(products), 10)
+        self.assertGreaterEqual(len(products), 40)
         errors = [error for product in products for error in MODULE.validate_search_config(product)]
         self.assertEqual(errors, [])
 
@@ -201,6 +201,16 @@ class Sync1688PricesTest(unittest.TestCase):
         }
         selected = MODULE.select_elim_refresh_products(products, cache, limit=3)
         self.assertEqual([item["id"] for item in selected], ["sku-5", "sku-3", "sku-2"])
+
+    def test_elim_rotation_prioritizes_daily_shortlist(self) -> None:
+        products = [{"id": f"sku-{index}"} for index in range(1, 7)]
+        selected = MODULE.select_elim_refresh_products(
+            products,
+            {},
+            limit=3,
+            preferred_ids=["sku-5", "sku-2"],
+        )
+        self.assertEqual([item["id"] for item in selected[:2]], ["sku-5", "sku-2"])
 
     def test_elim_rotation_full_refresh_returns_all_products(self) -> None:
         products = [{"id": f"sku-{index}"} for index in range(1, 11)]

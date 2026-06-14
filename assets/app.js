@@ -1,6 +1,8 @@
 const state = {
   products: [],
   filtered: [],
+  trackingProducts: [],
+  radarProducts: [],
   avoidList: [],
   rules: null,
 };
@@ -43,16 +45,16 @@ function renderSummary(data) {
   const products = data.products || [];
   const avgScore = products.reduce((sum, item) => sum + item.score.total, 0) / products.length;
   const topScore = Math.max(...products.map((item) => item.score.total));
-  const newCount = products.filter((item) => item.statusTag === "新增").length;
   const avoidCount = (data.avoidList || []).length;
   const verified1688 = products.filter((item) => item.supply1688?.matchStatus === "exact").length;
 
   byId("summaryGrid").innerHTML = [
-    ["单品SKU", `${products.length}个`, "每日固定输出"],
+    ["候选池", `${data.catalogSize || products.length}个`, `今日推荐${products.length}个`],
     ["平均热度", avgScore.toFixed(1), "1-10分综合模型"],
     ["最高分", topScore.toFixed(1), "优先进入上架池"],
     ["1688核验", `${verified1688}/${products.length}`, verified1688 ? "已接入官方单SKU价" : "等待TOP应用密钥"],
-    ["风控", `${newCount}新/${avoidCount}暂缓`, "避免误上高风险品"],
+    ["今日换新", `${data.changeSummary?.replacementCount ?? 0}个`, `与昨日重合${data.changeSummary?.overlapWithPrevious ?? 0}个`],
+    ["风控", `${avoidCount}暂缓`, "高频商品自动冷却"],
   ]
     .map(
       ([label, value, note]) => `
@@ -64,6 +66,43 @@ function renderSummary(data) {
       `,
     )
     .join("");
+}
+
+function renderTodayBrief(data) {
+  const summary = data.changeSummary || {};
+  const highlights = summary.highlights || [];
+  byId("todayBrief").innerHTML = `
+    <div class="brief-lead">
+      <div>
+        <p class="eyebrow">Today changed</p>
+        <h2>${escapeHtml(summary.headline || "今日选品已更新")}</h2>
+      </div>
+      <div class="freshness-ring" aria-label="今日换新数量">
+        <strong>${summary.replacementCount ?? 0}</strong>
+        <span>款换新</span>
+      </div>
+    </div>
+    <div class="brief-highlights">
+      ${highlights.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+    </div>
+    <div class="next-refresh">
+      <span>下次更新</span>
+      <strong id="refreshCountdown">计算中</strong>
+    </div>
+  `;
+}
+
+function updateRefreshCountdown() {
+  const target = byId("refreshCountdown");
+  if (!target) return;
+  const now = new Date();
+  const next = new Date(now);
+  next.setHours(10, 0, 0, 0);
+  if (now >= next) next.setDate(next.getDate() + 1);
+  const totalMinutes = Math.max(0, Math.floor((next - now) / 60000));
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  target.textContent = `${hours}小时${minutes}分`;
 }
 
 function renderOperatorGuide(data) {
@@ -109,6 +148,12 @@ function platformCard(platform) {
       <span class="match">${escapeHtml(platform.matchType || "参考价")}</span>
     </a>
   `;
+}
+
+function selectionBadge(item) {
+  return item.selectionReason
+    ? `<span class="badge selection">${escapeHtml(item.selectionReason)}</span>`
+    : "";
 }
 
 function platformEvidence(platform) {
@@ -174,6 +219,7 @@ function productCard(item) {
             <span class="badge">#${item.rank}</span>
             <span class="badge score">${item.score.total.toFixed(1)}分</span>
             <span class="badge warn">${escapeHtml(item.type)}</span>
+            ${selectionBadge(item)}
             ${statusBadges(item)}
           </div>
           <h3>${escapeHtml(item.name)}</h3>
@@ -226,12 +272,33 @@ function topCard(item) {
         <div class="badge-row">
           <span class="badge">#${item.rank}</span>
           <span class="badge score">${item.score.total.toFixed(1)}分</span>
+          ${selectionBadge(item)}
           ${statusBadges(item)}
         </div>
         <h3>${escapeHtml(item.name)}</h3>
         <p class="subline">${escapeHtml(item.brand)} · ${escapeHtml(item.sku)}</p>
         <p class="subline">建议售价：${formatRange(item.suggestedPrice)}</p>
         <p class="subline">1688：${item.supply1688?.lowestPrice ? currency.format(item.supply1688.lowestPrice) : "待核验"}</p>
+      </div>
+    </article>
+  `;
+}
+
+function signalCard(item, mode) {
+  const label = mode === "tracking" ? "持续跟踪" : "新品雷达";
+  const reason = mode === "tracking" ? item.trackingReason : item.radarReason;
+  return `
+    <article class="signal-card">
+      <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.onerror=null;this.src='assets/placeholder.svg';">
+      <div>
+        <div class="badge-row">
+          <span class="badge ${mode === "tracking" ? "returning" : "new"}">${label}</span>
+          <span class="badge score">${item.score.total.toFixed(1)}分</span>
+        </div>
+        <h3>${escapeHtml(item.name)}</h3>
+        <p class="subline">${escapeHtml(item.brand)} · ${escapeHtml(item.sku)}</p>
+        <p class="signal-reason">${escapeHtml(reason)}</p>
+        <a class="source-link" href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noreferrer">查看源商品</a>
       </div>
     </article>
   `;
@@ -256,6 +323,8 @@ function avoidCard(item) {
 function renderProducts() {
   byId("topPicks").innerHTML = state.products.slice(0, 3).map(topCard).join("");
   byId("productGrid").innerHTML = state.filtered.map(productCard).join("");
+  byId("trackingGrid").innerHTML = state.trackingProducts.map((item) => signalCard(item, "tracking")).join("");
+  byId("radarGrid").innerHTML = state.radarProducts.map((item) => signalCard(item, "radar")).join("");
   byId("avoidGrid").innerHTML = state.avoidList.map(avoidCard).join("");
   syncDetailsToggle();
 }
@@ -326,11 +395,16 @@ async function boot() {
 
   state.products = data.products || [];
   state.filtered = data.products || [];
+  state.trackingProducts = data.trackingProducts || [];
+  state.radarProducts = data.radarProducts || [];
   state.avoidList = data.avoidList || [];
   state.rules = data.scoreRules;
 
   byId("generatedAt").textContent = `生成时间：${data.generatedAtBeijing}`;
   renderSummary(data);
+  renderTodayBrief(data);
+  updateRefreshCountdown();
+  window.setInterval(updateRefreshCountdown, 60000);
   renderOperatorGuide(data);
   populateFilters(state.products);
   renderRules(data.scoreRules);

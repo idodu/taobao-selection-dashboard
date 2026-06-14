@@ -30,6 +30,9 @@ PRODUCT_REQUIRED = {
     "statusTag",
     "appearanceCount",
     "score",
+    "rotation",
+    "selectionReason",
+    "lifecycleStatus",
 }
 
 SCORE_REQUIRED = {
@@ -153,6 +156,20 @@ def validate_product(item: dict, index: int) -> list[str]:
         if platform.get("url") and not is_http_url(platform["url"]):
             errors.append(f"{label}: platform url must be http(s)")
 
+    rotation = item["rotation"]
+    for field in (
+        "valueScore",
+        "freshness",
+        "dataConfidence",
+        "repeatPenalty",
+        "selectionBucket",
+        "rotationScore",
+    ):
+        if field not in rotation:
+            errors.append(f"{label}: rotation missing {field}")
+    if item["selectionReason"] not in {"稳定跟踪款", "轮换机会款", "当日新发现", "季节机会款"}:
+        errors.append(f"{label}: invalid selectionReason")
+
     return errors
 
 
@@ -197,6 +214,14 @@ def validate(data: dict) -> list[str]:
         errors.append("operatorGuide is required")
     if not data.get("trialRules"):
         errors.append("trialRules is required")
+    if not isinstance(data.get("catalogSize"), int) or data["catalogSize"] < 40:
+        errors.append("catalogSize must be at least 40")
+    if not data.get("changeSummary"):
+        errors.append("changeSummary is required")
+    if not isinstance(data.get("trackingProducts"), list):
+        errors.append("trackingProducts must be a list")
+    if not isinstance(data.get("radarProducts"), list):
+        errors.append("radarProducts must be a list")
     return errors
 
 
