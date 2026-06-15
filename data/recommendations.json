@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-06-15T22:34:18.983129+08:00",
-  "generatedAtBeijing": "2026-06-15 22:34:18 UTC+8",
+  "generatedAt": "2026-06-15T22:38:22.004451+08:00",
+  "generatedAtBeijing": "2026-06-15 22:38:22 UTC+8",
   "date": "2026-06-15",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-15-single-sku-v4-official-market",
   "catalogSize": 40,
-  "supply1688UpdatedAt": "2026-06-15T15:08:29.662960+08:00",
+  "supply1688UpdatedAt": "2026-06-15T22:38:21.946222+08:00",
   "supply1688Provider": "elim-api",
   "supply1688VerifiedCount": 1,
   "supply1688PendingCount": 9,
-  "marketDataUpdatedAt": "2026-06-15T22:34:18.591398+08:00",
+  "marketDataUpdatedAt": "2026-06-15T22:38:14.170836+08:00",
   "marketProviders": {
     "taobao": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-15T22:34:18.584179+08:00"
+      "attemptedAt": "2026-06-15T22:38:14.169108+08:00"
     },
     "jd": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-15T22:34:18.588179+08:00"
+      "attemptedAt": "2026-06-15T22:38:14.169754+08:00"
     },
     "douyin": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-15T22:34:18.590188+08:00"
+      "attemptedAt": "2026-06-15T22:38:14.170290+08:00"
     }
   },
   "marketVerifiedCount": 0,
@@ -2464,7 +2464,7 @@
         "offerId": "938670169290",
         "offerUrl": "https://detail.1688.com/offer/938670169290.html",
         "verifiedAt": "2026-06-13T14:08:00.152792+08:00",
-        "ageHours": 56.4,
+        "ageHours": 56.5,
         "freshnessStatus": "aging",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -3207,8 +3207,8 @@
         "matchedTitle": "清风抽纸金装120抽大箱家用纸抽卫生纸餐巾纸24包箱装纸巾批发",
         "offerId": "724141170068",
         "offerUrl": "https://detail.1688.com/offer/724141170068.html",
-        "verifiedAt": "2026-06-15T15:08:29.662931+08:00",
-        "ageHours": 7.4,
+        "verifiedAt": "2026-06-15T22:38:21.946184+08:00",
+        "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
