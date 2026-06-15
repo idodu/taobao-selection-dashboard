@@ -8,6 +8,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 RECOMMENDATIONS_PATH = ROOT / "data" / "recommendations.json"
+MARKET_DATA_PATH = ROOT / "data" / "market_data.json"
 INDEX_PATH = ROOT / "index.html"
 MOTION_PATH = ROOT / "assets" / "motion.js"
 GSAP_PATH = ROOT / "assets" / "vendor" / "gsap.min.js"
@@ -22,6 +23,7 @@ PRODUCT_REQUIRED = {
     "sourcePlatform",
     "sourceSkuId",
     "sourceUrl",
+    "marketplaceIds",
     "suggestedPrice",
     "supplyCostReference",
     "costCeiling",
@@ -50,6 +52,10 @@ SCORE_REQUIRED = {
     "riskPenalty",
     "total",
 }
+
+MARKET_CODES = {"taobao", "jd", "douyin"}
+MARKET_STATUSES = {"verified", "not-configured", "no-exact-match", "error", "pending"}
+MARKET_FRESHNESS = {"fresh", "aging", "stale", "unverified"}
 
 AVOID_REQUIRED = {
     "id",
@@ -148,17 +154,63 @@ def validate_product(item: dict, index: int) -> list[str]:
     if not isinstance(risk, (int, float)) or not 0 <= risk <= 1.5:
         errors.append(f"{label}: score.riskPenalty must be between 0 and 1.5")
 
+    marketplace_ids = item["marketplaceIds"]
+    if not isinstance(marketplace_ids, dict) or set(marketplace_ids) != MARKET_CODES:
+        errors.append(f"{label}: marketplaceIds must contain taobao, jd and douyin")
+
     platforms = item["platforms"]
-    if not isinstance(platforms, list) or len(platforms) < 2:
-        errors.append(f"{label}: at least two platform signals are required")
-    if not any(isinstance(platform.get("lowPrice"), (int, float)) for platform in platforms):
-        errors.append(f"{label}: at least one platform lowPrice is required")
+    if not isinstance(platforms, list) or len(platforms) != 3:
+        errors.append(f"{label}: exactly three official marketplace rows are required")
+        platforms = []
+    elif {platform.get("code") for platform in platforms} != MARKET_CODES:
+        errors.append(f"{label}: platform rows must be taobao, jd and douyin")
     for platform in platforms:
-        for field in ("name", "price", "matchType", "salesSignal", "url"):
-            if not platform.get(field):
+        for field in (
+            "name",
+            "code",
+            "url",
+            "matchStatus",
+            "freshnessStatus",
+            "status",
+            "price",
+            "matchType",
+            "salesSignal",
+        ):
+            if platform.get(field) in (None, ""):
                 errors.append(f"{label}: platform missing {field}")
         if platform.get("url") and not is_http_url(platform["url"]):
             errors.append(f"{label}: platform url must be http(s)")
+        if platform.get("matchStatus") not in {"exact", "unverified"}:
+            errors.append(f"{label}: invalid platform matchStatus")
+        if platform.get("freshnessStatus") not in MARKET_FRESHNESS:
+            errors.append(f"{label}: invalid platform freshnessStatus")
+        if platform.get("status") not in MARKET_STATUSES:
+            errors.append(f"{label}: invalid platform status")
+        if platform.get("matchStatus") == "exact":
+            if not platform.get("platformItemId"):
+                errors.append(f"{label}: verified platform requires platformItemId")
+            if not platform.get("title"):
+                errors.append(f"{label}: verified platform requires title")
+            if not platform.get("verifiedAt") or not platform.get("sourceApi"):
+                errors.append(f"{label}: verified platform requires verifiedAt and sourceApi")
+            if not isinstance(platform.get("estimatedPrice"), (int, float)) or platform["estimatedPrice"] <= 0:
+                errors.append(f"{label}: verified platform estimatedPrice must be positive")
+        elif any(
+            platform.get(field) is not None
+            for field in (
+                "title",
+                "listPrice",
+                "couponAmount",
+                "estimatedPrice",
+                "sales30d",
+                "reviewCount",
+                "goodRate",
+                "rankSignal",
+                "verifiedAt",
+                "sourceApi",
+            )
+        ):
+            errors.append(f"{label}: unverified platform must not contain official market claims")
 
     rotation = item["rotation"]
     for field in (
@@ -229,6 +281,47 @@ def validate(data: dict) -> list[str]:
     return errors
 
 
+def validate_market_cache() -> list[str]:
+    errors: list[str] = []
+    if not MARKET_DATA_PATH.is_file():
+        return ["data/market_data.json is required"]
+    data = json.loads(MARKET_DATA_PATH.read_text(encoding="utf-8"))
+    if data.get("schemaVersion") != 1:
+        errors.append("market cache schemaVersion must be 1")
+    providers = data.get("providers")
+    if not isinstance(providers, dict) or set(providers) != MARKET_CODES:
+        errors.append("market cache providers must contain taobao, jd and douyin")
+    items = data.get("items")
+    if not isinstance(items, dict):
+        errors.append("market cache items must be an object")
+        return errors
+    for product_id, platform_map in items.items():
+        if not isinstance(platform_map, dict):
+            errors.append(f"{product_id}: market cache row must be an object")
+            continue
+        for code, item in platform_map.items():
+            label = f"{product_id}/{code}"
+            if code not in MARKET_CODES:
+                errors.append(f"{label}: unsupported market provider")
+                continue
+            if item.get("matchStatus") not in {"exact", "unverified"}:
+                errors.append(f"{label}: invalid matchStatus")
+            if item.get("freshnessStatus") not in MARKET_FRESHNESS:
+                errors.append(f"{label}: invalid freshnessStatus")
+            if item.get("status") not in MARKET_STATUSES:
+                errors.append(f"{label}: invalid status")
+            if item.get("matchStatus") == "exact":
+                if not item.get("platformItemId") or not item.get("title"):
+                    errors.append(f"{label}: exact match requires platformItemId and title")
+                if not is_http_url(item.get("url", "")):
+                    errors.append(f"{label}: exact match requires an http(s) URL")
+                if not isinstance(item.get("estimatedPrice"), (int, float)) or item["estimatedPrice"] <= 0:
+                    errors.append(f"{label}: exact match requires a positive estimatedPrice")
+                if not item.get("verifiedAt") or not item.get("sourceApi"):
+                    errors.append(f"{label}: exact match requires verifiedAt and sourceApi")
+    return errors
+
+
 def validate_frontend() -> list[str]:
     errors: list[str] = []
     for path in (INDEX_PATH, MOTION_PATH, GSAP_PATH, DESIGN_PATH):
@@ -253,6 +346,11 @@ def validate_frontend() -> list[str]:
     for required in ("prefers-reduced-motion", "localStorage", "visibilitychange", "dashboard:ready"):
         if required not in motion:
             errors.append(f"motion.js missing required behavior: {required}")
+    app = (ROOT / "assets" / "app.js").read_text(encoding="utf-8")
+    if "官方预估最低到手价" not in app or "30天销量" not in app:
+        errors.append("frontend must label official estimated price and 30-day sales explicitly")
+    if "实际成交价" in app:
+        errors.append("frontend must not label alliance estimates as actual transaction prices")
     if "GSAP 3.15.0" not in gsap[:200]:
         errors.append("vendored GSAP version header is missing")
     return errors
@@ -260,7 +358,7 @@ def validate_frontend() -> list[str]:
 
 def main() -> int:
     data = json.loads(RECOMMENDATIONS_PATH.read_text(encoding="utf-8"))
-    errors = validate(data) + validate_frontend()
+    errors = validate(data) + validate_market_cache() + validate_frontend()
     if errors:
         for error in errors:
             print(f"VALIDATION_ERROR: {error}", file=sys.stderr)

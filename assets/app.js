@@ -33,6 +33,24 @@ function formatPercentRange(range) {
   return `${range[0]}%-${range[1]}%`;
 }
 
+function formatMoney(value) {
+  return Number.isFinite(value) ? currency.format(value) : "—";
+}
+
+function formatCount(value) {
+  return Number.isFinite(value) ? new Intl.NumberFormat("zh-CN").format(value) : "—";
+}
+
+function marketStatus(platform) {
+  if (platform.matchStatus === "exact" && platform.freshnessStatus === "fresh") return ["已核验", "verified"];
+  if (platform.matchStatus === "exact" && platform.freshnessStatus === "aging") return ["数据老化", "aging"];
+  if (platform.freshnessStatus === "stale") return ["已过期", "stale"];
+  if (platform.status === "not-configured") return ["待授权", "pending"];
+  if (platform.status === "no-exact-match") return ["无精确匹配", "pending"];
+  if (platform.status === "error") return ["刷新失败", "stale"];
+  return ["待核验", "pending"];
+}
+
 function scoreWidth(score) {
   return `${Math.max(8, Math.min(100, score * 10))}%`;
 }
@@ -44,14 +62,23 @@ function byId(id) {
 function renderSummary(data) {
   const products = data.products || [];
   const avgScore = products.reduce((sum, item) => sum + item.score.total, 0) / products.length;
-  const topScore = Math.max(...products.map((item) => item.score.total));
   const avoidCount = (data.avoidList || []).length;
   const verified1688 = products.filter((item) => item.supply1688?.matchStatus === "exact").length;
+  const verifiedMarket = products.reduce(
+    (count, item) =>
+      count +
+      item.platforms.filter(
+        (platform) =>
+          platform.matchStatus === "exact" &&
+          ["fresh", "aging"].includes(platform.freshnessStatus),
+      ).length,
+    0,
+  );
 
   byId("summaryGrid").innerHTML = [
     ["候选池", `${data.catalogSize || products.length}个`, `今日推荐${products.length}个`],
     ["平均热度", avgScore.toFixed(1), "1-10分综合模型"],
-    ["最高分", topScore.toFixed(1), "优先进入上架池"],
+    ["官方市场核验", `${verifiedMarket}/${products.length * 3}`, "淘宝·京东·抖音"],
     ["1688核验", `${verified1688}/${products.length}`, verified1688 ? "已接入官方单SKU价" : "等待TOP应用密钥"],
     ["今日换新", `${data.changeSummary?.replacementCount ?? 0}个`, `与昨日重合${data.changeSummary?.overlapWithPrevious ?? 0}个`],
     ["风控", `${avoidCount}暂缓`, "高频商品自动冷却"],
@@ -141,11 +168,25 @@ function statusBadges(item) {
 }
 
 function platformCard(platform) {
+  const [statusLabel, statusClass] = marketStatus(platform);
+  const verifiedAt = platform.verifiedAt
+    ? new Date(platform.verifiedAt).toLocaleString("zh-CN", { hour12: false })
+    : "—";
   return `
-    <a class="platform" href="${escapeHtml(platform.url)}" target="_blank" rel="noreferrer">
-      <span class="platform-name">${escapeHtml(platform.name)}</span>
-      <strong>${escapeHtml(platform.price)}</strong>
-      <span class="match">${escapeHtml(platform.matchType || "参考价")}</span>
+    <a class="platform market-${statusClass}" href="${escapeHtml(platform.url)}" target="_blank" rel="noreferrer">
+      <div class="platform-head">
+        <span class="platform-name">${escapeHtml(platform.name)}</span>
+        <span class="market-status">${statusLabel}</span>
+      </div>
+      <strong class="market-price">${escapeHtml(platform.price)}</strong>
+      <div class="market-facts">
+        <span><i>标价</i><b>${formatMoney(platform.listPrice)}</b></span>
+        <span><i>券额</i><b>${formatMoney(platform.couponAmount)}</b></span>
+        <span><i>30天销量</i><b>${formatCount(platform.sales30d)}</b></span>
+        <span><i>累计评价</i><b>${formatCount(platform.reviewCount)}</b></span>
+      </div>
+      <span class="match">${escapeHtml(platform.matchType)}</span>
+      <span class="market-time">核验 ${escapeHtml(verifiedAt)}</span>
     </a>
   `;
 }
@@ -169,9 +210,9 @@ function scoreText(item) {
   const score = item.score;
   return [
     `跨平台${score.platformHeat}`,
-    `价格${score.priceCompetitiveness}`,
+    `价格${score.priceCompetitiveness}${score.priceEvidenceAvailable ? "" : "（无官方价）"}`,
     `利润${score.profitFeasibility}`,
-    `销量${score.salesProof}`,
+    `销量${score.salesProof}${score.salesEvidenceAvailable ? "" : "（无官方销量）"}`,
     `复购${score.repeatPurchase}`,
     `差异${score.differentiation}`,
     `风险扣${score.riskPenalty}`,
@@ -233,7 +274,7 @@ function productCard(item) {
         <div class="details">
           <div class="detail"><span>建议售价</span><strong>${formatRange(item.suggestedPrice)}</strong></div>
           <div class="detail"><span>预计毛利率</span><strong>${formatPercentRange(item.estimatedGrossProfitRate)}</strong></div>
-          <div class="detail"><span>平台低价</span><strong>${item.platformLowestPrice ? currency.format(item.platformLowestPrice) : "内容参考"}</strong></div>
+          <div class="detail"><span>官方预估最低到手价</span><strong>${item.platformLowestPrice ? currency.format(item.platformLowestPrice) : "待授权"}</strong></div>
           <div class="detail"><span>成本上限</span><strong>${formatRange(item.costCeiling)}</strong></div>
         </div>
 
@@ -278,6 +319,7 @@ function topCard(item) {
         <h3>${escapeHtml(item.name)}</h3>
         <p class="subline">${escapeHtml(item.brand)} · ${escapeHtml(item.sku)}</p>
         <p class="subline">建议售价：${formatRange(item.suggestedPrice)}</p>
+        <p class="subline">官方预估最低到手：${item.platformLowestPrice ? currency.format(item.platformLowestPrice) : "待授权"}</p>
         <p class="subline">1688：${item.supply1688?.lowestPrice ? currency.format(item.supply1688.lowestPrice) : "待核验"}</p>
       </div>
     </article>

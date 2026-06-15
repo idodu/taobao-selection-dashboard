@@ -12,6 +12,7 @@ CATALOG_PATH = ROOT / "data" / "product_catalog.json"
 OUTPUT_PATH = ROOT / "data" / "recommendations.json"
 HISTORY_PATH = ROOT / "data" / "selection_history.json"
 SUPPLY_1688_PATH = ROOT / "data" / "1688_supply_prices.json"
+MARKET_DATA_PATH = ROOT / "data" / "market_data.json"
 DAILY_DIR = ROOT / "docs" / "daily"
 
 BEIJING = timezone(timedelta(hours=8))
@@ -27,7 +28,7 @@ WEIGHTS = {
 }
 
 RULES = {
-    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+销量/评论信号10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。1688价仅在单SKU精确匹配并核验后参与毛利计算。",
+    "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+官方30天销量10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。价格和销量仅使用淘宝联盟、京东联盟、抖音精选联盟官方API的精确SKU数据。",
     "items": [
         {
             "name": "跨平台热度",
@@ -37,7 +38,7 @@ RULES = {
         {
             "name": "价格竞争力",
             "weight": "20%",
-            "description": "建议售价越接近同品牌同规格或近似规格的主流低价带，且不牺牲毛利，得分越高。",
+            "description": "建议售价下限达到三平台有效最低预估到手价的95%-98%时得分最高；无有效官方价格时按最低可信分处理。",
         },
         {
             "name": "利润可行性",
@@ -45,9 +46,9 @@ RULES = {
             "description": "优先使用已核验的1688单SKU最低价计算；未核验时只显示建议售价*78%的成本上限，不冒充真实供货价。",
         },
         {
-            "name": "销量/评论信号",
+            "name": "官方30天销量",
             "weight": "10%",
-            "description": "公开评论量、榜单名次、销量口径、达人带货或内容互动信号越强，得分越高。",
+            "description": "只使用联盟官方接口实际返回的30天销量；评价数、榜单和内容互动独立展示，不代替销量。",
         },
         {
             "name": "复购率",
@@ -135,29 +136,112 @@ def load_1688_supply() -> dict:
     return read_json(SUPPLY_1688_PATH, {"updatedAt": None, "items": {}})
 
 
+def load_market_data() -> dict:
+    return read_json(
+        MARKET_DATA_PATH,
+        {
+            "updatedAt": None,
+            "providers": {},
+            "items": {},
+        },
+    )
+
+
 def deterministic_adjustment(product_id: str, date_key: str) -> float:
     digest = hashlib.sha256(f"{product_id}:{date_key}".encode("utf-8")).hexdigest()
     bucket = int(digest[:4], 16) % 31
     return (bucket - 15) / 100
 
 
-def score_product(product: dict, date_key: str, focus_category: str) -> dict:
+def score_product(
+    product: dict,
+    date_key: str,
+    focus_category: str,
+    market_platforms: list[dict] | None = None,
+) -> dict:
     inputs = product["scoreInputs"]
-    weighted = sum(inputs[key] * weight for key, weight in WEIGHTS.items())
+    official = market_platforms or []
+    valid_prices = [
+        item["estimatedPrice"]
+        for item in official
+        if item.get("matchStatus") == "exact"
+        and item.get("freshnessStatus") in {"fresh", "aging"}
+        and isinstance(item.get("estimatedPrice"), (int, float))
+        and item["estimatedPrice"] > 0
+    ]
+    if valid_prices:
+        price_ratio = product["suggestedPrice"][0] / min(valid_prices)
+        price_competitiveness = (
+            8.0
+            if price_ratio <= 0.90
+            else 9.0
+            if price_ratio <= 0.95
+            else 10.0
+            if price_ratio <= 0.98
+            else 8.5
+            if price_ratio <= 1.02
+            else 7.0
+            if price_ratio <= 1.05
+            else 5.0
+            if price_ratio <= 1.10
+            else 2.5
+        )
+    else:
+        price_competitiveness = 1.0
+    sales = [
+        item["sales30d"]
+        for item in official
+        if item.get("matchStatus") == "exact"
+        and item.get("freshnessStatus") in {"fresh", "aging"}
+        and isinstance(item.get("sales30d"), (int, float))
+        and item["sales30d"] >= 0
+    ]
+    if sales:
+        maximum_sales = max(sales)
+        sales_proof = (
+            10.0
+            if maximum_sales >= 100000
+            else 9.0
+            if maximum_sales >= 30000
+            else 8.0
+            if maximum_sales >= 10000
+            else 7.0
+            if maximum_sales >= 3000
+            else 6.0
+            if maximum_sales >= 1000
+            else 5.0
+            if maximum_sales >= 300
+            else 4.0
+            if maximum_sales >= 100
+            else 3.0
+            if maximum_sales > 0
+            else 1.0
+        )
+    else:
+        sales_proof = 1.0
+    score_inputs = {
+        **inputs,
+        "priceCompetitiveness": price_competitiveness,
+        "salesProof": sales_proof,
+    }
+    weighted = sum(score_inputs[key] * weight for key, weight in WEIGHTS.items())
     focus_bonus = 0.22 if product["category"] == focus_category else 0
-    adjusted = weighted - inputs["riskPenalty"] + deterministic_adjustment(product["id"], date_key) + focus_bonus
+    adjusted = weighted - score_inputs["riskPenalty"] + deterministic_adjustment(product["id"], date_key) + focus_bonus
     total = round(max(1, min(10, adjusted)), 1)
 
     return {
         "platformHeat": inputs["platformHeat"],
-        "priceCompetitiveness": inputs["priceCompetitiveness"],
-        "profitFeasibility": inputs["profitFeasibility"],
-        "salesProof": inputs["salesProof"],
+        "priceCompetitiveness": score_inputs["priceCompetitiveness"],
+        "profitFeasibility": score_inputs["profitFeasibility"],
+        "salesProof": score_inputs["salesProof"],
         "repeatPurchase": inputs["repeatPurchase"],
         "differentiation": inputs["differentiation"],
         "operability": inputs["operability"],
         "riskPenalty": inputs["riskPenalty"],
         "total": total,
+        "priceEvidenceAvailable": bool(valid_prices),
+        "salesEvidenceAvailable": bool(sales),
+        "marketLowestEstimatedPrice": min(valid_prices) if valid_prices else None,
     }
 
 
@@ -197,9 +281,14 @@ def history_stats(history: dict, before_date: str) -> dict[str, dict]:
     return result
 
 
-def data_confidence(product: dict, supply_1688: dict) -> float:
+def data_confidence(product: dict, supply_1688: dict, market_platforms: list[dict] | None = None) -> float:
     score = 5.5
-    score += min(2.0, len(product.get("platforms", [])) * 0.5)
+    exact_market_count = sum(
+        item.get("matchStatus") == "exact"
+        and item.get("freshnessStatus") in {"fresh", "aging"}
+        for item in (market_platforms or [])
+    )
+    score += min(2.0, exact_market_count * 0.7)
     score += 0.8 if product.get("sourceUrl") else 0
     score += 0.7 if product.get("image") else 0
     score += 1.0 if supply_1688.get("matchStatus") == "exact" else 0
@@ -212,6 +301,7 @@ def rotation_metadata(
     stats: dict,
     supply_1688: dict,
     month: int,
+    market_platforms: list[dict] | None = None,
 ) -> dict:
     count = stats.get("count", 0)
     days_since_last = stats.get("daysSinceLast")
@@ -242,7 +332,7 @@ def rotation_metadata(
     product_tags = set(product.get("seasonalTags", []))
     seasonal_match = bool(active_tags & product_tags)
     seasonal_bonus = 0.5 if seasonal_match else 0
-    confidence = data_confidence(product, supply_1688)
+    confidence = data_confidence(product, supply_1688, market_platforms)
     rotation_score = round(
         value_score * 0.75 + freshness * 0.15 + confidence * 0.10 - repeat_penalty + seasonal_bonus,
         2,
@@ -279,7 +369,14 @@ def gross_margin_range(prices: list[float], costs: list[float]) -> list[float]:
 
 
 def platform_lowest_price(platforms: list[dict]) -> float | None:
-    prices = [item.get("lowPrice") for item in platforms if isinstance(item.get("lowPrice"), (int, float))]
+    prices = [
+        item.get("estimatedPrice")
+        for item in platforms
+        if item.get("matchStatus") == "exact"
+        and item.get("freshnessStatus") in {"fresh", "aging"}
+        and isinstance(item.get("estimatedPrice"), (int, float))
+        and item["estimatedPrice"] > 0
+    ]
     return min(prices) if prices else None
 
 
@@ -344,11 +441,120 @@ def parse_datetime(value: object) -> datetime | None:
     return parsed if parsed.tzinfo else parsed.replace(tzinfo=BEIJING)
 
 
+MARKET_NAMES = {
+    "taobao": "淘宝/天猫",
+    "jd": "京东",
+    "douyin": "抖音",
+}
+
+
+def marketplace_ids(product: dict) -> dict:
+    configured = dict(product.get("marketplaceIds") or {})
+    if not configured.get("jd") and "jd.com" in str(product.get("sourceUrl", "")):
+        configured["jd"] = str(product.get("sourceSkuId") or "") or None
+    return {
+        "taobao": configured.get("taobao"),
+        "jd": configured.get("jd"),
+        "douyin": configured.get("douyin"),
+    }
+
+
+def market_search_url(platform: str, product: dict) -> str:
+    query = f"{product['brand']} {product['name']} {product['sku']}"
+    if platform == "taobao":
+        return f"https://s.taobao.com/search?q={quote_plus(query)}"
+    if platform == "jd":
+        return (
+            product["sourceUrl"]
+            if "jd.com" in str(product.get("sourceUrl", ""))
+            else f"https://search.jd.com/Search?keyword={quote_plus(query)}"
+        )
+    return f"https://www.douyin.com/search/{quote_plus(query)}"
+
+
+def market_platforms(product: dict, market_cache: dict) -> list[dict]:
+    cached_platforms = market_cache.get("items", {}).get(product["id"], {})
+    provider_states = market_cache.get("providers", {})
+    result: list[dict] = []
+    for code in ("taobao", "jd", "douyin"):
+        cached = cached_platforms.get(code, {})
+        provider_status = provider_states.get(code, {}).get("status", "not-configured")
+        status = cached.get("status") or provider_status
+        match_status = cached.get("matchStatus", "unverified")
+        freshness_status = cached.get("freshnessStatus", "unverified")
+        estimated = cached.get("estimatedPrice")
+        valid_price = (
+            match_status == "exact"
+            and freshness_status in {"fresh", "aging"}
+            and isinstance(estimated, (int, float))
+            and estimated > 0
+        )
+        if valid_price:
+            price_text = f"预估到手￥{estimated:g}"
+            match_text = "官方API精确SKU"
+        elif match_status == "exact" and freshness_status == "stale":
+            price_text = "数据已过期"
+            match_text = "超过72小时，不参与价格评分"
+        elif status == "not-configured":
+            price_text = "待授权"
+            match_text = "官方API凭证未配置"
+        elif status == "no-exact-match":
+            price_text = "无精确匹配"
+            match_text = "品牌或规格未完全命中"
+        elif status == "error":
+            price_text = "刷新失败"
+            match_text = "保留最近有效数据"
+        else:
+            price_text = "待核验"
+            match_text = "等待官方API返回"
+
+        sales_30d = cached.get("sales30d")
+        review_count = cached.get("reviewCount")
+        sales_signal_parts = []
+        if isinstance(sales_30d, (int, float)):
+            sales_signal_parts.append(f"官方30天销量 {int(sales_30d):,}")
+        if isinstance(review_count, (int, float)):
+            sales_signal_parts.append(f"累计评价 {int(review_count):,}")
+        if cached.get("rankSignal"):
+            sales_signal_parts.append(str(cached["rankSignal"]))
+        sales_signal = "；".join(sales_signal_parts) or match_text
+
+        result.append(
+            {
+                "name": MARKET_NAMES[code],
+                "code": code,
+                "platformItemId": cached.get("platformItemId") or marketplace_ids(product).get(code),
+                "title": cached.get("title"),
+                "url": cached.get("url") or market_search_url(code, product),
+                "listPrice": cached.get("listPrice"),
+                "couponAmount": cached.get("couponAmount"),
+                "estimatedPrice": estimated if match_status == "exact" else None,
+                "lowPrice": estimated if valid_price else None,
+                "sales30d": sales_30d if match_status == "exact" else None,
+                "reviewCount": review_count if match_status == "exact" else None,
+                "goodRate": cached.get("goodRate") if match_status == "exact" else None,
+                "rankSignal": cached.get("rankSignal") if match_status == "exact" else None,
+                "matchStatus": match_status,
+                "verifiedAt": cached.get("verifiedAt"),
+                "ageHours": cached.get("ageHours"),
+                "freshnessStatus": freshness_status,
+                "sourceApi": cached.get("sourceApi"),
+                "status": status,
+                "error": cached.get("error"),
+                "price": price_text,
+                "matchType": match_text,
+                "salesSignal": sales_signal,
+            }
+        )
+    return result
+
+
 def enrich_product(
     product: dict,
     date_key: str,
     focus_category: str,
     supply_cache: dict,
+    market_cache: dict,
     stats: dict | None = None,
     month: int | None = None,
 ) -> dict:
@@ -356,6 +562,7 @@ def enrich_product(
     suggested = item["suggestedPrice"]
     cost_ceiling = [round(value * 0.78, 1) for value in suggested]
     supply_1688 = build_1688_supply(product, supply_cache)
+    official_platforms = market_platforms(product, market_cache)
     verified_price = supply_1688["lowestPrice"]
     if verified_price is not None:
         actual_costs = [verified_price, verified_price]
@@ -370,19 +577,40 @@ def enrich_product(
         item["marginBasis"] = "成本上限估算"
     item["costCeiling"] = cost_ceiling
     item["supply1688"] = supply_1688
-    item["platformLowestPrice"] = platform_lowest_price(item.get("platforms", []))
+    item["marketplaceIds"] = marketplace_ids(product)
+    item["platforms"] = official_platforms
+    item["platformLowestPrice"] = platform_lowest_price(official_platforms)
+    verified_market = [
+        platform
+        for platform in official_platforms
+        if platform["matchStatus"] == "exact"
+        and platform["freshnessStatus"] in {"fresh", "aging"}
+    ]
+    if verified_market:
+        evidence = []
+        for platform in verified_market:
+            parts = [f"{platform['name']}官方API精确SKU"]
+            if platform.get("sales30d") is not None:
+                parts.append(f"30天销量{int(platform['sales30d']):,}")
+            if platform.get("reviewCount") is not None:
+                parts.append(f"累计评价{int(platform['reviewCount']):,}")
+            evidence.append("，".join(parts))
+        item["heatEvidence"] = "；".join(evidence)
+    else:
+        item["heatEvidence"] = "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。"
     item["trialBudgetRule"] = "首批试款成本建议控制在￥200-￥500"
-    item["score"] = score_product(product, date_key, focus_category)
+    item["score"] = score_product(product, date_key, focus_category, official_platforms)
     item["rotation"] = rotation_metadata(
         product,
         item["score"]["total"],
         stats or {},
         supply_1688,
         month or datetime.now(BEIJING).month,
+        official_platforms,
     )
     item["lifecycleStatus"] = (
         "待核验"
-        if supply_1688["matchStatus"] != "exact"
+        if supply_1688["matchStatus"] != "exact" or not verified_market
         else "合格候选"
     )
     item.pop("scoreInputs", None)
@@ -535,6 +763,7 @@ def generate(
     date_key = now.strftime("%Y-%m-%d")
     catalog = load_catalog()
     supply_cache = load_1688_supply()
+    market_cache = load_market_data()
     history = history if history is not None else read_json(HISTORY_PATH, {"dates": {}})
     categories = sorted({item["category"] for item in catalog["products"]})
     focus_category = categories[now.timetuple().tm_yday % len(categories)] if categories else ""
@@ -546,6 +775,7 @@ def generate(
             date_key,
             focus_category,
             supply_cache,
+            market_cache,
             stats=stats_by_product.get(item["id"], {}),
             month=now.month,
         )
@@ -584,6 +814,12 @@ def generate(
 
     generated_at = now.isoformat()
     verified_1688_count = sum(item["supply1688"]["matchStatus"] == "exact" for item in selected)
+    verified_market_count = sum(
+        platform.get("matchStatus") == "exact"
+        and platform.get("freshnessStatus") in {"fresh", "aging"}
+        for item in selected
+        for platform in item["platforms"]
+    )
     recent_history_dates = sorted(date for date in history.get("dates", {}) if date < date_key)[-6:]
     seven_day_ids = set(selected_ids)
     for history_date in recent_history_dates:
@@ -607,6 +843,10 @@ def generate(
         "supply1688Provider": supply_cache.get("provider", "not-configured"),
         "supply1688VerifiedCount": verified_1688_count,
         "supply1688PendingCount": len(selected) - verified_1688_count,
+        "marketDataUpdatedAt": market_cache.get("updatedAt"),
+        "marketProviders": market_cache.get("providers", {}),
+        "marketVerifiedCount": verified_market_count,
+        "marketPendingCount": len(selected) * 3 - verified_market_count,
         "mode": catalog.get("mode", "single-sku"),
         "selectionPolicy": "每日目标为2个稳定跟踪款、4个轮换机会款、3个首次上榜款、1个季节机会款；历史样本不足时由当日最高质量候选补位。同品牌最多2款、同类目最多3款，并对连续出现和7日高频SKU扣分或冷却。",
         "focusCategory": focus_category,
@@ -663,6 +903,8 @@ def write_daily_markdown(data: dict) -> None:
         f"- 生成时间：{data['generatedAtBeijing']}",
         f"- 今日轮换关注：{data['focusCategory']}",
         f"- 评分规则：{data['scoreRules']['summary']}",
+        "- 市场数据口径：淘宝联盟、京东联盟、抖音精选联盟官方API；只接受品牌和全部规格词精确匹配的单SKU。",
+        "- 价格口径：展示商品标价、优惠券和官方预估到手价，不称为实际成交价；超过72小时的数据退出价格评分。",
         "- 供货价口径：1688单SKU精确匹配并核验后显示真实最低公开阶梯价；否则仅显示成本上限参考。",
         "",
         "## 店主每日10分钟操作流程",
@@ -688,13 +930,13 @@ def write_daily_markdown(data: dict) -> None:
             "",
             "## 今日10个候选SKU",
             "",
-            "| 排名 | 上榜标签 | 品牌/SKU | 规格 | 类型 | 平台最低参考 | 建议售价 | 1688最低价 | 成本上限 | 预计毛利率 | 热度分 | 源商品 |",
+            "| 排名 | 上榜标签 | 品牌/SKU | 规格 | 类型 | 官方预估最低到手 | 建议售价 | 1688最低价 | 成本上限 | 预计毛利率 | 热度分 | 源商品 |",
             "|---:|---|---|---|---|---:|---:|---:|---:|---:|---:|---|",
         ]
     )
 
     for item in data["products"]:
-        lowest = f"￥{item['platformLowestPrice']}" if item.get("platformLowestPrice") else "内容参考"
+        lowest = f"￥{item['platformLowestPrice']}" if item.get("platformLowestPrice") else "待授权"
         supply_1688 = item["supply1688"]
         supply_price = (
             f"[￥{supply_1688['lowestPrice']}]({supply_1688['offerUrl']})"

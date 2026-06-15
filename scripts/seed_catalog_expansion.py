@@ -3,7 +3,6 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-from urllib.parse import quote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -98,44 +97,6 @@ def score_inputs(sku_id: str, category: str, product_type: str) -> dict:
     }
 
 
-def platform_rows(brand: str, name: str, sku: str, suggested: list[float], source_url: str) -> list[dict]:
-    query = quote(f"{brand} {name} {sku}")
-    low = suggested[0]
-    return [
-        {
-            "name": "京东",
-            "price": f"约￥{low:.1f}-{suggested[1]:.1f}",
-            "lowPrice": low,
-            "matchType": "公开源商品/同规格参考",
-            "salesSignal": "京东公开价格页收录该具体商品，可核对商品编号、图片与完整规格。",
-            "url": source_url,
-        },
-        {
-            "name": "淘宝/天猫",
-            "price": f"约￥{low * 0.95:.1f}-{suggested[1] * 1.05:.1f}",
-            "lowPrice": round(low * 0.95, 1),
-            "matchType": "同品牌同规格搜索参考",
-            "salesSignal": "淘宝可检索同品牌同规格商品，用于核对低价带和官方活动价。",
-            "url": f"https://s.taobao.com/search?q={query}",
-        },
-        {
-            "name": "抖音",
-            "price": f"约￥{low:.1f}-{suggested[1] * 1.1:.1f}",
-            "lowPrice": low,
-            "matchType": "同品牌内容及价格参考",
-            "salesSignal": "抖音搜索可观察同品牌使用场景、达人讲解和促销组合。",
-            "url": f"https://www.douyin.com/search/{query}",
-        },
-        {
-            "name": "小红书",
-            "price": "内容种草",
-            "matchType": "场景热度参考",
-            "salesSignal": "小红书搜索用于观察家庭囤货、清洁教程或洗护体验内容。",
-            "url": f"https://www.xiaohongshu.com/search_result?keyword={query}",
-        },
-    ]
-
-
 def build_product(candidate: tuple) -> dict:
     sku_id, brand, name, sku, category, product_type, price, core, groups, seasonal_tags = candidate
     source_url = f"https://item.jd.com/{sku_id}.html"
@@ -158,11 +119,19 @@ def build_product(candidate: tuple) -> dict:
         "sourceUrl": source_url,
         "image": IMAGES[sku_id],
         "suggestedPrice": price,
-        "platforms": platform_rows(brand, name, sku, price, source_url),
-        "heatEvidence": "京东公开价格页可核对该具体SKU；淘宝、抖音和小红书均保留同品牌同规格搜索入口，至少形成两个平台的价格或内容观察信号。",
+        "heatEvidence": "等待淘宝联盟、京东联盟和抖音精选联盟官方API按品牌及完整规格核验。",
         "listingAdvice": f"标题覆盖{brand}、{core}和完整规格{sku}；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
         "risk": risk,
         "scoreInputs": score_inputs(sku_id, category, product_type),
+        "marketplaceIds": {
+            "taobao": None,
+            "jd": sku_id,
+            "douyin": None,
+        },
+        "marketSearch": {
+            "keywords": f"{brand} {name} {sku}",
+            "requiredTokenGroups": groups,
+        },
         "supply1688Search": {
             "keywords": f"{brand} {core} {sku}",
             "requiredTokenGroups": groups,

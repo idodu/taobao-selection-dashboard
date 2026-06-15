@@ -3,3 +3,5 @@ __pycache__/
 .env
 .env.*
 !.env.1688.example
+!.env.market.example
+.douyin_refresh_token

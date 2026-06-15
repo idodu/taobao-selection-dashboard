@@ -43,6 +43,33 @@ jobs:
       - name: Build preliminary daily shortlist
         run: python scripts/generate_daily_data.py
 
+      - name: Refresh official marketplace data
+        env:
+          TAOBAO_ALLIANCE_APP_KEY: ${{ secrets.TAOBAO_ALLIANCE_APP_KEY }}
+          TAOBAO_ALLIANCE_APP_SECRET: ${{ secrets.TAOBAO_ALLIANCE_APP_SECRET }}
+          TAOBAO_ADZONE_ID: ${{ secrets.TAOBAO_ADZONE_ID }}
+          JD_UNION_APP_KEY: ${{ secrets.JD_UNION_APP_KEY }}
+          JD_UNION_APP_SECRET: ${{ secrets.JD_UNION_APP_SECRET }}
+          JD_UNION_ID: ${{ secrets.JD_UNION_ID }}
+          DOUYIN_CLIENT_KEY: ${{ secrets.DOUYIN_CLIENT_KEY }}
+          DOUYIN_CLIENT_SECRET: ${{ secrets.DOUYIN_CLIENT_SECRET }}
+          DOUYIN_REFRESH_TOKEN: ${{ secrets.DOUYIN_REFRESH_TOKEN }}
+          DOUYIN_REFRESH_TOKEN_OUTPUT: ${{ runner.temp }}/douyin_refresh_token
+        run: python scripts/sync_market_data.py
+
+      - name: Rotate Douyin refresh token
+        env:
+          GH_TOKEN: ${{ secrets.MARKET_SECRETS_PAT }}
+          TOKEN_FILE: ${{ runner.temp }}/douyin_refresh_token
+        run: |
+          if [ -s "$TOKEN_FILE" ] && [ -n "$GH_TOKEN" ]; then
+            gh secret set DOUYIN_REFRESH_TOKEN --repo "${{ github.repository }}" < "$TOKEN_FILE"
+            echo "Douyin refresh token rotated."
+          elif [ -s "$TOKEN_FILE" ]; then
+            echo "::warning::MARKET_SECRETS_PAT is not configured; update DOUYIN_REFRESH_TOKEN before the next refresh."
+          fi
+          rm -f "$TOKEN_FILE"
+
       - name: Refresh audited 1688 SKU prices
         env:
           TOP_APP_KEY: ${{ secrets.TOP_APP_KEY }}
@@ -71,7 +98,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/1688_supply_prices.json data/recommendations.json data/selection_history.json docs/daily
+          git add data/1688_supply_prices.json data/market_data.json data/recommendations.json data/selection_history.json docs/daily
           git diff --cached --quiet || git commit -m "chore: update daily selection data"
           git push
 
