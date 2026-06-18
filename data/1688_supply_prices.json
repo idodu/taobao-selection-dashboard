@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T14:59:35.372948+08:00",
+  "updatedAt": "2026-06-18T14:43:42.211630+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -95,7 +95,7 @@
       "matchedTitle": "正品威露士经典沐浴露清新嫩肤滋润肌肤清洁男女持久留香沐浴乳1L",
       "offerId": "915228126518",
       "offerUrl": "https://detail.1688.com/offer/915228126518.html",
-      "verifiedAt": "2026-06-14T14:25:19.100677+08:00",
+      "verifiedAt": "2026-06-18T14:43:36.217555+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -245,7 +245,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-14T14:25:19.100699+08:00"
+      "attemptedAt": "2026-06-18T14:43:36.217582+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
@@ -257,16 +257,16 @@
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
       "returnedOffers": 40,
-      "exactMatches": 9,
+      "exactMatches": 8,
       "status": "matched",
-      "attemptedAt": "2026-06-14T14:25:17.788458+08:00"
+      "attemptedAt": "2026-06-18T14:43:34.607356+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-17T14:59:32.224052+08:00"
+      "attemptedAt": "2026-06-18T14:43:39.158948+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -315,7 +315,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-17T14:59:33.882292+08:00"
+      "attemptedAt": "2026-06-18T14:43:40.799190+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -330,12 +330,19 @@
       "exactMatches": 3,
       "status": "matched",
       "attemptedAt": "2026-06-17T14:59:31.085692+08:00"
+    },
+    "jd-100060591186-油污净": {
+      "keywords": "花王 油污净 1000ml",
+      "returnedOffers": 38,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-18T14:43:37.744745+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-3242242-洁厕液",
-    "jd-5030508-牙膏",
-    "jd-1218774-油污净",
+    "jd-100043025636-沐浴露",
+    "jd-100033499063-厨房纸",
+    "jd-100060591186-油污净",
     "jd-100012890014-抽纸",
     "jd-100013152446-洁厕液"
   ],
