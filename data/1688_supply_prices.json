@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T09:20:02.001319+08:00",
+  "updatedAt": "2026-06-21T14:42:28.746777+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -12,7 +12,7 @@
       "matchedTitle": "立白沙龙级香氛洗衣凝珠6合一家用持久留香洗衣珠高级感40颗正品",
       "offerId": "938670169290",
       "offerUrl": "https://detail.1688.com/offer/938670169290.html",
-      "verifiedAt": "2026-06-21T09:19:59.034023+08:00",
+      "verifiedAt": "2026-06-21T14:42:27.892943+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -189,7 +189,7 @@
       "returnedOffers": 40,
       "exactMatches": 12,
       "status": "matched",
-      "attemptedAt": "2026-06-21T09:19:57.601454+08:00"
+      "attemptedAt": "2026-06-21T14:42:27.556615+08:00"
     },
     "jd-100154323857-omo-laundry-pods-50": {
       "keywords": "奥妙 洗衣凝珠 50颗",
@@ -231,7 +231,7 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T09:19:55.179453+08:00"
+      "attemptedAt": "2026-06-21T14:42:26.578814+08:00"
     },
     "jd-100013568111-corou-cotton-towel-100x6": {
       "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
@@ -266,7 +266,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T09:19:59.034051+08:00"
+      "attemptedAt": "2026-06-21T14:42:27.892973+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -315,14 +315,14 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T09:20:00.471796+08:00"
+      "attemptedAt": "2026-06-21T14:42:28.417664+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T09:19:56.127524+08:00"
+      "attemptedAt": "2026-06-21T14:42:27.098639+08:00"
     },
     "jd-1218774-油污净": {
       "keywords": "威王 油污净 500g+420g",

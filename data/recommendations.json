@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-06-21T09:20:02.059293+08:00",
-  "generatedAtBeijing": "2026-06-21 09:20:02 UTC+8",
+  "generatedAt": "2026-06-21T14:42:28.808594+08:00",
+  "generatedAtBeijing": "2026-06-21 14:42:28 UTC+8",
   "date": "2026-06-21",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-15-single-sku-v4-official-market",
   "catalogSize": 40,
-  "supply1688UpdatedAt": "2026-06-21T09:20:02.001319+08:00",
+  "supply1688UpdatedAt": "2026-06-21T14:42:28.746777+08:00",
   "supply1688Provider": "elim-api",
   "supply1688VerifiedCount": 3,
   "supply1688PendingCount": 7,
-  "marketDataUpdatedAt": "2026-06-21T09:19:55.065533+08:00",
+  "marketDataUpdatedAt": "2026-06-21T14:42:26.462026+08:00",
   "marketProviders": {
     "taobao": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-21T09:19:55.063867+08:00"
+      "attemptedAt": "2026-06-21T14:42:26.460376+08:00"
     },
     "jd": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-21T09:19:55.064500+08:00"
+      "attemptedAt": "2026-06-21T14:42:26.461021+08:00"
     },
     "douyin": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-21T09:19:55.065018+08:00"
+      "attemptedAt": "2026-06-21T14:42:26.461520+08:00"
     }
   },
   "marketVerifiedCount": 0,
@@ -534,7 +534,7 @@
         "matchedTitle": "立白沙龙级香氛洗衣凝珠6合一家用持久留香洗衣珠高级感40颗正品",
         "offerId": "938670169290",
         "offerUrl": "https://detail.1688.com/offer/938670169290.html",
-        "verifiedAt": "2026-06-21T09:19:59.034023+08:00",
+        "verifiedAt": "2026-06-21T14:42:27.892943+08:00",
         "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
@@ -729,7 +729,7 @@
         "offerId": "674082368984",
         "offerUrl": "https://detail.1688.com/offer/674082368984.html",
         "verifiedAt": "2026-06-12T14:25:02.512764+08:00",
-        "ageHours": 210.9,
+        "ageHours": 216.3,
         "freshnessStatus": "stale",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -1500,7 +1500,7 @@
         "offerId": "764015283540",
         "offerUrl": "https://detail.1688.com/offer/764015283540.html",
         "verifiedAt": "2026-06-16T15:14:04.359686+08:00",
-        "ageHours": 114.1,
+        "ageHours": 119.5,
         "freshnessStatus": "aging",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -2080,7 +2080,7 @@
         "offerId": "915228126518",
         "offerUrl": "https://detail.1688.com/offer/915228126518.html",
         "verifiedAt": "2026-06-18T14:43:36.217555+08:00",
-        "ageHours": 66.6,
+        "ageHours": 72.0,
         "freshnessStatus": "aging",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
