@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import sys
 from pathlib import Path
 from urllib.parse import urlparse
@@ -85,6 +86,16 @@ def is_money_range(values: object) -> bool:
     )
 
 
+def is_percent_range(values: object) -> bool:
+    return (
+        isinstance(values, list)
+        and len(values) == 2
+        and all(isinstance(value, (int, float)) and math.isfinite(value) for value in values)
+        and values[0] <= values[1]
+        and values[1] <= 100
+    )
+
+
 def validate_product(item: dict, index: int) -> list[str]:
     errors: list[str] = []
     label = item.get("id", f"product[{index}]")
@@ -107,7 +118,7 @@ def validate_product(item: dict, index: int) -> list[str]:
         errors.append(f"{label}: supplyCostReference must be a two-number range")
     if not is_money_range(item["costCeiling"]):
         errors.append(f"{label}: costCeiling must be a two-number range")
-    if not is_money_range(item["estimatedGrossProfitRate"]):
+    if not is_percent_range(item["estimatedGrossProfitRate"]):
         errors.append(f"{label}: estimatedGrossProfitRate must be a two-number range")
     if item["statusTag"] not in {"新增", "昨日品", "回归品"}:
         errors.append(f"{label}: invalid statusTag {item['statusTag']}")
