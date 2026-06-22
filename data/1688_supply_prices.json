@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21T14:42:28.746777+08:00",
+  "updatedAt": "2026-06-22T15:11:22.571129+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -148,25 +148,25 @@
       "sellerType": "merchant"
     },
     "jd-1218774-油污净": {
-      "lowestPrice": 8.5,
+      "lowestPrice": 3.9,
       "moq": null,
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "威王油烟机清洗剂厨房重油污清洁剂去油除菌净500g+420g正品批发",
-      "offerId": "735683284974",
-      "offerUrl": "https://detail.1688.com/offer/735683284974.html",
-      "verifiedAt": "2026-06-17T14:59:32.224030+08:00",
+      "matchedTitle": "威王厨房油污清洁剂油烟机清洗剂柠檬香500克/瓶+420克/袋补充装",
+      "offerId": "656329274387",
+      "offerUrl": "https://detail.1688.com/offer/656329274387.html",
+      "verifiedAt": "2026-06-22T15:11:16.364978+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
         "威王",
         "油污清洁",
-        "500g",
-        "420g"
+        "500克",
+        "420克"
       ],
-      "bookedCount": 0,
-      "sellerType": "merchant"
+      "bookedCount": 5,
+      "sellerType": "seller"
     }
   },
   "attempts": {
@@ -266,7 +266,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T14:42:27.892973+08:00"
+      "attemptedAt": "2026-06-22T15:11:19.325331+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -280,7 +280,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-15T22:38:16.303881+08:00"
+      "attemptedAt": "2026-06-22T15:11:16.364999+08:00"
     },
     "jd-100010234334-洁厕宝": {
       "keywords": "蓝月亮 洁厕宝 50g*12块",
@@ -315,7 +315,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T14:42:28.417664+08:00"
+      "attemptedAt": "2026-06-22T15:11:20.848778+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -326,10 +326,10 @@
     },
     "jd-1218774-油污净": {
       "keywords": "威王 油污净 500g+420g",
-      "returnedOffers": 11,
-      "exactMatches": 3,
+      "returnedOffers": 12,
+      "exactMatches": 4,
       "status": "matched",
-      "attemptedAt": "2026-06-17T14:59:31.085692+08:00"
+      "attemptedAt": "2026-06-22T15:11:15.137033+08:00"
     },
     "jd-100060591186-油污净": {
       "keywords": "花王 油污净 1000ml",
@@ -351,12 +351,19 @@
       "exactMatches": 0,
       "status": "no-exact-match",
       "attemptedAt": "2026-06-19T14:56:30.106662+08:00"
+    },
+    "jd-100143899092-油污净": {
+      "keywords": "老管家 油污净 500g*2瓶",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-22T15:11:17.916599+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-100008268866-sensodyne-toothpaste-270g",
-    "jd-5030508-牙膏",
-    "jd-100045910485-liby-laundry-pods-40",
+    "jd-1218774-油污净",
+    "jd-3761608-抽纸",
+    "jd-100143899092-油污净",
     "jd-100012890014-抽纸",
     "jd-100013152446-洁厕液"
   ],
