@@ -1,22 +1,22 @@
 {
-  "updatedAt": "2026-06-22T15:11:15.036291+08:00",
+  "updatedAt": "2026-06-23T13:58:29.775596+08:00",
   "schemaVersion": 1,
   "sourcePolicy": "仅接受淘宝联盟、京东联盟、抖音精选联盟官方 API 返回的数据；品牌和全部规格词精确匹配后才参与价格与销量评分。",
   "providers": {
     "taobao": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-22T15:11:15.034560+08:00"
+      "attemptedAt": "2026-06-23T13:58:29.773738+08:00"
     },
     "jd": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-22T15:11:15.035225+08:00"
+      "attemptedAt": "2026-06-23T13:58:29.774516+08:00"
     },
     "douyin": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-06-22T15:11:15.035720+08:00"
+      "attemptedAt": "2026-06-23T13:58:29.775059+08:00"
     }
   },
   "items": {
