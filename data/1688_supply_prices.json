@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23T13:58:36.322998+08:00",
+  "updatedAt": "2026-06-24T13:58:27.765129+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -167,6 +167,46 @@
       ],
       "bookedCount": 5,
       "sellerType": "seller"
+    },
+    "jd-10074068017795-漱口水": {
+      "lowestPrice": 23.5,
+      "moq": 1,
+      "unit": "件",
+      "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+      "matchStatus": "exact",
+      "matchedTitle": "Lion狮王氨基酸国产漱口水450ml黑莓月桂叶NONIO鲜萃桃桃持久清新",
+      "offerId": "913001904906",
+      "offerUrl": "https://detail.1688.com/offer/913001904906.html",
+      "verifiedAt": "2026-06-24T13:58:23.438216+08:00",
+      "source": "ElimAPI 1688授权搜索",
+      "priceField": "dropship_price",
+      "matchEvidence": [
+        "狮王",
+        "漱口水",
+        "450ml"
+      ],
+      "bookedCount": 7,
+      "sellerType": "merchant"
+    },
+    "jd-4806379-油污净": {
+      "lowestPrice": 16.0,
+      "moq": null,
+      "unit": "件",
+      "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+      "matchStatus": "exact",
+      "matchedTitle": "批发进口意大利大公鸡管家多能油污净清洁剂厨房油污净600ml",
+      "offerId": "912215766130",
+      "offerUrl": "https://detail.1688.com/offer/912215766130.html",
+      "verifiedAt": "2026-06-24T13:58:24.809549+08:00",
+      "source": "ElimAPI 1688授权搜索",
+      "priceField": "price",
+      "matchEvidence": [
+        "大公鸡管家",
+        "油污净",
+        "600ml"
+      ],
+      "bookedCount": 40,
+      "sellerType": "seller"
     }
   },
   "attempts": {
@@ -245,7 +285,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-18T14:43:36.217582+08:00"
+      "attemptedAt": "2026-06-24T13:58:20.772334+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
@@ -266,7 +306,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-23T13:58:33.387005+08:00"
+      "attemptedAt": "2026-06-24T13:58:24.809578+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -315,7 +355,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-23T13:58:34.874539+08:00"
+      "attemptedAt": "2026-06-24T13:58:26.353956+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -358,12 +398,26 @@
       "exactMatches": 0,
       "status": "no-exact-match",
       "attemptedAt": "2026-06-22T15:11:17.916599+08:00"
+    },
+    "jd-10074068017795-漱口水": {
+      "keywords": "狮王 漱口水 450ml",
+      "returnedOffers": 11,
+      "exactMatches": 4,
+      "status": "matched",
+      "attemptedAt": "2026-06-24T13:58:22.546469+08:00"
+    },
+    "jd-4806379-油污净": {
+      "keywords": "大公鸡管家 油污净 600ml",
+      "returnedOffers": 40,
+      "exactMatches": 11,
+      "status": "matched",
+      "attemptedAt": "2026-06-24T13:58:23.438238+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-3242242-洁厕液",
-    "jd-5911553-mr-muscle-oil-cleaner-455x2",
-    "jd-100060591186-油污净",
+    "jd-100033499063-厨房纸",
+    "jd-10074068017795-漱口水",
+    "jd-4806379-油污净",
     "jd-100012890014-抽纸",
     "jd-100013152446-洁厕液"
   ],
