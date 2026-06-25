@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T13:58:27.765129+08:00",
+  "updatedAt": "2026-06-25T13:57:17.370095+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -115,7 +115,7 @@
       "matchedTitle": "清风抽纸金装120抽大箱家用纸抽卫生纸餐巾纸24包箱装纸巾批发",
       "offerId": "724141170068",
       "offerUrl": "https://detail.1688.com/offer/724141170068.html",
-      "verifiedAt": "2026-06-16T15:14:03.031410+08:00",
+      "verifiedAt": "2026-06-25T13:57:12.988669+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -124,7 +124,7 @@
         "120抽",
         "24包"
       ],
-      "bookedCount": 72345,
+      "bookedCount": 68742,
       "sellerType": "merchant"
     },
     "jd-100327980320-洗发水": {
@@ -136,7 +136,7 @@
       "matchedTitle": "正品潘婷3分钟奇迹洗发水300g/470g多效损伤修护洗发露护发素官方",
       "offerId": "764015283540",
       "offerUrl": "https://detail.1688.com/offer/764015283540.html",
-      "verifiedAt": "2026-06-16T15:14:04.359686+08:00",
+      "verifiedAt": "2026-06-25T13:57:11.519089+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -144,7 +144,7 @@
         "洗发水",
         "470g"
       ],
-      "bookedCount": 59,
+      "bookedCount": 67,
       "sellerType": "merchant"
     },
     "jd-1218774-油污净": {
@@ -306,7 +306,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-24T13:58:24.809578+08:00"
+      "attemptedAt": "2026-06-25T13:57:14.468901+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -332,16 +332,16 @@
     "jd-100018097536-抽纸": {
       "keywords": "清风 抽纸 120抽*24包",
       "returnedOffers": 40,
-      "exactMatches": 7,
+      "exactMatches": 6,
       "status": "matched",
-      "attemptedAt": "2026-06-16T15:14:01.266850+08:00"
+      "attemptedAt": "2026-06-25T13:57:11.519114+08:00"
     },
     "jd-100327980320-洗发水": {
       "keywords": "潘婷 洗发水 470g",
-      "returnedOffers": 31,
+      "returnedOffers": 36,
       "exactMatches": 4,
       "status": "matched",
-      "attemptedAt": "2026-06-16T15:14:03.031437+08:00"
+      "attemptedAt": "2026-06-25T13:57:09.868399+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -355,7 +355,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-24T13:58:26.353956+08:00"
+      "attemptedAt": "2026-06-25T13:57:15.877450+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -390,7 +390,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-19T14:56:30.106662+08:00"
+      "attemptedAt": "2026-06-25T13:57:12.988695+08:00"
     },
     "jd-100143899092-油污净": {
       "keywords": "老管家 油污净 500g*2瓶",
@@ -415,9 +415,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100033499063-厨房纸",
-    "jd-10074068017795-漱口水",
-    "jd-4806379-油污净",
+    "jd-100327980320-洗发水",
+    "jd-100018097536-抽纸",
+    "jd-100068270587-洁厕液",
     "jd-100012890014-抽纸",
     "jd-100013152446-洁厕液"
   ],
