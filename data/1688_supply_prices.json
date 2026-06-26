@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25T13:57:17.370095+08:00",
+  "updatedAt": "2026-06-26T14:01:23.325552+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -95,7 +95,7 @@
       "matchedTitle": "正品威露士经典沐浴露清新嫩肤滋润肌肤清洁男女持久留香沐浴乳1L",
       "offerId": "915228126518",
       "offerUrl": "https://detail.1688.com/offer/915228126518.html",
-      "verifiedAt": "2026-06-18T14:43:36.217555+08:00",
+      "verifiedAt": "2026-06-26T14:01:17.685874+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -299,14 +299,14 @@
       "returnedOffers": 40,
       "exactMatches": 8,
       "status": "matched",
-      "attemptedAt": "2026-06-18T14:43:34.607356+08:00"
+      "attemptedAt": "2026-06-26T14:01:15.789204+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-25T13:57:14.468901+08:00"
+      "attemptedAt": "2026-06-26T14:01:21.926767+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -355,7 +355,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-25T13:57:15.877450+08:00"
+      "attemptedAt": "2026-06-26T14:01:20.442804+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -373,10 +373,10 @@
     },
     "jd-100060591186-油污净": {
       "keywords": "花王 油污净 1000ml",
-      "returnedOffers": 39,
+      "returnedOffers": 36,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-23T13:58:31.985526+08:00"
+      "attemptedAt": "2026-06-26T14:01:19.087879+08:00"
     },
     "jd-100001843719-洗衣液": {
       "keywords": "奥妙 洗衣液 12斤",
@@ -412,14 +412,21 @@
       "exactMatches": 11,
       "status": "matched",
       "attemptedAt": "2026-06-24T13:58:23.438238+08:00"
+    },
+    "jd-100014696148-卷纸": {
+      "keywords": "清风 卷纸 140g*30卷",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-06-26T14:01:17.685903+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-100327980320-洗发水",
-    "jd-100018097536-抽纸",
-    "jd-100068270587-洁厕液",
-    "jd-100012890014-抽纸",
-    "jd-100013152446-洁厕液"
+    "jd-100043025636-沐浴露",
+    "jd-100014696148-卷纸",
+    "jd-100060591186-油污净",
+    "jd-100013152446-洁厕液",
+    "jd-100012890014-抽纸"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
