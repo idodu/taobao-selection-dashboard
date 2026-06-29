@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-28T14:07:57.118953+08:00",
+  "updatedAt": "2026-06-29T14:28:20.165751+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -136,7 +136,7 @@
       "matchedTitle": "正品潘婷3分钟奇迹洗发水300g/470g多效损伤修护洗发露护发素官方",
       "offerId": "764015283540",
       "offerUrl": "https://detail.1688.com/offer/764015283540.html",
-      "verifiedAt": "2026-06-25T13:57:11.519089+08:00",
+      "verifiedAt": "2026-06-29T14:28:14.887599+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -144,7 +144,7 @@
         "洗发水",
         "470g"
       ],
-      "bookedCount": 67,
+      "bookedCount": 81,
       "sellerType": "merchant"
     },
     "jd-1218774-油污净": {
@@ -207,6 +207,27 @@
       ],
       "bookedCount": 40,
       "sellerType": "seller"
+    },
+    "jd-100014696148-卷纸": {
+      "lowestPrice": 57.9,
+      "moq": null,
+      "unit": "件",
+      "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+      "matchStatus": "exact",
+      "matchedTitle": "清风原木金装有芯卷纸 4层140克*30卷整箱家用商用卷纸B2014JE30N",
+      "offerId": "906629956904",
+      "offerUrl": "https://detail.1688.com/offer/906629956904.html",
+      "verifiedAt": "2026-06-29T14:28:17.034871+08:00",
+      "source": "ElimAPI 1688授权搜索",
+      "priceField": "price",
+      "matchEvidence": [
+        "清风",
+        "卷纸",
+        "140克",
+        "30卷"
+      ],
+      "bookedCount": 91,
+      "sellerType": "merchant"
     }
   },
   "attempts": {
@@ -271,7 +292,7 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T14:42:26.578814+08:00"
+      "attemptedAt": "2026-06-29T14:28:14.887653+08:00"
     },
     "jd-100013568111-corou-cotton-towel-100x6": {
       "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
@@ -306,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-28T14:07:54.484588+08:00"
+      "attemptedAt": "2026-06-29T14:28:17.034900+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -338,10 +359,10 @@
     },
     "jd-100327980320-洗发水": {
       "keywords": "潘婷 洗发水 470g",
-      "returnedOffers": 36,
+      "returnedOffers": 38,
       "exactMatches": 4,
       "status": "matched",
-      "attemptedAt": "2026-06-25T13:57:09.868399+08:00"
+      "attemptedAt": "2026-06-29T14:28:13.023353+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -355,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-28T14:07:55.848548+08:00"
+      "attemptedAt": "2026-06-29T14:28:18.416743+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -416,15 +437,15 @@
     "jd-100014696148-卷纸": {
       "keywords": "清风 卷纸 140g*30卷",
       "returnedOffers": 40,
-      "exactMatches": 0,
-      "status": "no-exact-match",
-      "attemptedAt": "2026-06-26T14:01:17.685903+08:00"
+      "exactMatches": 1,
+      "status": "matched",
+      "attemptedAt": "2026-06-29T14:28:15.506318+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-100001843719-洗衣液",
-    "jd-100145357766-vinda-wet-toilet-80x5",
-    "jd-5911553-mr-muscle-oil-cleaner-455x2",
+    "jd-100327980320-洗发水",
+    "jd-100008268866-sensodyne-toothpaste-270g",
+    "jd-100014696148-卷纸",
     "jd-100012890014-抽纸",
     "jd-100013152446-洁厕液"
   ],
