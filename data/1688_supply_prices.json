@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-29T14:28:20.165751+08:00",
+  "updatedAt": "2026-06-30T14:01:40.979858+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -87,15 +87,15 @@
       "sellerType": "seller"
     },
     "jd-100043025636-沐浴露": {
-      "lowestPrice": 21.0,
+      "lowestPrice": 27.9,
       "moq": null,
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "正品威露士经典沐浴露清新嫩肤滋润肌肤清洁男女持久留香沐浴乳1L",
-      "offerId": "915228126518",
-      "offerUrl": "https://detail.1688.com/offer/915228126518.html",
-      "verifiedAt": "2026-06-26T14:01:17.685874+08:00",
+      "matchedTitle": "威露士白茶无花果1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳",
+      "offerId": "898396984139",
+      "offerUrl": "https://detail.1688.com/offer/898396984139.html",
+      "verifiedAt": "2026-06-30T14:01:35.307301+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -104,7 +104,7 @@
         "1L"
       ],
       "bookedCount": 0,
-      "sellerType": "seller"
+      "sellerType": "merchant"
     },
     "jd-100018097536-抽纸": {
       "lowestPrice": 1.1,
@@ -189,15 +189,15 @@
       "sellerType": "merchant"
     },
     "jd-4806379-油污净": {
-      "lowestPrice": 16.0,
+      "lowestPrice": 14.9,
       "moq": null,
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "批发进口意大利大公鸡管家多能油污净清洁剂厨房油污净600ml",
-      "offerId": "912215766130",
-      "offerUrl": "https://detail.1688.com/offer/912215766130.html",
-      "verifiedAt": "2026-06-24T13:58:24.809549+08:00",
+      "matchedTitle": "意大利大公鸡管家油污净厨房油烟机清洗剂喷雾家用去重油污600ml",
+      "offerId": "694500117288",
+      "offerUrl": "https://detail.1688.com/offer/694500117288.html",
+      "verifiedAt": "2026-06-30T14:01:36.911499+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -205,8 +205,8 @@
         "油污净",
         "600ml"
       ],
-      "bookedCount": 40,
-      "sellerType": "seller"
+      "bookedCount": 22,
+      "sellerType": "merchant"
     },
     "jd-100014696148-卷纸": {
       "lowestPrice": 57.9,
@@ -318,16 +318,16 @@
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
       "returnedOffers": 40,
-      "exactMatches": 8,
+      "exactMatches": 7,
       "status": "matched",
-      "attemptedAt": "2026-06-26T14:01:15.789204+08:00"
+      "attemptedAt": "2026-06-30T14:01:33.710912+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-29T14:28:17.034900+08:00"
+      "attemptedAt": "2026-06-30T14:01:36.911526+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-29T14:28:18.416743+08:00"
+      "attemptedAt": "2026-06-30T14:01:38.438032+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -394,10 +394,10 @@
     },
     "jd-100060591186-油污净": {
       "keywords": "花王 油污净 1000ml",
-      "returnedOffers": 36,
+      "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-26T14:01:19.087879+08:00"
+      "attemptedAt": "2026-06-30T14:01:32.152734+08:00"
     },
     "jd-100001843719-洗衣液": {
       "keywords": "奥妙 洗衣液 12斤",
@@ -430,9 +430,9 @@
     "jd-4806379-油污净": {
       "keywords": "大公鸡管家 油污净 600ml",
       "returnedOffers": 40,
-      "exactMatches": 11,
+      "exactMatches": 15,
       "status": "matched",
-      "attemptedAt": "2026-06-24T13:58:23.438238+08:00"
+      "attemptedAt": "2026-06-30T14:01:35.307328+08:00"
     },
     "jd-100014696148-卷纸": {
       "keywords": "清风 卷纸 140g*30卷",
@@ -443,9 +443,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100327980320-洗发水",
-    "jd-100008268866-sensodyne-toothpaste-270g",
-    "jd-100014696148-卷纸",
+    "jd-100060591186-油污净",
+    "jd-100043025636-沐浴露",
+    "jd-4806379-油污净",
     "jd-100012890014-抽纸",
     "jd-100013152446-洁厕液"
   ],
