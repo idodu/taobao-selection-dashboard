@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T14:01:40.979858+08:00",
+  "updatedAt": "2026-07-01T14:16:38.989514+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -74,7 +74,7 @@
       "matchedTitle": "威猛先生洁厕液柠檬草香750g*2瓶厕所清洁剂柠檬草香洁厕灵除垢",
       "offerId": "666127001707",
       "offerUrl": "https://detail.1688.com/offer/666127001707.html",
-      "verifiedAt": "2026-06-27T13:45:32.243899+08:00",
+      "verifiedAt": "2026-07-01T14:16:32.945237+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -313,7 +313,7 @@
       "returnedOffers": 8,
       "exactMatches": 1,
       "status": "matched",
-      "attemptedAt": "2026-06-27T13:45:30.905105+08:00"
+      "attemptedAt": "2026-07-01T14:16:31.450472+08:00"
     },
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-30T14:01:36.911526+08:00"
+      "attemptedAt": "2026-07-01T14:16:37.485007+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -341,7 +341,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-27T13:45:32.243919+08:00"
+      "attemptedAt": "2026-07-01T14:16:32.945258+08:00"
     },
     "jd-100010234334-洁厕宝": {
       "keywords": "蓝月亮 洁厕宝 50g*12块",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-30T14:01:38.438032+08:00"
+      "attemptedAt": "2026-07-01T14:16:35.998953+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -411,7 +411,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-25T13:57:12.988695+08:00"
+      "attemptedAt": "2026-07-01T14:16:34.443300+08:00"
     },
     "jd-100143899092-油污净": {
       "keywords": "老管家 油污净 500g*2瓶",
@@ -443,11 +443,11 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100060591186-油污净",
-    "jd-100043025636-沐浴露",
-    "jd-4806379-油污净",
-    "jd-100012890014-抽纸",
-    "jd-100013152446-洁厕液"
+    "jd-3242242-洁厕液",
+    "jd-3761608-抽纸",
+    "jd-100068270587-洁厕液",
+    "jd-100013152446-洁厕液",
+    "jd-100012890014-抽纸"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
