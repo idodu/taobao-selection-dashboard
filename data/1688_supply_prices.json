@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T13:49:21.762581+08:00",
+  "updatedAt": "2026-07-03T13:43:39.056699+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -177,7 +177,7 @@
       "matchedTitle": "Lion狮王氨基酸国产漱口水450ml黑莓月桂叶NONIO鲜萃桃桃持久清新",
       "offerId": "913001904906",
       "offerUrl": "https://detail.1688.com/offer/913001904906.html",
-      "verifiedAt": "2026-06-24T13:58:23.438216+08:00",
+      "verifiedAt": "2026-07-03T13:43:36.332667+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "dropship_price",
       "matchEvidence": [
@@ -185,7 +185,7 @@
         "漱口水",
         "450ml"
       ],
-      "bookedCount": 7,
+      "bookedCount": 6,
       "sellerType": "merchant"
     },
     "jd-4806379-油污净": {
@@ -292,7 +292,7 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-29T14:28:14.887653+08:00"
+      "attemptedAt": "2026-07-03T13:43:34.491910+08:00"
     },
     "jd-100013568111-corou-cotton-towel-100x6": {
       "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-02T13:49:20.419763+08:00"
+      "attemptedAt": "2026-07-03T13:43:37.621342+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -348,7 +348,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-15T22:38:17.817448+08:00"
+      "attemptedAt": "2026-07-03T13:43:32.540860+08:00"
     },
     "jd-100018097536-抽纸": {
       "keywords": "清风 抽纸 120抽*24包",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-02T13:49:19.105428+08:00"
+      "attemptedAt": "2026-07-03T13:43:36.332687+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -422,10 +422,10 @@
     },
     "jd-10074068017795-漱口水": {
       "keywords": "狮王 漱口水 450ml",
-      "returnedOffers": 11,
+      "returnedOffers": 10,
       "exactMatches": 4,
       "status": "matched",
-      "attemptedAt": "2026-06-24T13:58:22.546469+08:00"
+      "attemptedAt": "2026-07-03T13:43:35.294530+08:00"
     },
     "jd-4806379-油污净": {
       "keywords": "大公鸡管家 油污净 600ml",
@@ -443,9 +443,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100033499063-厨房纸",
-    "jd-5911553-mr-muscle-oil-cleaner-455x2",
-    "jd-5851301-blue-moon-laundry-liquid-12jin",
+    "jd-100010234334-洁厕宝",
+    "jd-100008268866-sensodyne-toothpaste-270g",
+    "jd-10074068017795-漱口水",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
