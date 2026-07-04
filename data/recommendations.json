@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-07-04T08:41:06.167521+08:00",
-  "generatedAtBeijing": "2026-07-04 08:41:06 UTC+8",
+  "generatedAt": "2026-07-04T08:43:05.580142+08:00",
+  "generatedAtBeijing": "2026-07-04 08:43:05 UTC+8",
   "date": "2026-07-04",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-15-single-sku-v4-official-market",
   "catalogSize": 40,
-  "supply1688UpdatedAt": "2026-07-04T08:41:06.117507+08:00",
+  "supply1688UpdatedAt": "2026-07-04T08:43:05.522153+08:00",
   "supply1688Provider": "elim-api",
   "supply1688VerifiedCount": 6,
   "supply1688PendingCount": 4,
-  "marketDataUpdatedAt": "2026-07-04T08:40:58.461152+08:00",
+  "marketDataUpdatedAt": "2026-07-04T08:43:03.765987+08:00",
   "marketProviders": {
     "taobao": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-04T08:40:58.459821+08:00"
+      "attemptedAt": "2026-07-04T08:43:03.764275+08:00"
     },
     "jd": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-04T08:40:58.460357+08:00"
+      "attemptedAt": "2026-07-04T08:43:03.764954+08:00"
     },
     "douyin": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-04T08:40:58.460745+08:00"
+      "attemptedAt": "2026-07-04T08:43:03.765448+08:00"
     }
   },
   "marketVerifiedCount": 0,
@@ -159,7 +159,7 @@
         "matchedTitle": "威露士白茶无花果1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳",
         "offerId": "898396984139",
         "offerUrl": "https://detail.1688.com/offer/898396984139.html",
-        "verifiedAt": "2026-07-04T08:41:00.368278+08:00",
+        "verifiedAt": "2026-07-04T08:43:04.230693+08:00",
         "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
@@ -351,7 +351,7 @@
         "matchedTitle": "正品潘婷3分钟奇迹洗发水300g/470g多效损伤修护洗发露护发素官方",
         "offerId": "764015283540",
         "offerUrl": "https://detail.1688.com/offer/764015283540.html",
-        "verifiedAt": "2026-07-04T08:41:01.667237+08:00",
+        "verifiedAt": "2026-07-04T08:43:04.552446+08:00",
         "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
@@ -541,7 +541,7 @@
         "matchedTitle": "意大利大公鸡管家油污净厨房油烟机清洗剂喷雾家用去重油污600ml",
         "offerId": "694500117288",
         "offerUrl": "https://detail.1688.com/offer/694500117288.html",
-        "verifiedAt": "2026-07-04T08:41:03.158998+08:00",
+        "verifiedAt": "2026-07-04T08:43:04.885863+08:00",
         "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",

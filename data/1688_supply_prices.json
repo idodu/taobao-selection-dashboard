@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-04T08:41:06.117507+08:00",
+  "updatedAt": "2026-07-04T08:43:05.522153+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -95,7 +95,7 @@
       "matchedTitle": "威露士白茶无花果1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳",
       "offerId": "898396984139",
       "offerUrl": "https://detail.1688.com/offer/898396984139.html",
-      "verifiedAt": "2026-07-04T08:41:00.368278+08:00",
+      "verifiedAt": "2026-07-04T08:43:04.230693+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -136,7 +136,7 @@
       "matchedTitle": "正品潘婷3分钟奇迹洗发水300g/470g多效损伤修护洗发露护发素官方",
       "offerId": "764015283540",
       "offerUrl": "https://detail.1688.com/offer/764015283540.html",
-      "verifiedAt": "2026-07-04T08:41:01.667237+08:00",
+      "verifiedAt": "2026-07-04T08:43:04.552446+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -197,7 +197,7 @@
       "matchedTitle": "意大利大公鸡管家油污净厨房油烟机清洗剂喷雾家用去重油污600ml",
       "offerId": "694500117288",
       "offerUrl": "https://detail.1688.com/offer/694500117288.html",
-      "verifiedAt": "2026-07-04T08:41:03.158998+08:00",
+      "verifiedAt": "2026-07-04T08:43:04.885863+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -320,14 +320,14 @@
       "returnedOffers": 40,
       "exactMatches": 8,
       "status": "matched",
-      "attemptedAt": "2026-07-04T08:40:58.598471+08:00"
+      "attemptedAt": "2026-07-04T08:43:03.881456+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-04T08:41:04.604273+08:00"
+      "attemptedAt": "2026-07-04T08:43:05.214865+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -362,7 +362,7 @@
       "returnedOffers": 39,
       "exactMatches": 4,
       "status": "matched",
-      "attemptedAt": "2026-07-04T08:41:00.368301+08:00"
+      "attemptedAt": "2026-07-04T08:43:04.230719+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-04T08:41:03.159021+08:00"
+      "attemptedAt": "2026-07-04T08:43:04.885899+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -432,7 +432,7 @@
       "returnedOffers": 40,
       "exactMatches": 15,
       "status": "matched",
-      "attemptedAt": "2026-07-04T08:41:01.667260+08:00"
+      "attemptedAt": "2026-07-04T08:43:04.552472+08:00"
     },
     "jd-100014696148-卷纸": {
       "keywords": "清风 卷纸 140g*30卷",
