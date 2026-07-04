@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-07-04T08:43:05.580142+08:00",
-  "generatedAtBeijing": "2026-07-04 08:43:05 UTC+8",
+  "generatedAt": "2026-07-04T13:37:16.581171+08:00",
+  "generatedAtBeijing": "2026-07-04 13:37:16 UTC+8",
   "date": "2026-07-04",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-15-single-sku-v4-official-market",
   "catalogSize": 40,
-  "supply1688UpdatedAt": "2026-07-04T08:43:05.522153+08:00",
+  "supply1688UpdatedAt": "2026-07-04T13:37:16.523150+08:00",
   "supply1688Provider": "elim-api",
   "supply1688VerifiedCount": 6,
   "supply1688PendingCount": 4,
-  "marketDataUpdatedAt": "2026-07-04T08:43:03.765987+08:00",
+  "marketDataUpdatedAt": "2026-07-04T13:37:08.925453+08:00",
   "marketProviders": {
     "taobao": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-04T08:43:03.764275+08:00"
+      "attemptedAt": "2026-07-04T13:37:08.923737+08:00"
     },
     "jd": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-04T08:43:03.764954+08:00"
+      "attemptedAt": "2026-07-04T13:37:08.924388+08:00"
     },
     "douyin": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-04T08:43:03.765448+08:00"
+      "attemptedAt": "2026-07-04T13:37:08.924922+08:00"
     }
   },
   "marketVerifiedCount": 0,
@@ -159,7 +159,7 @@
         "matchedTitle": "威露士白茶无花果1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳",
         "offerId": "898396984139",
         "offerUrl": "https://detail.1688.com/offer/898396984139.html",
-        "verifiedAt": "2026-07-04T08:43:04.230693+08:00",
+        "verifiedAt": "2026-07-04T13:37:10.672445+08:00",
         "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
@@ -351,7 +351,7 @@
         "matchedTitle": "正品潘婷3分钟奇迹洗发水300g/470g多效损伤修护洗发露护发素官方",
         "offerId": "764015283540",
         "offerUrl": "https://detail.1688.com/offer/764015283540.html",
-        "verifiedAt": "2026-07-04T08:43:04.552446+08:00",
+        "verifiedAt": "2026-07-04T13:37:12.124636+08:00",
         "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
@@ -541,7 +541,7 @@
         "matchedTitle": "意大利大公鸡管家油污净厨房油烟机清洗剂喷雾家用去重油污600ml",
         "offerId": "694500117288",
         "offerUrl": "https://detail.1688.com/offer/694500117288.html",
-        "verifiedAt": "2026-07-04T08:43:04.885863+08:00",
+        "verifiedAt": "2026-07-04T13:37:13.717510+08:00",
         "ageHours": 0.0,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
@@ -737,7 +737,7 @@
         "offerId": "656329274387",
         "offerUrl": "https://detail.1688.com/offer/656329274387.html",
         "verifiedAt": "2026-06-22T15:11:16.364978+08:00",
-        "ageHours": 281.5,
+        "ageHours": 286.4,
         "freshnessStatus": "stale",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -932,7 +932,7 @@
         "offerId": "906629956904",
         "offerUrl": "https://detail.1688.com/offer/906629956904.html",
         "verifiedAt": "2026-06-29T14:28:17.034871+08:00",
-        "ageHours": 114.2,
+        "ageHours": 119.1,
         "freshnessStatus": "aging",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -1693,7 +1693,7 @@
         "offerId": "913001904906",
         "offerUrl": "https://detail.1688.com/offer/913001904906.html",
         "verifiedAt": "2026-07-03T13:43:36.332667+08:00",
-        "ageHours": 19.0,
+        "ageHours": 23.9,
         "freshnessStatus": "fresh",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -2458,7 +2458,7 @@
         "offerId": "666127001707",
         "offerUrl": "https://detail.1688.com/offer/666127001707.html",
         "verifiedAt": "2026-07-01T14:16:32.945237+08:00",
-        "ageHours": 66.4,
+        "ageHours": 71.3,
         "freshnessStatus": "aging",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
@@ -2822,7 +2822,7 @@
         "offerId": "938670169290",
         "offerUrl": "https://detail.1688.com/offer/938670169290.html",
         "verifiedAt": "2026-06-21T14:42:27.892943+08:00",
-        "ageHours": 306.0,
+        "ageHours": 310.9,
         "freshnessStatus": "stale",
         "source": "ElimAPI 1688授权搜索",
         "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
