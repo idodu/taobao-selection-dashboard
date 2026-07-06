@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T13:55:06.919237+08:00",
+  "updatedAt": "2026-07-06T14:18:28.087925+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -261,10 +261,10 @@
     },
     "jd-5911553-mr-muscle-oil-cleaner-455x2": {
       "keywords": "威猛先生 油污清洁剂 455g 2瓶 替换装",
-      "returnedOffers": 3,
+      "returnedOffers": 2,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-02T13:49:16.878006+08:00"
+      "attemptedAt": "2026-07-06T14:18:21.736617+08:00"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
       "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
@@ -306,7 +306,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-02T13:49:15.256924+08:00"
+      "attemptedAt": "2026-07-06T14:18:22.479200+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-05T13:55:05.440730+08:00"
+      "attemptedAt": "2026-07-06T14:18:25.488629+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -369,14 +369,14 @@
       "returnedOffers": 32,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-27T13:45:33.896710+08:00"
+      "attemptedAt": "2026-07-06T14:18:20.223348+08:00"
     },
     "jd-100013152446-洁厕液": {
       "keywords": "花王 洁厕液 500ml*2瓶",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-05T13:55:03.771237+08:00"
+      "attemptedAt": "2026-07-06T14:18:23.934944+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -443,9 +443,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-3242242-洁厕液",
-    "jd-100068270587-洁厕液",
-    "jd-100045910485-liby-laundry-pods-40",
+    "jd-100072670087-沐浴露",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2",
+    "jd-100033499063-厨房纸",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
