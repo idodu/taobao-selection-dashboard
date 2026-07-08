@@ -632,12 +632,12 @@ def history_counts(history: dict, before_date: str) -> tuple[dict[str, int], set
     return counts, previous_ids
 
 
-def apply_history_labels(products: list[dict], history: dict, date_key: str) -> None:
-    counts, previous_ids = history_counts(history, date_key)
+def apply_history_labels(products: list[dict], stats_by_product: dict, date_key: str) -> None:
     for item in products:
-        previous_count = counts.get(item["id"], 0)
+        product_stats = stats_by_product.get(item["id"], {})
+        previous_count = product_stats.get("count", 0)
         item["appearanceCount"] = previous_count + 1
-        item["wasInPreviousDay"] = item["id"] in previous_ids
+        item["wasInPreviousDay"] = product_stats.get("wasPreviousDay", False)
         item["isNew"] = previous_count == 0
 
         if item["wasInPreviousDay"]:
@@ -787,9 +787,9 @@ def generate(
     for index, item in enumerate(selected, start=1):
         item["rank"] = index
 
-    apply_history_labels(selected, history, date_key)
+    apply_history_labels(selected, stats_by_product, date_key)
     selected_ids = {item["id"] for item in selected}
-    _, previous_ids = history_counts(history, date_key)
+    previous_ids = {pid for pid, s in stats_by_product.items() if s.get("wasPreviousDay")}
     tracking = [
         item
         for item in products

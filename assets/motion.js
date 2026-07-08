@@ -62,7 +62,7 @@
     if (!canvasActive || !canvas || !context) return;
     const width = window.innerWidth;
     const height = window.innerHeight;
-    context.clearRect(0, 0, width, height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
     const activeLines = width < 640 ? flowLines.filter((_, index) => index % 2 === 0) : flowLines;
     activeLines.forEach((line, index) => {

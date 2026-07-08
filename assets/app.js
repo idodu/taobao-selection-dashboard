@@ -507,9 +507,13 @@ async function boot() {
   renderProducts("initial");
   bindRailControls("tracking");
   bindRailControls("radar");
+  let resizeFrame = 0;
   window.addEventListener("resize", () => {
-    updateRailControls("tracking");
-    updateRailControls("radar");
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => {
+      updateRailControls("tracking");
+      updateRailControls("radar");
+    });
   });
 
   ["categoryFilter", "typeFilter", "sortBy"].forEach((id) => {
