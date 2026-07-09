@@ -76,7 +76,7 @@ jobs:
           TOP_APP_SECRET: ${{ secrets.TOP_APP_SECRET }}
           ELIM_API_KEY: ${{ secrets.ELIM_API_KEY }}
           ELIM_ACCESS_TOKEN: ${{ secrets.ELIM_ACCESS_TOKEN }}
-          ELIM_DAILY_LIMIT: "5"
+          ELIM_DAILY_LIMIT: "0"
           SUPPLY_1688_FEED_URL: ${{ secrets.SUPPLY_1688_FEED_URL }}
           SUPPLY_1688_FEED_TOKEN: ${{ secrets.SUPPLY_1688_FEED_TOKEN }}
         run: |

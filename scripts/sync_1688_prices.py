@@ -590,6 +590,7 @@ def main() -> int:
         use_top = args.provider == "top" or (args.provider == "auto" and app_key and app_secret)
         use_elim = args.provider == "elim" or (
             args.provider == "auto" and (elim_token or elim_access_token) and not use_top
+            and elim_daily_limit > 0
         )
         use_feed = args.provider == "feed" or (
             args.provider == "auto" and feed_url and not use_top and not use_elim
@@ -601,8 +602,6 @@ def main() -> int:
         elif use_elim:
             if not elim_token and not elim_access_token:
                 raise ValueError("ELIM_API_KEY or ELIM_ACCESS_TOKEN is required")
-            if elim_daily_limit < 1:
-                raise ValueError("ELIM_DAILY_LIMIT must be at least 1")
             output = sync_elim(
                 catalog,
                 api_key=elim_token or None,
