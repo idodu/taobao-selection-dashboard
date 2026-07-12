@@ -1,37 +1,37 @@
 {
-  "generatedAt": "2026-07-06T14:18:28.144625+08:00",
-  "generatedAtBeijing": "2026-07-06 14:18:28 UTC+8",
-  "date": "2026-07-06",
+  "generatedAt": "2026-07-12T13:16:35.825557+08:00",
+  "generatedAtBeijing": "2026-07-12 13:16:35 UTC+8",
+  "date": "2026-07-12",
   "timezone": "Asia/Shanghai",
   "catalogVersion": "2026-06-15-single-sku-v4-official-market",
   "catalogSize": 40,
-  "supply1688UpdatedAt": "2026-07-06T14:18:28.087925+08:00",
+  "supply1688UpdatedAt": "2026-07-12T13:16:35.762828+08:00",
   "supply1688Provider": "elim-api",
-  "supply1688VerifiedCount": 2,
-  "supply1688PendingCount": 8,
-  "marketDataUpdatedAt": "2026-07-06T14:18:20.111294+08:00",
+  "supply1688VerifiedCount": 6,
+  "supply1688PendingCount": 4,
+  "marketDataUpdatedAt": "2026-07-12T13:16:28.377868+08:00",
   "marketProviders": {
     "taobao": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-06T14:18:20.109575+08:00"
+      "attemptedAt": "2026-07-12T13:16:28.376144+08:00"
     },
     "jd": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-06T14:18:20.110243+08:00"
+      "attemptedAt": "2026-07-12T13:16:28.376816+08:00"
     },
     "douyin": {
       "status": "not-configured",
       "error": null,
-      "attemptedAt": "2026-07-06T14:18:20.110741+08:00"
+      "attemptedAt": "2026-07-12T13:16:28.377346+08:00"
     }
   },
   "marketVerifiedCount": 0,
   "marketPendingCount": 30,
   "mode": "single-sku",
   "selectionPolicy": "每日目标为2个稳定跟踪款、4个轮换机会款、3个首次上榜款、1个季节机会款；历史样本不足时由当日最高质量候选补位。同品牌最多2款、同类目最多3款，并对连续出现和7日高频SKU扣分或冷却。",
-  "focusCategory": "衣物清洁",
+  "focusCategory": "家庭清洁",
   "scoreRules": {
     "summary": "总分=跨平台热度30%+价格竞争力20%+利润可行性20%+官方30天销量10%+复购率10%+差异化空间5%+上架可操作性5%-风险扣分。价格和销量仅使用淘宝联盟、京东联盟、抖音精选联盟官方API的精确SKU数据。",
     "items": [
@@ -91,81 +91,80 @@
   ],
   "products": [
     {
-      "id": "jd-100072670087-沐浴露",
-      "brand": "威露士",
-      "name": "威露士精油沐浴露450ml*2瓶",
-      "sku": "450ml*2瓶",
+      "id": "jd-100327980320-洗发水",
+      "brand": "潘婷",
+      "name": "潘婷白桃乌龙控油蓬松洗发水470g",
+      "sku": "470g",
       "category": "个护日化",
       "type": "平销款",
       "catalogStatus": "active",
       "seasonalTags": [
         "夏季",
-        "除味"
+        "控油"
       ],
       "primaryPlatform": "京东",
       "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100072670087",
-      "sourceUrl": "https://item.jd.com/100072670087.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/456592/6/1505/150108/6a2937baFad15fa76/00833203200b142b.jpg",
+      "sourceSkuId": "100327980320",
+      "sourceUrl": "https://item.jd.com/100327980320.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/445222/34/9731/123397/6a229ddeFc9db1517/00833203206e20e5.jpg",
       "suggestedPrice": [
         39.9,
         55.9
       ],
       "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖威露士、沐浴露和完整规格450ml*2瓶；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "listingAdvice": "标题覆盖潘婷、洗发水和完整规格470g；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
       "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
       "marketplaceIds": {
         "taobao": null,
-        "jd": "100072670087",
+        "jd": "100327980320",
         "douyin": null
       },
       "marketSearch": {
-        "keywords": "威露士 威露士精油沐浴露450ml*2瓶 450ml*2瓶",
+        "keywords": "潘婷 潘婷白桃乌龙控油蓬松洗发水470g 470g",
         "requiredTokenGroups": [
           [
-            "威露士",
-            "walch"
+            "潘婷",
+            "pantene"
           ],
           [
-            "沐浴露"
+            "洗发水",
+            "洗发露"
           ],
           [
-            "450ml"
-          ],
-          [
-            "2瓶"
+            "470g",
+            "470克"
           ]
         ]
       },
       "supplyCostReference": [
-        31.1,
-        43.6
+        18.92,
+        18.92
       ],
-      "costSource": "成本上限参考，不是1688真实报价",
+      "costSource": "1688单SKU已核验最低公开阶梯价",
       "estimatedGrossProfitRate": [
-        22.0,
-        22.1
+        52.6,
+        66.2
       ],
-      "marginBasis": "成本上限估算",
+      "marginBasis": "1688已核验价",
       "costCeiling": [
         31.1,
         43.6
       ],
       "supply1688": {
-        "query": "威露士 沐浴露 450ml*2瓶",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E9%9C%B2%E5%A3%AB+%E6%B2%90%E6%B5%B4%E9%9C%B2+450ml%2A2%E7%93%B6",
-        "lowestPrice": null,
+        "query": "潘婷 洗发水 470g",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%BD%98%E5%A9%B7+%E6%B4%97%E5%8F%91%E6%B0%B4+470g",
+        "lowestPrice": 18.92,
         "moq": null,
         "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+        "matchStatus": "exact",
+        "matchedTitle": "潘婷3分钟奇迹洗发水小苍兰清爽版蓬松柔顺修护滋养470g",
+        "offerId": "905421175630",
+        "offerUrl": "https://detail.1688.com/offer/905421175630.html",
+        "verifiedAt": "2026-07-12T13:16:30.213782+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
       },
       "platforms": [
         {
@@ -173,7 +172,7 @@
           "code": "taobao",
           "platformItemId": null,
           "title": null,
-          "url": "https://s.taobao.com/search?q=%E5%A8%81%E9%9C%B2%E5%A3%AB+%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%B2%BE%E6%B2%B9%E6%B2%90%E6%B5%B4%E9%9C%B2450ml%2A2%E7%93%B6+450ml%2A2%E7%93%B6",
+          "url": "https://s.taobao.com/search?q=%E6%BD%98%E5%A9%B7+%E6%BD%98%E5%A9%B7%E7%99%BD%E6%A1%83%E4%B9%8C%E9%BE%99%E6%8E%A7%E6%B2%B9%E8%93%AC%E6%9D%BE%E6%B4%97%E5%8F%91%E6%B0%B4470g+470g",
           "listPrice": null,
           "couponAmount": null,
           "estimatedPrice": null,
@@ -196,9 +195,9 @@
         {
           "name": "京东",
           "code": "jd",
-          "platformItemId": "100072670087",
+          "platformItemId": "100327980320",
           "title": null,
-          "url": "https://item.jd.com/100072670087.html",
+          "url": "https://item.jd.com/100327980320.html",
           "listPrice": null,
           "couponAmount": null,
           "estimatedPrice": null,
@@ -223,7 +222,7 @@
           "code": "douyin",
           "platformItemId": null,
           "title": null,
-          "url": "https://www.douyin.com/search/%E5%A8%81%E9%9C%B2%E5%A3%AB+%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%B2%BE%E6%B2%B9%E6%B2%90%E6%B5%B4%E9%9C%B2450ml%2A2%E7%93%B6+450ml%2A2%E7%93%B6",
+          "url": "https://www.douyin.com/search/%E6%BD%98%E5%A9%B7+%E6%BD%98%E5%A9%B7%E7%99%BD%E6%A1%83%E4%B9%8C%E9%BE%99%E6%8E%A7%E6%B2%B9%E8%93%AC%E6%9D%BE%E6%B4%97%E5%8F%91%E6%B0%B4470g+470g",
           "listPrice": null,
           "couponAmount": null,
           "estimatedPrice": null,
@@ -249,12 +248,1354 @@
       "score": {
         "platformHeat": 7.8,
         "priceCompetitiveness": 1.0,
+        "profitFeasibility": 7.8,
+        "salesProof": 1.0,
+        "repeatPurchase": 8.5,
+        "differentiation": 8,
+        "operability": 7.9,
+        "riskPenalty": 0.5,
+        "total": 5.4,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.4,
+        "freshness": 9.0,
+        "dataConfidence": 8.0,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0.5,
+        "seasonalMatch": true,
+        "appearances7d": 2,
+        "consecutiveDays": 0,
+        "daysSinceLast": 7,
+        "cooldown": false,
+        "selectionBucket": "季节机会款",
+        "rotationScore": 6.7
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "季节机会款",
+      "rank": 1,
+      "appearanceCount": 10,
+      "wasInPreviousDay": false,
+      "isNew": false,
+      "statusTag": "回归品",
+      "historyNote": "累计上榜10次"
+    },
+    {
+      "id": "jd-4806379-油污净",
+      "brand": "大公鸡管家",
+      "name": "大公鸡管家多功能油污净600ml",
+      "sku": "600ml",
+      "category": "家庭清洁",
+      "type": "利润款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "大扫除"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "4806379",
+      "sourceUrl": "https://item.jd.com/4806379.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/445428/7/5867/100178/6a1acc16Fbd045a4d/00833203200ef379.jpg",
+      "suggestedPrice": [
+        29.9,
+        39.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖大公鸡管家、油污净和完整规格600ml；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "4806379",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "大公鸡管家 大公鸡管家多功能油污净600ml 600ml",
+        "requiredTokenGroups": [
+          [
+            "大公鸡管家",
+            "chante clair"
+          ],
+          [
+            "油污净",
+            "油污清洁"
+          ],
+          [
+            "600ml"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        14.9,
+        14.9
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        50.2,
+        62.7
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        23.3,
+        31.1
+      ],
+      "supply1688": {
+        "query": "大公鸡管家 油污净 600ml",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A4%A7%E5%85%AC%E9%B8%A1%E7%AE%A1%E5%AE%B6+%E6%B2%B9%E6%B1%A1%E5%87%80+600ml",
+        "lowestPrice": 14.9,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "意大利大公鸡管家油污净厨房油烟机清洗剂喷雾家用去重油污600ml",
+        "offerId": "823844960662",
+        "offerUrl": "https://detail.1688.com/offer/823844960662.html",
+        "verifiedAt": "2026-07-12T13:16:31.654651+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E5%A4%A7%E5%85%AC%E9%B8%A1%E7%AE%A1%E5%AE%B6+%E5%A4%A7%E5%85%AC%E9%B8%A1%E7%AE%A1%E5%AE%B6%E5%A4%9A%E5%8A%9F%E8%83%BD%E6%B2%B9%E6%B1%A1%E5%87%80600ml+600ml",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "4806379",
+          "title": null,
+          "url": "https://item.jd.com/4806379.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E5%A4%A7%E5%85%AC%E9%B8%A1%E7%AE%A1%E5%AE%B6+%E5%A4%A7%E5%85%AC%E9%B8%A1%E7%AE%A1%E5%AE%B6%E5%A4%9A%E5%8A%9F%E8%83%BD%E6%B2%B9%E6%B1%A1%E5%87%80600ml+600ml",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 8.5,
+        "salesProof": 1.0,
+        "repeatPurchase": 9,
+        "differentiation": 8.2,
+        "operability": 8.5,
+        "riskPenalty": 0.8,
+        "total": 5.7,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.7,
+        "freshness": 9.0,
+        "dataConfidence": 8.0,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 2,
+        "consecutiveDays": 0,
+        "daysSinceLast": 8,
+        "cooldown": false,
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 6.42
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "轮换机会款",
+      "rank": 2,
+      "appearanceCount": 8,
+      "wasInPreviousDay": false,
+      "isNew": false,
+      "statusTag": "回归品",
+      "historyNote": "累计上榜8次"
+    },
+    {
+      "id": "jd-100045910485-liby-laundry-pods-40",
+      "brand": "立白",
+      "name": "立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔",
+      "sku": "40颗",
+      "category": "衣物清洁",
+      "type": "平销款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100045910485",
+      "sourceUrl": "https://item.jd.com/100045910485.html",
+      "image": "https://img10.360buyimg.com/n1/s720x720_jfs/t1/452109/7/540/196515/6a1fe277F431281c8/0083320320daf059.jpg",
+      "suggestedPrice": [
+        29.9,
+        39.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题放立白、洗衣凝珠、40颗、除菌除螨、速溶快洗；主图突出每颗成本和40次洗涤；赠洗衣袋或留香珠小样提高转化。",
+      "risk": "洗衣凝珠低价白牌冲击明显，品牌标准品需用赠品、规格或组合差异避开旗舰店同款硬拼。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "100045910485",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "立白 立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔 40颗",
+        "requiredTokenGroups": [
+          [
+            "立白"
+          ],
+          [
+            "洗衣凝珠",
+            "凝珠"
+          ],
+          [
+            "40颗",
+            "40粒"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        23.9,
+        23.9
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        20.1,
+        40.1
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        23.3,
+        31.1
+      ],
+      "supply1688": {
+        "query": "立白 洗衣凝珠 40颗",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AB%8B%E7%99%BD+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+40%E9%A2%97",
+        "lowestPrice": 23.9,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "立白洗衣凝珠除菌倍净40颗家用量批洗衣液凝珠留香珠除菌祛螨正品",
+        "offerId": "751721118968",
+        "offerUrl": "https://detail.1688.com/offer/751721118968.html",
+        "verifiedAt": "2026-07-12T13:16:32.954186+08:00",
+        "ageHours": 0.0,
+        "freshnessStatus": "fresh",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+%E9%99%A4%E8%8F%8C%E9%99%A4%E8%9E%A8%E6%8A%91%E8%8F%8C%E6%B4%81%E5%87%8040%E9%A2%97+%E5%8D%95%E8%85%94+40%E9%A2%97",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "100045910485",
+          "title": null,
+          "url": "https://item.jd.com/100045910485.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+%E9%99%A4%E8%8F%8C%E9%99%A4%E8%9E%A8%E6%8A%91%E8%8F%8C%E6%B4%81%E5%87%8040%E9%A2%97+%E5%8D%95%E8%85%94+40%E9%A2%97",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 9,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 7.9,
+        "salesProof": 1.0,
+        "repeatPurchase": 8.8,
+        "differentiation": 7.6,
+        "operability": 8.5,
+        "riskPenalty": 0.7,
+        "total": 5.5,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.5,
+        "freshness": 9.0,
+        "dataConfidence": 8.0,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 2,
+        "consecutiveDays": 0,
+        "daysSinceLast": 7,
+        "cooldown": false,
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 6.27
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "轮换机会款",
+      "rank": 3,
+      "appearanceCount": 12,
+      "wasInPreviousDay": false,
+      "isNew": false,
+      "statusTag": "回归品",
+      "historyNote": "累计上榜12次"
+    },
+    {
+      "id": "jd-1218774-油污净",
+      "brand": "威王",
+      "name": "威王厨房油污净500g+420g",
+      "sku": "500g+420g",
+      "category": "家庭清洁",
+      "type": "平销款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "大扫除",
+        "春节"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "1218774",
+      "sourceUrl": "https://item.jd.com/1218774.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/442061/18/8430/247023/6a1997afF66e3590b/008332032020a978.jpg",
+      "suggestedPrice": [
+        16.9,
+        25.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖威王、油污净和完整规格500g+420g；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "1218774",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "威王 威王厨房油污净500g+420g 500g+420g",
+        "requiredTokenGroups": [
+          [
+            "威王"
+          ],
+          [
+            "油污净",
+            "油污清洁"
+          ],
+          [
+            "500g",
+            "500克"
+          ],
+          [
+            "420g",
+            "420克"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        3.9,
+        3.9
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        76.9,
+        84.9
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        13.2,
+        20.2
+      ],
+      "supply1688": {
+        "query": "威王 油污净 500g+420g",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E7%8E%8B+%E6%B2%B9%E6%B1%A1%E5%87%80+500g%2B420g",
+        "lowestPrice": 3.9,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "威王厨房油污清洁剂油烟机清洗剂柠檬香500克/瓶+420克/袋补充装",
+        "offerId": "656329274387",
+        "offerUrl": "https://detail.1688.com/offer/656329274387.html",
+        "verifiedAt": "2026-06-22T15:11:16.364978+08:00",
+        "ageHours": 478.1,
+        "freshnessStatus": "stale",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E5%A8%81%E7%8E%8B+%E5%A8%81%E7%8E%8B%E5%8E%A8%E6%88%BF%E6%B2%B9%E6%B1%A1%E5%87%80500g%2B420g+500g%2B420g",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "1218774",
+          "title": null,
+          "url": "https://item.jd.com/1218774.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E5%A8%81%E7%8E%8B+%E5%A8%81%E7%8E%8B%E5%8E%A8%E6%88%BF%E6%B2%B9%E6%B1%A1%E5%87%80500g%2B420g+500g%2B420g",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 7.7,
+        "priceCompetitiveness": 1.0,
         "profitFeasibility": 8,
         "salesProof": 1.0,
-        "repeatPurchase": 8,
-        "differentiation": 8,
-        "operability": 7.7,
+        "repeatPurchase": 9,
+        "differentiation": 8.2,
+        "operability": 8.3,
         "riskPenalty": 0.8,
+        "total": 5.5,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.5,
+        "freshness": 9.0,
+        "dataConfidence": 8.0,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 2,
+        "consecutiveDays": 0,
+        "daysSinceLast": 8,
+        "cooldown": false,
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 6.27
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "轮换机会款",
+      "rank": 4,
+      "appearanceCount": 7,
+      "wasInPreviousDay": false,
+      "isNew": false,
+      "statusTag": "回归品",
+      "historyNote": "累计上榜7次"
+    },
+    {
+      "id": "jd-5030508-牙膏",
+      "brand": "舒适达",
+      "name": "舒适达多效护理牙膏100g*3支",
+      "sku": "100g*3支",
+      "category": "个护日化",
+      "type": "平销款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "囤货",
+        "双11"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "5030508",
+      "sourceUrl": "https://item.jd.com/5030508.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/444325/6/9965/134333/6a1d4f62F49f85407/0083320320aad486.jpg",
+      "suggestedPrice": [
+        49.9,
+        69.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖舒适达、牙膏和完整规格100g*3支；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "5030508",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "舒适达 舒适达多效护理牙膏100g*3支 100g*3支",
+        "requiredTokenGroups": [
+          [
+            "舒适达",
+            "sensodyne"
+          ],
+          [
+            "牙膏"
+          ],
+          [
+            "100g",
+            "100克"
+          ],
+          [
+            "3支"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        38.9,
+        54.5
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        22.0,
+        22.0
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        38.9,
+        54.5
+      ],
+      "supply1688": {
+        "query": "舒适达 牙膏 100g*3支",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%88%92%E9%80%82%E8%BE%BE+%E7%89%99%E8%86%8F+100g%2A3%E6%94%AF",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E8%88%92%E9%80%82%E8%BE%BE+%E8%88%92%E9%80%82%E8%BE%BE%E5%A4%9A%E6%95%88%E6%8A%A4%E7%90%86%E7%89%99%E8%86%8F100g%2A3%E6%94%AF+100g%2A3%E6%94%AF",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "5030508",
+          "title": null,
+          "url": "https://item.jd.com/5030508.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E8%88%92%E9%80%82%E8%BE%BE+%E8%88%92%E9%80%82%E8%BE%BE%E5%A4%9A%E6%95%88%E6%8A%A4%E7%90%86%E7%89%99%E8%86%8F100g%2A3%E6%94%AF+100g%2A3%E6%94%AF",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 8,
+        "salesProof": 1.0,
+        "repeatPurchase": 8.3,
+        "differentiation": 8,
+        "operability": 8.5,
+        "riskPenalty": 0.5,
+        "total": 5.6,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.6,
+        "freshness": 9.0,
+        "dataConfidence": 7.0,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 2,
+        "consecutiveDays": 0,
+        "daysSinceLast": 9,
+        "cooldown": false,
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 6.25
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "轮换机会款",
+      "rank": 5,
+      "appearanceCount": 8,
+      "wasInPreviousDay": false,
+      "isNew": false,
+      "statusTag": "回归品",
+      "historyNote": "累计上榜8次"
+    },
+    {
+      "id": "jd-100018097536-抽纸",
+      "brand": "清风",
+      "name": "清风金装厚韧抽纸3层120抽*24包",
+      "sku": "120抽*24包",
+      "category": "纸品/湿巾",
+      "type": "引流款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "囤货",
+        "618",
+        "双11"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "100018097536",
+      "sourceUrl": "https://item.jd.com/100018097536.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/401999/21/13622/180197/69b3dd45F8ddb3f30/0083320320110655.jpg",
+      "suggestedPrice": [
+        49.9,
+        69.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖清风、抽纸和完整规格120抽*24包；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；纸品体积较大，需核算包装和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "100018097536",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "清风 清风金装厚韧抽纸3层120抽*24包 120抽*24包",
+        "requiredTokenGroups": [
+          [
+            "清风"
+          ],
+          [
+            "抽纸"
+          ],
+          [
+            "120抽"
+          ],
+          [
+            "24包"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        1.1,
+        1.1
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        97.8,
+        98.4
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        38.9,
+        54.5
+      ],
+      "supply1688": {
+        "query": "清风 抽纸 120抽*24包",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B8%85%E9%A3%8E+%E6%8A%BD%E7%BA%B8+120%E6%8A%BD%2A24%E5%8C%85",
+        "lowestPrice": 1.1,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "清风抽纸金装120抽大箱家用纸抽卫生纸餐巾纸24包箱装纸巾批发",
+        "offerId": "724141170068",
+        "offerUrl": "https://detail.1688.com/offer/724141170068.html",
+        "verifiedAt": "2026-06-25T13:57:12.988669+08:00",
+        "ageHours": 407.3,
+        "freshnessStatus": "stale",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E6%B8%85%E9%A3%8E+%E6%B8%85%E9%A3%8E%E9%87%91%E8%A3%85%E5%8E%9A%E9%9F%A7%E6%8A%BD%E7%BA%B83%E5%B1%82120%E6%8A%BD%2A24%E5%8C%85+120%E6%8A%BD%2A24%E5%8C%85",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "100018097536",
+          "title": null,
+          "url": "https://item.jd.com/100018097536.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E6%B8%85%E9%A3%8E+%E6%B8%85%E9%A3%8E%E9%87%91%E8%A3%85%E5%8E%9A%E9%9F%A7%E6%8A%BD%E7%BA%B83%E5%B1%82120%E6%8A%BD%2A24%E5%8C%85+120%E6%8A%BD%2A24%E5%8C%85",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.1,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 7.6,
+        "salesProof": 1.0,
+        "repeatPurchase": 8.4,
+        "differentiation": 8,
+        "operability": 8,
+        "riskPenalty": 0.8,
+        "total": 5.2,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.2,
+        "freshness": 9.0,
+        "dataConfidence": 8.0,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 2,
+        "consecutiveDays": 0,
+        "daysSinceLast": 9,
+        "cooldown": false,
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 6.05
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "轮换机会款",
+      "rank": 6,
+      "appearanceCount": 8,
+      "wasInPreviousDay": false,
+      "isNew": false,
+      "statusTag": "回归品",
+      "historyNote": "累计上榜8次"
+    },
+    {
+      "id": "jd-100014696148-卷纸",
+      "brand": "清风",
+      "name": "清风原木金装有芯卷纸4层140g*30卷",
+      "sku": "140g*30卷",
+      "category": "纸品/湿巾",
+      "type": "引流款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "囤货",
+        "618",
+        "双11"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "100014696148",
+      "sourceUrl": "https://item.jd.com/100014696148.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/446597/39/4998/203504/6a21358eF3c791f13/0083320320f3e902.jpg",
+      "suggestedPrice": [
+        49.9,
+        69.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖清风、卷纸和完整规格140g*30卷；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；纸品体积较大，需核算包装和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "100014696148",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "清风 清风原木金装有芯卷纸4层140g*30卷 140g*30卷",
+        "requiredTokenGroups": [
+          [
+            "清风"
+          ],
+          [
+            "卷纸",
+            "卷筒纸"
+          ],
+          [
+            "140g",
+            "140克"
+          ],
+          [
+            "30卷"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        57.9,
+        57.9
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        -16.0,
+        17.2
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        38.9,
+        54.5
+      ],
+      "supply1688": {
+        "query": "清风 卷纸 140g*30卷",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%B8%85%E9%A3%8E+%E5%8D%B7%E7%BA%B8+140g%2A30%E5%8D%B7",
+        "lowestPrice": 57.9,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "清风原木金装有芯卷纸 4层140克*30卷整箱家用商用卷纸B2014JE30N",
+        "offerId": "906629956904",
+        "offerUrl": "https://detail.1688.com/offer/906629956904.html",
+        "verifiedAt": "2026-06-29T14:28:17.034871+08:00",
+        "ageHours": 310.8,
+        "freshnessStatus": "stale",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E6%B8%85%E9%A3%8E+%E6%B8%85%E9%A3%8E%E5%8E%9F%E6%9C%A8%E9%87%91%E8%A3%85%E6%9C%89%E8%8A%AF%E5%8D%B7%E7%BA%B84%E5%B1%82140g%2A30%E5%8D%B7+140g%2A30%E5%8D%B7",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "100014696148",
+          "title": null,
+          "url": "https://item.jd.com/100014696148.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E6%B8%85%E9%A3%8E+%E6%B8%85%E9%A3%8E%E5%8E%9F%E6%9C%A8%E9%87%91%E8%A3%85%E6%9C%89%E8%8A%AF%E5%8D%B7%E7%BA%B84%E5%B1%82140g%2A30%E5%8D%B7+140g%2A30%E5%8D%B7",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 7.9,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 7.6,
+        "salesProof": 1.0,
+        "repeatPurchase": 8.2,
+        "differentiation": 7.6,
+        "operability": 7.9,
+        "riskPenalty": 0.5,
+        "total": 5.2,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.2,
+        "freshness": 9.0,
+        "dataConfidence": 8.0,
+        "repeatPenalty": 0.0,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 1,
+        "consecutiveDays": 0,
+        "daysSinceLast": 8,
+        "cooldown": false,
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 6.05
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "轮换机会款",
+      "rank": 7,
+      "appearanceCount": 8,
+      "wasInPreviousDay": false,
+      "isNew": false,
+      "statusTag": "回归品",
+      "historyNote": "累计上榜8次"
+    },
+    {
+      "id": "jd-100005511754-mindact-wet-toilet-80x5",
+      "brand": "心相印",
+      "name": "心相印三丽鸥湿厕纸 80片*5包 纯水湿纸巾家庭装",
+      "sku": "80片*5包",
+      "category": "纸品/湿巾",
+      "type": "引流款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100005511754",
+      "sourceUrl": "https://item.jd.com/100005511754.html",
+      "image": "https://img14.360buyimg.com/n1/s720x720_jfs/t1/452907/11/3363/143117/6a261685F94f47093/0083320320f37f08.png",
+      "suggestedPrice": [
+        26.9,
+        32.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题突出心相印、三丽鸥、湿厕纸、80片5包、家庭装；主图强调IP包装和纯水湿巾；适合与抽纸或便携装组成套购。",
+      "risk": "IP包装可能存在新旧随机，详情页需写明版本随机；品牌低价控价风险高，避免冒充官方活动价。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "100005511754",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "心相印 心相印三丽鸥湿厕纸 80片*5包 纯水湿纸巾家庭装 80片*5包",
+        "requiredTokenGroups": [
+          [
+            "心相印"
+          ],
+          [
+            "湿厕纸"
+          ],
+          [
+            "80片",
+            "80抽"
+          ],
+          [
+            "5包",
+            "5袋"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        21.0,
+        25.7
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        21.9,
+        21.9
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        21.0,
+        25.7
+      ],
+      "supply1688": {
+        "query": "心相印 湿厕纸 80片 5包",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%BF%83%E7%9B%B8%E5%8D%B0+%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87+5%E5%8C%85",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E5%BF%83%E7%9B%B8%E5%8D%B0+%E5%BF%83%E7%9B%B8%E5%8D%B0%E4%B8%89%E4%B8%BD%E9%B8%A5%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87%2A5%E5%8C%85+%E7%BA%AF%E6%B0%B4%E6%B9%BF%E7%BA%B8%E5%B7%BE%E5%AE%B6%E5%BA%AD%E8%A3%85+80%E7%89%87%2A5%E5%8C%85",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "100005511754",
+          "title": null,
+          "url": "https://item.jd.com/100005511754.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E5%BF%83%E7%9B%B8%E5%8D%B0+%E5%BF%83%E7%9B%B8%E5%8D%B0%E4%B8%89%E4%B8%BD%E9%B8%A5%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87%2A5%E5%8C%85+%E7%BA%AF%E6%B0%B4%E6%B9%BF%E7%BA%B8%E5%B7%BE%E5%AE%B6%E5%BA%AD%E8%A3%85+80%E7%89%87%2A5%E5%8C%85",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 9,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 7.6,
+        "salesProof": 1.0,
+        "repeatPurchase": 9.2,
+        "differentiation": 8,
+        "operability": 8.3,
+        "riskPenalty": 0.9,
         "total": 5.2,
         "priceEvidenceAvailable": false,
         "salesEvidenceAvailable": false,
@@ -265,23 +1606,23 @@
         "freshness": 9.0,
         "dataConfidence": 7.0,
         "repeatPenalty": 0.0,
-        "seasonalBonus": 0.5,
-        "seasonalMatch": true,
-        "appearances7d": 1,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 2,
         "consecutiveDays": 0,
-        "daysSinceLast": 6,
+        "daysSinceLast": 8,
         "cooldown": false,
-        "selectionBucket": "季节机会款",
-        "rotationScore": 6.45
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 5.95
       },
       "lifecycleStatus": "待核验",
-      "selectionReason": "季节机会款",
-      "rank": 1,
-      "appearanceCount": 6,
+      "selectionReason": "轮换机会款",
+      "rank": 8,
+      "appearanceCount": 11,
       "wasInPreviousDay": false,
       "isNew": false,
       "statusTag": "回归品",
-      "historyNote": "累计上榜6次"
+      "historyNote": "累计上榜11次"
     },
     {
       "id": "jd-5911553-mr-muscle-oil-cleaner-455x2",
@@ -451,6 +1792,580 @@
         "differentiation": 8.5,
         "operability": 8.7,
         "riskPenalty": 0.5,
+        "total": 6.1,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 6.1,
+        "freshness": 9.0,
+        "dataConfidence": 7.0,
+        "repeatPenalty": 1.0,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 2,
+        "consecutiveDays": 1,
+        "daysSinceLast": 6,
+        "cooldown": false,
+        "selectionBucket": "稳定跟踪款",
+        "rotationScore": 5.62
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "稳定跟踪款",
+      "rank": 9,
+      "appearanceCount": 12,
+      "wasInPreviousDay": true,
+      "isNew": false,
+      "statusTag": "昨日品",
+      "historyNote": "累计上榜12次"
+    },
+    {
+      "id": "jd-100072670087-沐浴露",
+      "brand": "威露士",
+      "name": "威露士精油沐浴露450ml*2瓶",
+      "sku": "450ml*2瓶",
+      "category": "个护日化",
+      "type": "平销款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "夏季",
+        "除味"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "100072670087",
+      "sourceUrl": "https://item.jd.com/100072670087.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/456592/6/1505/150108/6a2937baFad15fa76/00833203200b142b.jpg",
+      "suggestedPrice": [
+        39.9,
+        55.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖威露士、沐浴露和完整规格450ml*2瓶；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "100072670087",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "威露士 威露士精油沐浴露450ml*2瓶 450ml*2瓶",
+        "requiredTokenGroups": [
+          [
+            "威露士",
+            "walch"
+          ],
+          [
+            "沐浴露"
+          ],
+          [
+            "450ml"
+          ],
+          [
+            "2瓶"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        31.1,
+        43.6
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        22.0,
+        22.1
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        31.1,
+        43.6
+      ],
+      "supply1688": {
+        "query": "威露士 沐浴露 450ml*2瓶",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E9%9C%B2%E5%A3%AB+%E6%B2%90%E6%B5%B4%E9%9C%B2+450ml%2A2%E7%93%B6",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E5%A8%81%E9%9C%B2%E5%A3%AB+%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%B2%BE%E6%B2%B9%E6%B2%90%E6%B5%B4%E9%9C%B2450ml%2A2%E7%93%B6+450ml%2A2%E7%93%B6",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "100072670087",
+          "title": null,
+          "url": "https://item.jd.com/100072670087.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E5%A8%81%E9%9C%B2%E5%A3%AB+%E5%A8%81%E9%9C%B2%E5%A3%AB%E7%B2%BE%E6%B2%B9%E6%B2%90%E6%B5%B4%E9%9C%B2450ml%2A2%E7%93%B6+450ml%2A2%E7%93%B6",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 7.8,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 8,
+        "salesProof": 1.0,
+        "repeatPurchase": 8,
+        "differentiation": 8,
+        "operability": 7.7,
+        "riskPenalty": 0.8,
+        "total": 4.9,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 4.9,
+        "freshness": 9.0,
+        "dataConfidence": 7.0,
+        "repeatPenalty": 1.0,
+        "seasonalBonus": 0.5,
+        "seasonalMatch": true,
+        "appearances7d": 2,
+        "consecutiveDays": 1,
+        "daysSinceLast": 6,
+        "cooldown": false,
+        "selectionBucket": "稳定跟踪款",
+        "rotationScore": 5.23
+      },
+      "lifecycleStatus": "待核验",
+      "selectionReason": "稳定跟踪款",
+      "rank": 10,
+      "appearanceCount": 7,
+      "wasInPreviousDay": true,
+      "isNew": false,
+      "statusTag": "昨日品",
+      "historyNote": "累计上榜7次"
+    }
+  ],
+  "trackingProducts": [
+    {
+      "id": "jd-100060591186-油污净",
+      "brand": "花王",
+      "name": "花王厨房油污净1000ml",
+      "sku": "1000ml",
+      "category": "家庭清洁",
+      "type": "利润款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "大扫除"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "100060591186",
+      "sourceUrl": "https://item.jd.com/100060591186.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/409331/33/18416/133968/69cb9e47F41116ff9/008332032059323a.jpg",
+      "suggestedPrice": [
+        35.9,
+        49.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖花王、油污净和完整规格1000ml；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "100060591186",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "花王 花王厨房油污净1000ml 1000ml",
+        "requiredTokenGroups": [
+          [
+            "花王",
+            "kao"
+          ],
+          [
+            "油污净",
+            "油污清洁"
+          ],
+          [
+            "1000ml",
+            "1L"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        28.0,
+        38.9
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        22.0,
+        22.0
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        28.0,
+        38.9
+      ],
+      "supply1688": {
+        "query": "花王 油污净 1000ml",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%8A%B1%E7%8E%8B+%E6%B2%B9%E6%B1%A1%E5%87%80+1000ml",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E8%8A%B1%E7%8E%8B+%E8%8A%B1%E7%8E%8B%E5%8E%A8%E6%88%BF%E6%B2%B9%E6%B1%A1%E5%87%801000ml+1000ml",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "100060591186",
+          "title": null,
+          "url": "https://item.jd.com/100060591186.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E8%8A%B1%E7%8E%8B+%E8%8A%B1%E7%8E%8B%E5%8E%A8%E6%88%BF%E6%B2%B9%E6%B1%A1%E5%87%801000ml+1000ml",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.5,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 8.5,
+        "salesProof": 1.0,
+        "repeatPurchase": 8.8,
+        "differentiation": 7.8,
+        "operability": 8.1,
+        "riskPenalty": 0.6,
+        "total": 5.9,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.9,
+        "freshness": 9.0,
+        "dataConfidence": 7.0,
+        "repeatPenalty": 1.5,
+        "seasonalBonus": 0,
+        "seasonalMatch": false,
+        "appearances7d": 3,
+        "consecutiveDays": 0,
+        "daysSinceLast": 7,
+        "cooldown": false,
+        "selectionBucket": "轮换机会款",
+        "rotationScore": 4.98
+      },
+      "lifecycleStatus": "持续跟踪",
+      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
+    },
+    {
+      "id": "jd-3242242-洁厕液",
+      "brand": "威猛先生",
+      "name": "威猛先生洁厕灵750g*2瓶",
+      "sku": "750g*2瓶",
+      "category": "家庭清洁",
+      "type": "引流款",
+      "catalogStatus": "active",
+      "seasonalTags": [
+        "夏季",
+        "除味"
+      ],
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东公开价格页",
+      "sourceSkuId": "3242242",
+      "sourceUrl": "https://item.jd.com/3242242.html",
+      "image": "https://img30.360buyimg.com/n7/jfs/t1/430435/40/14160/209730/6a057481F6b2aa933/00833203206d1208.jpg",
+      "suggestedPrice": [
+        19.9,
+        29.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖威猛先生、洁厕液和完整规格750g*2瓶；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
+      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "3242242",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "威猛先生 威猛先生洁厕灵750g*2瓶 750g*2瓶",
+        "requiredTokenGroups": [
+          [
+            "威猛先生",
+            "mr muscle"
+          ],
+          [
+            "洁厕"
+          ],
+          [
+            "750g",
+            "750克"
+          ],
+          [
+            "2瓶"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        14.74,
+        14.74
+      ],
+      "costSource": "1688单SKU已核验最低公开阶梯价",
+      "estimatedGrossProfitRate": [
+        25.9,
+        50.7
+      ],
+      "marginBasis": "1688已核验价",
+      "costCeiling": [
+        15.5,
+        23.3
+      ],
+      "supply1688": {
+        "query": "威猛先生 洁厕液 750g*2瓶",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E6%B4%81%E5%8E%95%E6%B6%B2+750g%2A2%E7%93%B6",
+        "lowestPrice": 14.74,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "exact",
+        "matchedTitle": "威猛先生洁厕液柠檬草香750g*2瓶厕所清洁剂柠檬草香洁厕灵除垢",
+        "offerId": "666127001707",
+        "offerUrl": "https://detail.1688.com/offer/666127001707.html",
+        "verifiedAt": "2026-07-05T13:55:00.552868+08:00",
+        "ageHours": 167.4,
+        "freshnessStatus": "aging",
+        "source": "ElimAPI 1688授权搜索",
+        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6+750g%2A2%E7%93%B6",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "3242242",
+          "title": null,
+          "url": "https://item.jd.com/3242242.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6+750g%2A2%E7%93%B6",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.5,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 7.3,
+        "salesProof": 1.0,
+        "repeatPurchase": 9,
+        "differentiation": 8.2,
+        "operability": 8,
+        "riskPenalty": 0.6,
         "total": 5.8,
         "priceEvidenceAvailable": false,
         "salesEvidenceAvailable": false,
@@ -459,25 +2374,199 @@
       "rotation": {
         "valueScore": 5.8,
         "freshness": 9.0,
+        "dataConfidence": 8.0,
+        "repeatPenalty": 3.5,
+        "seasonalBonus": 0.5,
+        "seasonalMatch": true,
+        "appearances7d": 3,
+        "consecutiveDays": 2,
+        "daysSinceLast": 6,
+        "cooldown": false,
+        "selectionBucket": "稳定跟踪款",
+        "rotationScore": 3.5
+      },
+      "lifecycleStatus": "持续跟踪",
+      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
+    },
+    {
+      "id": "jd-100008268866-sensodyne-toothpaste-270g",
+      "brand": "舒适达",
+      "name": "舒适达专业修复抗敏成人牙膏套装270g",
+      "sku": "270g套装",
+      "category": "个护日化",
+      "type": "利润款",
+      "primaryPlatform": "京东",
+      "sourcePlatform": "京东",
+      "sourceSkuId": "100008268866",
+      "sourceUrl": "https://item.jd.com/100008268866.html",
+      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t1/440680/19/15406/170620/6a1c5931F28b4eb6f/00833203208b0333.jpg",
+      "suggestedPrice": [
+        49.9,
+        69.9
+      ],
+      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
+      "listingAdvice": "标题覆盖舒适达、专业修复、抗敏、牙膏套装、270g、含氟防蛀；主图突出套装克重和抗敏卖点；赠牙线可做差异。",
+      "risk": "口腔护理功效表述需合规，避免治疗牙龈出血、修复牙病等医疗化承诺；需确保正品授权和进货凭证。",
+      "marketplaceIds": {
+        "taobao": null,
+        "jd": "100008268866",
+        "douyin": null
+      },
+      "marketSearch": {
+        "keywords": "舒适达 舒适达专业修复抗敏成人牙膏套装270g 270g套装",
+        "requiredTokenGroups": [
+          [
+            "舒适达",
+            "sensodyne"
+          ],
+          [
+            "牙膏"
+          ],
+          [
+            "270g",
+            "270克"
+          ]
+        ]
+      },
+      "supplyCostReference": [
+        38.9,
+        54.5
+      ],
+      "costSource": "成本上限参考，不是1688真实报价",
+      "estimatedGrossProfitRate": [
+        22.0,
+        22.0
+      ],
+      "marginBasis": "成本上限估算",
+      "costCeiling": [
+        38.9,
+        54.5
+      ],
+      "supply1688": {
+        "query": "舒适达 专业修复 牙膏 270g",
+        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%88%92%E9%80%82%E8%BE%BE+%E4%B8%93%E4%B8%9A%E4%BF%AE%E5%A4%8D+%E7%89%99%E8%86%8F+270g",
+        "lowestPrice": null,
+        "moq": null,
+        "unit": "件",
+        "matchStatus": "unverified",
+        "matchedTitle": null,
+        "offerId": null,
+        "offerUrl": null,
+        "verifiedAt": null,
+        "ageHours": null,
+        "freshnessStatus": "unverified",
+        "source": "1688待核验",
+        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
+      },
+      "platforms": [
+        {
+          "name": "淘宝/天猫",
+          "code": "taobao",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://s.taobao.com/search?q=%E8%88%92%E9%80%82%E8%BE%BE+%E8%88%92%E9%80%82%E8%BE%BE%E4%B8%93%E4%B8%9A%E4%BF%AE%E5%A4%8D%E6%8A%97%E6%95%8F%E6%88%90%E4%BA%BA%E7%89%99%E8%86%8F%E5%A5%97%E8%A3%85270g+270g%E5%A5%97%E8%A3%85",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "京东",
+          "code": "jd",
+          "platformItemId": "100008268866",
+          "title": null,
+          "url": "https://item.jd.com/100008268866.html",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        },
+        {
+          "name": "抖音",
+          "code": "douyin",
+          "platformItemId": null,
+          "title": null,
+          "url": "https://www.douyin.com/search/%E8%88%92%E9%80%82%E8%BE%BE+%E8%88%92%E9%80%82%E8%BE%BE%E4%B8%93%E4%B8%9A%E4%BF%AE%E5%A4%8D%E6%8A%97%E6%95%8F%E6%88%90%E4%BA%BA%E7%89%99%E8%86%8F%E5%A5%97%E8%A3%85270g+270g%E5%A5%97%E8%A3%85",
+          "listPrice": null,
+          "couponAmount": null,
+          "estimatedPrice": null,
+          "lowPrice": null,
+          "sales30d": null,
+          "reviewCount": null,
+          "goodRate": null,
+          "rankSignal": null,
+          "matchStatus": "unverified",
+          "verifiedAt": null,
+          "ageHours": null,
+          "freshnessStatus": "unverified",
+          "sourceApi": null,
+          "status": "not-configured",
+          "error": "official API credentials are not configured",
+          "price": "待授权",
+          "matchType": "官方API凭证未配置",
+          "salesSignal": "官方API凭证未配置"
+        }
+      ],
+      "platformLowestPrice": null,
+      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
+      "score": {
+        "platformHeat": 8.1,
+        "priceCompetitiveness": 1.0,
+        "profitFeasibility": 8.3,
+        "salesProof": 1.0,
+        "repeatPurchase": 8.6,
+        "differentiation": 8.1,
+        "operability": 8,
+        "riskPenalty": 0.6,
+        "total": 5.6,
+        "priceEvidenceAvailable": false,
+        "salesEvidenceAvailable": false,
+        "marketLowestEstimatedPrice": null
+      },
+      "rotation": {
+        "valueScore": 5.6,
+        "freshness": 9.0,
         "dataConfidence": 7.0,
         "repeatPenalty": 0.0,
         "seasonalBonus": 0,
         "seasonalMatch": false,
-        "appearances7d": 2,
+        "appearances7d": 1,
         "consecutiveDays": 0,
-        "daysSinceLast": 4,
+        "daysSinceLast": 9,
         "cooldown": false,
         "selectionBucket": "轮换机会款",
-        "rotationScore": 6.4
+        "rotationScore": 6.25
       },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "轮换机会款",
-      "rank": 2,
-      "appearanceCount": 11,
-      "wasInPreviousDay": false,
-      "isNew": false,
-      "statusTag": "回归品",
-      "historyNote": "累计上榜11次"
+      "lifecycleStatus": "持续跟踪",
+      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
     },
     {
       "id": "jd-100033499063-厨房纸",
@@ -645,410 +2734,27 @@
         "differentiation": 8.2,
         "operability": 8.5,
         "riskPenalty": 0.6,
-        "total": 5.4,
+        "total": 5.6,
         "priceEvidenceAvailable": false,
         "salesEvidenceAvailable": false,
         "marketLowestEstimatedPrice": null
       },
       "rotation": {
-        "valueScore": 5.4,
-        "freshness": 7.5,
+        "valueScore": 5.6,
+        "freshness": 9.0,
         "dataConfidence": 7.0,
-        "repeatPenalty": 0.0,
+        "repeatPenalty": 2.5,
         "seasonalBonus": 0.5,
         "seasonalMatch": true,
-        "appearances7d": 2,
-        "consecutiveDays": 0,
-        "daysSinceLast": 3,
+        "appearances7d": 3,
+        "consecutiveDays": 1,
+        "daysSinceLast": 6,
         "cooldown": false,
-        "selectionBucket": "季节机会款",
-        "rotationScore": 6.38
+        "selectionBucket": "稳定跟踪款",
+        "rotationScore": 4.25
       },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "季节机会款",
-      "rank": 3,
-      "appearanceCount": 9,
-      "wasInPreviousDay": false,
-      "isNew": false,
-      "statusTag": "回归品",
-      "historyNote": "累计上榜9次"
-    },
-    {
-      "id": "jd-100145357766-vinda-wet-toilet-80x5",
-      "brand": "维达",
-      "name": "维达（Vinda）湿厕纸 家庭装80片*5包 多巴胺湿厕纸",
-      "sku": "80片*5包",
-      "category": "纸品/湿巾",
-      "type": "引流款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100145357766",
-      "sourceUrl": "https://item.jd.com/100145357766.html",
-      "image": "https://img11.360buyimg.com/n1/s720x720_jfs/t20280606/445445/1/15027/254589/6a258046F3964d2cc/0a02320320e2d20a.jpg",
-      "suggestedPrice": [
-        24.9,
-        29.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖维达、湿厕纸、80片5包、家庭装、可冲散、纯水湿巾；主图突出品牌、5包囤货、可冲散和0酒精；可加10片便携装做差异。",
-      "risk": "湿巾类控价和品控投诉较敏感，需保留进货凭证、批次和保质期；低客单重货需核算偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100145357766",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "维达 维达（Vinda）湿厕纸 家庭装80片*5包 多巴胺湿厕纸 80片*5包",
-        "requiredTokenGroups": [
-          [
-            "维达",
-            "vinda"
-          ],
-          [
-            "湿厕纸"
-          ],
-          [
-            "80片",
-            "80抽"
-          ],
-          [
-            "5包",
-            "5袋"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        19.4,
-        23.3
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.1,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        19.4,
-        23.3
-      ],
-      "supply1688": {
-        "query": "维达 湿厕纸 80片 5包",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%BB%B4%E8%BE%BE+%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87+5%E5%8C%85",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E7%BB%B4%E8%BE%BE+%E7%BB%B4%E8%BE%BE%EF%BC%88Vinda%EF%BC%89%E6%B9%BF%E5%8E%95%E7%BA%B8+%E5%AE%B6%E5%BA%AD%E8%A3%8580%E7%89%87%2A5%E5%8C%85+%E5%A4%9A%E5%B7%B4%E8%83%BA%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87%2A5%E5%8C%85",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100145357766",
-          "title": null,
-          "url": "https://item.jd.com/100145357766.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E7%BB%B4%E8%BE%BE+%E7%BB%B4%E8%BE%BE%EF%BC%88Vinda%EF%BC%89%E6%B9%BF%E5%8E%95%E7%BA%B8+%E5%AE%B6%E5%BA%AD%E8%A3%8580%E7%89%87%2A5%E5%8C%85+%E5%A4%9A%E5%B7%B4%E8%83%BA%E6%B9%BF%E5%8E%95%E7%BA%B8+80%E7%89%87%2A5%E5%8C%85",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 9.2,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 7.8,
-        "salesProof": 1.0,
-        "repeatPurchase": 9.4,
-        "differentiation": 7.8,
-        "operability": 8.7,
-        "riskPenalty": 0.8,
-        "total": 5.7,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.7,
-        "freshness": 9.0,
-        "dataConfidence": 7.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0,
-        "seasonalMatch": false,
-        "appearances7d": 2,
-        "consecutiveDays": 0,
-        "daysSinceLast": 5,
-        "cooldown": false,
-        "selectionBucket": "轮换机会款",
-        "rotationScore": 6.33
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "轮换机会款",
-      "rank": 4,
-      "appearanceCount": 11,
-      "wasInPreviousDay": false,
-      "isNew": false,
-      "statusTag": "回归品",
-      "historyNote": "累计上榜11次"
-    },
-    {
-      "id": "jd-100154323857-omo-laundry-pods-50",
-      "brand": "奥妙",
-      "name": "奥妙桃桃春日除菌洗衣凝珠50颗 单腔洗衣球",
-      "sku": "50颗",
-      "category": "衣物清洁",
-      "type": "平销款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100154323857",
-      "sourceUrl": "https://item.jd.com/100154323857.html",
-      "image": "https://img12.360buyimg.com/n1/s720x720_jfs/t1/341658/4/11180/123757/68e7f3c8Fc8b17e6b/19377b332c79b26b.jpg",
-      "suggestedPrice": [
-        39.9,
-        55.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖奥妙、洗衣凝珠、50颗、除菌除螨、桃桃春日、鲜花精油；主图强调50颗桶装和香氛卖点；可与留香珠做加价购。",
-      "risk": "香味主观差异大，详情页需提示不同衣物和晾晒环境会影响留香；品牌低价促销波动会压缩利润。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100154323857",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "奥妙 奥妙桃桃春日除菌洗衣凝珠50颗 单腔洗衣球 50颗",
-        "requiredTokenGroups": [
-          [
-            "奥妙",
-            "omo"
-          ],
-          [
-            "洗衣凝珠",
-            "凝珠"
-          ],
-          [
-            "50颗",
-            "50粒"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        2.3,
-        2.3
-      ],
-      "costSource": "1688单SKU已核验最低公开阶梯价",
-      "estimatedGrossProfitRate": [
-        94.2,
-        95.9
-      ],
-      "marginBasis": "1688已核验价",
-      "costCeiling": [
-        31.1,
-        43.6
-      ],
-      "supply1688": {
-        "query": "奥妙 洗衣凝珠 50颗",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A5%A5%E5%A6%99+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+50%E9%A2%97",
-        "lowestPrice": 2.3,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "exact",
-        "matchedTitle": "奥妙洗衣凝珠50颗浓缩天然酵素洗衣球除菌留香柔软护衣多香型可选",
-        "offerId": "898169972654",
-        "offerUrl": "https://detail.1688.com/offer/898169972654.html",
-        "verifiedAt": "2026-06-13T14:08:01.585778+08:00",
-        "ageHours": 552.2,
-        "freshnessStatus": "stale",
-        "source": "ElimAPI 1688授权搜索",
-        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E5%A5%A5%E5%A6%99+%E5%A5%A5%E5%A6%99%E6%A1%83%E6%A1%83%E6%98%A5%E6%97%A5%E9%99%A4%E8%8F%8C%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A050%E9%A2%97+%E5%8D%95%E8%85%94%E6%B4%97%E8%A1%A3%E7%90%83+50%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100154323857",
-          "title": null,
-          "url": "https://item.jd.com/100154323857.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E5%A5%A5%E5%A6%99+%E5%A5%A5%E5%A6%99%E6%A1%83%E6%A1%83%E6%98%A5%E6%97%A5%E9%99%A4%E8%8F%8C%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A050%E9%A2%97+%E5%8D%95%E8%85%94%E6%B4%97%E8%A1%A3%E7%90%83+50%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.6,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 7.7,
-        "salesProof": 1.0,
-        "repeatPurchase": 8.7,
-        "differentiation": 8,
-        "operability": 8.3,
-        "riskPenalty": 0.7,
-        "total": 5.5,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.5,
-        "freshness": 9.0,
-        "dataConfidence": 8.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0,
-        "seasonalMatch": false,
-        "appearances7d": 2,
-        "consecutiveDays": 0,
-        "daysSinceLast": 4,
-        "cooldown": false,
-        "selectionBucket": "轮换机会款",
-        "rotationScore": 6.27
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "轮换机会款",
-      "rank": 5,
-      "appearanceCount": 11,
-      "wasInPreviousDay": false,
-      "isNew": false,
-      "statusTag": "回归品",
-      "historyNote": "累计上榜11次"
+      "lifecycleStatus": "持续跟踪",
+      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
     },
     {
       "id": "jd-3761608-抽纸",
@@ -1224,1714 +2930,15 @@
         "valueScore": 5.6,
         "freshness": 9.0,
         "dataConfidence": 7.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0,
-        "seasonalMatch": false,
-        "appearances7d": 2,
-        "consecutiveDays": 0,
-        "daysSinceLast": 4,
-        "cooldown": false,
-        "selectionBucket": "轮换机会款",
-        "rotationScore": 6.25
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "轮换机会款",
-      "rank": 6,
-      "appearanceCount": 7,
-      "wasInPreviousDay": false,
-      "isNew": false,
-      "statusTag": "回归品",
-      "historyNote": "累计上榜7次"
-    },
-    {
-      "id": "jd-100119958151-洗衣凝珠",
-      "brand": "京东京造",
-      "name": "京东京造六效合一洗衣凝珠104颗",
-      "sku": "104颗",
-      "category": "衣物清洁",
-      "type": "平销款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "开学",
-        "宿舍"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100119958151",
-      "sourceUrl": "https://item.jd.com/100119958151.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/435954/16/8755/214460/6a0f0a3eFafe3f12d/00833e83e80f0894.jpg",
-      "suggestedPrice": [
-        39.9,
-        59.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖京东京造、洗衣凝珠和完整规格104颗；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100119958151",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "京东京造 京东京造六效合一洗衣凝珠104颗 104颗",
-        "requiredTokenGroups": [
-          [
-            "京东京造"
-          ],
-          [
-            "洗衣凝珠",
-            "凝珠"
-          ],
-          [
-            "104颗",
-            "104粒"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        31.1,
-        46.7
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.0,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        31.1,
-        46.7
-      ],
-      "supply1688": {
-        "query": "京东京造 洗衣凝珠 104颗",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E4%BA%AC%E4%B8%9C%E4%BA%AC%E9%80%A0+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+104%E9%A2%97",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E4%BA%AC%E4%B8%9C%E4%BA%AC%E9%80%A0+%E4%BA%AC%E4%B8%9C%E4%BA%AC%E9%80%A0%E5%85%AD%E6%95%88%E5%90%88%E4%B8%80%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0104%E9%A2%97+104%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100119958151",
-          "title": null,
-          "url": "https://item.jd.com/100119958151.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E4%BA%AC%E4%B8%9C%E4%BA%AC%E9%80%A0+%E4%BA%AC%E4%B8%9C%E4%BA%AC%E9%80%A0%E5%85%AD%E6%95%88%E5%90%88%E4%B8%80%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0104%E9%A2%97+104%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.1,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 8.4,
-        "salesProof": 1.0,
-        "repeatPurchase": 9,
-        "differentiation": 7.8,
-        "operability": 8.5,
-        "riskPenalty": 0.7,
-        "total": 5.6,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.6,
-        "freshness": 7.5,
-        "dataConfidence": 7.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0,
-        "seasonalMatch": false,
-        "appearances7d": 2,
-        "consecutiveDays": 0,
-        "daysSinceLast": 2,
-        "cooldown": false,
-        "selectionBucket": "轮换机会款",
-        "rotationScore": 6.02
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "轮换机会款",
-      "rank": 7,
-      "appearanceCount": 9,
-      "wasInPreviousDay": false,
-      "isNew": false,
-      "statusTag": "回归品",
-      "historyNote": "累计上榜9次"
-    },
-    {
-      "id": "jd-206673-洗发水",
-      "brand": "潘婷",
-      "name": "潘婷丝质顺滑去屑洗发水750g",
-      "sku": "750g",
-      "category": "个护日化",
-      "type": "引流款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "囤货",
-        "双11"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "206673",
-      "sourceUrl": "https://item.jd.com/206673.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/450014/26/1813/146912/6a1f9a36F049338b9/0083320320111a38.jpg",
-      "suggestedPrice": [
-        39.9,
-        59.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖潘婷、洗发水和完整规格750g；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "206673",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "潘婷 潘婷丝质顺滑去屑洗发水750g 750g",
-        "requiredTokenGroups": [
-          [
-            "潘婷",
-            "pantene"
-          ],
-          [
-            "洗发水",
-            "洗发露"
-          ],
-          [
-            "750g",
-            "750克"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        31.1,
-        46.7
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.0,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        31.1,
-        46.7
-      ],
-      "supply1688": {
-        "query": "潘婷 洗发水 750g",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%BD%98%E5%A9%B7+%E6%B4%97%E5%8F%91%E6%B0%B4+750g",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E6%BD%98%E5%A9%B7+%E6%BD%98%E5%A9%B7%E4%B8%9D%E8%B4%A8%E9%A1%BA%E6%BB%91%E5%8E%BB%E5%B1%91%E6%B4%97%E5%8F%91%E6%B0%B4750g+750g",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "206673",
-          "title": null,
-          "url": "https://item.jd.com/206673.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E6%BD%98%E5%A9%B7+%E6%BD%98%E5%A9%B7%E4%B8%9D%E8%B4%A8%E9%A1%BA%E6%BB%91%E5%8E%BB%E5%B1%91%E6%B4%97%E5%8F%91%E6%B0%B4750g+750g",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 7.6,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 7.8,
-        "salesProof": 1.0,
-        "repeatPurchase": 7.9,
-        "differentiation": 7.4,
-        "operability": 7.7,
-        "riskPenalty": 0.8,
-        "total": 5.0,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.0,
-        "freshness": 9.0,
-        "dataConfidence": 7.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0,
-        "seasonalMatch": false,
-        "appearances7d": 2,
-        "consecutiveDays": 0,
-        "daysSinceLast": 4,
-        "cooldown": false,
-        "selectionBucket": "轮换机会款",
-        "rotationScore": 5.8
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "轮换机会款",
-      "rank": 8,
-      "appearanceCount": 7,
-      "wasInPreviousDay": false,
-      "isNew": false,
-      "statusTag": "回归品",
-      "historyNote": "累计上榜7次"
-    },
-    {
-      "id": "jd-3242242-洁厕液",
-      "brand": "威猛先生",
-      "name": "威猛先生洁厕灵750g*2瓶",
-      "sku": "750g*2瓶",
-      "category": "家庭清洁",
-      "type": "引流款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "夏季",
-        "除味"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "3242242",
-      "sourceUrl": "https://item.jd.com/3242242.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/430435/40/14160/209730/6a057481F6b2aa933/00833203206d1208.jpg",
-      "suggestedPrice": [
-        19.9,
-        29.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖威猛先生、洁厕液和完整规格750g*2瓶；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "3242242",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "威猛先生 威猛先生洁厕灵750g*2瓶 750g*2瓶",
-        "requiredTokenGroups": [
-          [
-            "威猛先生",
-            "mr muscle"
-          ],
-          [
-            "洁厕"
-          ],
-          [
-            "750g",
-            "750克"
-          ],
-          [
-            "2瓶"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        14.74,
-        14.74
-      ],
-      "costSource": "1688单SKU已核验最低公开阶梯价",
-      "estimatedGrossProfitRate": [
-        25.9,
-        50.7
-      ],
-      "marginBasis": "1688已核验价",
-      "costCeiling": [
-        15.5,
-        23.3
-      ],
-      "supply1688": {
-        "query": "威猛先生 洁厕液 750g*2瓶",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E6%B4%81%E5%8E%95%E6%B6%B2+750g%2A2%E7%93%B6",
-        "lowestPrice": 14.74,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "exact",
-        "matchedTitle": "威猛先生洁厕液柠檬草香750g*2瓶厕所清洁剂柠檬草香洁厕灵除垢",
-        "offerId": "666127001707",
-        "offerUrl": "https://detail.1688.com/offer/666127001707.html",
-        "verifiedAt": "2026-07-05T13:55:00.552868+08:00",
-        "ageHours": 24.4,
-        "freshnessStatus": "fresh",
-        "source": "ElimAPI 1688授权搜索",
-        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6+750g%2A2%E7%93%B6",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "3242242",
-          "title": null,
-          "url": "https://item.jd.com/3242242.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F+%E5%A8%81%E7%8C%9B%E5%85%88%E7%94%9F%E6%B4%81%E5%8E%95%E7%81%B5750g%2A2%E7%93%B6+750g%2A2%E7%93%B6",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.5,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 7.3,
-        "salesProof": 1.0,
-        "repeatPurchase": 9,
-        "differentiation": 8.2,
-        "operability": 8,
-        "riskPenalty": 0.6,
-        "total": 5.3,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.3,
-        "freshness": 4.0,
-        "dataConfidence": 8.0,
-        "repeatPenalty": 1.0,
-        "seasonalBonus": 0.5,
-        "seasonalMatch": true,
-        "appearances7d": 2,
-        "consecutiveDays": 1,
-        "daysSinceLast": 1,
-        "cooldown": false,
-        "selectionBucket": "稳定跟踪款",
-        "rotationScore": 4.87
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "稳定跟踪款",
-      "rank": 9,
-      "appearanceCount": 9,
-      "wasInPreviousDay": true,
-      "isNew": false,
-      "statusTag": "昨日品",
-      "historyNote": "累计上榜9次"
-    },
-    {
-      "id": "jd-100068270587-洁厕液",
-      "brand": "老管家",
-      "name": "老管家香氛洁厕液500g*2瓶",
-      "sku": "500g*2瓶",
-      "category": "家庭清洁",
-      "type": "平销款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "夏季",
-        "除味"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100068270587",
-      "sourceUrl": "https://item.jd.com/100068270587.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/433447/13/10643/163939/6a051c8aFf4e824b4/00833203209b1d77.jpg",
-      "suggestedPrice": [
-        16.9,
-        25.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖老管家、洁厕液和完整规格500g*2瓶；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100068270587",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "老管家 老管家香氛洁厕液500g*2瓶 500g*2瓶",
-        "requiredTokenGroups": [
-          [
-            "老管家"
-          ],
-          [
-            "洁厕"
-          ],
-          [
-            "500g",
-            "500克"
-          ],
-          [
-            "2瓶"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        13.2,
-        20.2
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        21.9,
-        22.0
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        13.2,
-        20.2
-      ],
-      "supply1688": {
-        "query": "老管家 洁厕液 500g*2瓶",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%80%81%E7%AE%A1%E5%AE%B6+%E6%B4%81%E5%8E%95%E6%B6%B2+500g%2A2%E7%93%B6",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E8%80%81%E7%AE%A1%E5%AE%B6+%E8%80%81%E7%AE%A1%E5%AE%B6%E9%A6%99%E6%B0%9B%E6%B4%81%E5%8E%95%E6%B6%B2500g%2A2%E7%93%B6+500g%2A2%E7%93%B6",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100068270587",
-          "title": null,
-          "url": "https://item.jd.com/100068270587.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E8%80%81%E7%AE%A1%E5%AE%B6+%E8%80%81%E7%AE%A1%E5%AE%B6%E9%A6%99%E6%B0%9B%E6%B4%81%E5%8E%95%E6%B6%B2500g%2A2%E7%93%B6+500g%2A2%E7%93%B6",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 8.1,
-        "salesProof": 1.0,
-        "repeatPurchase": 9,
-        "differentiation": 7.7,
-        "operability": 8.5,
-        "riskPenalty": 0.9,
-        "total": 5.3,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.3,
-        "freshness": 4.0,
-        "dataConfidence": 7.0,
-        "repeatPenalty": 1.0,
-        "seasonalBonus": 0.5,
-        "seasonalMatch": true,
-        "appearances7d": 2,
-        "consecutiveDays": 1,
-        "daysSinceLast": 1,
-        "cooldown": false,
-        "selectionBucket": "稳定跟踪款",
-        "rotationScore": 4.77
-      },
-      "lifecycleStatus": "待核验",
-      "selectionReason": "稳定跟踪款",
-      "rank": 10,
-      "appearanceCount": 6,
-      "wasInPreviousDay": true,
-      "isNew": false,
-      "statusTag": "昨日品",
-      "historyNote": "累计上榜6次"
-    }
-  ],
-  "trackingProducts": [
-    {
-      "id": "jd-100218230085-洗衣凝珠",
-      "brand": "立白",
-      "name": "立白大师香氛格拉斯玫瑰洗衣凝珠50颗",
-      "sku": "50颗",
-      "category": "衣物清洁",
-      "type": "利润款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "春季",
-        "夏季"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100218230085",
-      "sourceUrl": "https://item.jd.com/100218230085.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/434884/3/6202/193557/6a058f2cFffd29fc7/008332032055d344.jpg",
-      "suggestedPrice": [
-        29.9,
-        45.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖立白、洗衣凝珠和完整规格50颗；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100218230085",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "立白 立白大师香氛格拉斯玫瑰洗衣凝珠50颗 50颗",
-        "requiredTokenGroups": [
-          [
-            "立白"
-          ],
-          [
-            "洗衣凝珠",
-            "凝珠"
-          ],
-          [
-            "50颗",
-            "50粒"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        23.3,
-        35.8
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.0,
-        22.1
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        23.3,
-        35.8
-      ],
-      "supply1688": {
-        "query": "立白 洗衣凝珠 50颗",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AB%8B%E7%99%BD+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+50%E9%A2%97",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%A0%BC%E6%8B%89%E6%96%AF%E7%8E%AB%E7%91%B0%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A050%E9%A2%97+50%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100218230085",
-          "title": null,
-          "url": "https://item.jd.com/100218230085.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E5%A4%A7%E5%B8%88%E9%A6%99%E6%B0%9B%E6%A0%BC%E6%8B%89%E6%96%AF%E7%8E%AB%E7%91%B0%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A050%E9%A2%97+50%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.4,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 8.2,
-        "salesProof": 1.0,
-        "repeatPurchase": 8.7,
-        "differentiation": 8,
-        "operability": 8.2,
-        "riskPenalty": 0.6,
-        "total": 5.9,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.9,
-        "freshness": 9.0,
-        "dataConfidence": 7.0,
-        "repeatPenalty": 0.0,
-        "seasonalBonus": 0.5,
-        "seasonalMatch": true,
-        "appearances7d": 0,
-        "consecutiveDays": 0,
-        "daysSinceLast": 20,
-        "cooldown": false,
-        "selectionBucket": "季节机会款",
-        "rotationScore": 6.98
-      },
-      "lifecycleStatus": "持续跟踪",
-      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
-    },
-    {
-      "id": "jd-100045910485-liby-laundry-pods-40",
-      "brand": "立白",
-      "name": "立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔",
-      "sku": "40颗",
-      "category": "衣物清洁",
-      "type": "平销款",
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东",
-      "sourceSkuId": "100045910485",
-      "sourceUrl": "https://item.jd.com/100045910485.html",
-      "image": "https://img10.360buyimg.com/n1/s720x720_jfs/t1/452109/7/540/196515/6a1fe277F431281c8/0083320320daf059.jpg",
-      "suggestedPrice": [
-        29.9,
-        39.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题放立白、洗衣凝珠、40颗、除菌除螨、速溶快洗；主图突出每颗成本和40次洗涤；赠洗衣袋或留香珠小样提高转化。",
-      "risk": "洗衣凝珠低价白牌冲击明显，品牌标准品需用赠品、规格或组合差异避开旗舰店同款硬拼。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100045910485",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "立白 立白洗衣凝珠 除菌除螨抑菌洁净40颗 单腔 40颗",
-        "requiredTokenGroups": [
-          [
-            "立白"
-          ],
-          [
-            "洗衣凝珠",
-            "凝珠"
-          ],
-          [
-            "40颗",
-            "40粒"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        17.9,
-        17.9
-      ],
-      "costSource": "1688单SKU已核验最低公开阶梯价",
-      "estimatedGrossProfitRate": [
-        40.1,
-        55.1
-      ],
-      "marginBasis": "1688已核验价",
-      "costCeiling": [
-        23.3,
-        31.1
-      ],
-      "supply1688": {
-        "query": "立白 洗衣凝珠 40颗",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AB%8B%E7%99%BD+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+40%E9%A2%97",
-        "lowestPrice": 17.9,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "exact",
-        "matchedTitle": "广州立白洗衣凝珠香柔樱花凝珠320g代发批发40颗/8g",
-        "offerId": "732933845252",
-        "offerUrl": "https://detail.1688.com/offer/732933845252.html",
-        "verifiedAt": "2026-07-05T13:55:03.771211+08:00",
-        "ageHours": 24.4,
-        "freshnessStatus": "fresh",
-        "source": "ElimAPI 1688授权搜索",
-        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+%E9%99%A4%E8%8F%8C%E9%99%A4%E8%9E%A8%E6%8A%91%E8%8F%8C%E6%B4%81%E5%87%8040%E9%A2%97+%E5%8D%95%E8%85%94+40%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100045910485",
-          "title": null,
-          "url": "https://item.jd.com/100045910485.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+%E9%99%A4%E8%8F%8C%E9%99%A4%E8%9E%A8%E6%8A%91%E8%8F%8C%E6%B4%81%E5%87%8040%E9%A2%97+%E5%8D%95%E8%85%94+40%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 9,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 7.9,
-        "salesProof": 1.0,
-        "repeatPurchase": 8.8,
-        "differentiation": 7.6,
-        "operability": 8.5,
-        "riskPenalty": 0.7,
-        "total": 5.8,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.8,
-        "freshness": 4.0,
-        "dataConfidence": 8.0,
         "repeatPenalty": 2.5,
         "seasonalBonus": 0,
         "seasonalMatch": false,
         "appearances7d": 3,
         "consecutiveDays": 1,
-        "daysSinceLast": 1,
-        "cooldown": true,
-        "selectionBucket": "稳定跟踪款",
-        "rotationScore": 3.25
-      },
-      "lifecycleStatus": "持续跟踪",
-      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
-    },
-    {
-      "id": "jd-100060591186-油污净",
-      "brand": "花王",
-      "name": "花王厨房油污净1000ml",
-      "sku": "1000ml",
-      "category": "家庭清洁",
-      "type": "利润款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "大扫除"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100060591186",
-      "sourceUrl": "https://item.jd.com/100060591186.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/409331/33/18416/133968/69cb9e47F41116ff9/008332032059323a.jpg",
-      "suggestedPrice": [
-        35.9,
-        49.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖花王、油污净和完整规格1000ml；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100060591186",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "花王 花王厨房油污净1000ml 1000ml",
-        "requiredTokenGroups": [
-          [
-            "花王",
-            "kao"
-          ],
-          [
-            "油污净",
-            "油污清洁"
-          ],
-          [
-            "1000ml",
-            "1L"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        28.0,
-        38.9
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.0,
-        22.0
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        28.0,
-        38.9
-      ],
-      "supply1688": {
-        "query": "花王 油污净 1000ml",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E8%8A%B1%E7%8E%8B+%E6%B2%B9%E6%B1%A1%E5%87%80+1000ml",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E8%8A%B1%E7%8E%8B+%E8%8A%B1%E7%8E%8B%E5%8E%A8%E6%88%BF%E6%B2%B9%E6%B1%A1%E5%87%801000ml+1000ml",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100060591186",
-          "title": null,
-          "url": "https://item.jd.com/100060591186.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E8%8A%B1%E7%8E%8B+%E8%8A%B1%E7%8E%8B%E5%8E%A8%E6%88%BF%E6%B2%B9%E6%B1%A1%E5%87%801000ml+1000ml",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8.5,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 8.5,
-        "salesProof": 1.0,
-        "repeatPurchase": 8.8,
-        "differentiation": 7.8,
-        "operability": 8.1,
-        "riskPenalty": 0.6,
-        "total": 5.7,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.7,
-        "freshness": 4.0,
-        "dataConfidence": 7.0,
-        "repeatPenalty": 2.5,
-        "seasonalBonus": 0,
-        "seasonalMatch": false,
-        "appearances7d": 3,
-        "consecutiveDays": 1,
-        "daysSinceLast": 1,
-        "cooldown": true,
-        "selectionBucket": "稳定跟踪款",
-        "rotationScore": 3.08
-      },
-      "lifecycleStatus": "持续跟踪",
-      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
-    },
-    {
-      "id": "jd-100193026772-洗衣凝珠",
-      "brand": "立白",
-      "name": "立白沙龙香氛三腔洗衣凝珠65颗",
-      "sku": "65颗",
-      "category": "衣物清洁",
-      "type": "利润款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "双11",
-        "囤货"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100193026772",
-      "sourceUrl": "https://item.jd.com/100193026772.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/435347/12/6611/181434/6a058f0eF0884119d/008332032016215d.jpg",
-      "suggestedPrice": [
-        49.9,
-        69.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖立白、洗衣凝珠和完整规格65颗；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100193026772",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "立白 立白沙龙香氛三腔洗衣凝珠65颗 65颗",
-        "requiredTokenGroups": [
-          [
-            "立白"
-          ],
-          [
-            "洗衣凝珠",
-            "凝珠"
-          ],
-          [
-            "65颗",
-            "65粒"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        38.9,
-        54.5
-      ],
-      "costSource": "成本上限参考，不是1688真实报价",
-      "estimatedGrossProfitRate": [
-        22.0,
-        22.0
-      ],
-      "marginBasis": "成本上限估算",
-      "costCeiling": [
-        38.9,
-        54.5
-      ],
-      "supply1688": {
-        "query": "立白 洗衣凝珠 65颗",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E7%AB%8B%E7%99%BD+%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A0+65%E9%A2%97",
-        "lowestPrice": null,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "unverified",
-        "matchedTitle": null,
-        "offerId": null,
-        "offerUrl": null,
-        "verifiedAt": null,
-        "ageHours": null,
-        "freshnessStatus": "unverified",
-        "source": "1688待核验",
-        "note": "尚无可审计的1688单SKU报价，不展示推测价格；可点击搜索链接人工核对。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E6%B2%99%E9%BE%99%E9%A6%99%E6%B0%9B%E4%B8%89%E8%85%94%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A065%E9%A2%97+65%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100193026772",
-          "title": null,
-          "url": "https://item.jd.com/100193026772.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E7%AB%8B%E7%99%BD+%E7%AB%8B%E7%99%BD%E6%B2%99%E9%BE%99%E9%A6%99%E6%B0%9B%E4%B8%89%E8%85%94%E6%B4%97%E8%A1%A3%E5%87%9D%E7%8F%A065%E9%A2%97+65%E9%A2%97",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 8,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 8.4,
-        "salesProof": 1.0,
-        "repeatPurchase": 8.4,
-        "differentiation": 8,
-        "operability": 8.3,
-        "riskPenalty": 0.7,
-        "total": 5.5,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.5,
-        "freshness": 4.0,
-        "dataConfidence": 7.0,
-        "repeatPenalty": 1.0,
-        "seasonalBonus": 0,
-        "seasonalMatch": false,
-        "appearances7d": 1,
-        "consecutiveDays": 1,
-        "daysSinceLast": 1,
+        "daysSinceLast": 6,
         "cooldown": false,
         "selectionBucket": "稳定跟踪款",
-        "rotationScore": 4.42
-      },
-      "lifecycleStatus": "持续跟踪",
-      "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
-    },
-    {
-      "id": "jd-100327980320-洗发水",
-      "brand": "潘婷",
-      "name": "潘婷白桃乌龙控油蓬松洗发水470g",
-      "sku": "470g",
-      "category": "个护日化",
-      "type": "平销款",
-      "catalogStatus": "active",
-      "seasonalTags": [
-        "夏季",
-        "控油"
-      ],
-      "primaryPlatform": "京东",
-      "sourcePlatform": "京东公开价格页",
-      "sourceSkuId": "100327980320",
-      "sourceUrl": "https://item.jd.com/100327980320.html",
-      "image": "https://img30.360buyimg.com/n7/jfs/t1/445222/34/9731/123397/6a229ddeFc9db1517/00833203206e20e5.jpg",
-      "suggestedPrice": [
-        39.9,
-        55.9
-      ],
-      "heatEvidence": "三平台官方API尚无72小时内精确SKU数据，不使用静态价格区间、评价量或内容互动冒充销量。",
-      "listingAdvice": "标题覆盖潘婷、洗发水和完整规格470g；主图突出单次使用成本、家庭场景和组合数量，避免直接复制旗舰店主图。",
-      "risk": "标准品牌商品价格透明，需保留进货凭证并核算活动价差；液体运输需额外核算破损、漏液和偏远地区运费。",
-      "marketplaceIds": {
-        "taobao": null,
-        "jd": "100327980320",
-        "douyin": null
-      },
-      "marketSearch": {
-        "keywords": "潘婷 潘婷白桃乌龙控油蓬松洗发水470g 470g",
-        "requiredTokenGroups": [
-          [
-            "潘婷",
-            "pantene"
-          ],
-          [
-            "洗发水",
-            "洗发露"
-          ],
-          [
-            "470g",
-            "470克"
-          ]
-        ]
-      },
-      "supplyCostReference": [
-        11.99,
-        11.99
-      ],
-      "costSource": "1688单SKU已核验最低公开阶梯价",
-      "estimatedGrossProfitRate": [
-        69.9,
-        78.6
-      ],
-      "marginBasis": "1688已核验价",
-      "costCeiling": [
-        31.1,
-        43.6
-      ],
-      "supply1688": {
-        "query": "潘婷 洗发水 470g",
-        "searchUrl": "https://s.1688.com/selloffer/offer_search.htm?keywords=%E6%BD%98%E5%A9%B7+%E6%B4%97%E5%8F%91%E6%B0%B4+470g",
-        "lowestPrice": 11.99,
-        "moq": null,
-        "unit": "件",
-        "matchStatus": "exact",
-        "matchedTitle": "正品潘婷3分钟奇迹洗发水300g/470g多效损伤修护洗发露护发素官方",
-        "offerId": "764015283540",
-        "offerUrl": "https://detail.1688.com/offer/764015283540.html",
-        "verifiedAt": "2026-07-04T13:37:12.124636+08:00",
-        "ageHours": 48.7,
-        "freshnessStatus": "aging",
-        "source": "ElimAPI 1688授权搜索",
-        "note": "已核验为同品牌、同规格的单SKU最低公开阶梯价；下单前仍需确认起订量、运费和库存。"
-      },
-      "platforms": [
-        {
-          "name": "淘宝/天猫",
-          "code": "taobao",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://s.taobao.com/search?q=%E6%BD%98%E5%A9%B7+%E6%BD%98%E5%A9%B7%E7%99%BD%E6%A1%83%E4%B9%8C%E9%BE%99%E6%8E%A7%E6%B2%B9%E8%93%AC%E6%9D%BE%E6%B4%97%E5%8F%91%E6%B0%B4470g+470g",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "京东",
-          "code": "jd",
-          "platformItemId": "100327980320",
-          "title": null,
-          "url": "https://item.jd.com/100327980320.html",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        },
-        {
-          "name": "抖音",
-          "code": "douyin",
-          "platformItemId": null,
-          "title": null,
-          "url": "https://www.douyin.com/search/%E6%BD%98%E5%A9%B7+%E6%BD%98%E5%A9%B7%E7%99%BD%E6%A1%83%E4%B9%8C%E9%BE%99%E6%8E%A7%E6%B2%B9%E8%93%AC%E6%9D%BE%E6%B4%97%E5%8F%91%E6%B0%B4470g+470g",
-          "listPrice": null,
-          "couponAmount": null,
-          "estimatedPrice": null,
-          "lowPrice": null,
-          "sales30d": null,
-          "reviewCount": null,
-          "goodRate": null,
-          "rankSignal": null,
-          "matchStatus": "unverified",
-          "verifiedAt": null,
-          "ageHours": null,
-          "freshnessStatus": "unverified",
-          "sourceApi": null,
-          "status": "not-configured",
-          "error": "official API credentials are not configured",
-          "price": "待授权",
-          "matchType": "官方API凭证未配置",
-          "salesSignal": "官方API凭证未配置"
-        }
-      ],
-      "platformLowestPrice": null,
-      "trialBudgetRule": "首批试款成本建议控制在￥200-￥500",
-      "score": {
-        "platformHeat": 7.8,
-        "priceCompetitiveness": 1.0,
-        "profitFeasibility": 7.8,
-        "salesProof": 1.0,
-        "repeatPurchase": 8.5,
-        "differentiation": 8,
-        "operability": 7.9,
-        "riskPenalty": 0.5,
-        "total": 5.5,
-        "priceEvidenceAvailable": false,
-        "salesEvidenceAvailable": false,
-        "marketLowestEstimatedPrice": null
-      },
-      "rotation": {
-        "valueScore": 5.5,
-        "freshness": 4.0,
-        "dataConfidence": 8.0,
-        "repeatPenalty": 3.5,
-        "seasonalBonus": 0.5,
-        "seasonalMatch": true,
-        "appearances7d": 3,
-        "consecutiveDays": 2,
-        "daysSinceLast": 1,
-        "cooldown": true,
-        "selectionBucket": "稳定跟踪款",
-        "rotationScore": 2.52
+        "rotationScore": 3.75
       },
       "lifecycleStatus": "持续跟踪",
       "trackingReason": "历史上榜高分SKU，保留观察但不占今日推荐位"
@@ -3290,13 +3297,13 @@
         "differentiation": 8,
         "operability": 8.5,
         "riskPenalty": 0.7,
-        "total": 5.6,
+        "total": 5.5,
         "priceEvidenceAvailable": false,
         "salesEvidenceAvailable": false,
         "marketLowestEstimatedPrice": null
       },
       "rotation": {
-        "valueScore": 5.6,
+        "valueScore": 5.5,
         "freshness": 10.0,
         "dataConfidence": 7.0,
         "repeatPenalty": 0.0,
@@ -3307,7 +3314,7 @@
         "daysSinceLast": null,
         "cooldown": false,
         "selectionBucket": "当日新发现",
-        "rotationScore": 6.4
+        "rotationScore": 6.33
       },
       "lifecycleStatus": "新品雷达",
       "radarReason": "首次上榜前等待价格、货源或授权进一步核验"
@@ -3475,13 +3482,13 @@
         "differentiation": 8.2,
         "operability": 8.5,
         "riskPenalty": 0.9,
-        "total": 5.1,
+        "total": 4.9,
         "priceEvidenceAvailable": false,
         "salesEvidenceAvailable": false,
         "marketLowestEstimatedPrice": null
       },
       "rotation": {
-        "valueScore": 5.1,
+        "valueScore": 4.9,
         "freshness": 10.0,
         "dataConfidence": 7.0,
         "repeatPenalty": 0.0,
@@ -3492,7 +3499,7 @@
         "daysSinceLast": null,
         "cooldown": false,
         "selectionBucket": "当日新发现",
-        "rotationScore": 6.02
+        "rotationScore": 5.88
       },
       "lifecycleStatus": "新品雷达",
       "radarReason": "首次上榜前等待价格、货源或授权进一步核验"
@@ -3520,13 +3527,13 @@
     "overlapWithPrevious": 2,
     "replacementCount": 8,
     "sevenDayUniqueCount": 35,
-    "cooldownCount": 7,
-    "headline": "今日替换8款，主推威露士 450ml*2瓶",
+    "cooldownCount": 0,
+    "headline": "今日替换8款，主推潘婷 470g",
     "highlights": [
-      "今日关注类目：衣物清洁",
+      "今日关注类目：家庭清洁",
       "首次上榜0款，回归机会8款",
       "近7日累计覆盖35个不同SKU",
-      "7款因近期高频进入冷却观察"
+      "0款因近期高频进入冷却观察"
     ]
   },
   "avoidList": [

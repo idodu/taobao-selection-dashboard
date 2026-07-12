@@ -1,18 +1,18 @@
 {
-  "updatedAt": "2026-07-06T14:18:28.087925+08:00",
+  "updatedAt": "2026-07-12T13:16:35.762828+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
     "jd-100045910485-liby-laundry-pods-40": {
-      "lowestPrice": 17.9,
+      "lowestPrice": 23.9,
       "moq": null,
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "广州立白洗衣凝珠香柔樱花凝珠320g代发批发40颗/8g",
-      "offerId": "732933845252",
-      "offerUrl": "https://detail.1688.com/offer/732933845252.html",
-      "verifiedAt": "2026-07-05T13:55:03.771211+08:00",
+      "matchedTitle": "立白洗衣凝珠除菌倍净40颗家用量批洗衣液凝珠留香珠除菌祛螨正品",
+      "offerId": "751721118968",
+      "offerUrl": "https://detail.1688.com/offer/751721118968.html",
+      "verifiedAt": "2026-07-12T13:16:32.954186+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -128,24 +128,24 @@
       "sellerType": "merchant"
     },
     "jd-100327980320-洗发水": {
-      "lowestPrice": 11.99,
+      "lowestPrice": 18.92,
       "moq": null,
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "正品潘婷3分钟奇迹洗发水300g/470g多效损伤修护洗发露护发素官方",
-      "offerId": "764015283540",
-      "offerUrl": "https://detail.1688.com/offer/764015283540.html",
-      "verifiedAt": "2026-07-04T13:37:12.124636+08:00",
+      "matchedTitle": "潘婷3分钟奇迹洗发水小苍兰清爽版蓬松柔顺修护滋养470g",
+      "offerId": "905421175630",
+      "offerUrl": "https://detail.1688.com/offer/905421175630.html",
+      "verifiedAt": "2026-07-12T13:16:30.213782+08:00",
       "source": "ElimAPI 1688授权搜索",
-      "priceField": "price",
+      "priceField": "promotion_price",
       "matchEvidence": [
         "潘婷",
         "洗发水",
         "470g"
       ],
-      "bookedCount": 76,
-      "sellerType": "merchant"
+      "bookedCount": 0,
+      "sellerType": "seller"
     },
     "jd-1218774-油污净": {
       "lowestPrice": 3.9,
@@ -195,9 +195,9 @@
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
       "matchedTitle": "意大利大公鸡管家油污净厨房油烟机清洗剂喷雾家用去重油污600ml",
-      "offerId": "694500117288",
-      "offerUrl": "https://detail.1688.com/offer/694500117288.html",
-      "verifiedAt": "2026-07-04T13:37:13.717510+08:00",
+      "offerId": "823844960662",
+      "offerUrl": "https://detail.1688.com/offer/823844960662.html",
+      "verifiedAt": "2026-07-12T13:16:31.654651+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -205,7 +205,7 @@
         "油污净",
         "600ml"
       ],
-      "bookedCount": 16,
+      "bookedCount": 9,
       "sellerType": "merchant"
     },
     "jd-100014696148-卷纸": {
@@ -248,9 +248,9 @@
     "jd-100045910485-liby-laundry-pods-40": {
       "keywords": "立白 洗衣凝珠 40颗",
       "returnedOffers": 40,
-      "exactMatches": 11,
+      "exactMatches": 8,
       "status": "matched",
-      "attemptedAt": "2026-07-05T13:55:02.013593+08:00"
+      "attemptedAt": "2026-07-12T13:16:31.654683+08:00"
     },
     "jd-100154323857-omo-laundry-pods-50": {
       "keywords": "奥妙 洗衣凝珠 50颗",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-06T14:18:25.488629+08:00"
+      "attemptedAt": "2026-07-12T13:16:34.347755+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -360,9 +360,9 @@
     "jd-100327980320-洗发水": {
       "keywords": "潘婷 洗发水 470g",
       "returnedOffers": 40,
-      "exactMatches": 4,
+      "exactMatches": 3,
       "status": "matched",
-      "attemptedAt": "2026-07-04T13:37:10.672470+08:00"
+      "attemptedAt": "2026-07-12T13:16:28.496458+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-06T14:18:23.934944+08:00"
+      "attemptedAt": "2026-07-12T13:16:32.954214+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -430,9 +430,9 @@
     "jd-4806379-油污净": {
       "keywords": "大公鸡管家 油污净 600ml",
       "returnedOffers": 40,
-      "exactMatches": 15,
+      "exactMatches": 14,
       "status": "matched",
-      "attemptedAt": "2026-07-04T13:37:12.124661+08:00"
+      "attemptedAt": "2026-07-12T13:16:30.213814+08:00"
     },
     "jd-100014696148-卷纸": {
       "keywords": "清风 卷纸 140g*30卷",
@@ -443,9 +443,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100072670087-沐浴露",
-    "jd-5911553-mr-muscle-oil-cleaner-455x2",
-    "jd-100033499063-厨房纸",
+    "jd-100327980320-洗发水",
+    "jd-4806379-油污净",
+    "jd-100045910485-liby-laundry-pods-40",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
