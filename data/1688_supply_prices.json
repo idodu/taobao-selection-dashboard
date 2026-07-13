@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-12T13:16:35.762828+08:00",
+  "updatedAt": "2026-07-13T13:25:39.729112+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -92,10 +92,10 @@
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "威露士白茶无花果1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳",
-      "offerId": "898396984139",
-      "offerUrl": "https://detail.1688.com/offer/898396984139.html",
-      "verifiedAt": "2026-07-04T13:37:10.672445+08:00",
+      "matchedTitle": "威露士清新1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳大瓶",
+      "offerId": "897993497583",
+      "offerUrl": "https://detail.1688.com/offer/897993497583.html",
+      "verifiedAt": "2026-07-13T13:25:34.258256+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -236,7 +236,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-28T14:07:52.333628+08:00"
+      "attemptedAt": "2026-07-13T13:25:34.258282+08:00"
     },
     "jd-100005511754-mindact-wet-toilet-80x5": {
       "keywords": "心相印 湿厕纸 80片 5包",
@@ -318,16 +318,16 @@
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
       "returnedOffers": 40,
-      "exactMatches": 8,
+      "exactMatches": 6,
       "status": "matched",
-      "attemptedAt": "2026-07-04T13:37:09.026166+08:00"
+      "attemptedAt": "2026-07-13T13:25:32.426109+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-12T13:16:34.347755+08:00"
+      "attemptedAt": "2026-07-13T13:25:38.397507+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -348,7 +348,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-03T13:43:32.540860+08:00"
+      "attemptedAt": "2026-07-13T13:25:35.813766+08:00"
     },
     "jd-100018097536-抽纸": {
       "keywords": "清风 抽纸 120抽*24包",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-12T13:16:32.954214+08:00"
+      "attemptedAt": "2026-07-13T13:25:37.166474+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -443,9 +443,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100327980320-洗发水",
-    "jd-4806379-油污净",
-    "jd-100045910485-liby-laundry-pods-40",
+    "jd-100043025636-沐浴露",
+    "jd-100145357766-vinda-wet-toilet-80x5",
+    "jd-100010234334-洁厕宝",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
