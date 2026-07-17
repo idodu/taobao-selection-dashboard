@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T12:50:28.514098+08:00",
+  "updatedAt": "2026-07-17T12:53:34.313928+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -95,7 +95,7 @@
       "matchedTitle": "威露士清新1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳大瓶",
       "offerId": "897993497583",
       "offerUrl": "https://detail.1688.com/offer/897993497583.html",
-      "verifiedAt": "2026-07-13T13:25:34.258256+08:00",
+      "verifiedAt": "2026-07-17T12:53:28.743427+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -136,7 +136,7 @@
       "matchedTitle": "潘婷3分钟奇迹洗发水小苍兰清爽版蓬松柔顺修护滋养470g",
       "offerId": "905421175630",
       "offerUrl": "https://detail.1688.com/offer/905421175630.html",
-      "verifiedAt": "2026-07-12T13:16:30.213782+08:00",
+      "verifiedAt": "2026-07-17T12:53:30.003930+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -318,23 +318,23 @@
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
       "returnedOffers": 40,
-      "exactMatches": 6,
+      "exactMatches": 5,
       "status": "matched",
-      "attemptedAt": "2026-07-13T13:25:32.426109+08:00"
+      "attemptedAt": "2026-07-17T12:53:27.019499+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-16T12:50:27.064839+08:00"
+      "attemptedAt": "2026-07-17T12:53:31.458592+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-15T22:38:14.266392+08:00"
+      "attemptedAt": "2026-07-17T12:53:30.003956+08:00"
     },
     "jd-3761608-抽纸": {
       "keywords": "得宝 抽纸 100抽*18包",
@@ -359,10 +359,10 @@
     },
     "jd-100327980320-洗发水": {
       "keywords": "潘婷 洗发水 470g",
-      "returnedOffers": 40,
+      "returnedOffers": 39,
       "exactMatches": 3,
       "status": "matched",
-      "attemptedAt": "2026-07-12T13:16:28.496458+08:00"
+      "attemptedAt": "2026-07-17T12:53:28.743453+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-16T12:50:25.651848+08:00"
+      "attemptedAt": "2026-07-17T12:53:32.937223+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -450,11 +450,11 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100068270587-洁厕液",
-    "jd-100072670087-沐浴露",
-    "jd-4806379-油污净",
-    "jd-100013152446-洁厕液",
-    "jd-100012890014-抽纸"
+    "jd-100043025636-沐浴露",
+    "jd-100327980320-洗发水",
+    "jd-100218230085-洗衣凝珠",
+    "jd-100012890014-抽纸",
+    "jd-100013152446-洁厕液"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
