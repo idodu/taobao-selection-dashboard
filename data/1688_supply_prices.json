@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-18T12:38:48.368135+08:00",
+  "updatedAt": "2026-07-19T13:10:46.584733+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -32,7 +32,7 @@
       "matchedTitle": "奥妙洗衣凝珠留香珠50颗/盒装400g 公司福利商超劳保批发 一件代",
       "offerId": "897062851647",
       "offerUrl": "https://detail.1688.com/offer/897062851647.html",
-      "verifiedAt": "2026-07-14T12:40:26.582473+08:00",
+      "verifiedAt": "2026-07-19T13:10:43.788021+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -255,16 +255,16 @@
     "jd-100154323857-omo-laundry-pods-50": {
       "keywords": "奥妙 洗衣凝珠 50颗",
       "returnedOffers": 40,
-      "exactMatches": 18,
+      "exactMatches": 17,
       "status": "matched",
-      "attemptedAt": "2026-07-14T12:40:25.205411+08:00"
+      "attemptedAt": "2026-07-19T13:10:42.471467+08:00"
     },
     "jd-5911553-mr-muscle-oil-cleaner-455x2": {
       "keywords": "威猛先生 油污清洁剂 455g 2瓶 替换装",
       "returnedOffers": 2,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-15T12:40:17.204397+08:00"
+      "attemptedAt": "2026-07-19T13:10:39.816256+08:00"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
       "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
@@ -306,7 +306,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-15T12:40:13.512999+08:00"
+      "attemptedAt": "2026-07-19T13:10:41.030597+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-18T12:38:46.918111+08:00"
+      "attemptedAt": "2026-07-19T13:10:45.210245+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-18T12:38:45.633259+08:00"
+      "attemptedAt": "2026-07-19T13:10:43.788050+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -450,9 +450,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-3242242-洁厕液",
-    "jd-100045910485-liby-laundry-pods-40",
-    "jd-100060591186-油污净",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2",
+    "jd-100033499063-厨房纸",
+    "jd-100154323857-omo-laundry-pods-50",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
