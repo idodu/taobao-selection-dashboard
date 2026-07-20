@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-19T13:10:46.584733+08:00",
+  "updatedAt": "2026-07-20T13:30:06.790054+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -136,7 +136,7 @@
       "matchedTitle": "潘婷3分钟奇迹洗发水小苍兰清爽版蓬松柔顺修护滋养470g",
       "offerId": "905421175630",
       "offerUrl": "https://detail.1688.com/offer/905421175630.html",
-      "verifiedAt": "2026-07-17T12:53:30.003930+08:00",
+      "verifiedAt": "2026-07-20T13:29:59.904570+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -144,7 +144,7 @@
         "洗发水",
         "470g"
       ],
-      "bookedCount": 0,
+      "bookedCount": 1,
       "sellerType": "seller"
     },
     "jd-1218774-油污净": {
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-19T13:10:45.210245+08:00"
+      "attemptedAt": "2026-07-20T13:30:04.793957+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -359,10 +359,10 @@
     },
     "jd-100327980320-洗发水": {
       "keywords": "潘婷 洗发水 470g",
-      "returnedOffers": 39,
+      "returnedOffers": 40,
       "exactMatches": 3,
       "status": "matched",
-      "attemptedAt": "2026-07-17T12:53:28.743453+08:00"
+      "attemptedAt": "2026-07-20T13:29:58.017701+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -376,14 +376,14 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-19T13:10:43.788050+08:00"
+      "attemptedAt": "2026-07-20T13:30:03.282428+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-21T14:42:27.098639+08:00"
+      "attemptedAt": "2026-07-20T13:30:01.445539+08:00"
     },
     "jd-1218774-油污净": {
       "keywords": "威王 油污净 500g+420g",
@@ -447,12 +447,19 @@
       "exactMatches": 0,
       "status": "no-exact-match",
       "attemptedAt": "2026-07-14T12:40:23.786912+08:00"
+    },
+    "jd-100193026772-洗衣凝珠": {
+      "keywords": "立白 洗衣凝珠 65颗",
+      "returnedOffers": 40,
+      "exactMatches": 0,
+      "status": "no-exact-match",
+      "attemptedAt": "2026-07-20T13:29:59.904600+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-5911553-mr-muscle-oil-cleaner-455x2",
-    "jd-100033499063-厨房纸",
-    "jd-100154323857-omo-laundry-pods-50",
+    "jd-100327980320-洗发水",
+    "jd-100193026772-洗衣凝珠",
+    "jd-5030508-牙膏",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
