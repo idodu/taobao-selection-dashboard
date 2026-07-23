@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T12:58:01.663935+08:00",
+  "updatedAt": "2026-07-23T13:15:33.753854+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -177,7 +177,7 @@
       "matchedTitle": "Lion狮王氨基酸国产漱口水450ml黑莓月桂叶NONIO鲜萃桃桃持久清新",
       "offerId": "913001904906",
       "offerUrl": "https://detail.1688.com/offer/913001904906.html",
-      "verifiedAt": "2026-07-03T13:43:36.332667+08:00",
+      "verifiedAt": "2026-07-23T13:15:29.480404+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "dropship_price",
       "matchEvidence": [
@@ -185,7 +185,7 @@
         "漱口水",
         "450ml"
       ],
-      "bookedCount": 6,
+      "bookedCount": 25,
       "sellerType": "merchant"
     },
     "jd-4806379-油污净": {
@@ -306,7 +306,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-19T13:10:41.030597+08:00"
+      "attemptedAt": "2026-07-23T13:15:26.849625+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-22T12:58:00.295156+08:00"
+      "attemptedAt": "2026-07-23T13:15:32.238014+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-22T12:57:58.831366+08:00"
+      "attemptedAt": "2026-07-23T13:15:30.773055+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -425,7 +425,7 @@
       "returnedOffers": 10,
       "exactMatches": 4,
       "status": "matched",
-      "attemptedAt": "2026-07-03T13:43:35.294530+08:00"
+      "attemptedAt": "2026-07-23T13:15:28.504495+08:00"
     },
     "jd-4806379-油污净": {
       "keywords": "大公鸡管家 油污净 600ml",
@@ -446,7 +446,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-14T12:40:23.786912+08:00"
+      "attemptedAt": "2026-07-23T13:15:29.480427+08:00"
     },
     "jd-100193026772-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 65颗",
@@ -457,9 +457,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-3242242-洁厕液",
-    "jd-100008268866-sensodyne-toothpaste-270g",
-    "jd-4806379-油污净",
+    "jd-100033499063-厨房纸",
+    "jd-10074068017795-漱口水",
+    "jd-100119958151-洗衣凝珠",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
