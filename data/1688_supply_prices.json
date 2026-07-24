@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T13:15:33.753854+08:00",
+  "updatedAt": "2026-07-24T13:00:17.166798+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -261,10 +261,10 @@
     },
     "jd-5911553-mr-muscle-oil-cleaner-455x2": {
       "keywords": "威猛先生 油污清洁剂 455g 2瓶 替换装",
-      "returnedOffers": 2,
+      "returnedOffers": 1,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-19T13:10:39.816256+08:00"
+      "attemptedAt": "2026-07-24T13:00:09.791460+08:00"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
       "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-23T13:15:32.238014+08:00"
+      "attemptedAt": "2026-07-24T13:00:15.682356+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-23T13:15:30.773055+08:00"
+      "attemptedAt": "2026-07-24T13:00:13.958099+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -394,10 +394,10 @@
     },
     "jd-100060591186-油污净": {
       "keywords": "花王 油污净 1000ml",
-      "returnedOffers": 34,
+      "returnedOffers": 36,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-18T12:38:44.246512+08:00"
+      "attemptedAt": "2026-07-24T13:00:12.581788+08:00"
     },
     "jd-100001843719-洗衣液": {
       "keywords": "奥妙 洗衣液 12斤",
@@ -411,7 +411,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-16T12:50:21.120631+08:00"
+      "attemptedAt": "2026-07-24T13:00:11.205361+08:00"
     },
     "jd-100143899092-油污净": {
       "keywords": "老管家 油污净 500g*2瓶",
@@ -457,9 +457,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100033499063-厨房纸",
-    "jd-10074068017795-漱口水",
-    "jd-100119958151-洗衣凝珠",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2",
+    "jd-100068270587-洁厕液",
+    "jd-100060591186-油污净",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
