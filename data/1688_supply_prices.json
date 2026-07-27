@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T13:21:15.721934+08:00",
+  "updatedAt": "2026-07-27T13:39:52.658592+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -177,7 +177,7 @@
       "matchedTitle": "Lion狮王氨基酸国产漱口水450ml黑莓月桂叶NONIO鲜萃桃桃持久清新",
       "offerId": "913001904906",
       "offerUrl": "https://detail.1688.com/offer/913001904906.html",
-      "verifiedAt": "2026-07-23T13:15:29.480404+08:00",
+      "verifiedAt": "2026-07-27T13:39:48.979065+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "dropship_price",
       "matchEvidence": [
@@ -264,7 +264,7 @@
       "returnedOffers": 1,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-24T13:00:09.791460+08:00"
+      "attemptedAt": "2026-07-27T13:39:48.979086+08:00"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
       "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
@@ -306,7 +306,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-23T13:15:26.849625+08:00"
+      "attemptedAt": "2026-07-27T13:39:46.171496+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
@@ -327,7 +327,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-26T13:21:14.430551+08:00"
+      "attemptedAt": "2026-07-27T13:39:51.221361+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-26T13:21:13.196703+08:00"
+      "attemptedAt": "2026-07-27T13:39:49.827954+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -425,7 +425,7 @@
       "returnedOffers": 10,
       "exactMatches": 4,
       "status": "matched",
-      "attemptedAt": "2026-07-23T13:15:28.504495+08:00"
+      "attemptedAt": "2026-07-27T13:39:48.040723+08:00"
     },
     "jd-4806379-油污净": {
       "keywords": "大公鸡管家 油污净 600ml",
@@ -457,9 +457,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-3242242-洁厕液",
-    "jd-100010234334-洁厕宝",
-    "jd-100045910485-liby-laundry-pods-40",
+    "jd-100033499063-厨房纸",
+    "jd-10074068017795-漱口水",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
