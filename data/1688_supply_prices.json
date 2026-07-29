@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28T12:54:06.011765+08:00",
+  "updatedAt": "2026-07-29T12:58:42.386700+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -95,7 +95,7 @@
       "matchedTitle": "威露士清新1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳大瓶",
       "offerId": "897993497583",
       "offerUrl": "https://detail.1688.com/offer/897993497583.html",
-      "verifiedAt": "2026-07-25T12:56:07.494165+08:00",
+      "verifiedAt": "2026-07-29T12:58:37.548991+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -292,7 +292,7 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-22T12:57:57.017847+08:00"
+      "attemptedAt": "2026-07-29T12:58:39.016250+08:00"
     },
     "jd-100013568111-corou-cotton-towel-100x6": {
       "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
@@ -320,14 +320,14 @@
       "returnedOffers": 40,
       "exactMatches": 5,
       "status": "matched",
-      "attemptedAt": "2026-07-25T12:56:04.615378+08:00"
+      "attemptedAt": "2026-07-29T12:58:35.699329+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-28T12:54:04.599697+08:00"
+      "attemptedAt": "2026-07-29T12:58:39.735470+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -376,7 +376,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-28T12:54:03.271460+08:00"
+      "attemptedAt": "2026-07-29T12:58:41.065884+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -394,10 +394,10 @@
     },
     "jd-100060591186-油污净": {
       "keywords": "花王 油污净 1000ml",
-      "returnedOffers": 36,
+      "returnedOffers": 37,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-24T13:00:12.581788+08:00"
+      "attemptedAt": "2026-07-29T12:58:37.549023+08:00"
     },
     "jd-100001843719-洗衣液": {
       "keywords": "奥妙 洗衣液 12斤",
@@ -457,11 +457,11 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100068270587-洁厕液",
-    "jd-100327980320-洗发水",
-    "jd-5030508-牙膏",
-    "jd-100013152446-洁厕液",
-    "jd-100012890014-抽纸"
+    "jd-100043025636-沐浴露",
+    "jd-100060591186-油污净",
+    "jd-100008268866-sensodyne-toothpaste-270g",
+    "jd-100012890014-抽纸",
+    "jd-100013152446-洁厕液"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
