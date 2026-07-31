@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T12:47:20.315400+08:00",
+  "updatedAt": "2026-07-31T13:24:35.960684+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -303,10 +303,10 @@
     },
     "jd-100033499063-厨房纸": {
       "keywords": "清风 厨房纸 76张*3包",
-      "returnedOffers": 40,
+      "returnedOffers": 8,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-27T13:39:46.171496+08:00"
+      "attemptedAt": "2026-07-31T13:24:31.091502+08:00"
     },
     "jd-3242242-洁厕液": {
       "keywords": "威猛先生 洁厕液 750g*2瓶",
@@ -324,10 +324,10 @@
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
-      "returnedOffers": 40,
+      "returnedOffers": 17,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-30T12:47:18.926075+08:00"
+      "attemptedAt": "2026-07-31T13:24:34.998270+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -373,17 +373,17 @@
     },
     "jd-100013152446-洁厕液": {
       "keywords": "花王 洁厕液 500ml*2瓶",
-      "returnedOffers": 40,
+      "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-30T12:47:17.613326+08:00"
+      "attemptedAt": "2026-07-31T13:24:34.255218+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
-      "returnedOffers": 40,
+      "returnedOffers": 18,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-28T12:54:01.782060+08:00"
+      "attemptedAt": "2026-07-31T13:24:32.926387+08:00"
     },
     "jd-1218774-油污净": {
       "keywords": "威王 油污净 500g+420g",
@@ -443,10 +443,10 @@
     },
     "jd-100119958151-洗衣凝珠": {
       "keywords": "京东京造 洗衣凝珠 104颗",
-      "returnedOffers": 40,
+      "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-07-23T13:15:29.480427+08:00"
+      "attemptedAt": "2026-07-31T13:24:32.351446+08:00"
     },
     "jd-100193026772-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 65颗",
@@ -457,9 +457,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-3242242-洁厕液",
-    "jd-100154323857-omo-laundry-pods-50",
-    "jd-100193026772-洗衣凝珠",
+    "jd-100033499063-厨房纸",
+    "jd-100119958151-洗衣凝珠",
+    "jd-5030508-牙膏",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
