@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T13:17:44.631673+08:00",
+  "updatedAt": "2026-08-02T13:16:46.964062+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -95,7 +95,7 @@
       "matchedTitle": "威露士清新1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳大瓶",
       "offerId": "897993497583",
       "offerUrl": "https://detail.1688.com/offer/897993497583.html",
-      "verifiedAt": "2026-07-29T12:58:37.548991+08:00",
+      "verifiedAt": "2026-08-02T13:16:43.262723+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -136,7 +136,7 @@
       "matchedTitle": "潘婷3分钟洗发水头发多效损伤修护滋养发质470g300g瓶批发",
       "offerId": "807384514514",
       "offerUrl": "https://detail.1688.com/offer/807384514514.html",
-      "verifiedAt": "2026-07-28T12:54:01.782007+08:00",
+      "verifiedAt": "2026-08-02T13:16:44.383754+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -217,7 +217,7 @@
       "matchedTitle": "清风原木金装有芯卷纸 4层140克*30卷整箱家用商用卷纸B2014JE30N",
       "offerId": "906629956904",
       "offerUrl": "https://detail.1688.com/offer/906629956904.html",
-      "verifiedAt": "2026-06-29T14:28:17.034871+08:00",
+      "verifiedAt": "2026-08-02T13:16:45.193929+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -226,7 +226,7 @@
         "140克",
         "30卷"
       ],
-      "bookedCount": 91,
+      "bookedCount": 476,
       "sellerType": "merchant"
     }
   },
@@ -317,17 +317,17 @@
     },
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
-      "returnedOffers": 40,
-      "exactMatches": 5,
+      "returnedOffers": 13,
+      "exactMatches": 6,
       "status": "matched",
-      "attemptedAt": "2026-07-29T12:58:35.699329+08:00"
+      "attemptedAt": "2026-08-02T13:16:42.084863+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
-      "returnedOffers": 8,
+      "returnedOffers": 17,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-01T13:17:43.675679+08:00"
+      "attemptedAt": "2026-08-02T13:16:46.000518+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -359,10 +359,10 @@
     },
     "jd-100327980320-洗发水": {
       "keywords": "潘婷 洗发水 470g",
-      "returnedOffers": 35,
+      "returnedOffers": 22,
       "exactMatches": 2,
       "status": "matched",
-      "attemptedAt": "2026-07-28T12:54:00.589402+08:00"
+      "attemptedAt": "2026-08-02T13:16:43.262746+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -376,7 +376,7 @@
       "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-01T13:17:42.920997+08:00"
+      "attemptedAt": "2026-08-02T13:16:45.193950+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -436,10 +436,10 @@
     },
     "jd-100014696148-卷纸": {
       "keywords": "清风 卷纸 140g*30卷",
-      "returnedOffers": 40,
-      "exactMatches": 1,
+      "returnedOffers": 3,
+      "exactMatches": 2,
       "status": "matched",
-      "attemptedAt": "2026-06-29T14:28:15.506318+08:00"
+      "attemptedAt": "2026-08-02T13:16:44.383777+08:00"
     },
     "jd-100119958151-洗衣凝珠": {
       "keywords": "京东京造 洗衣凝珠 104颗",
@@ -457,9 +457,9 @@
     }
   },
   "refreshedProductIds": [
-    "jd-5911553-mr-muscle-oil-cleaner-455x2",
-    "jd-100068270587-洁厕液",
-    "jd-4806379-油污净",
+    "jd-100043025636-沐浴露",
+    "jd-100327980320-洗发水",
+    "jd-100014696148-卷纸",
     "jd-100013152446-洁厕液",
     "jd-100012890014-抽纸"
   ],
