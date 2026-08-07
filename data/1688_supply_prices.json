@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-06T12:55:17.207101+08:00",
+  "updatedAt": "2026-08-07T12:18:16.766052+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -74,7 +74,7 @@
       "matchedTitle": "威猛先生洁厕液柠檬草香750g*2瓶厕所清洁剂柠檬草香洁厕灵除垢",
       "offerId": "666127001707",
       "offerUrl": "https://detail.1688.com/offer/666127001707.html",
-      "verifiedAt": "2026-08-03T13:31:04.227438+08:00",
+      "verifiedAt": "2026-08-07T12:18:13.679207+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -83,7 +83,7 @@
         "750g",
         "2瓶"
       ],
-      "bookedCount": 778,
+      "bookedCount": 828,
       "sellerType": "seller"
     },
     "jd-100043025636-沐浴露": {
@@ -92,10 +92,10 @@
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "威露士清新1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳大瓶",
-      "offerId": "897993497583",
-      "offerUrl": "https://detail.1688.com/offer/897993497583.html",
-      "verifiedAt": "2026-08-02T13:16:43.262723+08:00",
+      "matchedTitle": "威露士白茶无花果1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳",
+      "offerId": "898396984139",
+      "offerUrl": "https://detail.1688.com/offer/898396984139.html",
+      "verifiedAt": "2026-08-07T12:18:12.740820+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -103,7 +103,7 @@
         "沐浴露",
         "1L"
       ],
-      "bookedCount": 1,
+      "bookedCount": 8,
       "sellerType": "merchant"
     },
     "jd-100018097536-抽纸": {
@@ -243,7 +243,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-13T14:07:57.282309+08:00"
+      "attemptedAt": "2026-08-07T12:18:13.679227+08:00"
     },
     "jd-100045910485-liby-laundry-pods-40": {
       "keywords": "立白 洗衣凝珠 40颗",
@@ -313,14 +313,14 @@
       "returnedOffers": 5,
       "exactMatches": 1,
       "status": "matched",
-      "attemptedAt": "2026-08-03T13:31:03.029116+08:00"
+      "attemptedAt": "2026-08-07T12:18:12.740844+08:00"
     },
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
       "returnedOffers": 13,
-      "exactMatches": 6,
+      "exactMatches": 7,
       "status": "matched",
-      "attemptedAt": "2026-08-02T13:16:42.084863+08:00"
+      "attemptedAt": "2026-08-07T12:18:11.457837+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
@@ -376,7 +376,7 @@
       "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-06T12:55:15.788206+08:00"
+      "attemptedAt": "2026-08-07T12:18:15.125771+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -460,13 +460,13 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-06T12:55:16.578321+08:00"
+      "attemptedAt": "2026-08-07T12:18:16.142564+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-100218230085-洗衣凝珠",
-    "jd-100010234334-洁厕宝",
-    "jd-100068270587-洁厕液",
+    "jd-100043025636-沐浴露",
+    "jd-3242242-洁厕液",
+    "jd-100005511754-mindact-wet-toilet-80x5",
     "jd-100013152446-洁厕液",
     "jd-100285611330-牙膏"
   ],
