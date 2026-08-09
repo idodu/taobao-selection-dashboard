@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T11:15:58.794676+08:00",
+  "updatedAt": "2026-08-09T11:23:47.057929+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -228,6 +228,28 @@
       ],
       "bookedCount": 476,
       "sellerType": "merchant"
+    },
+    "jd-100017084069-洗衣液": {
+      "lowestPrice": 35.91,
+      "moq": null,
+      "unit": "件",
+      "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
+      "matchStatus": "exact",
+      "matchedTitle": "威露士洗衣液松木1L+500ml*2袋4斤整箱装LA有氧柠檬团购一件代发",
+      "offerId": "874025170846",
+      "offerUrl": "https://detail.1688.com/offer/874025170846.html",
+      "verifiedAt": "2026-08-09T11:23:45.694162+08:00",
+      "source": "ElimAPI 1688授权搜索",
+      "priceField": "promotion_price",
+      "matchEvidence": [
+        "威露士",
+        "洗衣液",
+        "1L",
+        "500ml",
+        "2袋"
+      ],
+      "bookedCount": 3,
+      "sellerType": "seller"
     }
   },
   "attempts": {
@@ -264,7 +286,7 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-01T13:17:27.005356+08:00"
+      "attemptedAt": "2026-08-09T11:23:42.200212+08:00"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
       "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
@@ -376,7 +398,7 @@
       "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-08T11:15:57.172568+08:00"
+      "attemptedAt": "2026-08-09T11:23:45.694184+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -397,7 +419,7 @@
       "returnedOffers": 6,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-05T12:54:50.250526+08:00"
+      "attemptedAt": "2026-08-09T11:23:43.623052+08:00"
     },
     "jd-100001843719-洗衣液": {
       "keywords": "奥妙 洗衣液 12斤",
@@ -460,13 +482,20 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-08T11:15:58.125663+08:00"
+      "attemptedAt": "2026-08-09T11:23:46.481845+08:00"
+    },
+    "jd-100017084069-洗衣液": {
+      "keywords": "威露士 洗衣液 1L瓶+500ml*2袋",
+      "returnedOffers": 24,
+      "exactMatches": 1,
+      "status": "matched",
+      "attemptedAt": "2026-08-09T11:23:44.461911+08:00"
     }
   },
   "refreshedProductIds": [
-    "jd-100033499063-厨房纸",
-    "jd-100119958151-洗衣凝珠",
-    "jd-100012890014-抽纸",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2",
+    "jd-100060591186-油污净",
+    "jd-100017084069-洗衣液",
     "jd-100013152446-洁厕液",
     "jd-100285611330-牙膏"
   ],
