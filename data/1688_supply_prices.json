@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T10:51:37.012067+08:00",
+  "updatedAt": "2026-08-17T10:51:31.904487+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -281,7 +281,7 @@
       "matchedTitle": "薰衣草亮白增艳洗衣液一瓶1kg+2袋500g 蓝月亮 一件代发 厂家正品",
       "offerId": "630634785006",
       "offerUrl": "https://detail.1688.com/offer/630634785006.html",
-      "verifiedAt": "2026-08-13T11:59:01.436691+08:00",
+      "verifiedAt": "2026-08-17T10:51:27.909226+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -370,7 +370,7 @@
       "returnedOffers": 0,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-13T11:58:56.164109+08:00"
+      "attemptedAt": "2026-08-17T10:51:27.909254+08:00"
     },
     "jd-5851301-blue-moon-laundry-liquid-12jin": {
       "keywords": "蓝月亮 洗衣液 12斤 3kg 1kg 3袋",
@@ -384,7 +384,7 @@
       "returnedOffers": 40,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-12T14:25:02.512791+08:00"
+      "attemptedAt": "2026-08-17T10:51:30.545900+08:00"
     },
     "jd-100166629324-vinda-kitchen-paper-180x6": {
       "keywords": "维达 厨房纸 180抽 6提",
@@ -482,7 +482,7 @@
       "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-16T10:51:35.110649+08:00"
+      "attemptedAt": "2026-08-17T10:51:29.702239+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -503,7 +503,7 @@
       "returnedOffers": 6,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-13T11:58:57.089766+08:00"
+      "attemptedAt": "2026-08-17T10:51:28.817892+08:00"
     },
     "jd-100001843719-洗衣液": {
       "keywords": "奥妙 洗衣液 12斤",
@@ -592,9 +592,9 @@
     "jd-100010234342-洗衣液": {
       "keywords": "蓝月亮 洗衣液 1kg+500g*2",
       "returnedOffers": 37,
-      "exactMatches": 2,
+      "exactMatches": 1,
       "status": "matched",
-      "attemptedAt": "2026-08-13T11:58:59.981195+08:00"
+      "attemptedAt": "2026-08-17T10:51:26.717895+08:00"
     },
     "jd-10140934284730-漱口水": {
       "keywords": "狮王 漱口水 12ml*20条*2盒",
@@ -619,11 +619,11 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100033499063-厨房纸",
-    "jd-100119958151-洗衣凝珠",
-    "jd-5030508-牙膏",
+    "jd-100010234342-洗衣液",
+    "jd-5911553-mr-muscle-oil-cleaner-455x2",
+    "jd-100060591186-油污净",
     "jd-100013152446-洁厕液",
-    "jd-206673-洗发水"
+    "jd-10160893457212-liby-master-liquid-6-4jin"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
