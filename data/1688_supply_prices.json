@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T10:51:31.904487+08:00",
+  "updatedAt": "2026-08-18T10:47:16.880796+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
@@ -136,7 +136,7 @@
       "matchedTitle": "潘婷3分钟洗发水头发多效损伤修护滋养发质470g300g瓶批发",
       "offerId": "807384514514",
       "offerUrl": "https://detail.1688.com/offer/807384514514.html",
-      "verifiedAt": "2026-08-13T11:58:59.137287+08:00",
+      "verifiedAt": "2026-08-18T10:47:12.866338+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -260,7 +260,7 @@
       "matchedTitle": "Tempo得宝天然无香有芯卷纸卫生纸4层160克加厚16卷箱装得宝卷纸",
       "offerId": "773901914627",
       "offerUrl": "https://detail.1688.com/offer/773901914627.html",
-      "verifiedAt": "2026-08-11T11:25:36.425808+08:00",
+      "verifiedAt": "2026-08-18T10:47:15.249907+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "promotion_price",
       "matchEvidence": [
@@ -269,7 +269,7 @@
         "160克",
         "16卷"
       ],
-      "bookedCount": 242,
+      "bookedCount": 255,
       "sellerType": "factory"
     },
     "jd-100010234342-洗衣液": {
@@ -388,10 +388,10 @@
     },
     "jd-100166629324-vinda-kitchen-paper-180x6": {
       "keywords": "维达 厨房纸 180抽 6提",
-      "returnedOffers": 40,
+      "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-12T14:25:04.278800+08:00"
+      "attemptedAt": "2026-08-18T10:47:16.096161+08:00"
     },
     "jd-100008268866-sensodyne-toothpaste-270g": {
       "keywords": "舒适达 专业修复 牙膏 270g",
@@ -430,10 +430,10 @@
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
-      "returnedOffers": 16,
+      "returnedOffers": 17,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-08T11:15:55.698284+08:00"
+      "attemptedAt": "2026-08-18T10:47:12.866361+08:00"
     },
     "jd-100218230085-洗衣凝珠": {
       "keywords": "立白 洗衣凝珠 50颗",
@@ -465,10 +465,10 @@
     },
     "jd-100327980320-洗发水": {
       "keywords": "潘婷 洗发水 470g",
-      "returnedOffers": 21,
-      "exactMatches": 2,
+      "returnedOffers": 24,
+      "exactMatches": 3,
       "status": "matched",
-      "attemptedAt": "2026-08-13T11:58:57.952335+08:00"
+      "attemptedAt": "2026-08-18T10:47:11.275126+08:00"
     },
     "jd-100072670087-沐浴露": {
       "keywords": "威露士 沐浴露 450ml*2瓶",
@@ -482,7 +482,7 @@
       "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-17T10:51:29.702239+08:00"
+      "attemptedAt": "2026-08-18T10:47:15.249929+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -580,7 +580,7 @@
       "returnedOffers": 17,
       "exactMatches": 8,
       "status": "matched",
-      "attemptedAt": "2026-08-11T11:25:35.265419+08:00"
+      "attemptedAt": "2026-08-18T10:47:14.139963+08:00"
     },
     "jd-100009506112-油污净": {
       "keywords": "水卫士 油污净 480g*2瓶",
@@ -619,11 +619,11 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100010234342-洗衣液",
-    "jd-5911553-mr-muscle-oil-cleaner-455x2",
-    "jd-100060591186-油污净",
+    "jd-100327980320-洗发水",
+    "jd-100012890014-抽纸",
+    "jd-100002559796-卷纸",
     "jd-100013152446-洁厕液",
-    "jd-10160893457212-liby-master-liquid-6-4jin"
+    "jd-100166629324-vinda-kitchen-paper-180x6"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
