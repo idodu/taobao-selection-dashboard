@@ -1,26 +1,26 @@
 {
-  "updatedAt": "2026-08-18T10:47:16.880796+08:00",
+  "updatedAt": "2026-08-19T10:48:59.245290+08:00",
   "provider": "elim-api",
   "sourcePolicy": "ElimAPI按价格升序搜索1688；每日优先刷新最久未检查的SKU，仅保留标题同时匹配品牌和全部规格词组的最低公开价。",
   "items": {
     "jd-100045910485-liby-laundry-pods-40": {
-      "lowestPrice": 25.9,
-      "moq": null,
+      "lowestPrice": 23.23,
+      "moq": 1,
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "立白洗衣凝珠除菌倍净40颗家用量批洗衣液凝珠留香珠除菌祛螨正品",
-      "offerId": "751721118968",
-      "offerUrl": "https://detail.1688.com/offer/751721118968.html",
-      "verifiedAt": "2026-08-11T11:25:33.392198+08:00",
+      "matchedTitle": "广州立白洗衣凝珠立白净护除菌洗衣凝珠护色除菌除螨40颗批发代发",
+      "offerId": "734015368514",
+      "offerUrl": "https://detail.1688.com/offer/734015368514.html",
+      "verifiedAt": "2026-08-19T10:48:57.696653+08:00",
       "source": "ElimAPI 1688授权搜索",
-      "priceField": "price",
+      "priceField": "dropship_price",
       "matchEvidence": [
         "立白",
         "洗衣凝珠",
         "40颗"
       ],
-      "bookedCount": 0,
+      "bookedCount": 3,
       "sellerType": "merchant"
     },
     "jd-100154323857-omo-laundry-pods-50": {
@@ -74,7 +74,7 @@
       "matchedTitle": "威猛先生洁厕液柠檬草香750g*2瓶厕所清洁剂柠檬草香洁厕灵除垢",
       "offerId": "666127001707",
       "offerUrl": "https://detail.1688.com/offer/666127001707.html",
-      "verifiedAt": "2026-08-15T10:43:10.513277+08:00",
+      "verifiedAt": "2026-08-19T10:48:55.550484+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -92,10 +92,10 @@
       "unit": "件",
       "moqSource": "代发/零售价按1件口径；批发价需进入商品页确认起订量",
       "matchStatus": "exact",
-      "matchedTitle": "威露士白茶无花果1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳",
-      "offerId": "898396984139",
-      "offerUrl": "https://detail.1688.com/offer/898396984139.html",
-      "verifiedAt": "2026-08-15T10:43:09.628504+08:00",
+      "matchedTitle": "威露士清新1L沐浴露清新清爽滋润肌肤清洁男女家庭沐浴乳大瓶",
+      "offerId": "897993497583",
+      "offerUrl": "https://detail.1688.com/offer/897993497583.html",
+      "verifiedAt": "2026-08-19T10:48:56.417668+08:00",
       "source": "ElimAPI 1688授权搜索",
       "priceField": "price",
       "matchEvidence": [
@@ -103,7 +103,7 @@
         "沐浴露",
         "1L"
       ],
-      "bookedCount": 8,
+      "bookedCount": 1,
       "sellerType": "merchant"
     },
     "jd-100018097536-抽纸": {
@@ -353,10 +353,10 @@
     },
     "jd-100045910485-liby-laundry-pods-40": {
       "keywords": "立白 洗衣凝珠 40颗",
-      "returnedOffers": 28,
+      "returnedOffers": 27,
       "exactMatches": 8,
       "status": "matched",
-      "attemptedAt": "2026-08-11T11:25:32.203240+08:00"
+      "attemptedAt": "2026-08-19T10:48:56.417690+08:00"
     },
     "jd-100154323857-omo-laundry-pods-50": {
       "keywords": "奥妙 洗衣凝珠 50颗",
@@ -402,10 +402,10 @@
     },
     "jd-100013568111-corou-cotton-towel-100x6": {
       "keywords": "可心柔 棉柔巾 洗脸巾 100抽 6包",
-      "returnedOffers": 40,
+      "returnedOffers": 1,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-06-12T14:25:06.545376+08:00"
+      "attemptedAt": "2026-08-19T10:48:58.518219+08:00"
     },
     "jd-100033499063-厨房纸": {
       "keywords": "清风 厨房纸 76张*3包",
@@ -419,14 +419,14 @@
       "returnedOffers": 5,
       "exactMatches": 1,
       "status": "matched",
-      "attemptedAt": "2026-08-15T10:43:09.628525+08:00"
+      "attemptedAt": "2026-08-19T10:48:54.400300+08:00"
     },
     "jd-100043025636-沐浴露": {
       "keywords": "威露士 沐浴露 1L",
-      "returnedOffers": 10,
-      "exactMatches": 7,
+      "returnedOffers": 11,
+      "exactMatches": 6,
       "status": "matched",
-      "attemptedAt": "2026-08-15T10:43:08.338865+08:00"
+      "attemptedAt": "2026-08-19T10:48:55.550504+08:00"
     },
     "jd-100012890014-抽纸": {
       "keywords": "得宝 抽纸 80抽*20包",
@@ -482,7 +482,7 @@
       "returnedOffers": 3,
       "exactMatches": 0,
       "status": "no-exact-match",
-      "attemptedAt": "2026-08-18T10:47:15.249929+08:00"
+      "attemptedAt": "2026-08-19T10:48:57.696678+08:00"
     },
     "jd-5030508-牙膏": {
       "keywords": "舒适达 牙膏 100g*3支",
@@ -619,11 +619,11 @@
     }
   },
   "refreshedProductIds": [
-    "jd-100327980320-洗发水",
-    "jd-100012890014-抽纸",
-    "jd-100002559796-卷纸",
+    "jd-3242242-洁厕液",
+    "jd-100043025636-沐浴露",
+    "jd-100045910485-liby-laundry-pods-40",
     "jd-100013152446-洁厕液",
-    "jd-100166629324-vinda-kitchen-paper-180x6"
+    "jd-100013568111-corou-cotton-towel-100x6"
   ],
   "dailyRequestLimit": 5,
   "fullRefresh": false
